@@ -9,14 +9,13 @@ public class LaborCamp extends Ownable {
 
 	private String name;
 	private int price, rent;
-	private DiceBox dice;
+	private DiceBox box;
 	private GUIcontroller out = new GUIcontroller();
 
-	public LaborCamp(String name, int price, int rent, DiceBox dice2) {
-		this.name = name;
-		this.price = price;
+	public LaborCamp(String name, int price, int pansat, int rent, DiceBox box) {
+		super(name, price, pansat);
 		this.rent = rent;
-		this.dice = dice2;
+		this.box = box;
 	}
 
 	@Override
@@ -48,7 +47,7 @@ public class LaborCamp extends Ownable {
 			}else{
 				rent = 80;
 			}
-			int fullRent = rent * dice.getSum();
+			int fullRent = rent * box.getSum();
 			if (player.account.getScore() >= fullRent) {
 				out.fieldTax(name, getOwner().getName(), fullRent);
 				
