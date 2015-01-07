@@ -84,7 +84,7 @@ public class Player {
 		return lost;
 	}
 
-	// Getters and setters for Fieldammount below.
+	// Getters, setters and add for Fieldammount below.
 	public int getFieldammount_blue() {
 		return fieldammount_blue;
 	}
@@ -181,6 +181,9 @@ public class Player {
 		fieldammount_purple++;
 	}
 	
+	
+	// Houseammount and hotelammount listed below
+	
 	public int getHouseammount() {
 		return houseammount;
 	}
@@ -204,6 +207,8 @@ public class Player {
 	public void addHotelammount(){
 		hotelammount++;
 	}
+	
+	// Jailcard and jail status
 	
 	public boolean haveOutofjailcard() {
 		return outofjailcard;
