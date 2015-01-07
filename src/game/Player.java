@@ -11,7 +11,7 @@ public class Player {
 	private int position, fleets, laborCamp;
 	private boolean lost;
 	public Account account = new Account();
-
+		
 	// Object that stores the name and position of a player
 	public Player(String name) {
 		position = 0;
