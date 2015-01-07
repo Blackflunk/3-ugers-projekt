@@ -27,7 +27,7 @@ public class LaborCamp extends Ownable {
 				if (buyField) {
 					player.account.addPoints(-price);
 					setOwner(player);
-					player.setLaborCamp();
+					player.addLaborCamp();
 					out.fieldBought(name);
 					out.setOwner(player);
 				} else {
@@ -62,7 +62,7 @@ public class LaborCamp extends Ownable {
 				out.insufficiantFunds(name, getOwner().getName(), player.account.getScore());
 				out.updateBalance(getOwner().getName(), getOwner().account.getScore());
 				
-				player.setStatus();
+				player.setStatus(true);
 			}
 		}
 		// Updates the GUI balance for each player

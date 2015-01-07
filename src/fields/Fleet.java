@@ -28,7 +28,7 @@ public class Fleet extends Ownable {
 				if (buyField) {
 					player.account.addPoints(-price);
 					setOwner(player);
-					player.setFleets();
+					player.addFleet();
 					out.fieldBought(name);
 					out.setOwner(player);
 				} else {
@@ -61,7 +61,7 @@ public class Fleet extends Ownable {
 				out.updateBalance(getOwner().getName(),
 						getOwner().account.getScore());
 
-				player.setStatus();
+				player.setStatus(true);
 			}
 		}
 		// Updates the GUI balance for each player

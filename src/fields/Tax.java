@@ -24,7 +24,7 @@ public class Tax extends Fields {
 			} else {
 				out.insufficiantFundsTax();
 				player.account.addPoints(-player.account.getScore());
-				player.setStatus();
+				player.setStatus(true);
 			}
 		}
 		// If a player lands on caravan
@@ -36,7 +36,7 @@ public class Tax extends Fields {
 				} else {
 					out.taxFunds();
 					player.account.addPoints(-player.account.getScore());
-					player.setStatus();
+					player.setStatus(true);
 				}
 			} else {
 				player.account.addPoints((int) -player.account.getScore() / 10);
