@@ -9,10 +9,9 @@ public class Fleet extends Ownable {
 	private int[] rent = new int[4];
 	private GUIcontroller out = new GUIcontroller();
 
-	public Fleet(String name, int price, int rent_1, int rent_2, int rent_3,
+	public Fleet(String name, int price, int pansat, int rent_1, int rent_2, int rent_3,
 			int rent_4) {
-		this.name = name;
-		this.price = price;
+		super(name, price, pansat);
 		this.rent[0] = rent_1;
 		this.rent[1] = rent_2;
 		this.rent[2] = rent_3;
