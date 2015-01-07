@@ -1,6 +1,6 @@
 package test;
 
-import game.Dice;
+import game.DiceBox;
 
 public class TestCase3 {
 
@@ -12,13 +12,13 @@ public class TestCase3 {
 		
 		
 		//Preconditions
-		Dice dice = new Dice();
+		DiceBox box = new DiceBox();
 		int WrongThrow = 0;
 		
 		//Test
 		for (int i = 0; i < 100; i++){
-		dice.throwDice();
-		if (dice.getSum() < 1 || dice.getSum() > 12){
+		box.rollDice();
+		if (box.getSum() < 1 || box.getSum() > 12){
 			WrongThrow++;
 			}
 		}
