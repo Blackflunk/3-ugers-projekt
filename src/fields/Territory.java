@@ -10,7 +10,8 @@ public class Territory extends Ownable {
 	private int[] rent = new int[6];
 	private GUIcontroller out = new GUIcontroller();
 
-	public Territory(String name, int price, int pansat, int rent1, int rent2, int rent3, int rent4, int rent5, int hotel, int houseprice) {
+	public Territory(String name, int price, int houseprice, int pansat, 
+			int rent1, int rent2, int rent3, int rent4, int rent5, int hotel) {
 		super(name, price, pansat);
 		rent[0] = rent1;
 		rent[1] = rent2;
