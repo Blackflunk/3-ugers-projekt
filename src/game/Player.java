@@ -42,12 +42,15 @@ public class Player {
 	}
 
 	// Method that sets the position of the player
-	public void setPosition(int roll) {
-		if (position + roll > 21) {
-			position = position + roll - 22;
+	public void movePosition(int move) {
+		if (position + move > 40) {
+			position = position + move - 41;
 		} else {
-			position += roll;
+			position += move;
 		}
+	}
+	public void setPosition(int position){
+		this.position=position;
 	}
 	// Method that returns the position of the player
 	public int getPosition() {
