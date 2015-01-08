@@ -10,7 +10,7 @@ public class Player {
 	private String name;
 	private int position, fleets, laborCamp,
 	fieldammount_blue,fieldammount_pink,fieldammount_green,fieldammount_grey,
-	fieldammount_red,fieldammount_white,fieldammount_yellow,fieldammount_purple,
+	fieldammount_red,fieldammount_white,fieldammount_yellow,fieldammount_magneta,
 	houseammount,hotelammount;
 	private boolean lost, outofjailcard,jailed;
 	public Account account = new Account();
@@ -30,7 +30,7 @@ public class Player {
 		fieldammount_red = 0;
 		fieldammount_white = 0;
 		fieldammount_yellow = 0;
-		fieldammount_purple = 0;
+		fieldammount_magneta = 0;
 		houseammount = 0;
 		hotelammount = 0;
 		this.name = name;
@@ -173,16 +173,16 @@ public class Player {
 		fieldammount_yellow++;
 	}
 
-	public int getFieldammount_purple() {
-		return fieldammount_purple;
+	public int getFieldammount_magneta() {
+		return fieldammount_magneta;
 	}
 
-	public void setFieldammount_purple(int fieldammount_purple) {
-		this.fieldammount_purple = fieldammount_purple;
+	public void setFieldammount_magneta(int fieldammount_magneta) {
+		this.fieldammount_magneta = fieldammount_magneta;
 	}
 
-	public void addFieldammount_purple(){
-		fieldammount_purple++;
+	public void addFieldammount_magneta(){
+		fieldammount_magneta++;
 	}
 	
 	

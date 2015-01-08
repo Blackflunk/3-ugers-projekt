@@ -8,9 +8,10 @@ public class Territory extends Ownable {
 	private int houseprice, numberofhouses;
 	private int[] rent = new int[6];
 	private GUIcontroller out = new GUIcontroller();
+	private String color;
 
 	public Territory(String name, int price, int houseprice, int pansat, 
-			int rent1, int rent2, int rent3, int rent4, int rent5, int hotel) {
+			int rent1, int rent2, int rent3, int rent4, int rent5, int hotel, String color) {
 		super(name, price, pansat);
 		rent[0] = rent1;
 		rent[1] = rent2;
@@ -31,6 +32,16 @@ public class Territory extends Ownable {
 				if (buyField) {
 					player.account.addPoints(-price);
 					setOwner(player);
+					switch(color){
+					case "Blue"   : player.addFieldammount_blue();
+					case "Pink"   : player.addFieldammount_pink();
+					case "Green"  : player.addFieldammount_green();
+					case "Gray"   : player.addFieldammount_grey();
+					case "Red"    : player.addFieldammount_red();
+					case "White"  : player.addFieldammount_white();
+					case "Yellow" : player.addFieldammount_yellow();
+					case "Magneta": player.addFieldammount_magneta();
+					}
 					out.fieldBought(name);
 					out.setOwner(player);
 				} else {
@@ -72,6 +83,10 @@ public class Territory extends Ownable {
 	}
 	public int getNumberofhouses() {
 		return numberofhouses;
+	}
+	
+	public String getColor(){
+		return color;
 	}
 	
 	@Override
