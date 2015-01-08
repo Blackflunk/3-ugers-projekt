@@ -8,7 +8,7 @@ import game.Player;
 
 public class MoveToJailTest {
 	@Test
-	public void testFængsel(){
+	public void testFaengsel(){
 	
 	//Preconditions
 	GameBoard gameboard = new GameBoard(null);
