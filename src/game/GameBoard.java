@@ -39,7 +39,7 @@ public class GameBoard {
 		//field[17] =	pr�v lykken
 		field[18] = new Territory("Hellerupvej", 3600, 2000, 1800, 280, 1400, 4000, 11000, 15000, 19000);
 		field[19] = new Territory("Strandvejen", 4000, 2000, 2000, 320, 1600, 4400, 12000, 16000, 20000);
-		field[20] = new Refuge("Parkering", 200);
+		field[20] = new Refuge("Helle", 5000);
 		field[21] = new Territory("Trianglen", 4400, 3000, 2200, 360, 1800, 5000, 14000, 17500, 21000);
 		//field[22] = pr�v lykken
 		field[23] =	new Territory("�sterbrogade", 4400, 3000, 2200, 360, 1800, 5000, 14000, 17500, 21000);
