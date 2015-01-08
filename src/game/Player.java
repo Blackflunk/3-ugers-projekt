@@ -44,7 +44,8 @@ public class Player {
 	// Method that sets the position of the player
 	public void movePosition(int move) {
 		if (position + move > 40) {
-			position = position + move - 41;
+			position = position + move - 40;
+			account.addPoints(4000);
 		} else {
 			position += move;
 		}

@@ -1,13 +1,11 @@
 package fields;
 
-import game.Dice;
 import game.DiceBox;
 import game.Player;
 import boundary.GUIcontroller;
 
 public class LaborCamp extends Ownable {
 
-	private String name;
 	private int price, rent;
 	private DiceBox box;
 	private GUIcontroller out = new GUIcontroller();

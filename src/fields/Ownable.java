@@ -4,13 +4,12 @@ import game.Player;
 
 public abstract class Ownable extends Fields {
 	
-	private Player owner;
-	private String name;
-	private int price;
-	private int pansat;
+	protected Player owner;
+	protected int price;
+	protected int pansat;
 
 	public Ownable(String name, int price, int pansat) {
-		this.name = name;
+		super(name);
 		this.price = price;
 		this.pansat = pansat;
 	}	

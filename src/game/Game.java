@@ -25,8 +25,8 @@ public class Game {
 	public void run() {
 
 		boolean won = false;
-		DiceBox dice = new DiceBox();
-		GameBoard gameboard = new GameBoard(dice);
+		DiceBox box = new DiceBox();
+		GameBoard gameboard = new GameBoard(box);
 		Player[] player;
 		GUIcontroller out = new GUIcontroller();
 		int lostCount = 0;
@@ -54,9 +54,9 @@ public class Game {
 			if (!player[currentPlayer].getStatus()) {
 
 				out.nextPlayer(player, currentPlayer);
-				dice.rollDice();
-				out.showDice(dice.getDice1(), dice.getDice2());
-				out.updatePosition(player, currentPlayer, dice.getSum());
+				box.rollDice();
+				out.showDice(box.getDice1(), box.getDice2());
+				out.updatePosition(player, currentPlayer, box.getSum());
 		
 				// Execute landOnField for the players new position
 				gameboard.getField(player[currentPlayer].getPosition()).landOnField(player[currentPlayer]);
