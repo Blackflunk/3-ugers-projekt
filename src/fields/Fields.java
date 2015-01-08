@@ -17,5 +17,18 @@ public abstract class Fields {
 	public abstract void landOnField(Player player);
 	
 	public abstract String toString();
+	
+	public Player getOwner() {
+		return null;
+	}
+	public int getPrice() {
+		return 0;
+	}
+	public int getHouseprice() {
+		return 0;
+	}
+	public int getNumberofhouses() {
+		return 0;
+	}
 		
 }

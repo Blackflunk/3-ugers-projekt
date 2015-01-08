@@ -67,6 +67,13 @@ public class Territory extends Ownable {
 		out.updateBalance(player.getName(), player.account.getScore());
 	}
 	
+	public int getHouseprice() {
+		return houseprice;
+	}
+	public int getNumberofhouses() {
+		return numberofhouses;
+	}
+	
 	@Override
 	public String toString() {
 		return "Type: Territory --- Name: " + name + " --- Price: " + price + " --- Rent: " + rent + "\n";
