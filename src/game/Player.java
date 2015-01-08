@@ -54,10 +54,13 @@ public class Player {
 	public void movePosition(int move) {
 		if (position + move > 40) {
 			position = position + move - 40;
-			account.addPoints(4000);
+			passStart();
 		} else {
 			position += move;
 		}
+	}
+	public void passStart(){
+		account.addPoints(4000);
 	}
 	public void setPosition(int position){
 		this.position=position;
