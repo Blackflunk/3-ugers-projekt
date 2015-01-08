@@ -38,7 +38,7 @@ package game;
 			box[1].rollDice();
 		}
 		
-		// ER DEN DER I FORVEJEN?
+		// Tjek for par
 		public boolean isEqual(){
 			if (box[0].getDice() == box[1].getDice())
 				return true;
