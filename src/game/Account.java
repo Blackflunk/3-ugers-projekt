@@ -12,7 +12,12 @@ public class Account {
 	public int getScore() {
 		return balance;
 	}
-
+	
+	// Public set method to set the score of a chosen player
+	public void setScore(int balance){
+		this.balance = balance;
+	}
+	
 	// Public method to add points to chosen player
 	public boolean addPoints(int points) {
 
