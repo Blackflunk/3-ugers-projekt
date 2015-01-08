@@ -6,12 +6,11 @@ import game.Player;
 
 public class Refuge extends Fields {
 	
-private String name;
 private int bonus;
 private GUIcontroller out = new GUIcontroller();
 	
 	public Refuge(String name, int bonus) {
-		this.name = name;
+		super(name);
 		this.bonus = bonus;
 	}
 	@Override

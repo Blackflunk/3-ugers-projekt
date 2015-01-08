@@ -10,7 +10,7 @@ public class Tax extends Fields {
 	private GUIcontroller out = new GUIcontroller();
 
 	public Tax(String name, int pay) {
-		this.name = name;
+		super(name);
 		this.pay = pay;
 	}
 

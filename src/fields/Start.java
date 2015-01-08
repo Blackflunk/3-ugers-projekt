@@ -9,7 +9,7 @@ public class Start extends Fields {
 	private GUIcontroller out = new GUIcontroller(); 
 
 	public Start(String name) {
-		this.name = name;
+		super(name);
 	}
 
 	@Override

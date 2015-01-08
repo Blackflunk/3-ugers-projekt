@@ -5,8 +5,7 @@ import game.Player;
 
 public class Territory extends Ownable {
 
-	private String name;
-	private int price, houseprice, numberofhouses;
+	private int houseprice, numberofhouses;
 	private int[] rent = new int[6];
 	private GUIcontroller out = new GUIcontroller();
 

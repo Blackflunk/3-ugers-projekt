@@ -4,8 +4,8 @@ import game.Player;
 
 public class MoveToJail extends Fields {
 	
-	public MoveToJail() {
-		
+	public MoveToJail(String name) {
+		super(name);
 	}
 
 	@Override

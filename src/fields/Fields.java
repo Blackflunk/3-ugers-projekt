@@ -9,9 +9,10 @@ package fields;
 import game.Player;
 
 public abstract class Fields {
+	protected String name;
 	
-	public Fields() {
-	
+	public Fields(String name) {
+		this.name = name;
 	}
 	public abstract void landOnField(Player player);
 	

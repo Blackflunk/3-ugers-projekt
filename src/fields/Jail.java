@@ -1,12 +1,11 @@
 package fields;
 
-import boundary.GUIcontroller;
-import game.DiceBox;
 import game.Player;
 
 public class Jail extends Fields{
-
-	public Jail(){
+	
+	public Jail(String name){
+		super(name);
 	}
 	
 	@Override
