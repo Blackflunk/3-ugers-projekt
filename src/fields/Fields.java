@@ -9,7 +9,6 @@ package fields;
 import game.Player;
 
 public abstract class Fields {
-
 	
 	public Fields() {
 	

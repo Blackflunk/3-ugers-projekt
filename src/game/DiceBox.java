@@ -38,6 +38,14 @@ package game;
 			box[1].rollDice();
 		}
 		
+		// ER DEN DER I FORVEJEN?
+		public boolean isEqual(){
+			if (box[0].getDice() == box[1].getDice())
+				return true;
+			else
+				return false;
+		}
+		
 		public int getSum() {
 			return (box[0].getDice() + box[1].getDice());
 		}
