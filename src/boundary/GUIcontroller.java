@@ -26,11 +26,11 @@ public class GUIcontroller {
 				.setDescription("Start").setSubText("Start")
 				.setBgColor(Color.RED).build();
 		field[1] = new Street.Builder().setTitle("Rødovrevej")
-				.setDescription("Rødovrevej").setBgColor(Color.CYAN)
+				.setDescription("Rødovrevej").setBgColor(Color.BLUE)
 				.setSubText("Price: 1200").setRent("Rent: 1000").build();
 		field[2] = new Chance.Builder().build();
 		field[3] = new Street.Builder().setTitle("Hvidovrevej")
-				.setDescription("Hvidovrevej").setBgColor(Color.CYAN)
+				.setDescription("Hvidovrevej").setBgColor(Color.BLUE)
 				.setSubText("Price: 1200").setRent("Rent: 1000").build();
 		field[4] = new Tax.Builder().setTitle("Statskat")
 				.setDescription("Pay: 2000").setBgColor(Color.ORANGE)
@@ -39,94 +39,94 @@ public class GUIcontroller {
 				.setDescription("Helsingør-Helsingborg").setBgColor(Color.GRAY)
 				.setSubText("Price: 4000").setRent("Rent: 500").build();
 		field[6] = new Street.Builder().setTitle("Roskildevej")
-				.setDescription("Roskildevej").setBgColor(Color.CYAN)
+				.setDescription("Roskildevej").setBgColor(Color.PINK)
 				.setSubText("Price: 2000").setRent("Rent: 1000").build();
 		field[7] = new Chance.Builder().build();
 		field[8] = new Street.Builder().setTitle("Valby Langgade")
-				.setDescription("Valby Langgade").setBgColor(Color.CYAN)
+				.setDescription("Valby Langgade").setBgColor(Color.PINK)
 				.setSubText("Price: 2000").setRent("Rent: 1000").build();
 		field[9] = new Street.Builder().setTitle("Allégade")
-				.setDescription("Allégade").setBgColor(Color.CYAN)
+				.setDescription("Allégade").setBgColor(Color.PINK)
 				.setSubText("Price: 2400").setRent("Rent: 1000").build();
 		field[10] = new Jail.Builder().setTitle("Fængsel").setDescription("Fængsel")
 				.setSubText("RAWR").build();
 		field[11] = new Street.Builder().setTitle("Fredriksberg Allé")
-				.setDescription("Fredriksberg Allé").setBgColor(Color.CYAN)
+				.setDescription("Fredriksberg Allé").setBgColor(Color.GREEN)
 				.setSubText("Price: 2800").setRent("Rent: 2000").build();
 		field[12] = new Brewery.Builder().setTitle("Tuborg")
-				.setDescription("Tuborg").setBgColor(Color.GREEN)
+				.setDescription("Tuborg").setBgColor(Color.CYAN)
 				.setSubText("Price: 3000").setRent("80/200 x dice").build();
 		field[13] = new Street.Builder().setTitle("Bülowsvej")
-				.setDescription("Bülowsvej").setBgColor(Color.CYAN)
+				.setDescription("Bülowsvej").setBgColor(Color.GREEN)
 				.setSubText("Price: 2800").setRent("Rent: 2000").build();
 		field[14] = new Street.Builder().setTitle("Gl Kongevej")
-				.setDescription("Gl Kongevej").setBgColor(Color.CYAN)
+				.setDescription("Gl Kongevej").setBgColor(Color.GREEN)
 				.setSubText("Price: 3200").setRent("Rent: 2000").build();
 		field[15] = new Shipping.Builder().setTitle("Mols-Linien")
-				.setDescription("Mols-Linien").setBgColor(Color.GRAY)
+				.setDescription("Mols-Linien").setBgColor(Color.CYAN)
 				.setSubText("Price: 4000").setRent("Rent: 500").build();
 		field[16] = new Street.Builder().setTitle("Bernstorffsvej")
-				.setDescription("Bernstorffsvej").setBgColor(Color.CYAN)
+				.setDescription("Bernstorffsvej").setBgColor(Color.GRAY)
 				.setSubText("Price: 3600").setRent("Rent: 2000").build();
 		field[17] = new Chance.Builder().build();
 		field[18] = new Street.Builder().setTitle("Hellerupvej")
-				.setDescription("Hellerupvej").setBgColor(Color.CYAN)
+				.setDescription("Hellerupvej").setBgColor(Color.GRAY)
 				.setSubText("Price: 3600").setRent("Rent: 2000").build();
 		field[19] = new Street.Builder().setTitle("Strandvejen")
-				.setDescription("Strandvejen").setBgColor(Color.CYAN)
+				.setDescription("Strandvejen").setBgColor(Color.GRAY)
 				.setSubText("Price: 4000").setRent("Rent: 2000").build();
-		field[20] = new Refuge.Builder().setTitle("Parkering")
-				.setDescription("Parkering").setBgColor(Color.MAGENTA)
+		field[20] = new Refuge.Builder().setTitle("Helle")
+				.setDescription("Price 5000").setBgColor(Color.ORANGE)
 				.setSubText("Recieve: 500").build();
 		field[21] = new Street.Builder().setTitle("Trianglen")
-				.setDescription("Trianglen").setBgColor(Color.CYAN)
+				.setDescription("Trianglen").setBgColor(Color.RED)
 				.setSubText("Price: 4400").setRent("Rent: 3000").build();
 		field[22] = new Chance.Builder().build();
 		field[23]= new Street.Builder().setTitle("Østerbrogade")
-				.setDescription("Østerbrogade").setBgColor(Color.CYAN)
+				.setDescription("Østerbrogade").setBgColor(Color.RED)
 				.setSubText("Price: 4400").setRent("Rent: 3000").build();
 		field[24] = new Street.Builder().setTitle("Grønningen")
-				.setDescription("Grønningen").setBgColor(Color.CYAN)
+				.setDescription("Grønningen").setBgColor(Color.RED)
 				.setSubText("Price: 4800").setRent("Rent: 3000").build();
 		field[25] = new Shipping.Builder().setTitle("Gedser-Rostock")
-				.setDescription("Gedser-Rostock").setBgColor(Color.GRAY)
+				.setDescription("Gedser-Rostock").setBgColor(Color.CYAN)
 				.setSubText("Price: 4000").setRent("Rent: 500").build();
 		field[26] = new Street.Builder().setTitle("Bredgade")
-				.setDescription("Bredgade").setBgColor(Color.CYAN)
+				.setDescription("Bredgade").setBgColor(Color.WHITE)
 				.setSubText("Price: 5200").setRent("Rent: 3000").build();
 		field[27] = new Street.Builder().setTitle("Kgs Nytorv")
-				.setDescription("Kgs Nytorv").setBgColor(Color.CYAN)
+				.setDescription("Kgs Nytorv").setBgColor(Color.WHITE)
 				.setSubText("Price: 5200").setRent("Rent: 3000").build();
 		field[28] = new Brewery.Builder().setTitle("Coca-Cola")
-				.setDescription("Coca-Cola").setBgColor(Color.GREEN)
+				.setDescription("Coca-Cola").setBgColor(Color.CYAN)
 				.setSubText("Price: 3000").setRent("80/200 x dice").build();
 		field[29] = new Street.Builder().setTitle("Østergade")
-				.setDescription("Østergade").setBgColor(Color.CYAN)
+				.setDescription("Østergade").setBgColor(Color.WHITE)
 				.setSubText("Price: 5600").setRent("Rent: 3000").build();
 		field[30] = new Jail.Builder().setDescription("Ryk til Fængsel")
 				.setSubText("Du modtager ikke kr. 4000 selvom du passerer start").build();
 		field[31] = new Street.Builder().setTitle("Amagertorv")
-				.setDescription("Amagertorv").setBgColor(Color.CYAN)
+				.setDescription("Amagertorv").setBgColor(Color.YELLOW)
 				.setSubText("Price: 6000").setRent("Rent: 4000").build();
 		field[32] = new Street.Builder().setTitle("Vimmelskaftet")
-				.setDescription("Vimmelskaftet").setBgColor(Color.CYAN)
+				.setDescription("Vimmelskaftet").setBgColor(Color.YELLOW)
 				.setSubText("Price: 6000").setRent("Rent: 4000").build();
 		field[33] = new Chance.Builder().build();
 		field[34] = new Street.Builder().setTitle("Nygade")
-				.setDescription("Nygade").setBgColor(Color.CYAN)
+				.setDescription("Nygade").setBgColor(Color.YELLOW)
 				.setSubText("Price: 6400").setRent("Rent: 4000").build();
 		field[35] = new Shipping.Builder().setTitle("Rødby-Puttgarden")
-				.setDescription("Rødby-Puttgarden").setBgColor(Color.GRAY)
+				.setDescription("Rødby-Puttgarden").setBgColor(Color.CYAN)
 				.setSubText("Price: 4000").setRent("Rent: 500").build();
 		field[36] = new Chance.Builder().build();
 		field[37] = new Street.Builder().setTitle("Frederiksberggade")
-				.setDescription("Frederiksberggade").setBgColor(Color.CYAN)
+				.setDescription("Frederiksberggade").setBgColor(Color.MAGENTA)
 				.setSubText("Price: 7000").setRent("Rent: 4000").build();
 		field[38] = new Tax.Builder().setTitle("Indkomstskat")
 				.setDescription("Pay: 4000 or 10%").setBgColor(Color.ORANGE)
 				.setSubText("Pay: 4000 or 10%").build();
 		field[39] = new Street.Builder().setTitle("Rådhuspladsen")
-				.setDescription("Rådhuspladsen").setBgColor(Color.CYAN)
+				.setDescription("Rådhuspladsen").setBgColor(Color.MAGENTA)
 				.setSubText("Price: 8000").setRent("Rent: 4000").build();
 		
 		GUI.create(field);
