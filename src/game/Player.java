@@ -12,7 +12,8 @@ public class Player {
 	fieldammount_blue,fieldammount_pink,fieldammount_green,fieldammount_grey,
 	fieldammount_red,fieldammount_white,fieldammount_yellow,fieldammount_magneta,
 	houseammount,hotelammount;
-	private boolean lost, outofjailcard,jailed;
+	private boolean lost, outofjailcard,jailed,build_blue, build_pink, build_green,
+			build_grey, build_red, build_white, build_yellow, build_magneta;
 	public Account account = new Account();
 		
 	// Object that stores the name and position of a player
@@ -34,6 +35,14 @@ public class Player {
 		houseammount = 0;
 		hotelammount = 0;
 		this.name = name;
+		build_blue = false;
+		build_pink = false;
+		build_green = false;
+		build_grey = false;
+		build_red = false;
+		build_white = false;
+		build_yellow = false;
+		build_magneta = false;
 	}
 
 	// Method that returns the name of the player
@@ -185,7 +194,71 @@ public class Player {
 		fieldammount_magneta++;
 	}
 	
+	//getters and setters for buing
 	
+	public boolean getBuy_Blue(){
+		return build_blue;
+	}
+	
+	public void setBuy_Blue(boolean khan){
+		this.build_blue = khan;
+	}
+	
+	public boolean getBuy_Pink(){
+		return build_pink;
+	}
+	
+	public void setBuy_Pink(boolean khan){
+		this.build_pink = khan;
+	}
+	
+	public boolean getBuy_Green(){
+		return build_green;
+	}
+	
+	public void setBuy_Green(boolean khan){
+		this.build_green = khan;
+	}
+	
+	public boolean getBuy_grey(){
+		return build_grey;
+	}
+	
+	public void setBuy_grey(boolean khan){
+		this.build_grey = khan;
+	}
+	
+	public boolean getBuy_Red(){
+		return build_red;
+	}
+	
+	public void setBuy_Red(boolean khan){
+		this.build_red = khan;
+	}
+	
+	public boolean getBuy_White(){
+		return build_white;
+	}
+	
+	public void setBuy_White(boolean khan){
+		this.build_white = khan;
+	}
+	
+	public boolean getBuy_Yellow(){
+		return build_yellow;
+	}
+	
+	public void setBuy_Yellow(boolean khan){
+		this.build_yellow = khan;
+	}
+	
+	public boolean getBuy_Magneta(){
+		return build_magneta;
+	}
+	
+	public void setBuy_Magneta(boolean khan){
+		this.build_magneta = khan;
+	}
 	// Houseammount and hotelammount listed below
 	
 	public int getHouseammount() {

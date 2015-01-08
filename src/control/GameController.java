@@ -18,7 +18,8 @@ public class GameController {
 	int currentPlayer = 0;
 	int playerAmount = 0;
 	boolean onwards = false;
-	
+	Player[] player;
+	boolean khan = true;
 	public static void main(String[] args) {
 		GameController game = new GameController();
 		game.run();
@@ -30,7 +31,7 @@ public class GameController {
 		boolean won = false;
 		DiceBox box = new DiceBox();
 		GameBoard gameboard = new GameBoard(box);
-		Player[] player;
+		
 		GUIcontroller out = new GUIcontroller();
 		int lostCount = 0;
 
@@ -55,7 +56,7 @@ public class GameController {
 		// The game continues as long as won equals false
 		while (!won) {
 			if (!player[currentPlayer].getStatus()) {
-
+				checkOwnedFields();
 				out.nextPlayer(player, currentPlayer);
 				box.rollDice();
 				out.showDice(box.getDice1(), box.getDice2());
@@ -90,4 +91,62 @@ public class GameController {
 			currentPlayer++;
 		}
 	}
-}
+
+	public void checkOwnedFields(){
+		checkBlue();
+		checkPink();
+		checkGreen();
+		checkGrey();
+		checkRed();
+		checkWhite();
+		checkYellow();
+		checkMagneta();
+	}
+	public void checkBlue(){
+		if(player[currentPlayer].getFieldammount_blue() == 2){
+			player[currentPlayer].setBuy_Blue(khan);
+		}
+	}
+	
+	public void checkPink(){
+		if(player[currentPlayer].getFieldammount_pink() == 3){
+			player[currentPlayer].setBuy_Pink(khan);
+		}
+	}
+	
+	public void checkGreen(){
+		if(player[currentPlayer].getFieldammount_green() == 3){
+			player[currentPlayer].setBuy_Green(khan);
+		}
+	}
+	
+	public void checkGrey(){
+		if(player[currentPlayer].getFieldammount_grey() == 3){
+			player[currentPlayer].setBuy_grey(khan);
+		}
+	}
+	
+	public void checkRed(){
+		if(player[currentPlayer].getFieldammount_red() == 3){
+			player[currentPlayer].setBuy_Red(khan);
+		}
+	}
+	
+	public void checkWhite(){
+		if(player[currentPlayer].getFieldammount_white() == 3){
+			player[currentPlayer].setBuy_White(khan);
+		}
+	}
+	
+	public void checkYellow(){
+		if(player[currentPlayer].getFieldammount_yellow() == 3){
+			player[currentPlayer].setBuy_Yellow(khan);
+		}
+	}
+	
+	public void checkMagneta(){
+		if(player[currentPlayer].getFieldammount_magneta() == 2){
+			player[currentPlayer].setBuy_Magneta(khan);
+		}
+	}
+}	
