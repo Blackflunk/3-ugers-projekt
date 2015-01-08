@@ -1,8 +1,10 @@
 package JUnit_Tests;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
-import game.GameBoard;
+
+import fields.GameBoard;
 import game.Player;
 
 
@@ -14,12 +16,12 @@ public class PastStartTest {
 	GameBoard gameboard = new GameBoard(null);
 	Player player1 = new Player("Spiller1");
 	//Test
-		//Sætter ham på position 37.
+		//Sï¿½tter ham pï¿½ position 37.
 		player1.setPosition(37);
-		//Rykker ham over start ved at slå 5.
+		//Rykker ham over start ved at slï¿½ 5.
 		player1.movePosition(5);
 	//Postconditions
-		//Tjekker om han er på position 2.
+		//Tjekker om han er pï¿½ position 2.
 		assertEquals(2,player1.getPosition());
 	}
 	
@@ -29,16 +31,16 @@ public class PastStartTest {
 		//Opretter gameboard og spiller
 		GameBoard gameboard = new GameBoard(null);
 		Player player1 = new Player("Spiller1");
-		//Sætter spillerens scorer til 5000
+		//Sï¿½tter spillerens scorer til 5000
 		player1.account.setScore(5000);
 	
 	//Test
-		//Sætter ham på position 37.
+		//Sï¿½tter ham pï¿½ position 37.
 		player1.setPosition(37);
-		//Rykker ham over start ved at slå 5.
+		//Rykker ham over start ved at slï¿½ 5.
 		player1.movePosition(5);
 	//Postconditions
-		//Tjekker om han er på position 2.
+		//Tjekker om han er pï¿½ position 2.
 		assertEquals(2,player1.getPosition());
 		//Tjekker om man har modtaget penge over start.
 		assertEquals(9000,player1.account.getScore());

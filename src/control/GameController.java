@@ -4,20 +4,23 @@
 //  The main class in CDIO part 2 to start and end the game
 //********************************************************************
 
-package game;
+package control;
 
 import javax.swing.JOptionPane;
 
+import fields.GameBoard;
+import game.DiceBox;
+import game.Player;
 import boundary.GUIcontroller;
 
-public class Game {
+public class GameController {
 
 	int currentPlayer = 0;
 	int playerAmount = 0;
 	boolean onwards = false;
 	
 	public static void main(String[] args) {
-		Game game = new Game();
+		GameController game = new GameController();
 		game.run();
 
 	}

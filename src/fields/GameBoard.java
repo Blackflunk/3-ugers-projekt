@@ -1,16 +1,7 @@
-package game;
+package fields;
 
-import fields.Fields;
-import fields.Fleet;
-import fields.LaborCamp;
-import fields.Ownable;
-import fields.Refuge;
-import fields.Start;
-import fields.Tax;
-import fields.Territory;
-import fields.Jail;
-import fields.MoveToJail;
-import fields.ChanceCard;
+import game.DiceBox;
+import game.Player;
 
 public class GameBoard {
 
@@ -30,7 +21,7 @@ public class GameBoard {
 		field[7] = new ChanceCard("Chancekort");
 		field[8] = new Territory("Valby Langgade", 2000, 1000, 1000, 120, 600, 1800, 5400, 8000, 1100);
 		field[9] = new Territory("Allï¿½gade", 2400, 1000, 1200, 160, 800, 2000, 6000, 9000, 12000);
-		field[10] = new Jail("Fængsel");
+		field[10] = new Jail("Fï¿½ngsel");
 		field[11] = new Territory("Fredriksberg Allï¿½", 2800, 2000, 1400, 200, 1000, 3000, 9000, 12500, 15000);
 		field[12] = new LaborCamp("Tuborg", 3000, 1500, 80, box);
 		field[13] = new Territory("Bï¿½lowsvej", 2800, 2000, 1400, 200, 1000, 3000, 9000, 12500, 15000);
@@ -50,7 +41,7 @@ public class GameBoard {
 		field[27] =	new Territory("Kgs Nytorv", 5200, 3000, 2600, 440, 2200, 6600, 16000, 19500, 23000);
 		field[28] = new LaborCamp("Coca-Cola", 3000, 1500, 80, box);
 		field[29] = new Territory("ï¿½stergade", 5600, 3000, 2800, 480, 2400, 7200, 17000, 20500, 24000);
-		field[30] = new MoveToJail("Gå I Fængslet");
+		field[30] = new MoveToJail("Gï¿½ I Fï¿½ngslet");
 		field[31] = new Territory("Amagertorv", 6000, 4000, 3000, 520, 2600, 7800, 18000, 22000, 25500);
 		field[32] =	new Territory("Vimmelskaftet", 6000, 4000, 3000, 520, 2600, 7800, 18000, 22000, 25500);
 		field[33] = new ChanceCard("Chancekort");

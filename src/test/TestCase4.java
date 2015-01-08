@@ -1,6 +1,5 @@
 package test;
 
-import game.GameBoard;
 import game.Player;
 import fields.*;
 

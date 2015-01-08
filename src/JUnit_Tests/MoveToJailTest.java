@@ -1,9 +1,11 @@
 package JUnit_Tests;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
+
+import fields.GameBoard;
 import fields.MoveToJail;
-import game.GameBoard;
 import game.Player;
 
 public class MoveToJailTest {
