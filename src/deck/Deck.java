@@ -1,8 +1,14 @@
 package deck;
 import game.Player;
 import fields.GameBoard;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Random;
 public class Deck {
 	private Card[] cardlist = new Card[30];
+	private Card[] templist = new Card[30];
 	
 	public Deck(Player[] playerlist, GameBoard board){
 		cardlist[0] = new Movetocard("Ryk frem til Grønningen. Hvis de passerer \"Start\", indkassér da 4000kr ", 24, board);
@@ -42,8 +48,17 @@ public class Deck {
 	}
 	
 	public void mixDeck() {
+//		ArrayList<Card> arrlist = new ArrayList<Card>(Arrays.asList(cardlist));
+//		Collections.addAll(arrlist,cardlist);
+//		Collections.shuffle(arrlist);
+//		cardlist =  arrlist.toArray();
 	}
-	
-	
 
+	public String toString() {
+		String n = "";
+		for (int i=0; i<cardlist.length; i++){
+			n += i+1 + ":\t" + cardlist[i] + "\n" + "\n";
+		}
+		return n;
+	}
 }

@@ -14,4 +14,9 @@ public abstract class Card {
 		return message;
 	}
 
+	@Override
+	public String toString() {
+		return message;
+	}
+
 }
