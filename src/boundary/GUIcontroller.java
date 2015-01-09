@@ -139,6 +139,9 @@ public class GUIcontroller {
 	public void playerAmountError(){
 		JOptionPane.showMessageDialog(null, "Du skal v�lge mellem 3-6 spiller");
 	}
+	public void showMessage(String message) {
+		GUI.showMessage(message);
+	}
 	
 	public void createPlayers(int playerAmount, Player[] player) {
 		// Array that holds the cars for the GUI
@@ -180,9 +183,18 @@ public class GUIcontroller {
 		// Sets car on new position on board
 		GUI.setCar(player[currentPlayer].getPosition() + 1,
 				player[currentPlayer].getName());
-
+	}
+	public void removeCar(Player player) {
+		GUI.removeAllCars(player.getName());
+	}
+	public void setCar(Player player) {
+		GUI.setCar(player.getPosition(), player.getName());
 	}
 	
+	public void newPositon(Player player) {
+		GUI.removeAllCars(player.getName());
+		GUI.setCar(player.getPosition(), player.getName());
+	}
 	public void removePlayer(Player[] player, int currentPlayer) {
 		GUI.removeCar(player[currentPlayer].getPosition() + 1, player[currentPlayer].getName());
 		GUI.showMessage("Du er fallit.");		

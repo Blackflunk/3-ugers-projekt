@@ -12,6 +12,7 @@ import fields.GameBoard;
 import game.DiceBox;
 import game.Player;
 import boundary.GUIcontroller;
+import deck.Deck;
 
 public class GameController {
 
@@ -32,8 +33,9 @@ public class GameController {
 		boolean won = false;
 		DiceBox box = new DiceBox();
 		GameBoard gameboard = new GameBoard(box);
-		
+		Deck deck = new Deck(player, gameboard);
 		GUIcontroller out = new GUIcontroller();
+		DeckController DC = new DeckController(deck, out, player, gameboard);
 		int lostCount = 0;
 
 		System.out.println(gameboard.toString());
@@ -66,6 +68,18 @@ public class GameController {
 		
 				// Execute landOnField for the players new position
 				gameboard.getField(player[currentPlayer].getPosition()).landOnField(player[currentPlayer]);
+				
+				if (player[currentPlayer].getPosition()==2 ||
+					player[currentPlayer].getPosition()==7 ||
+					player[currentPlayer].getPosition()== 17 ||
+					player[currentPlayer].getPosition()== 22 ||
+					player[currentPlayer].getPosition()==33 ||
+					player[currentPlayer].getPosition()==36) {
+						DC.drawCard(player[currentPlayer]);
+					}
+				else if (player[currentPlayer].getPosition()==30) {
+					out.newPositon(player[currentPlayer]);
+				}
 				
 				// If a player has lost, adds one to lostCount and reset the players owned fields
 				if (player[currentPlayer].getStatus()) {

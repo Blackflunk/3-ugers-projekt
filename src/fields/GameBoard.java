@@ -8,7 +8,7 @@ public class GameBoard {
 	private Fields[] field;
 	
 	public GameBoard(DiceBox box) {
-		
+
 		// Array that creates each field and the attributes
 		field = new Fields[40];
 		field[0] = new Start("Start");
