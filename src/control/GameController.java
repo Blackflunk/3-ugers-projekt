@@ -20,6 +20,7 @@ public class GameController {
 	boolean onwards = false;
 	Player[] player;
 	boolean khan = true;
+	boolean build;
 	public static void main(String[] args) {
 		GameController game = new GameController();
 		game.run();
@@ -57,6 +58,7 @@ public class GameController {
 		while (!won) {
 			if (!player[currentPlayer].getStatus()) {
 				checkOwnedFields();
+				//if(player[currentPlayer].getBuy_Blue()||player[])
 				out.nextPlayer(player, currentPlayer);
 				box.rollDice();
 				out.showDice(box.getDice1(), box.getDice2());
