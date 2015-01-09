@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
+
 public class Deck {
 	private Card[] cardlist = new Card[30];
-	private Card[] templist = new Card[30];
 	
 	public Deck(Player[] playerlist, GameBoard board){
 		cardlist[0] = new Movetocard("Ryk frem til Grønningen. Hvis de passerer \"Start\", indkassér da 4000kr ", 24, board);
@@ -47,12 +47,28 @@ public class Deck {
 				+ "Dette kort kan opbevares, indtil de får brug for det");
 	}
 	
-	public void mixDeck() {
-//		ArrayList<Card> arrlist = new ArrayList<Card>(Arrays.asList(cardlist));
-//		Collections.addAll(arrlist,cardlist);
-//		Collections.shuffle(arrlist);
-//		cardlist =  arrlist.toArray();
+	public void shuffleDeck() {
+		// Fisher-Yates shuffle algorithm
+		Random r = new Random();
+		for (int i = cardlist.length-1; i>0; i--) {
+			int index = r.nextInt(i+1);
+			Card a = cardlist[index];
+			cardlist[index] = cardlist[i];
+			cardlist[i] = a;
+		}
 	}
+	public void drawCard(Player player) {
+		cardlist[0].drawCard(player);
+		Card temp = cardlist[0];
+		for (int k = 1; k<cardlist.length; k++){
+			cardlist[k-1] = cardlist[k];
+		}
+		cardlist[cardlist.length-1]=temp;
+	}
+	public String getMessage() {
+		return cardlist[0].getMessage();
+	}
+		
 
 	public String toString() {
 		String n = "";

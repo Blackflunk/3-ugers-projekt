@@ -25,8 +25,8 @@ public class GUIcontroller {
 		field[0] = new Start.Builder().setTitle("Start")
 				.setDescription("Start").setSubText("Start")
 				.setBgColor(Color.RED).build();
-		field[1] = new Street.Builder().setTitle("Rødovrevej")
-				.setDescription("Rødovrevej").setBgColor(Color.BLUE)
+		field[1] = new Street.Builder().setTitle("Rï¿½dovrevej")
+				.setDescription("Rï¿½dovrevej").setBgColor(Color.BLUE)
 				.setSubText("Price: 1200").setRent("Rent: 1000").build();
 		field[2] = new Chance.Builder().build();
 		field[3] = new Street.Builder().setTitle("Hvidovrevej")
@@ -35,8 +35,8 @@ public class GUIcontroller {
 		field[4] = new Tax.Builder().setTitle("Statskat")
 				.setDescription("Pay: 2000").setBgColor(Color.ORANGE)
 				.setSubText("Pay: 2000").build();
-		field[5] = new Shipping.Builder().setTitle("Helsingør-Helsingborg")
-				.setDescription("Helsingør-Helsingborg").setBgColor(Color.GRAY)
+		field[5] = new Shipping.Builder().setTitle("Helsingï¿½r-Helsingborg")
+				.setDescription("Helsingï¿½r-Helsingborg").setBgColor(Color.GRAY)
 				.setSubText("Price: 4000").setRent("Rent: 500").build();
 		field[6] = new Street.Builder().setTitle("Roskildevej")
 				.setDescription("Roskildevej").setBgColor(Color.PINK)
@@ -45,19 +45,19 @@ public class GUIcontroller {
 		field[8] = new Street.Builder().setTitle("Valby Langgade")
 				.setDescription("Valby Langgade").setBgColor(Color.PINK)
 				.setSubText("Price: 2000").setRent("Rent: 1000").build();
-		field[9] = new Street.Builder().setTitle("Allégade")
-				.setDescription("Allégade").setBgColor(Color.PINK)
+		field[9] = new Street.Builder().setTitle("Allï¿½gade")
+				.setDescription("Allï¿½gade").setBgColor(Color.PINK)
 				.setSubText("Price: 2400").setRent("Rent: 1000").build();
-		field[10] = new Jail.Builder().setTitle("Fængsel").setDescription("Fængsel")
+		field[10] = new Jail.Builder().setTitle("Fï¿½ngsel").setDescription("Fï¿½ngsel")
 				.setSubText("RAWR").build();
-		field[11] = new Street.Builder().setTitle("Fredriksberg Allé")
-				.setDescription("Fredriksberg Allé").setBgColor(Color.GREEN)
+		field[11] = new Street.Builder().setTitle("Fredriksberg Allï¿½")
+				.setDescription("Fredriksberg Allï¿½").setBgColor(Color.GREEN)
 				.setSubText("Price: 2800").setRent("Rent: 2000").build();
 		field[12] = new Brewery.Builder().setTitle("Tuborg")
 				.setDescription("Tuborg").setBgColor(Color.CYAN)
 				.setSubText("Price: 3000").setRent("80/200 x dice").build();
-		field[13] = new Street.Builder().setTitle("Bülowsvej")
-				.setDescription("Bülowsvej").setBgColor(Color.GREEN)
+		field[13] = new Street.Builder().setTitle("Bï¿½lowsvej")
+				.setDescription("Bï¿½lowsvej").setBgColor(Color.GREEN)
 				.setSubText("Price: 2800").setRent("Rent: 2000").build();
 		field[14] = new Street.Builder().setTitle("Gl Kongevej")
 				.setDescription("Gl Kongevej").setBgColor(Color.GREEN)
@@ -82,11 +82,11 @@ public class GUIcontroller {
 				.setDescription("Trianglen").setBgColor(Color.RED)
 				.setSubText("Price: 4400").setRent("Rent: 3000").build();
 		field[22] = new Chance.Builder().build();
-		field[23]= new Street.Builder().setTitle("Østerbrogade")
-				.setDescription("Østerbrogade").setBgColor(Color.RED)
+		field[23]= new Street.Builder().setTitle("ï¿½sterbrogade")
+				.setDescription("ï¿½sterbrogade").setBgColor(Color.RED)
 				.setSubText("Price: 4400").setRent("Rent: 3000").build();
-		field[24] = new Street.Builder().setTitle("Grønningen")
-				.setDescription("Grønningen").setBgColor(Color.RED)
+		field[24] = new Street.Builder().setTitle("Grï¿½nningen")
+				.setDescription("Grï¿½nningen").setBgColor(Color.RED)
 				.setSubText("Price: 4800").setRent("Rent: 3000").build();
 		field[25] = new Shipping.Builder().setTitle("Gedser-Rostock")
 				.setDescription("Gedser-Rostock").setBgColor(Color.CYAN)
@@ -100,10 +100,10 @@ public class GUIcontroller {
 		field[28] = new Brewery.Builder().setTitle("Coca-Cola")
 				.setDescription("Coca-Cola").setBgColor(Color.CYAN)
 				.setSubText("Price: 3000").setRent("80/200 x dice").build();
-		field[29] = new Street.Builder().setTitle("Østergade")
-				.setDescription("Østergade").setBgColor(Color.WHITE)
+		field[29] = new Street.Builder().setTitle("ï¿½stergade")
+				.setDescription("ï¿½stergade").setBgColor(Color.WHITE)
 				.setSubText("Price: 5600").setRent("Rent: 3000").build();
-		field[30] = new Jail.Builder().setDescription("Ryk til Fængsel")
+		field[30] = new Jail.Builder().setDescription("Ryk til Fï¿½ngsel")
 				.setSubText("Du modtager ikke kr. 4000 selvom du passerer start").build();
 		field[31] = new Street.Builder().setTitle("Amagertorv")
 				.setDescription("Amagertorv").setBgColor(Color.YELLOW)
@@ -115,8 +115,8 @@ public class GUIcontroller {
 		field[34] = new Street.Builder().setTitle("Nygade")
 				.setDescription("Nygade").setBgColor(Color.YELLOW)
 				.setSubText("Price: 6400").setRent("Rent: 4000").build();
-		field[35] = new Shipping.Builder().setTitle("Rødby-Puttgarden")
-				.setDescription("Rødby-Puttgarden").setBgColor(Color.CYAN)
+		field[35] = new Shipping.Builder().setTitle("Rï¿½dby-Puttgarden")
+				.setDescription("Rï¿½dby-Puttgarden").setBgColor(Color.CYAN)
 				.setSubText("Price: 4000").setRent("Rent: 500").build();
 		field[36] = new Chance.Builder().build();
 		field[37] = new Street.Builder().setTitle("Frederiksberggade")
@@ -125,19 +125,19 @@ public class GUIcontroller {
 		field[38] = new Tax.Builder().setTitle("Indkomstskat")
 				.setDescription("Pay: 4000 or 10%").setBgColor(Color.ORANGE)
 				.setSubText("Pay: 4000 or 10%").build();
-		field[39] = new Street.Builder().setTitle("Rådhuspladsen")
-				.setDescription("Rådhuspladsen").setBgColor(Color.MAGENTA)
+		field[39] = new Street.Builder().setTitle("Rï¿½dhuspladsen")
+				.setDescription("Rï¿½dhuspladsen").setBgColor(Color.MAGENTA)
 				.setSubText("Price: 8000").setRent("Rent: 4000").build();
 		
 		GUI.create(field);
 	}
 	
 	public int playerAmount() {
-		return Integer.parseInt(JOptionPane.showInputDialog("Vælg antallet af spillere (mellem 3-6)"));
+		return Integer.parseInt(JOptionPane.showInputDialog("Vï¿½lg antallet af spillere (mellem 3-6)"));
 	}
 	
 	public void playerAmountError(){
-		JOptionPane.showMessageDialog(null, "Du skal vælge mellem 3-6 spiller");
+		JOptionPane.showMessageDialog(null, "Du skal vï¿½lge mellem 3-6 spiller");
 	}
 	
 	public void createPlayers(int playerAmount, Player[] player) {
@@ -161,7 +161,7 @@ public class GUIcontroller {
 	
 	public void nextPlayer(Player[] player, int currentPlayer) {
 		GUI.showMessage(player[currentPlayer].getName()
-				+ "'s tur til at slå.");
+				+ "'s tur til at slï¿½.");
 	}
 	
 	public void showDice(int dice1, int dice2) {
@@ -176,7 +176,7 @@ public class GUIcontroller {
 		// Remove car from old position on board
 		GUI.removeCar(player[currentPlayer].getPosition() + 1,
 				player[currentPlayer].getName());
-		player[currentPlayer].setPosition(diceSum);
+		player[currentPlayer].movePosition(diceSum);
 		// Sets car on new position on board
 		GUI.setCar(player[currentPlayer].getPosition() + 1,
 				player[currentPlayer].getName());
@@ -199,20 +199,20 @@ public class GUIcontroller {
 	//Field methods
 	public boolean buyField(String name, int price) {
 		return GUI.getUserLeftButtonPressed(name + 
-				" har ingen ejer, vil du købe grunden for " + price + "?", "Ja",
+				" har ingen ejer, vil du kï¿½be grunden for " + price + "?", "Ja",
 				"Nej");
 	}
 	
 	public void fieldBought(String name) {
-		GUI.showMessage("Du har købt " + name);
+		GUI.showMessage("Du har kï¿½bt " + name);
 	}
 	
 	public void fieldRefused(String name) {
-		GUI.showMessage("Du har ikke købt " + name);
+		GUI.showMessage("Du har ikke kï¿½bt " + name);
 	}
 	
 	public void fieldRefusedPrice(String name) {
-		GUI.showMessage("Du har ikke nok penge til at købe " + name);
+		GUI.showMessage("Du har ikke nok penge til at kï¿½be " + name);
 	}
 	
 	public void fieldOwnedByPlayer(String name) {
@@ -242,27 +242,27 @@ public class GUIcontroller {
 	}
 	
 	public void bonusMessage(String name, int bonus) {
-		GUI.showMessage("du er landet på " + name + " og modtager " + bonus + " Kr.");
+		GUI.showMessage("du er landet pï¿½ " + name + " og modtager " + bonus + " Kr.");
 	}
 	
 	public void startMessage(String name) {
-		GUI.showMessage("Du er landet på " + name
+		GUI.showMessage("Du er landet pï¿½ " + name
 				+ ". Rest here until next turn.");  // FIKS THIS
 	}
 	
 	public void goldmineMessage(String name) {
-		GUI.showMessage("Du er landet på " + name
-				+ " og må betale 2000 til skat");
+		GUI.showMessage("Du er landet pï¿½ " + name
+				+ " og mï¿½ betale 2000 til skat");
 	}
 	
 	public void insufficiantFundsTax() {
 		GUI.showMessage("Du skylder mere i skat end du har. "
-				+ "Resten af dine værdier vil bliver overført til banken.");
+				+ "Resten af dine vï¿½rdier vil bliver overfï¿½rt til banken.");
 	}
 	
 	public String taxPick(String name) {
 		return GUI.getUserSelection(
-				"du er landet på "+ name + " og skal betale indkomstskat. "
+				"du er landet pï¿½ "+ name + " og skal betale indkomstskat. "
 						+ "vil du helts betale 4000 eller 10% af dine kontanter?",
 				"4000", "10%");
 	}

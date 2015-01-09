@@ -13,7 +13,7 @@ public class TestCase5 {
 		
 		Deck deck = new Deck(players, board);
 		System.out.println(deck);
-		deck.mixDeck();
+		deck.shuffleDeck();
 		System.out.println("efter mix");
 		System.out.println(deck);
 	}
