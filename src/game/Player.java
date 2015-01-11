@@ -10,10 +10,10 @@ public class Player {
 	private String name;
 	private int position, fleets, laborCamp,
 	fieldammount_blue,fieldammount_pink,fieldammount_green,fieldammount_grey,
-	fieldammount_red,fieldammount_white,fieldammount_yellow,fieldammount_magneta,
+	fieldammount_red,fieldammount_white,fieldammount_yellow,fieldammount_magenta,
 	houseammount,hotelammount;
 	private boolean lost, outofjailcard,jailed,build_blue, build_pink, build_green,
-			build_grey, build_red, build_white, build_yellow, build_magneta;
+			build_grey, build_red, build_white, build_yellow, build_magenta;
 	public Account account = new Account();
 		
 	// Object that stores the name and position of a player
@@ -31,7 +31,7 @@ public class Player {
 		fieldammount_red = 0;
 		fieldammount_white = 0;
 		fieldammount_yellow = 0;
-		fieldammount_magneta = 0;
+		fieldammount_magenta = 0;
 		houseammount = 0;
 		hotelammount = 0;
 		this.name = name;
@@ -42,7 +42,7 @@ public class Player {
 		build_red = false;
 		build_white = false;
 		build_yellow = false;
-		build_magneta = false;
+		build_magenta = false;
 	}
 
 	// Method that returns the name of the player
@@ -185,16 +185,16 @@ public class Player {
 		fieldammount_yellow++;
 	}
 
-	public int getFieldammount_magneta() {
-		return fieldammount_magneta;
+	public int getFieldammount_magenta() {
+		return fieldammount_magenta;
 	}
 
-	public void setFieldammount_magneta(int fieldammount_magneta) {
-		this.fieldammount_magneta = fieldammount_magneta;
+	public void setFieldammount_magenta(int fieldammount_magenta) {
+		this.fieldammount_magenta = fieldammount_magenta;
 	}
 
-	public void addFieldammount_magneta(){
-		fieldammount_magneta++;
+	public void addFieldammount_magenta(){
+		fieldammount_magenta++;
 	}
 	
 	//getters and setters for buing
@@ -255,12 +255,12 @@ public class Player {
 		this.build_yellow = khan;
 	}
 	
-	public boolean getBuy_Magneta(){
-		return build_magneta;
+	public boolean getBuy_Magenta(){
+		return build_magenta;
 	}
 	
-	public void setBuy_Magneta(boolean khan){
-		this.build_magneta = khan;
+	public void setBuy_Magenta(boolean khan){
+		this.build_magenta = khan;
 	}
 	// Houseammount and hotelammount listed below
 	

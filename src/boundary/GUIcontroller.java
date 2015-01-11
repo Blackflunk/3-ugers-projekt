@@ -282,4 +282,9 @@ public class GUIcontroller {
 	public void taxFunds() {
 		GUI.showMessage("The tax is higher than your balance. Instead you pay the rest of you balance.");
 	}
+	
+	public String offerToBuy(String possibleBuild){
+		return GUI.getUserSelection("Du ejer nok grunde af en farve til at bygge huse. Ønsker du at bygger på en af disse grunde?" + possibleBuild,"Ja","Nej");
+		
+	}
 }

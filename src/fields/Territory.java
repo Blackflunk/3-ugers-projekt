@@ -20,7 +20,7 @@ public class Territory extends Ownable {
 		rent[4] = rent5;
 		rent[5] = hotel;
 		this.houseprice = houseprice;
-		numberofhouses = 0;
+		numberofhouses = 2;
 	}
 
 	@Override
@@ -34,13 +34,21 @@ public class Territory extends Ownable {
 					setOwner(player);
 					switch(color){
 					case "Blue"   : player.addFieldammount_blue();
+					break;
 					case "Pink"   : player.addFieldammount_pink();
+					break;
 					case "Green"  : player.addFieldammount_green();
+					break;
 					case "Gray"   : player.addFieldammount_grey();
+					break;
 					case "Red"    : player.addFieldammount_red();
+					break;
 					case "White"  : player.addFieldammount_white();
+					break;
 					case "Yellow" : player.addFieldammount_yellow();
-					case "Magneta": player.addFieldammount_magneta();
+					break;
+					case "Magneta": player.addFieldammount_magenta();
+					break;
 					}
 					out.fieldBought(name);
 					out.setOwner(player);
