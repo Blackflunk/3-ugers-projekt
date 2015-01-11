@@ -59,14 +59,18 @@ public class Deck {
 	}
 	public void drawCard(Player player) {
 		cardlist[0].drawCard(player);
+		// puts the card in the bottom of the list/array
 		Card temp = cardlist[0];
 		for (int k = 1; k<cardlist.length; k++){
 			cardlist[k-1] = cardlist[k];
 		}
 		cardlist[cardlist.length-1]=temp;
 	}
-	public String getMessage() {
-		return cardlist[0].getMessage();
+	public String getMessage(int cardnumber) {
+		return cardlist[cardnumber].getMessage();
+	}
+	public void pickCard(Player player, int cardnumber) {
+		cardlist[cardnumber].drawCard(player);
 	}
 		
 

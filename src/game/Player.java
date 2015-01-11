@@ -11,7 +11,7 @@ public class Player {
 	private int position, fleets, laborCamp,
 	fieldammount_blue,fieldammount_pink,fieldammount_green,fieldammount_grey,
 	fieldammount_red,fieldammount_white,fieldammount_yellow,fieldammount_magenta,
-	houseammount,hotelammount;
+	houseammount,hotelammount, jailcount;
 	private boolean lost, outofjailcard,jailed,build_blue, build_pink, build_green,
 			build_grey, build_red, build_white, build_yellow, build_magenta;
 	public Account account = new Account();
@@ -24,6 +24,7 @@ public class Player {
 		lost = false;
 		outofjailcard = false;
 		jailed = false;
+		jailcount = 0;
 		fieldammount_blue = 0;
 		fieldammount_pink = 0;
 		fieldammount_grey = 0;
@@ -308,6 +309,21 @@ public class Player {
 
 	public void setJailed(boolean jailed) {
 		this.jailed = jailed;
+	}
+
+	public boolean hasOutofjailcard() {
+		return outofjailcard;
+	}
+
+	public int getJailcount() {
+		return jailcount;
+	}
+
+	public void setJailcount(int jailcount) {
+		this.jailcount = jailcount;
+	}
+	public void addJailcount() {
+		jailcount++;
 	}
 	
 }

@@ -19,10 +19,12 @@ public class DeckController {
 		this.playerlist = playerlist;
 		this.board = board;
 		this.deck = deck;
+		// shuffles deck on creation
+		deck.shuffleDeck();
 	}
 	
 	public void drawCard(Player player) {
-		GUIC.showMessage(deck.getMessage());
+		GUIC.showMessage(deck.getMessage(0));
 		deck.drawCard(player);
 		cardsdrawned++;
 		if (cardsdrawned >=decklength)

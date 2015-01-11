@@ -16,83 +16,79 @@ import deck.Deck;
 
 public class GameController {
 
-	int currentPlayer = 0;
-	int playerAmount = 0;
-	boolean onwards = false;
-	Player[] player;
-	boolean khan = true;
-	boolean build;
-	String possibleBuild;
+	private int currentPlayer = 0;
+	private int playerAmount = 0;
+	private boolean onwards = false;
+	private Player[] playerlist;
+	private boolean khan = true;
+	private boolean build;
+	private String possibleBuild;
+	private boolean won = false;
+	private DiceBox box = new DiceBox();
+	private GameBoard gameboard = new GameBoard(box);
+	private Deck deck = new Deck(playerlist, gameboard);
+	private GUIcontroller GUIC = new GUIcontroller();
+	private DeckController DC = new DeckController(deck, GUIC, playerlist, gameboard);
+	private TurnController TurnC = new TurnController(GUIC, gameboard, box, playerlist);
+	private int lostCount = 0;
+	
 	public static void main(String[] args) {
 		GameController game = new GameController();
 		game.run();
+		/** 
+		 * To do list
+		 * lav binding i køb af felter (ingen gui kontakt i ownable)
+		 * pansetning (måske)
+		 * 
+		 */
 
 	}
 
 	public void run() {
-
-		boolean won = false;
-		DiceBox box = new DiceBox();
-		GameBoard gameboard = new GameBoard(box);
-		Deck deck = new Deck(player, gameboard);
-		GUIcontroller out = new GUIcontroller();
-		DeckController DC = new DeckController(deck, out, player, gameboard);
-		int lostCount = 0;
-
 		System.out.println(gameboard.toString());
-		out.createField();
+		GUIC.createField();
 		
 		// Takes a chosen number and creates that amount of players
-		
 		while(!onwards){
-		playerAmount = out.playerAmount();
+		playerAmount = GUIC.playerAmount();
 		if(playerAmount<7  && playerAmount>2){
 		onwards=true;
 		}else{
-			out.playerAmountError();
+			GUIC.playerAmountError();
 			}
 		}
-		player = new Player[playerAmount];
-		out.createPlayers(playerAmount, player);
+		playerlist = new Player[playerAmount];
+		GUIC.createPlayers(playerAmount, playerlist);
 		
 
 		
 		// The game continues as long as won equals false
 		while (!won) {
-			if (!player[currentPlayer].getStatus()) {
+			if (!playerlist[currentPlayer].getStatus()) {
 				checkOwnedFields();
-				//if(player[currentPlayer].getBuy_Blue()||player[])
-				out.nextPlayer(player, currentPlayer);
-				box.rollDice();
-				out.showDice(box.getDice1(), box.getDice2());
-				out.updatePosition(player, currentPlayer, box.getSum());
+				// If Player is jailed
+				if (playerlist[currentPlayer].isJailed())
+					TurnC.runJailTurn(playerlist[currentPlayer], currentPlayer);
+				// Normal Turn
+				else
+					TurnC.runTurn(playerlist, currentPlayer);
 		
 				// Execute landOnField for the players new position
-				gameboard.getField(player[currentPlayer].getPosition()).landOnField(player[currentPlayer]);
-				
-				if (player[currentPlayer].getPosition()==2 ||
-					player[currentPlayer].getPosition()==7 ||
-					player[currentPlayer].getPosition()== 17 ||
-					player[currentPlayer].getPosition()== 22 ||
-					player[currentPlayer].getPosition()==33 ||
-					player[currentPlayer].getPosition()==36) {
-						DC.drawCard(player[currentPlayer]);
-					}
-				else if (player[currentPlayer].getPosition()==30) {
-					out.newPositon(player[currentPlayer]);
-				}
+				gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
+				// Controls for further funktions on the field
+				controlFieldType();
 				
 				// If a player has lost, adds one to lostCount and reset the players owned fields
-				if (player[currentPlayer].getStatus()) {
-					out.removePlayer(player, currentPlayer);
+				if (playerlist[currentPlayer].getStatus()) {
+					GUIC.removePlayer(playerlist, currentPlayer);
 					
-					gameboard.resetOwnedFields(player[currentPlayer]);
+					gameboard.resetOwnedFields(playerlist[currentPlayer]);
 					lostCount++;
 					
 					// If only one player is left, won is set to true
 					if (lostCount == playerAmount - 1) {
 						won = true;
-						out.showWin(player, playerAmount);
+						GUIC.showWin(playerlist, playerAmount);
 					}	
 				}	
 			}
@@ -108,6 +104,20 @@ public class GameController {
 			currentPlayer++;
 		}
 	}
+	
+	public void controlFieldType(){
+		if (playerlist[currentPlayer].getPosition()==2 ||
+				playerlist[currentPlayer].getPosition()==7 ||
+				playerlist[currentPlayer].getPosition()== 17 ||
+				playerlist[currentPlayer].getPosition()== 22 ||
+				playerlist[currentPlayer].getPosition()==33 ||
+				playerlist[currentPlayer].getPosition()==36) {
+					DC.drawCard(playerlist[currentPlayer]);
+				}
+			else if (playerlist[currentPlayer].getPosition()==30) {
+				GUIC.newPositon(playerlist[currentPlayer]);
+			}
+	}
 
 	public void checkOwnedFields(){
 		checkBlue();
@@ -120,77 +130,77 @@ public class GameController {
 		checkMagneta();
 	}
 	public void checkBlue(){
-		if(player[currentPlayer].getFieldammount_blue() == 2){
-			player[currentPlayer].setBuy_Blue(khan);
+		if(playerlist[currentPlayer].getFieldammount_blue() == 2){
+			playerlist[currentPlayer].setBuy_Blue(khan);
 		}
 	}
 	
 	public void checkPink(){
-		if(player[currentPlayer].getFieldammount_pink() == 3){
-			player[currentPlayer].setBuy_Pink(khan);
+		if(playerlist[currentPlayer].getFieldammount_pink() == 3){
+			playerlist[currentPlayer].setBuy_Pink(khan);
 		}
 	}
 	
 	public void checkGreen(){
-		if(player[currentPlayer].getFieldammount_green() == 3){
-			player[currentPlayer].setBuy_Green(khan);
+		if(playerlist[currentPlayer].getFieldammount_green() == 3){
+			playerlist[currentPlayer].setBuy_Green(khan);
 		}
 	}
 	
 	public void checkGrey(){
-		if(player[currentPlayer].getFieldammount_grey() == 3){
-			player[currentPlayer].setBuy_grey(khan);
+		if(playerlist[currentPlayer].getFieldammount_grey() == 3){
+			playerlist[currentPlayer].setBuy_grey(khan);
 		}
 	}
 	
 	public void checkRed(){
-		if(player[currentPlayer].getFieldammount_red() == 3){
-			player[currentPlayer].setBuy_Red(khan);
+		if(playerlist[currentPlayer].getFieldammount_red() == 3){
+			playerlist[currentPlayer].setBuy_Red(khan);
 		}
 	}
 	
 	public void checkWhite(){
-		if(player[currentPlayer].getFieldammount_white() == 3){
-			player[currentPlayer].setBuy_White(khan);
+		if(playerlist[currentPlayer].getFieldammount_white() == 3){
+			playerlist[currentPlayer].setBuy_White(khan);
 		}
 	}
 	
 	public void checkYellow(){
-		if(player[currentPlayer].getFieldammount_yellow() == 3){
-			player[currentPlayer].setBuy_Yellow(khan);
+		if(playerlist[currentPlayer].getFieldammount_yellow() == 3){
+			playerlist[currentPlayer].setBuy_Yellow(khan);
 		}
 	}
 	
 	public void checkMagneta(){
-		if(player[currentPlayer].getFieldammount_magenta() == 2){
-			player[currentPlayer].setBuy_Magenta(khan);
+		if(playerlist[currentPlayer].getFieldammount_magenta() == 2){
+			playerlist[currentPlayer].setBuy_Magenta(khan);
 		}
 	}
 	
 	public boolean getBuild(int n){
 		if(n == 1){
-			return player[currentPlayer].getBuy_Blue();
+			return playerlist[currentPlayer].getBuy_Blue();
 		}
 		else if(n == 2){
-			return player[currentPlayer].getBuy_Pink();
+			return playerlist[currentPlayer].getBuy_Pink();
 		}
 		else if(n == 3){
-			return player[currentPlayer].getBuy_Green();
+			return playerlist[currentPlayer].getBuy_Green();
 		}
 		else if(n == 4){
-			return player[currentPlayer].getBuy_grey();
+			return playerlist[currentPlayer].getBuy_grey();
 		}
 		else if(n == 5){
-			return player[currentPlayer].getBuy_Red();
+			return playerlist[currentPlayer].getBuy_Red();
 		}
 		else if(n == 6){
-			return player[currentPlayer].getBuy_White();
+			return playerlist[currentPlayer].getBuy_White();
 		}
 		else if(n == 7){
-			return player[currentPlayer].getBuy_Yellow();
+			return playerlist[currentPlayer].getBuy_Yellow();
 		}
 		else if(n == 8){
-			return player[currentPlayer].getBuy_Magenta();
+			return playerlist[currentPlayer].getBuy_Magenta();
 		}
 		return false;
 		/*switch(n){

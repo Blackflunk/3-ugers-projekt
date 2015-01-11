@@ -163,8 +163,7 @@ public class GUIcontroller {
 	}
 	
 	public void nextPlayer(Player[] player, int currentPlayer) {
-		GUI.showMessage(player[currentPlayer].getName()
-				+ "'s tur til at slï¿½.");
+		GUI.showMessage(player[currentPlayer].getName()+"'s tur til at slï¿½.");
 	}
 	
 	public void showDice(int dice1, int dice2) {
@@ -285,6 +284,9 @@ public class GUIcontroller {
 	
 	public String offerToBuy(String possibleBuild){
 		return GUI.getUserSelection("Du ejer nok grunde af en farve til at bygge huse. Ønsker du at bygger på en af disse grunde?" + possibleBuild,"Ja","Nej");
-		
+	}
+	public boolean jailOptions(Player player) {
+		return GUI.getUserLeftButtonPressed(player.getName()+" sidder i fængsel, "
+				+ "vil du betale 1000kr for at komme ud, eller prøve at slå dig ud af fængslet?", "Betal 1000kr", "slå for at komme ud");
 	}
 }
