@@ -10,6 +10,7 @@ public class Start extends Fields {
 
 	public Start(String name) {
 		super(name);
+		this.name = name;
 	}
 
 	@Override
