@@ -193,5 +193,74 @@ public class HouseController {
 				board.getField(14).setNumberofHouses(1);
 			}
 		}
+		if(n == 4){
+			GUIC.buyBernstorffsvej();
+			if(GUIC.buyBernstorffsvej().equals("Ja")){
+				board.getField(16).setNumberofHouses(1);
+			}
+			GUIC.buyHellerupvej();
+			if(GUIC.buyHellerupvej().equals("Ja")){
+				board.getField(18).setNumberofHouses(1);
+			}
+			GUIC.buyStrandvejen();
+			if(GUIC.buyStrandvejen().equals("Ja")){
+				board.getField(19).setNumberofHouses(1);
+			}
+		}
+		
+		if(n == 5){
+			GUIC.buyTrianglen();
+			if(GUIC.buyTrianglen().equals("Ja")){
+				board.getField(21).setNumberofHouses(1);
+			}
+			GUIC.buyOesterbrogade();
+			if(GUIC.buyOesterbrogade().equals("Ja")){
+				board.getField(23).setNumberofHouses(1);
+			}
+			GUIC.buyGroenningen();
+			if(GUIC.buyGroenningen().equals("Ja")){
+				board.getField(24).setNumberofHouses(1);
+			}
+		}
+		
+		if(n == 6){
+			GUIC.buyBredgade();
+			if(GUIC.buyBredgade().equals("Ja")){
+				board.getField(26).setNumberofHouses(1);
+			}
+			GUIC.buyKgsNytorv();
+			if(GUIC.buyKgsNytorv().equals("Ja")){
+				board.getField(27).setNumberofHouses(1);
+			}
+			GUIC.buyIstergade();
+			if(GUIC.buyIstergade().equals("Ja")){
+				board.getField(29).setNumberofHouses(1);
+			}
+		}
+		
+		if(n == 7){
+			GUIC.buyAmagertorv();
+			if(GUIC.buyAmagertorv().equals("Ja")){
+				board.getField(31).setNumberofHouses(1);
+			}
+			GUIC.buyVimmelskaftet();
+			if(GUIC.buyVimmelskaftet().equals("Ja")){
+				board.getField(32).setNumberofHouses(1);
+			}
+			GUIC.buyNygade();
+			if(GUIC.buyNygade().equals("Ja")){
+				board.getField(34).setNumberofHouses(1);
+			}
+		}
+		if(n == 8){
+			GUIC.buyFrederiksberggade();
+			if(GUIC.buyFrederiksberggade().equals("Ja")){
+				board.getField(37).setNumberofHouses(1);
+			}
+			GUIC.buyRaadhuspladsen();
+			if(GUIC.buyRaadhuspladsen().equals("Ja")){
+				board.getField(39).setNumberofHouses(1);
+			}
+		}
 	}
 }
