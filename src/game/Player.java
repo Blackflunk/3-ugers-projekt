@@ -198,7 +198,7 @@ public class Player {
 		fieldammount_magenta++;
 	}
 	
-	//getters and setters for buing
+	//getters and setters for buildings
 	
 	public boolean getBuy_Blue(){
 		return build_blue;
@@ -290,10 +290,6 @@ public class Player {
 	}
 	
 	// Jailcard and jail status
-	
-	public boolean haveOutofjailcard() {
-		return outofjailcard;
-	}
 
 	public void setOutofjailcard(boolean outofjailcard) {
 		this.outofjailcard = outofjailcard;
