@@ -27,6 +27,7 @@ public class DeckController {
 		GUIC.showMessage(deck.getMessage(0));
 		deck.drawCard(player);
 		cardsdrawned++;
+		GUIC.newPositon(player);
 		if (cardsdrawned >=decklength)
 			deck.shuffleDeck();
 	}
