@@ -54,7 +54,7 @@ public class GameBoard {
 
 		
 		
-		//Skal havde lavet en class til Chance kort Jail og move to jail.
+	
 	}
 	
 	public Fields getField(int i) {

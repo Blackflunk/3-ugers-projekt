@@ -20,7 +20,8 @@ public class Territory extends Ownable {
 		rent[4] = rent5;
 		rent[5] = hotel;
 		this.houseprice = houseprice;
-		numberofhouses = 2;
+		numberofhouses = 0;
+		this.color = color;
 	}
 
 	@Override
@@ -92,7 +93,9 @@ public class Territory extends Ownable {
 	public int getNumberofhouses() {
 		return numberofhouses;
 	}
-	
+	public void setNumberofHouses(int numberofhouses){
+		this.numberofhouses += numberofhouses;
+	}
 	public String getColor(){
 		return color;
 	}

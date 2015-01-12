@@ -16,6 +16,9 @@ public class Fleet extends Ownable {
 		this.rent[1] = rent_2;
 		this.rent[2] = rent_3;
 		this.rent[3] = rent_4;
+		this.name = name;
+		this.price = price;
+		this.pansat = pansat;
 
 	}
 

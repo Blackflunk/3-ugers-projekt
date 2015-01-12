@@ -30,5 +30,9 @@ public abstract class Fields {
 	public int getNumberofhouses() {
 		return 0;
 	}
+	
+	public void setNumberofHouses(int numberofhouses){
+		
+	}
 		
 }

@@ -20,9 +20,6 @@ public class GameController {
 	private int playerAmount = 0;
 	private boolean onwards = false;
 	private Player[] playerlist;
-	private boolean khan = true;
-	private boolean build;
-	private String possibleBuild;
 	private boolean won = false;
 	private DiceBox box = new DiceBox();
 	private GameBoard gameboard = new GameBoard(box);
@@ -30,6 +27,7 @@ public class GameController {
 	private GUIcontroller GUIC = new GUIcontroller();
 	private DeckController DC = new DeckController(deck, GUIC, playerlist, gameboard);
 	private TurnController TurnC = new TurnController(GUIC, gameboard, box, playerlist);
+	private HouseController houseC = new HouseController(GUIC, gameboard, playerlist);
 	private int lostCount = 0;
 	
 	public static void main(String[] args) {
@@ -37,8 +35,10 @@ public class GameController {
 		game.run();
 		/** 
 		 * To do list
+		 * BUG FIXING!!!!
 		 * lav binding i køb af felter (ingen gui kontakt i ownable)
 		 * pansetning (måske)
+		 * Skal stadig havet fikset huset!
 		 * 
 		 */
 
@@ -65,7 +65,8 @@ public class GameController {
 		// The game continues as long as won equals false
 		while (!won) {
 			if (!playerlist[currentPlayer].getStatus()) {
-				checkOwnedFields();
+				houseC.checkOwnedFields(playerlist[currentPlayer]);
+				houseC.Housing(playerlist[currentPlayer],currentPlayer);
 				// If Player is jailed
 				if (playerlist[currentPlayer].isJailed())
 					TurnC.runJailTurn(playerlist[currentPlayer], currentPlayer);
@@ -119,139 +120,5 @@ public class GameController {
 			}
 	}
 
-	public void checkOwnedFields(){
-		checkBlue();
-		checkPink();
-		checkGreen();
-		checkGrey();
-		checkRed();
-		checkWhite();
-		checkYellow();
-		checkMagneta();
-	}
-	public void checkBlue(){
-		if(playerlist[currentPlayer].getFieldammount_blue() == 2){
-			playerlist[currentPlayer].setBuy_Blue(khan);
-		}
-	}
 	
-	public void checkPink(){
-		if(playerlist[currentPlayer].getFieldammount_pink() == 3){
-			playerlist[currentPlayer].setBuy_Pink(khan);
-		}
-	}
-	
-	public void checkGreen(){
-		if(playerlist[currentPlayer].getFieldammount_green() == 3){
-			playerlist[currentPlayer].setBuy_Green(khan);
-		}
-	}
-	
-	public void checkGrey(){
-		if(playerlist[currentPlayer].getFieldammount_grey() == 3){
-			playerlist[currentPlayer].setBuy_grey(khan);
-		}
-	}
-	
-	public void checkRed(){
-		if(playerlist[currentPlayer].getFieldammount_red() == 3){
-			playerlist[currentPlayer].setBuy_Red(khan);
-		}
-	}
-	
-	public void checkWhite(){
-		if(playerlist[currentPlayer].getFieldammount_white() == 3){
-			playerlist[currentPlayer].setBuy_White(khan);
-		}
-	}
-	
-	public void checkYellow(){
-		if(playerlist[currentPlayer].getFieldammount_yellow() == 3){
-			playerlist[currentPlayer].setBuy_Yellow(khan);
-		}
-	}
-	
-	public void checkMagneta(){
-		if(playerlist[currentPlayer].getFieldammount_magenta() == 2){
-			playerlist[currentPlayer].setBuy_Magenta(khan);
-		}
-	}
-	
-	public boolean getBuild(int n){
-		if(n == 1){
-			return playerlist[currentPlayer].getBuy_Blue();
-		}
-		else if(n == 2){
-			return playerlist[currentPlayer].getBuy_Pink();
-		}
-		else if(n == 3){
-			return playerlist[currentPlayer].getBuy_Green();
-		}
-		else if(n == 4){
-			return playerlist[currentPlayer].getBuy_grey();
-		}
-		else if(n == 5){
-			return playerlist[currentPlayer].getBuy_Red();
-		}
-		else if(n == 6){
-			return playerlist[currentPlayer].getBuy_White();
-		}
-		else if(n == 7){
-			return playerlist[currentPlayer].getBuy_Yellow();
-		}
-		else if(n == 8){
-			return playerlist[currentPlayer].getBuy_Magenta();
-		}
-		return false;
-		/*switch(n){
-		case 1 : return player[currentPlayer].getBuy_Blue();
-		case 2 : return player[currentPlayer].getBuy_Pink();
-		case 3 : return player[currentPlayer].getBuy_Green();
-		case 4 : return player[currentPlayer].getBuy_grey();
-		case 5 : return player[currentPlayer].getBuy_Red();
-		case 6 : return player[currentPlayer].getBuy_White();
-		case 7 : return player[currentPlayer].getBuy_Yellow();
-		case 8 : return player[currentPlayer].getBuy_magenta();
-		
-		}*/
-	}
-	
-	public void getRoad(int n){
-		if(n == 1){
-			possibleBuild += " Roedovervej og Hvidovervej";
-		}
-		else if(n == 2){
-			possibleBuild += " Roskildevej, Valby Langgade og Allegade";
-		}
-		else if(n == 3){
-			possibleBuild += " Fredriksberg Alle, Bulowsvej og GL Kongevej";
-		}
-		else if(n == 4){
-			possibleBuild += " Bernstorffsvej, Hellerupvej og Strandvej";
-		}
-		else if(n == 5){
-			possibleBuild += " Trianglen, Oesterbrogade og Groenningen";
-		}
-		else if(n == 6){
-			possibleBuild += " Bredgade, Kgs Nytorv og Istergade";
-		}
-		else if(n == 7){
-			possibleBuild += " Amagertorv, Vimmelskaftet og Nygade";
-		}
-		else if(n == 8){
-			possibleBuild += " Frederiksberggade og Raedhuspladsen";
-		}
-		
-		/*switch(n){
-		case 1 : possibleBuild += " Roedovervej og Hvidovervej";
-		case 2 : possibleBuild += " Roskildevej, Valby Langgade og Allegade";
-		case 3 : possibleBuild += " Fredriksberg Alle, Bulowsvej og GL Kongevej";
-		case 4 : possibleBuild += " Bernstorffsvej, Hellerupvej og Strandvej";
-		case 5 : possibleBuild += " Trianglen, Oesterbrogade og Groenningen";
-		case 6 : possibleBuild += " Bredgade, Kgs Nytorv og Istergade";
-		case 7 : possibleBuild += " Amagertorv, Vimmelskaftet og Nygade";
-		case 8 : possibleBuild += " Frederiksberggade og Raedhuspladsen";	
-		break;
-		}	*/
-	}
 }	
