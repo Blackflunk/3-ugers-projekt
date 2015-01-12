@@ -38,7 +38,7 @@ public class GameController {
 		 * BUG FIXING!!!!
 		 * lav binding i køb af felter (ingen gui kontakt i ownable)
 		 * pansetning (måske)
-		 * Skal stadig havet fikset huset!
+		 * Skal stadig havet fikset huset
 		 * 
 		 */
 
