@@ -10,6 +10,7 @@ public class TurnController {
 	private GameBoard board;
 	private DiceBox box;
 	private Player[] playerlist;
+	private FieldController FC;
 	// for testing only
 	private int k = 0;
 	
@@ -19,17 +20,23 @@ public class TurnController {
 		this.box = box;
 		this.playerlist = playerlist;
 	}
+	public void runTurn(Player player, int currentPlayer) {
+		if (player.isJailed())
+			runJailTurn(player, currentPlayer);
+		else
+			runNormalTurn(playerlist, currentPlayer);
+	}
 	
 	public void runJailTurn(Player player, int currentPlayer){
 		// If player has a getoutofjailcard
 		if (player.hasOutofjailcard()) {
 			exitCard(player, currentPlayer);
-			runTurn(playerlist, currentPlayer);
+			runNormalTurn(playerlist, currentPlayer);
 		}
 		// If player pays for exit
 		else if (GUIC.jailOptions(player)) {
 			exitPay(player, currentPlayer);
-			runTurn(playerlist, currentPlayer);
+			runNormalTurn(playerlist, currentPlayer);
 		}
 		// If player wants to throw the dice for exit
 		else 
@@ -37,19 +44,19 @@ public class TurnController {
 	}
 	
 	// Standard tur
-	public void runTurn(Player[] playerlist, int currentPlayer) {
+	public void runNormalTurn(Player[] playerlist, int currentPlayer) {
 		GUIC.nextPlayer(playerlist, currentPlayer);
 		box.rollDice();
 		GUIC.showDice(box.getDice1(), box.getDice2());
 		GUIC.updatePosition(playerlist, currentPlayer, box.getSum());
-		board.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
+		FC.landOnField(currentPlayer);
 	}
 	
 	// Tur, efter exit fra jail
 	public void afterJailTurn(int currentPlayer) {
 		GUIC.showMessage("Du forlod fængslet, og rykker summen på terningerne");
 		GUIC.updatePosition(playerlist, currentPlayer, box.getSum());
-		board.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
+		FC.landOnField(currentPlayer);
 	}
 	
 	

@@ -6,8 +6,6 @@
 
 package control;
 
-import javax.swing.JOptionPane;
-
 import fields.GameBoard;
 import game.DiceBox;
 import game.Player;
@@ -32,7 +30,7 @@ public class GameController {
 	
 	public static void main(String[] args) {
 		GameController game = new GameController();
-		game.run();
+		game.runGame();
 		/** 
 		 * To do list
 		 * BUG FIXING!!!!
@@ -44,7 +42,7 @@ public class GameController {
 
 	}
 
-	public void run() {
+	public void runGame() {
 		System.out.println(gameboard.toString());
 		GUIC.createField();
 		
@@ -68,11 +66,7 @@ public class GameController {
 				houseC.checkOwnedFields(playerlist[currentPlayer]);
 				houseC.Housing(playerlist[currentPlayer],currentPlayer);
 				// If Player is jailed
-				if (playerlist[currentPlayer].isJailed())
-					TurnC.runJailTurn(playerlist[currentPlayer], currentPlayer);
-				// Normal Turn
-				else
-					TurnC.runTurn(playerlist, currentPlayer);
+				TurnC.runTurn(playerlist[currentPlayer], currentPlayer);
 		
 				// Controls for further funktions on the field
 				controlFieldType();
@@ -105,18 +99,16 @@ public class GameController {
 	}
 	
 	public void controlFieldType(){
-		if (playerlist[currentPlayer].getPosition()==2 ||
-				playerlist[currentPlayer].getPosition()==7 ||
-				playerlist[currentPlayer].getPosition()== 17 ||
-				playerlist[currentPlayer].getPosition()== 22 ||
-				playerlist[currentPlayer].getPosition()==33 ||
-				playerlist[currentPlayer].getPosition()==36) {
+		if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.ChanceCard) {
 					DC.drawCard(playerlist[currentPlayer]);
 				}
-			else if (playerlist[currentPlayer].getPosition()==30) {
+			else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.MoveToJail) {
 				GUIC.newPositon(playerlist[currentPlayer]);
 			}
 	}
+	public void controlPurchase() {
+		
+	}
+}
 
-	
-}	
+		

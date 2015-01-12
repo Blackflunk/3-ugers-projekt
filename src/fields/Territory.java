@@ -1,13 +1,11 @@
 package fields;
 
-import boundary.GUIcontroller;
 import game.Player;
 
 public class Territory extends Ownable {
 
 	private int houseprice, numberofhouses;
 	private int[] rent = new int[6];
-	private GUIcontroller out = new GUIcontroller();
 	private String color;
 
 	public Territory(String name, int price, int houseprice, int pansat, 
@@ -33,10 +31,10 @@ public class Territory extends Ownable {
 		// If the current field has no owner, the player can buy it
 		if (getOwner() == null) {
 			if (player.account.getScore() >= price) {
-				boolean buyField = out.buyField(name, price);
-				if (buyField) {
+				if (buyfield) {
 					player.account.addPoints(-price);
 					setOwner(player);
+					buyfield = false;
 					switch(color){
 					case "Blue"   : player.addFieldammount_blue();
 					break;
@@ -55,40 +53,26 @@ public class Territory extends Ownable {
 					case "Magneta": player.addFieldammount_magenta();
 					break;
 					}
-					out.fieldBought(name);
-					out.setOwner(player);
 				} else {
-					out.fieldRefused(name);
 				}
 			} else {
-				out.fieldRefusedPrice(name);
 			}
 		// if the owner is the player himself, nothing happens
 		} else if (getOwner() == player) {
-			out.fieldOwnedByPlayer(name);
 		// if the field is owned by another player, a rent have to be paid
 		} else {
 			if (player.account.getScore() >= rent[numberofhouses]) {
-				out.fieldTax(name, getOwner().getName(), rent[numberofhouses]);
-				
 				getOwner().account.addPoints(rent[numberofhouses]);
 				player.account.addPoints(-rent[numberofhouses]);
-
-				out.updateBalance(getOwner().getName(), getOwner().account.getScore());			// the player looses if the rent is higher than the players balance
+		// the player looses if the rent is higher than the players balance
 			}
 			// the player loses if the rent is higher than the players balance
 			else {
 				getOwner().account.addPoints(player.account.getScore());
 				player.account.addPoints(-player.account.getScore());
-				
-				out.insufficiantFunds(name, getOwner().getName(), player.account.getScore());
-				out.updateBalance(getOwner().getName(), getOwner().account.getScore());
-				
 				player.setStatus(true);
 			}
 		}
-		// Updates the GUI balance for each player
-		out.updateBalance(player.getName(), player.account.getScore());
 	}
 	
 	public int getHouseprice() {
@@ -108,4 +92,9 @@ public class Territory extends Ownable {
 	public String toString() {
 		return "Type: Territory --- Name: " + name + " --- Price: " + price + " --- Rent: " + rent + "\n";
 	}
+
+	public int getRent(int numberofhouses) {
+		return rent[numberofhouses];
+	}
+
 }

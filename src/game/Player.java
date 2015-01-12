@@ -321,5 +321,9 @@ public class Player {
 	public void addJailcount() {
 		jailcount++;
 	}
+
+	public String getOwner() {
+		return null;
+	}
 	
 }

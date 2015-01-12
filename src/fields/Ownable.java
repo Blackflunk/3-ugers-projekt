@@ -7,6 +7,7 @@ public abstract class Ownable extends Fields {
 	protected Player owner;
 	protected int price;
 	protected int pansat;
+	protected boolean buyfield = false;
 
 	public Ownable(String name, int price, int pansat) {
 		super(name);
@@ -28,5 +29,15 @@ public abstract class Ownable extends Fields {
 	}
 	public int getPrice() {
 		return price;
+	}
+	
+	@Override
+	public boolean isBuyfield() {
+		return buyfield;
+	}
+	
+	@Override
+	public void setBuyfield(boolean buyfield) {
+		this.buyfield = buyfield;
 	}
 }

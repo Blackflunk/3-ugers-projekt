@@ -34,5 +34,20 @@ public abstract class Fields {
 	public void setNumberofHouses(int numberofhouses){
 		
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public boolean isBuyfield() {
+		return false;
+	}
+	public void setBuyfield(boolean buyfield) {
+		
+	}
+	public int getRent(int rentnumber) {
+		return 0;
+	}
 		
 }
