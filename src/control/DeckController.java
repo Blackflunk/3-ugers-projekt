@@ -19,8 +19,6 @@ public class DeckController {
 		this.playerlist = playerlist;
 		this.board = board;
 		this.deck = deck;
-		// shuffles deck on creation
-		deck.shuffleDeck();
 	}
 	
 	public void drawCard(Player player) {
@@ -30,6 +28,14 @@ public class DeckController {
 		GUIC.newPositon(player);
 		if (cardsdrawned >=decklength)
 			deck.shuffleDeck();
+	}
+	public void shuffleDeck() {
+		deck.shuffleDeck();
+	}
+	public void pickCard(Player player, int cardnumber) {
+		GUIC.showMessage(deck.getMessage(cardnumber));
+		deck.pickCard(player, cardnumber);
+		GUIC.newPositon(player);
 	}
 	
 
