@@ -50,7 +50,7 @@ public class DeckTest {
 			players[2] = new Player("Spiller3");
 			players[0].setPosition(0);
 		//Test
-			//Draws second card,
+			//Draws second card, move to nearest shipping company.
 			DC.drawCard(players[0]);
 			System.out.println(players[0].getPosition());
 			players[0].setPosition(2);
