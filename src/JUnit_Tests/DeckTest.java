@@ -6,8 +6,11 @@ import fields.GameBoard;
 import game.DiceBox;
 import deck.Deck;
 import game.Player;
+
 import org.junit.Test;
+
 import control.DeckController;
+import control.HouseController;
 
 public class DeckTest {
 
@@ -48,20 +51,14 @@ public class DeckTest {
 			players[0] = new Player("Spiller1");
 			players[1] = new Player("Spiller2");
 			players[2] = new Player("Spiller3");
-			players[0].setPosition(0);
+			players[0].setPosition(7);
 		//Test
 			//Draws second card, move to nearest shipping company.
-			DC.drawCard(players[0]);
-			System.out.println(players[0].getPosition());
-			players[0].setPosition(2);
-			DC.drawCard(players[0]);
-			System.out.println(players[0].getPosition());
-			DC.drawCard(players[0]);
-			System.out.println(players[0].getPosition());
-
+			deck.pickCard(players[0], 1);
+			
 		//Postconditions
 			//Tjek om spilleren er på feltet
-			assertEquals(5,players[0].getPosition());
+			assertEquals(15,players[0].getPosition());
 		}
 	
 	@Test
@@ -185,7 +182,104 @@ public class DeckTest {
 	}
 
 	@Test
-	public void testKort7(){
+	public void testKort8(){
+	//Preconditions
+		DiceBox box = new DiceBox();
+		GameBoard board = new GameBoard(box);
+		Player[] players = new Player[3];
+		Deck deck = new Deck(players, board);
+		
+		players[0] = new Player("Spiller1");
+		players[1] = new Player("Spiller2");
+		players[2] = new Player("Spiller3");
+		
+		
+		//We land on chance card at field 36.
+		players[0].setPosition(36);
+		
+		
+		
+	//Test
+		//Use mols linien, if you cross start receive 4000.
+		deck.pickCard(players[0], 7);
+		
+
+
+	//Postconditions
+		//Check if the player is set to a jailed status.
+		assertEquals(true,players[0].isJailed());
+		//Check if the player is on the jail field.
+		assertEquals(10,players[0].getPosition());		
+		
+	}
+	
+	@Test
+	public void testKort10(){
+	//Preconditions
+		DiceBox box = new DiceBox();
+		GameBoard board = new GameBoard(box);
+		Player[] players = new Player[3];
+		Deck deck = new Deck(players, board);
+		
+		players[0] = new Player("Spiller1");
+		players[1] = new Player("Spiller2");
+		players[2] = new Player("Spiller3");
+		
+		
+		//We land on chance card at field 7.
+		players[0].setPosition(7);
+		
+		
+		
+	//Test
+		//Repair on car, 3000 bill.
+		deck.pickCard(players[0],9);
+		
+
+
+	//Postconditions
+		//Check if the player lost 3000.
+		assertEquals(27000,players[0].account.getScore());
+		
+	}
+	
+	@Test
+	public void testKort11(){
+	//Preconditions
+		DiceBox box = new DiceBox();
+		GameBoard board = new GameBoard(box);
+		Player[] players = new Player[3];
+		Deck deck = new Deck(players, board);
+		GUIcontroller GUIC = new GUIcontroller();
+		HouseController HC = new HouseController(GUIC, board, players);
+		
+		players[0] = new Player("Spiller1");
+		players[1] = new Player("Spiller2");
+		players[2] = new Player("Spiller3");
+		
+		players[0].setPosition(11);
+		board.getField(players[0].getPosition()).landOnField(players[0]);
+		players[0].setPosition(13);
+		board.getField(players[0].getPosition()).landOnField(players[0]);
+		players[0].setPosition(14);
+		board.getField(players[0].getPosition()).landOnField(players[0]);
+		HC.Housing(players[0], 0);
+		
+		
+		//We land on chance card at field 7.
+		players[0].setPosition(7);
+		
+		
+		
+	//Test
+		//Repair on car, 3000 bill.
+		deck.pickCard(players[0],9);
+		
+
+
+	//Postconditions
+		//Check if the player lost 3000.
+		assertEquals(27000,players[0].account.getScore());
 		
 	}
 
