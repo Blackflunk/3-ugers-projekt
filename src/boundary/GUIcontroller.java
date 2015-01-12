@@ -274,7 +274,7 @@ public class GUIcontroller {
 	public String taxPick(String name) {
 		return GUI.getUserSelection(
 				"du er landet paa "+ name + " og skal betale indkomstskat. "
-						+ "vil du helts betale 4000 eller 10% af dine kontanter?",
+						+ "vil du helst betale 4000 eller 10% af dine kontanter?",
 				"4000", "10%");
 	}
 	
