@@ -9,6 +9,7 @@ public class Recieveifcard extends Recievecard{
 	public Recieveifcard(String message, int bonus, int maxvalue, GameBoard board) {
 		super(message, bonus);
 		this.maxvalue = maxvalue;
+		this.bonus = bonus;
 		
 	}
 	

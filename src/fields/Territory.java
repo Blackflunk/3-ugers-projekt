@@ -22,6 +22,10 @@ public class Territory extends Ownable {
 		this.houseprice = houseprice;
 		numberofhouses = 0;
 		this.color = color;
+		this.name = name;
+		this.price  = price;
+		this.pansat = pansat;
+		
 	}
 
 	@Override

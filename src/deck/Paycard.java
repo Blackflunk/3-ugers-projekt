@@ -6,6 +6,7 @@ public class Paycard extends Card{
 	
 	public Paycard(String message, int price) {
 		super(message);
+		this.price = price;
 	}
 	
 	@Override 
