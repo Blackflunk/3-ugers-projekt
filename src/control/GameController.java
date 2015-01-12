@@ -74,8 +74,6 @@ public class GameController {
 				else
 					TurnC.runTurn(playerlist, currentPlayer);
 		
-				// Execute landOnField for the players new position
-				gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 				// Controls for further funktions on the field
 				controlFieldType();
 				
