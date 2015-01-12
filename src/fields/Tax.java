@@ -12,6 +12,7 @@ public class Tax extends Fields {
 	public Tax(String name, int pay) {
 		super(name);
 		this.pay = pay;
+		this.name = name;
 	}
 
 	@Override

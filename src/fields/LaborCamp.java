@@ -14,6 +14,9 @@ public class LaborCamp extends Ownable {
 		super(name, price, pansat);
 		this.rent = rent;
 		this.box = box;
+		this.name = name;
+		this.price = price;
+		this.pansat = pansat;
 	}
 
 	@Override

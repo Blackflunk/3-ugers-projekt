@@ -12,6 +12,7 @@ private GUIcontroller out = new GUIcontroller();
 	public Refuge(String name, int bonus) {
 		super(name);
 		this.bonus = bonus;
+		this.name = name;
 	}
 	@Override
 	public void landOnField(Player player) {
