@@ -9,27 +9,30 @@ public class DeckController {
 	private Player[] playerlist;
 	private GameBoard board;
 	private Deck deck = new Deck(playerlist, board);
+	private FieldController FC;
 	private int decklength = 30;
 	private int cardsdrawned= 0;
 	
 	
 	
-	public DeckController(Deck deck, GUIcontroller GUIC, Player[] playerlist, GameBoard board) {
+	public DeckController(Deck deck, GUIcontroller GUIC, Player[] playerlist, GameBoard board, FieldController FC) {
 		this.GUIC = GUIC;
 		this.playerlist = playerlist;
 		this.board = board;
 		this.deck = deck;
+		this.FC = FC;
 	}
 	
-	public void drawCard(Player player) {
+	public void drawCard(Player[] playerlist, int currentPlayer) {
 		GUIC.showMessage(deck.getMessage(0));
-		deck.drawCard(player);
+		deck.drawCard(playerlist[currentPlayer]);
 		cardsdrawned++;
-		GUIC.newPositon(player);
+		GUIC.newPositon(playerlist[currentPlayer]);
 		if (cardsdrawned >=decklength) {
 			deck.shuffleDeck();
 			cardsdrawned = 0;
 		}
+		FC.landOnField(playerlist, currentPlayer);
 	}
 	public void shuffleDeck() {
 		deck.shuffleDeck();

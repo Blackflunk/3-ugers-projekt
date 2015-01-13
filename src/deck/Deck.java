@@ -65,6 +65,7 @@ public class Deck {
 			cardlist[k-1] = cardlist[k];
 		}
 		cardlist[cardlist.length-1]=temp;
+		
 	}
 	public String getMessage(int cardnumber) {
 		return cardlist[cardnumber].getMessage();

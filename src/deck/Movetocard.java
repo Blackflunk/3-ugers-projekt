@@ -15,7 +15,6 @@ public class Movetocard extends Movecard {
 		if (player.getPosition()<=newposition)
 			player.passStart();
 		player.setPosition(newposition);
-		board.getField(newposition).landOnField(player);
 	}
 	
 	

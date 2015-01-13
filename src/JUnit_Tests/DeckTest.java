@@ -10,6 +10,7 @@ import game.Player;
 import org.junit.Test;
 
 import control.DeckController;
+import control.FieldController;
 import control.HouseController;
 
 public class DeckTest {
@@ -22,7 +23,8 @@ public class DeckTest {
 		Player[] players = new Player[3];
 		Deck deck = new Deck(players, board);
 		GUIcontroller GUIC = new GUIcontroller();
-		DeckController DC = new DeckController(deck, GUIC, players, board);
+		FieldController FC = new FieldController(GUIC, board, box, players);
+		DeckController DC = new DeckController(deck, GUIC, players, board, FC);
 		
 		players[0] = new Player("Spiller1");
 		players[1] = new Player("Spiller2");
@@ -30,10 +32,10 @@ public class DeckTest {
 		players[0].setPosition(0);
 	//Test
 		//Move to "Groenningen"
-		DC.drawCard(players[0]);
+		DC.drawCard(players, 0);
 
 	//Postconditions
-		//Tjek om spilleren er på feltet
+		//Tjek om spilleren er pï¿½ feltet
 		assertEquals(24,players[0].getPosition());
 		
 	}
@@ -46,7 +48,8 @@ public class DeckTest {
 			Player[] players = new Player[3];
 			Deck deck = new Deck(players, board);
 			GUIcontroller GUIC = new GUIcontroller();
-			DeckController DC = new DeckController(deck, GUIC, players, board);
+			FieldController FC = new FieldController(GUIC, board, box, players);
+			DeckController DC = new DeckController(deck, GUIC, players, board, FC);
 			
 			players[0] = new Player("Spiller1");
 			players[1] = new Player("Spiller2");
@@ -57,7 +60,7 @@ public class DeckTest {
 			deck.pickCard(players[0], 1);
 			
 		//Postconditions
-			//Tjek om spilleren er på feltet
+			//Tjek om spilleren er pï¿½ feltet
 			assertEquals(15,players[0].getPosition());
 		}
 	

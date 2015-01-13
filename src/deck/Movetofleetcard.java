@@ -27,7 +27,6 @@ public class Movetofleetcard extends Movecard{
 			newposition = 15;
 		}
 		player.setPosition(newposition);
-		board.getField(newposition).landOnField(player);
 	}
 	
 

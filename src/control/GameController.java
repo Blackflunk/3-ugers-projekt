@@ -23,7 +23,8 @@ public class GameController {
 	private GameBoard gameboard = new GameBoard(box);
 	private Deck deck = new Deck(playerlist, gameboard);
 	private GUIcontroller GUIC = new GUIcontroller();
-	private DeckController DC = new DeckController(deck, GUIC, playerlist, gameboard);
+	private FieldController FC = new FieldController(GUIC, gameboard, box, playerlist);
+	private DeckController DC = new DeckController(deck, GUIC, playerlist, gameboard, FC);
 	private TurnController TurnC = new TurnController(GUIC, gameboard, box, playerlist);
 	private HouseController houseC = new HouseController(GUIC, gameboard, playerlist);
 	private int lostCount = 0;
@@ -34,8 +35,8 @@ public class GameController {
 		/** 
 		 * To do list
 		 * BUG FIXING!!!!
-		 * lav binding i køb af felter (ingen gui kontakt i ownable)
-		 * pansetning (måske)
+		 * lav binding i kï¿½b af felter (ingen gui kontakt i ownable)
+		 * pansetning (mï¿½ske)
 		 * Skal stadig havet fikset huset
 		 * 
 		 */
@@ -100,7 +101,7 @@ public class GameController {
 	
 	public void controlFieldType(){
 		if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.ChanceCard) {
-					DC.drawCard(playerlist[currentPlayer]);
+					DC.drawCard(playerlist, currentPlayer);
 				}
 			else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.MoveToJail) {
 				GUIC.newPositon(playerlist[currentPlayer]);
