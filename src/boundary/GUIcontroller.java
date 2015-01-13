@@ -357,5 +357,7 @@ public class GUIcontroller {
 	public String buyRaadhuspladsen(){
 		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Raadhuspladsen?", "Ja", "Nej");
 	}
-	
+	public void setHouse(int fieldNumber, int houseCount){
+		GUI.setHouses(fieldNumber, houseCount);
+	}
 }
