@@ -158,7 +158,7 @@ public class HouseController {
 			possibleBuild += " Frederiksberggade og Raedhuspladsen";
 		}
 	}
-	
+	//lav en funktion der checker om du har penge nok til at købe. hvis man ikke har skal den sige (Du har desværre ikke nok til at købe huse, rul venligts terningen)
 	public int gethouses(int n){
 		return board.getField(n).getNumberofhouses();
 	}
