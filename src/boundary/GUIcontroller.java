@@ -192,7 +192,7 @@ public class GUIcontroller {
 	
 	public void newPositon(Player player) {
 		GUI.removeAllCars(player.getName());
-		GUI.setCar(player.getPosition(), player.getName());
+		GUI.setCar(player.getPosition()+1, player.getName());
 	}
 	public void removePlayer(Player[] player, int currentPlayer) {
 		GUI.removeCar(player[currentPlayer].getPosition() + 1, player[currentPlayer].getName());
@@ -283,79 +283,79 @@ public class GUIcontroller {
 	}
 	
 	public String offerToBuy(String possibleBuild){
-		return GUI.getUserSelection("Du ejer nok grunde af en farve til at bygge huse. Oensker du at bygger på en af disse grunde?" + possibleBuild,"Ja","Nej");
+		return GUI.getUserSelection("Du ejer nok grunde af en farve til at bygge huse. Oensker du at bygger pï¿½ en af disse grunde?" + possibleBuild,"Ja","Nej");
 	}
 	
 	public boolean jailOptions(Player player) {
-		return GUI.getUserLeftButtonPressed(player.getName()+" sidder i fængsel, "
-				+ "vil du betale 1000kr for at komme ud, eller proeve at slå dig ud af faengslet?", "Betal 1000kr", "slaa for at komme ud");
+		return GUI.getUserLeftButtonPressed(player.getName()+" sidder i fï¿½ngsel, "
+				+ "vil du betale 1000kr for at komme ud, eller proeve at slï¿½ dig ud af faengslet?", "Betal 1000kr", "slaa for at komme ud");
 	}
 	
 	public String buyRoedovervej(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Roedovervej for kr. 1000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Roedovervej for kr. 1000?", "Ja", "Nej");
 	}
 	public String buyHvidovervej(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Hvidovervej for kr. 1000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Hvidovervej for kr. 1000?", "Ja", "Nej");
 	}
 	public String buyRoskildevej(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Roskildevej for kr. 1000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Roskildevej for kr. 1000?", "Ja", "Nej");
 	}
 	public String buyValbyLanggade(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Valby Langgade for kr. 1000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Valby Langgade for kr. 1000?", "Ja", "Nej");
 	}
 	public String buyAllegade(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Allegade for kr. 1000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Allegade for kr. 1000?", "Ja", "Nej");
 	}
 	public String buyFredriksbergAlle(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Fredriksberg Alle for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Fredriksberg Alle for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyBulowsvej(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Bulowsvej for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Bulowsvej for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyGlKongevej(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Gl Kongevej for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Gl Kongevej for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyBernstorffsvej(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Bernstorffsvej for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Bernstorffsvej for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyHellerupvej(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Hellerupvej for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Hellerupvej for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyStrandvejen(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Strandvejen for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Strandvejen for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyTrianglen(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Trianglen for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Trianglen for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyOesterbrogade(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Oesterbrogade for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Oesterbrogade for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyGroenningen(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Groenningen for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Groenningen for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyBredgade(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Bredgade for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Bredgade for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyKgsNytorv(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Kgs Nytorv for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Kgs Nytorv for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyIstergade(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Istergade for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Istergade for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyAmagertorv(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Amagertorv for kr. 4000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Amagertorv for kr. 4000?", "Ja", "Nej");
 	}
 	public String buyVimmelskaftet(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Vimmelskaftet for kr. 4000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Vimmelskaftet for kr. 4000?", "Ja", "Nej");
 	}
 	public String buyNygade(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Nygade for kr. 4000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Nygade for kr. 4000?", "Ja", "Nej");
 	}
 	public String buyFrederiksberggade(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Frederiksberggade for kr. 4000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Frederiksberggade for kr. 4000?", "Ja", "Nej");
 	}
 	public String buyRaadhuspladsen(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel på Raadhuspladsen for kr. 4000?", "Ja", "Nej");
+		return GUI.getUserSelection("Oensker du at koebe et hus/hotel pï¿½ Raadhuspladsen for kr. 4000?", "Ja", "Nej");
 	}
 	public void setHouse(int fieldNumber, int houseCount){
 		GUI.setHouses(fieldNumber, houseCount);
