@@ -263,6 +263,7 @@ public class DeckTest {
 		board.getField(players[0].getPosition()).landOnField(players[0]);
 		players[0].setPosition(14);
 		board.getField(players[0].getPosition()).landOnField(players[0]);
+		HC.checkOwnedFields(players[0]);
 		HC.Housing(players[0], 0);
 		
 		

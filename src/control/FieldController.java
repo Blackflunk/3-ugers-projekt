@@ -16,7 +16,7 @@ public class FieldController {
 		this.playerlist = playerlist;
 	}
 	
-	public void landOnField(int currentPlayer) {
+	public void landOnField(Player[] playerlist, int currentPlayer) {
 		// For Territories
 		if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.Territory)
 			landOnTerritory(currentPlayer);

@@ -66,7 +66,7 @@ public class GameController {
 				houseC.checkOwnedFields(playerlist[currentPlayer]);
 				houseC.Housing(playerlist[currentPlayer],currentPlayer);
 				// If Player is jailed
-				TurnC.runTurn(playerlist[currentPlayer], currentPlayer);
+				TurnC.runTurn(playerlist, currentPlayer);
 		
 				// Controls for further funktions on the field
 				controlFieldType();
