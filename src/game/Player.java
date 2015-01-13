@@ -53,7 +53,7 @@ public class Player {
 
 	// Method that sets the position of the player
 	public void movePosition(int move) {
-		if (position + move > 40) {
+		if (position + move >= 40) {
 			position = position + move - 40;
 			passStart();
 		} else {
