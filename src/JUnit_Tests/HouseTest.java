@@ -112,11 +112,11 @@ public class HouseTest {
 			HC.Housing(players[0], 0);
 			HC.Housing(players[0], 0);
 			HC.Housing(players[0], 0);
-			HC.Housing(players[0], 0);
+		
 			
 		// Postconditions
 			assertEquals(3,players[0].getFieldammount_green());
-			assertEquals(9200, players[0].account.getScore());
+			assertEquals(3200, players[0].account.getScore());
 		}
 }
 
