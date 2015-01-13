@@ -98,6 +98,7 @@ public class FieldController {
 				if (buyfield) {
 					GUIC.fieldBought(gameboard.getField(playerlist[currentPlayer].getPosition()).getName());
 					GUIC.setOwner(playerlist[currentPlayer]);
+					GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				} else
 					GUIC.fieldRefused(gameboard.getField(playerlist[currentPlayer].getPosition()).getName());
 				} else
@@ -144,6 +145,7 @@ public class FieldController {
 				if (buyfield) {
 					GUIC.fieldBought(gameboard.getField(playerlist[currentPlayer].getPosition()).getName());
 					GUIC.setOwner(playerlist[currentPlayer]);
+					GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				} else
 					GUIC.fieldRefused(gameboard.getField(playerlist[currentPlayer].getPosition()).getName());
 				} else
