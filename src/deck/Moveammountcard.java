@@ -14,7 +14,11 @@ public class Moveammountcard extends Movecard{
 	public void drawCard(Player player) {
 		if (player.getPosition()+moveammount<39)
 			player.passStart();
-		player.setPosition(player.getPosition()+moveammount);
+		// control for Chancecard on field 2
+		if (player.getPosition() ==2)
+			player.setPosition(39);
+		else
+			player.setPosition(player.getPosition()+moveammount);
 		board.getField(player.getPosition()).landOnField(player);
 		
 	}
