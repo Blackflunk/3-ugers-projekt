@@ -80,6 +80,9 @@ public class TurnController {
 	public void exitThrow(Player[] playerlist, int currentPlayer) {
 		if (playerlist[currentPlayer].getJailcount() < 3) {
 			for (int i=1; i<=3; i++) {
+			/**
+			 * indsæt GUI slag
+			 */
 			box.rollDice();
 			GUIC.showDice(box.getDice1(), box.getDice2());
 			if (box.isEqual()){
