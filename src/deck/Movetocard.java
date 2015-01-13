@@ -12,7 +12,7 @@ public class Movetocard extends Movecard {
 
 	@Override
 	public void drawCard(Player player) {
-		if (player.getPosition()<=newposition)
+		if (player.getPosition()>=newposition)
 			player.passStart();
 		player.setPosition(newposition);
 	}
