@@ -26,8 +26,10 @@ public class DeckController {
 		deck.drawCard(player);
 		cardsdrawned++;
 		GUIC.newPositon(player);
-		if (cardsdrawned >=decklength)
+		if (cardsdrawned >=decklength) {
 			deck.shuffleDeck();
+			cardsdrawned = 0;
+		}
 	}
 	public void shuffleDeck() {
 		deck.shuffleDeck();
