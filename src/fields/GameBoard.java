@@ -1,16 +1,16 @@
 package fields;
 
-import game.DiceBox;
-import game.Player;
+import entity.DiceBox;
+import entity.Player;
 
 public class GameBoard {
 
-	private Fields[] fieldlist;
+	private Field[] fieldlist;
 	
 	public GameBoard(DiceBox box) {
 
 		// Array that creates each field and the attributes
-		fieldlist = new Fields[40];
+		fieldlist = new Field[40];
 		fieldlist[0] = new Start("Start");
 		fieldlist[1] = new Territory("Raadovrevej",1200, 1000, 600, 40, 200, 600, 1800, 3200, 5000,"Blue");
 		fieldlist[2] = new ChanceCard("Chancekort");
@@ -57,7 +57,7 @@ public class GameBoard {
 	
 	}
 	
-	public Fields getField(int i) {
+	public Field getField(int i) {
 		return fieldlist[i];
 	}
 	public void resetOwnedFields(Player player) {

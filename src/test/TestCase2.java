@@ -1,6 +1,6 @@
 package test;
 
-import game.Account;
+import entity.Account;
 
 public class TestCase2 {
 

@@ -4,9 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import entity.Player;
 import fields.GameBoard;
 import fields.MoveToJail;
-import game.Player;
 
 public class MoveToJailTest {
 	@Test

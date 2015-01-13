@@ -1,5 +1,5 @@
 package deck;
-import game.Player;
+import entity.Player;
 public abstract class Card {
 	
 	private String message;

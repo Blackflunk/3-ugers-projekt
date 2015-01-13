@@ -1,8 +1,8 @@
 package fields;
 
-import game.Player;
+import entity.Player;
 
-public class Start extends Fields { 
+public class Start extends Field { 
 
 	public Start(String name) {
 		super(name);

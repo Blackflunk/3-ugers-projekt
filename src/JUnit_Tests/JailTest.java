@@ -1,9 +1,9 @@
 package JUnit_Tests;
 
 import static org.junit.Assert.*;
+import entity.DiceBox;
+import entity.Player;
 import fields.GameBoard;
-import game.DiceBox;
-import game.Player;
 
 import org.junit.Test;
 

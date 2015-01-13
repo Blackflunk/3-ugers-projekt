@@ -1,6 +1,6 @@
 package test;
 
-import game.DiceBox;
+import entity.DiceBox;
 
 public class TestCase3 {
 

@@ -1,8 +1,8 @@
 package fields;
 
-import game.Player;
+import entity.Player;
 
-public class Jail extends Fields{
+public class Jail extends Field{
 	
 	public Jail(String name){
 		super(name);

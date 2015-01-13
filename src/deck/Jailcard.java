@@ -1,5 +1,5 @@
 package deck;
-import game.Player;
+import entity.Player;
 import fields.GameBoard;
 
 public class Jailcard extends Movecard {

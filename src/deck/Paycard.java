@@ -1,5 +1,5 @@
 package deck;
-import game.Player;
+import entity.Player;
 
 public class Paycard extends Card{
 	protected int price;

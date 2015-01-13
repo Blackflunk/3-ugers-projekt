@@ -6,12 +6,12 @@
 
 package fields;
 
-import game.Player;
+import entity.Player;
 
-public abstract class Fields {
+public abstract class Field {
 	protected String name;
 	
-	public Fields(String name) {
+	public Field(String name) {
 		this.name = name;
 	}
 	public abstract void landOnField(Player player);

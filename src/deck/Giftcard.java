@@ -1,5 +1,5 @@
 package deck;
-import game.Player;
+import entity.Player;
 
 public class Giftcard extends Recievecard {
 	private Player[] playerlist;

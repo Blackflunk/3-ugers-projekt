@@ -1,6 +1,6 @@
 package test;
 
-import game.Player;
+import entity.Player;
 public class TestCase1 {
 
 	public TestCase1() {

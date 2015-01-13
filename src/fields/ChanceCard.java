@@ -1,8 +1,8 @@
 package fields;
 
-import game.Player;
+import entity.Player;
 
-public class ChanceCard extends Fields{
+public class ChanceCard extends Field{
 	
 	public ChanceCard(String name){
 		super(name);

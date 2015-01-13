@@ -4,7 +4,7 @@
 //  A class to hold information and methods regarding the dice in CDIO part 2
 //********************************************************************
 
-package game;
+package entity;
 
 public class Dice {
 	

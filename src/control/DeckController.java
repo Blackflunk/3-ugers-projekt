@@ -1,8 +1,8 @@
 package control;
 import boundary.GUIcontroller;
 import deck.Deck;
+import entity.Player;
 import fields.GameBoard;
-import game.Player;
 
 public class DeckController {
 	private GUIcontroller GUIC = new GUIcontroller();

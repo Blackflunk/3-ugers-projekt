@@ -1,8 +1,8 @@
 package fields;
 
-import game.Player;
+import entity.Player;
 
-public abstract class Ownable extends Fields {
+public abstract class Ownable extends Field {
 	
 	protected Player owner;
 	protected int price;

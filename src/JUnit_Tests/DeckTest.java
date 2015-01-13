@@ -2,10 +2,10 @@ package JUnit_Tests;
 
 import static org.junit.Assert.*;
 import boundary.GUIcontroller;
+import entity.DiceBox;
+import entity.Player;
 import fields.GameBoard;
-import game.DiceBox;
 import deck.Deck;
-import game.Player;
 
 import org.junit.Test;
 

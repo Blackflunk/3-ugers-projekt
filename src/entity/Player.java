@@ -4,7 +4,7 @@
 //  A class to hold information and methods regarding the player in CDIO part 3
 //********************************************************************
 
-package game;
+package entity;
 
 public class Player {
 	private String name;

@@ -7,9 +7,9 @@ import org.junit.Test;
 import boundary.GUIcontroller;
 import control.HouseController;
 import deck.Deck;
+import entity.DiceBox;
+import entity.Player;
 import fields.GameBoard;
-import game.DiceBox;
-import game.Player;
 
 public class HouseTest {
 

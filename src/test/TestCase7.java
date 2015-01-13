@@ -1,9 +1,9 @@
 package test;
 
 import deck.Deck;
+import entity.DiceBox;
+import entity.Player;
 import fields.GameBoard;
-import game.DiceBox;
-import game.Player;
 
 public class TestCase7 {
 	public static void main(String[] args) {

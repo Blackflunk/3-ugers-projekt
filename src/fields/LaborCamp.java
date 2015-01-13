@@ -1,7 +1,7 @@
 package fields;
 
-import game.DiceBox;
-import game.Player;
+import entity.DiceBox;
+import entity.Player;
 
 
 public class LaborCamp extends Ownable {

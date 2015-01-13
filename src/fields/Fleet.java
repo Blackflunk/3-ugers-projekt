@@ -1,6 +1,6 @@
 package fields;
 
-import game.Player;
+import entity.Player;
 
 public class Fleet extends Ownable {
 	private int[] rent = new int[4];

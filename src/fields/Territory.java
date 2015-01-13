@@ -1,6 +1,6 @@
 package fields;
 
-import game.Player;
+import entity.Player;
 
 public class Territory extends Ownable {
 

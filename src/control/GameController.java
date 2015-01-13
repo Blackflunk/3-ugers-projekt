@@ -6,9 +6,9 @@
 
 package control;
 
+import entity.DiceBox;
+import entity.Player;
 import fields.GameBoard;
-import game.DiceBox;
-import game.Player;
 import boundary.GUIcontroller;
 import deck.Deck;
 

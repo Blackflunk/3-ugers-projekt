@@ -1,9 +1,9 @@
 package fields;
 
+import entity.Player;
 import boundary.GUIcontroller;
-import game.Player;
 
-public class Tax extends Fields {
+public class Tax extends Field {
 
 	private String name;
 	private int pay;

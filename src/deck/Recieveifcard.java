@@ -1,6 +1,6 @@
 package deck;
+import entity.Player;
 import fields.GameBoard;
-import game.Player;
 
 public class Recieveifcard extends Recievecard{
 	private int maxvalue;

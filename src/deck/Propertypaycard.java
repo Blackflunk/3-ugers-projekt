@@ -1,5 +1,5 @@
 package deck;
-import game.Player;
+import entity.Player;
 
 public class Propertypaycard extends Paycard {
 	private int price_house;

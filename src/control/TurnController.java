@@ -1,9 +1,9 @@
 package control;
 
 import boundary.GUIcontroller;
+import entity.DiceBox;
+import entity.Player;
 import fields.GameBoard;
-import game.Player;
-import game.DiceBox;
 
 public class TurnController {
 	private GUIcontroller GUIC;

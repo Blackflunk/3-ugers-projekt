@@ -1,8 +1,8 @@
 package test;
 import deck.Deck;
+import entity.DiceBox;
+import entity.Player;
 import fields.GameBoard;
-import game.Player;
-import game.DiceBox;
 
 public class TestCase5 {
 	

@@ -1,6 +1,6 @@
 package deck;
 
-import game.Player;
+import entity.Player;
 import fields.GameBoard;
 
 public abstract class Movecard extends Card{

@@ -1,10 +1,10 @@
 package fields;
 
+import entity.Player;
 import boundary.GUIcontroller;
-import game.Player;
 
 
-public class Refuge extends Fields {
+public class Refuge extends Field {
 	
 private int bonus;
 private GUIcontroller out = new GUIcontroller();

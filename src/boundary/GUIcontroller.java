@@ -15,7 +15,7 @@ import desktop_fields.Start;
 import desktop_fields.Street;
 import desktop_fields.Tax;
 import desktop_resources.GUI;
-import game.Player;
+import entity.Player;
 
 public class GUIcontroller {
 	//Game methods
