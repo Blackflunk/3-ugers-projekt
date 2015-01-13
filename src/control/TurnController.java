@@ -21,7 +21,12 @@ public class TurnController {
 		this.playerlist = playerlist;
 		FC = new FieldController(GUIC, board, box, playerlist);
 	}
+	
+	//lav en for løkke så den updater værd tur
 	public void runTurn(Player[] playerlist, int currentPlayer) {
+		GUIC.updateBalance(playerlist[0].getName(), playerlist[0].account.getScore());
+		GUIC.updateBalance(playerlist[1].getName(), playerlist[1].account.getScore());
+		GUIC.updateBalance(playerlist[2].getName(), playerlist[2].account.getScore());
 		if (playerlist[currentPlayer].isJailed())
 			runJailTurn(playerlist, currentPlayer);
 		else
