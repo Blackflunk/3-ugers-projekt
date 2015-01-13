@@ -29,6 +29,9 @@ public class FieldController {
 		// For every other fields
 		else
 			gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
+		
+		// Update on GUI
+		GUIC.newPositon(playerlist[currentPlayer]);
 	}
 	
 	

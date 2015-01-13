@@ -11,7 +11,7 @@ public class MoveToJail extends Fields {
 	@Override
 	public void landOnField(Player player){
 		player.setJailed(true);
-		player.setPosition(11);
+		player.setPosition(10);
 		
 	}
 
