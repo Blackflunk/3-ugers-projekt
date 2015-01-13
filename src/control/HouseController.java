@@ -179,7 +179,7 @@ public class HouseController {
 				if(GUIC.buyHvidovervej().equals("Ja")){
 					player.account.addPoints(-getHousePrice(3));
 					board.getField(3).setNumberofHouses(1);
-					GUIC.setHouse(3, 1);
+					GUIC.setHouse(3, gethouses(3));
 				}}
 		}
 		if(n == 2){
@@ -187,19 +187,19 @@ public class HouseController {
 				if(GUIC.buyRoskildevej().equals("Ja")){
 					player.account.addPoints(-getHousePrice(6));
 					board.getField(6).setNumberofHouses(1);
-					GUIC.setHouse(6, 1);
+					GUIC.setHouse(6, gethouses(6));
 				}}
 			if(gethouses(8) <= gethouses(6) && gethouses(8) <= gethouses(9)){
 				if(GUIC.buyValbyLanggade().equals("Ja")){
 					player.account.addPoints(-getHousePrice(8));
 					board.getField(8).setNumberofHouses(1);
-					GUIC.setHouse(8, 1);
+					GUIC.setHouse(8, gethouses(8));
 				}}
 			if(gethouses(9) <= gethouses(8) && gethouses(9) <= gethouses(6)){
 				if(GUIC.buyAllegade().equals("Ja")){
 					player.account.addPoints(-getHousePrice(9));
 					board.getField(9).setNumberofHouses(1);
-					GUIC.setHouse(9, 1);
+					GUIC.setHouse(9, gethouses(9));
 				}}
 		}
 		if(n == 3){
@@ -207,19 +207,19 @@ public class HouseController {
 				if(GUIC.buyFredriksbergAlle().equals("Ja")){
 					player.account.addPoints(-getHousePrice(11));
 					board.getField(11).setNumberofHouses(1);
-					GUIC.setHouse(11, 1);
+					GUIC.setHouse(11, gethouses(11));
 				}}
 			if(gethouses(13) <= gethouses(11) && gethouses(13) <= gethouses(14)){
 				if(GUIC.buyBulowsvej().equals("Ja")){
 					player.account.addPoints(-getHousePrice(13));
 					board.getField(13).setNumberofHouses(1);
-					GUIC.setHouse(13, 1);
+					GUIC.setHouse(13, gethouses(13));
 				}}
 			if(gethouses(14) <= gethouses(11) && gethouses(14) <= gethouses(13)){
 				if(GUIC.buyGlKongevej().equals("Ja")){
 					player.account.addPoints(-getHousePrice(14));
 					board.getField(14).setNumberofHouses(1);
-					GUIC.setHouse(14, 1);
+					GUIC.setHouse(14, gethouses(14));
 				}}
 		}
 		if(n == 4){
