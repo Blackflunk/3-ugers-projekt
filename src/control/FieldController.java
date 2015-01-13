@@ -19,13 +19,13 @@ public class FieldController {
 	public void landOnField(Player[] playerlist, int currentPlayer) {
 		// For Territories
 		if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.Territory)
-			landOnTerritory(currentPlayer);
+			landOnTerritory(playerlist, currentPlayer);
 		// For Fleets
 		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.Fleet)
-			landOnFleet(currentPlayer);
+			landOnFleet(playerlist, currentPlayer);
 		// For LaborCamps
 		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.LaborCamp)
-			landOnLaborCamp(currentPlayer);
+			landOnLaborCamp(playerlist, currentPlayer);
 		// For every other fields
 		else
 			gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
@@ -36,7 +36,7 @@ public class FieldController {
 	 * fieldtax is the only thing that varies
 	 * 
 	 */
-	public void landOnTerritory(int currentPlayer) {
+	public void landOnTerritory(Player[] playerlist, int currentPlayer) {
 		// If no owner
 		if (gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner() == null) {
 			// If affordable
@@ -82,7 +82,7 @@ public class FieldController {
 		}
 	}
 	
-	public void landOnFleet(int currentPlayer) {
+	public void landOnFleet(Player[] playerlist, int currentPlayer) {
 		// If no owner
 		if (gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner() == null) {
 			// If affordable
@@ -128,7 +128,7 @@ public class FieldController {
 		}
 	}
 	
-	public void landOnLaborCamp(int currentPlayer) {
+	public void landOnLaborCamp(Player[] playerlist, int currentPlayer) {
 		// If no owner
 		if (gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner() == null) {
 			// If affordable

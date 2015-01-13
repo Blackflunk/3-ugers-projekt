@@ -10,7 +10,7 @@ public class TurnController {
 	private GameBoard board;
 	private DiceBox box;
 	private Player[] playerlist;
-	private FieldController FC = new FieldController(GUIC, board, box, playerlist);
+	private FieldController FC;
 	// for testing only
 	private int k = 0;
 	
@@ -19,6 +19,7 @@ public class TurnController {
 		this.board = board;
 		this.box = box;
 		this.playerlist = playerlist;
+		FC = new FieldController(GUIC, board, box, playerlist);
 	}
 	public void runTurn(Player[] playerlist, int currentPlayer) {
 		if (playerlist[currentPlayer].isJailed())
