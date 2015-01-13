@@ -18,7 +18,7 @@ public class Tax extends Fields {
 	@Override
 	public void landOnField(Player player) {
 		// If a player lands on goldmine
-		if (name == "Statskat") {
+		if (name.equals("Statsskat")) {
 			out.goldmineMessage(name);
 			if (player.account.getScore() >= pay) {
 				player.account.addPoints(-pay);

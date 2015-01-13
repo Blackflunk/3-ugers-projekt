@@ -128,8 +128,6 @@ public class HouseController {
 	}
 	
 	public boolean getPriceAndValue(){
-		
-		
 		return true;
 		
 	}
@@ -170,9 +168,8 @@ public class HouseController {
 			if(gethouses(1) <= gethouses(3)){
 			GUIC.buyRoedovervej();
 			if(GUIC.buyRoedovervej().equals("Ja")){
-				
 				board.getField(1).setNumberofHouses(1);
-				GUIC.setHouse(1, 1);
+				GUIC.setHouse(1, gethouses(1));
 			}}
 			if(gethouses(3) <= gethouses(1)){
 			GUIC.buyHvidovervej();
