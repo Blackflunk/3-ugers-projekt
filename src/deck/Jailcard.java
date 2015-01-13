@@ -3,7 +3,7 @@ import game.Player;
 import fields.GameBoard;
 
 public class Jailcard extends Movecard {
-	private int newposition = 11;
+	private int newposition = 10;
 
 	public Jailcard(String message, GameBoard board) {
 		super(message, board);
