@@ -176,8 +176,7 @@ public class GUIcontroller {
 	
 	public void updatePosition(Player[] player, int currentPlayer, int diceSum) {
 		// Remove car from old position on board
-		GUI.removeCar(player[currentPlayer].getPosition() + 1,
-				player[currentPlayer].getName());
+		GUI.removeAllCars(player[currentPlayer].getName());;
 		player[currentPlayer].movePosition(diceSum);
 		// Sets car on new position on board
 		GUI.setCar(player[currentPlayer].getPosition() + 1,
