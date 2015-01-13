@@ -80,9 +80,10 @@ public class FieldController {
 						playerlist[currentPlayer].account.getScore());
 			}
 				
-			GUIC.updateBalance(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
+		/*	GUIC.updateBalance(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
 					gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().account.getScore());
 			GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+		*/
 		}
 	}
 	
@@ -126,11 +127,11 @@ public class FieldController {
 						gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
 						playerlist[currentPlayer].account.getScore());
 			}
-				
+			/*	
 			GUIC.updateBalance(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
 					gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().account.getScore());
 			GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
-		}
+		*/}
 	}
 	
 	public void landOnLaborCamp(Player[] playerlist, int currentPlayer) {
@@ -174,10 +175,10 @@ public class FieldController {
 						playerlist[currentPlayer].account.getScore());
 			}
 				
-			GUIC.updateBalance(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
+			/*GUIC.updateBalance(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
 					gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().account.getScore());
 			GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
-		}
+		*/}
 	}
 
 }
