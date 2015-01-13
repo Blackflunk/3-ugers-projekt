@@ -17,6 +17,7 @@ public class HouseController {
 		this.board =board;
 		this.GUIC = GUIC;
 		this.playerlist = playerlist;
+		possibleBuild = " ";
 	}
 	
 	public void Housing(Player player, int currentPlayer){
