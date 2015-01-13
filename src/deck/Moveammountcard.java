@@ -15,6 +15,7 @@ public class Moveammountcard extends Movecard{
 		if (player.getPosition()+moveammount<39)
 			player.passStart();
 		player.setPosition(player.getPosition()+moveammount);
+		board.getField(player.getPosition()).landOnField(player);
 		
 	}
 
