@@ -252,14 +252,13 @@ public class DeckTest {
 		DiceBox box = new DiceBox();
 		GameBoard board = new GameBoard(box);
 		Player[] players = new Player[3];
-		Deck deck = new Deck(players, board);
 		GUIcontroller GUIC = new GUIcontroller();
 		HouseController HC = new HouseController(GUIC, board, players);
 		
 		players[0] = new Player("Spiller1");
 		players[1] = new Player("Spiller2");
 		players[2] = new Player("Spiller3");
-		
+		Deck deck = new Deck(players, board);
 		// Preconditions
 		players[0].setPosition(11);
 		board.getField(11).setBuyfield(true);
@@ -283,17 +282,19 @@ public class DeckTest {
 	
 	@Test
 	public void testKort19(){
+		// Giftcard
+		
 	//Preconditions
 		DiceBox box = new DiceBox();
 		GameBoard board = new GameBoard(box);
 		Player[] players = new Player[3];
-		Deck deck = new Deck(players, board);
 		GUIcontroller GUIC = new GUIcontroller();
-		HouseController HC = new HouseController(GUIC, board, players);
 		
 		players[0] = new Player("Spiller1");
 		players[1] = new Player("Spiller2");
 		players[2] = new Player("Spiller3");
+		Deck deck = new Deck(players, board);
+		HouseController HC = new HouseController(GUIC, board, players);
 		
 		// Preconditions
 		players[0].setPosition(7);

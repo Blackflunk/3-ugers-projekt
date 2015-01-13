@@ -24,7 +24,7 @@ public class GameController {
 	private Deck deck = new Deck(playerlist, gameboard);
 	private GUIcontroller GUIC = new GUIcontroller();
 	private FieldController FC = new FieldController(GUIC, gameboard, box, playerlist);
-	private DeckController DC = new DeckController(deck, GUIC, playerlist, gameboard, FC);
+	private DeckController DC;
 	private TurnController TurnC = new TurnController(GUIC, gameboard, box, playerlist);
 	private HouseController houseC = new HouseController(GUIC, gameboard, playerlist);
 	private int lostCount = 0;
@@ -62,7 +62,8 @@ public class GameController {
 		/** 
 		 * skal laves i turnC.
 		 */
-
+		
+		DC = new DeckController(deck, GUIC, playerlist, gameboard, FC);
 		DC.shuffleDeck();
 		// The game continues as long as won equals false
 		while (!won) {
