@@ -32,7 +32,7 @@ public class DeckTest {
 		players[0].setPosition(0);
 	//Test
 		//Move to "Groenningen"
-		DC.drawCard(players, 0);
+		deck.pickCard(players[0], 0);
 
 	//Postconditions
 		//Tjek om spilleren er p� feltet
@@ -260,31 +260,83 @@ public class DeckTest {
 		players[1] = new Player("Spiller2");
 		players[2] = new Player("Spiller3");
 		
+		// Preconditions
 		players[0].setPosition(11);
+		board.getField(11).setBuyfield(true);
 		board.getField(players[0].getPosition()).landOnField(players[0]);
 		players[0].setPosition(13);
+		board.getField(13).setBuyfield(true);
 		board.getField(players[0].getPosition()).landOnField(players[0]);
 		players[0].setPosition(14);
+		board.getField(14).setBuyfield(true);
 		board.getField(players[0].getPosition()).landOnField(players[0]);
+		assertEquals(21200, players[0].account.getScore());
+		
+		// Test
 		HC.checkOwnedFields(players[0]);
 		HC.Housing(players[0], 0);
 		
-		
-		//We land on chance card at field 7.
-		players[0].setPosition(7);
-		
-		
-		
-	//Test
-		//Repair on car, 3000 bill.
-		deck.pickCard(players[0],9);
-		
-
-
-	//Postconditions
-		//Check if the player lost 3000.
-		assertEquals(27000,players[0].account.getScore());
-		
+		// Postconditions
+		assertEquals(3,players[0].getFieldammount_green());
+		assertEquals(15200, players[0].account.getScore());
 	}
+	
+	@Test
+	public void testKort19(){
+	//Preconditions
+		DiceBox box = new DiceBox();
+		GameBoard board = new GameBoard(box);
+		Player[] players = new Player[3];
+		Deck deck = new Deck(players, board);
+		GUIcontroller GUIC = new GUIcontroller();
+		HouseController HC = new HouseController(GUIC, board, players);
+		
+		players[0] = new Player("Spiller1");
+		players[1] = new Player("Spiller2");
+		players[2] = new Player("Spiller3");
+		
+		// Preconditions
+		players[0].setPosition(7);
 
+		// Test
+		deck.pickCard(players[0], 19);
+		
+		// Postconditions
+		assertEquals(30400, players[0].account.getScore());
+		assertEquals(29800, players[1].account.getScore());
+		assertEquals(29800, players[2].account.getScore());
+	}
+	
+	@Test
+	public void testKort28(){
+	//Preconditions
+		DiceBox box = new DiceBox();
+		GameBoard board = new GameBoard(box);
+		Player[] players = new Player[3];
+		Deck deck = new Deck(players, board);
+		GUIcontroller GUIC = new GUIcontroller();
+		HouseController HC = new HouseController(GUIC, board, players);
+		
+		players[0] = new Player("Spiller1");
+		players[1] = new Player("Spiller2");
+		players[2] = new Player("Spiller3");
+		
+		// Preconditions
+		players[0].setPosition(11);
+		board.getField(11).setBuyfield(true);
+		board.getField(players[0].getPosition()).landOnField(players[0]);
+		players[0].setPosition(13);
+		board.getField(13).setBuyfield(true);
+		board.getField(players[0].getPosition()).landOnField(players[0]);
+		players[0].account.setScore(4000);
+
+
+		
+		// Test
+		deck.pickCard(players[0], 28);
+		
+		// Postconditions
+		assertEquals(2,players[0].getFieldammount_green());
+		assertEquals(44000, players[0].account.getScore());
+	}
 }
