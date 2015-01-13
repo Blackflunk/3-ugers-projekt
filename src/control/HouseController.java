@@ -25,11 +25,11 @@ public class HouseController {
 				||player.getBuy_grey()== true||player.getBuy_Red()== true||player.getBuy_White() == true
 				||player.getBuy_Yellow()== true||player.getBuy_Magenta()== true){
 					for(int i=1; i<=8; i++){
-						if(getBuild(i, player) == true){
+						if(getBuild(i, player) == true && getPriceAndValue() == true){
 							getRoad(i);
 						}
 					}GUIC.offerToBuy(possibleBuild);
-					if(GUIC.offerToBuy(possibleBuild) == "Ja"){
+					if(GUIC.offerToBuy(possibleBuild).equals("Ja")){
 						for(int i=1; i<=8; i++){
 							if(getBuild(i, player) == true){
 								buildPlots(i);
@@ -127,6 +127,13 @@ public class HouseController {
 		return false;
 	}
 	
+	public boolean getPriceAndValue(){
+		
+		
+		return true;
+		
+	}
+	
 	public void getRoad(int n){
 		if(n == 1){
 			possibleBuild += " Roedovervej og Hvidovervej";
@@ -163,6 +170,7 @@ public class HouseController {
 			if(gethouses(1) <= gethouses(3)){
 			GUIC.buyRoedovervej();
 			if(GUIC.buyRoedovervej().equals("Ja")){
+				
 				board.getField(1).setNumberofHouses(1);
 				GUIC.setHouse(1, 1);
 			}}

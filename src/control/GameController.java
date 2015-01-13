@@ -59,7 +59,7 @@ public class GameController {
 		GUIC.createPlayers(playerAmount, playerlist);
 		
 
-		
+		DC.shuffleDeck();
 		// The game continues as long as won equals false
 		while (!won) {
 			if (!playerlist[currentPlayer].getStatus()) {
