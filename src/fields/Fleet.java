@@ -3,8 +3,6 @@ package fields;
 import game.Player;
 
 public class Fleet extends Ownable {
-	private String name;
-	private int price;
 	private int[] rent = new int[4];
 
 	public Fleet(String name, int price, int pansat, int rent_1, int rent_2, int rent_3,
@@ -14,9 +12,6 @@ public class Fleet extends Ownable {
 		this.rent[1] = rent_2;
 		this.rent[2] = rent_3;
 		this.rent[3] = rent_4;
-		this.name = name;
-		this.price = price;
-		this.pansat = pansat;
 
 	}
 	@Override

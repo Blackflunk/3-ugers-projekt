@@ -6,7 +6,7 @@ import game.Player;
 
 public class LaborCamp extends Ownable {
 
-	private int price, rent;
+	private int rent;
 	private DiceBox box;
 	private int fullRent;
 
@@ -14,9 +14,6 @@ public class LaborCamp extends Ownable {
 		super(name, price, pansat);
 		this.rent = rent;
 		this.box = box;
-		this.name = name;
-		this.price = price;
-		this.pansat = pansat;
 	}
 	@Override
 	public int getRent(int numberoflaborcamps) {
