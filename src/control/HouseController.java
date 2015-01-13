@@ -154,135 +154,161 @@ public class HouseController {
 		}
 	}
 	
+	public int gethouses(int n){
+		return board.getField(n).getNumberofhouses();
+	}
+	
 	public void buildPlots(int n){
 		if(n == 1){
+			if(gethouses(1) <= gethouses(3)){
 			GUIC.buyRoedovervej();
 			if(GUIC.buyRoedovervej().equals("Ja")){
 				board.getField(1).setNumberofHouses(1);
 				GUIC.setHouse(1, 1);
-			}
+			}}
+			if(gethouses(3) <= gethouses(1)){
 			GUIC.buyHvidovervej();
 			if(GUIC.buyHvidovervej().equals("Ja")){
 				board.getField(3).setNumberofHouses(1);
 				GUIC.setHouse(3, 1);
-			}
+			}}
 		}
 		if(n == 2){
+			if(gethouses(6) <= gethouses(8) && gethouses(6) <= gethouses(9)){
 			GUIC.buyRoskildevej();
 			if(GUIC.buyRoskildevej().equals("Ja")){
 				board.getField(6).setNumberofHouses(1);
 				GUIC.setHouse(6, 1);
-			}
+			}}
+			if(gethouses(8) <= gethouses(6) && gethouses(8) <= gethouses(9)){
 			GUIC.buyValbyLanggade();
 			if(GUIC.buyValbyLanggade().equals("Ja")){
 				board.getField(8).setNumberofHouses(1);
 				GUIC.setHouse(8, 1);
-			}
+			}}
+			if(gethouses(9) <= gethouses(8) && gethouses(9) <= gethouses(6)){
 			GUIC.buyAllegade();
 			if(GUIC.buyAllegade().equals("Ja")){
 				board.getField(9).setNumberofHouses(1);
 				GUIC.setHouse(9, 1);
-			}
+			}}
 		}
 		if(n == 3){
+			if(gethouses(11) <= gethouses(13) && gethouses(11) <= gethouses(14)){
 			GUIC.buyFredriksbergAlle();
 			if(GUIC.buyFredriksbergAlle().equals("Ja")){
 				board.getField(11).setNumberofHouses(1);
 				GUIC.setHouse(11, 1);
-			}
+			}}
+			if(gethouses(13) <= gethouses(11) && gethouses(13) <= gethouses(14)){
 			GUIC.buyBulowsvej();
 			if(GUIC.buyBulowsvej().equals("Ja")){
 				board.getField(13).setNumberofHouses(1);
 				GUIC.setHouse(13, 1);
-			}
+			}}
+			if(gethouses(14) <= gethouses(11) && gethouses(14) <= gethouses(13)){
 			GUIC.buyGlKongevej();
 			if(GUIC.buyGlKongevej().equals("Ja")){
 				board.getField(14).setNumberofHouses(1);
 				GUIC.setHouse(14, 1);
-			}
+			}}
 		}
 		if(n == 4){
+			if(gethouses(16) <= gethouses(18) && gethouses(16) <= gethouses(19)){
 			GUIC.buyBernstorffsvej();
 			if(GUIC.buyBernstorffsvej().equals("Ja")){
 				board.getField(16).setNumberofHouses(1);
 				GUIC.setHouse(16, 1);
-			}
+			}}
+			if(gethouses(18) <= gethouses(16) && gethouses(18) <= gethouses(19)){
 			GUIC.buyHellerupvej();
 			if(GUIC.buyHellerupvej().equals("Ja")){
 				board.getField(18).setNumberofHouses(1);
 				GUIC.setHouse(18, 1);
-			}
+			}}
+			if(gethouses(19) <= gethouses(16) && gethouses(19) <= gethouses(18)){
 			GUIC.buyStrandvejen();
 			if(GUIC.buyStrandvejen().equals("Ja")){
 				board.getField(19).setNumberofHouses(1);
 				GUIC.setHouse(19, 1);
-			}
+			}}
 		}
 		
 		if(n == 5){
+			if(gethouses(21) <= gethouses(23) && gethouses(21) <= gethouses(24)){
 			GUIC.buyTrianglen();
 			if(GUIC.buyTrianglen().equals("Ja")){
 				board.getField(21).setNumberofHouses(1);
 				GUIC.setHouse(21, 1);
-			}
+			}}
+			if(gethouses(23) <= gethouses(21) && gethouses(23) <= gethouses(24)){
 			GUIC.buyOesterbrogade();
 			if(GUIC.buyOesterbrogade().equals("Ja")){
 				board.getField(23).setNumberofHouses(1);
 				GUIC.setHouse(23, 1);
-			}
+			}}
+			if(gethouses(24) <= gethouses(21) && gethouses(24) <= gethouses(23)){
 			GUIC.buyGroenningen();
 			if(GUIC.buyGroenningen().equals("Ja")){
 				board.getField(24).setNumberofHouses(1);
 				GUIC.setHouse(24, 1);
-			}
+			}}
 		}
 		
 		if(n == 6){
+			if(gethouses(26) <= gethouses(27) && gethouses(26) <= gethouses(29)){
 			GUIC.buyBredgade();
 			if(GUIC.buyBredgade().equals("Ja")){
 				board.getField(26).setNumberofHouses(1);
 				GUIC.setHouse(26, 1);
-			}
+			}}
+			if(gethouses(27) <= gethouses(26) && gethouses(27) <= gethouses(29)){
 			GUIC.buyKgsNytorv();
 			if(GUIC.buyKgsNytorv().equals("Ja")){
 				board.getField(27).setNumberofHouses(1);
 				GUIC.setHouse(27, 1);
-			}
+			}}
+			if(gethouses(29) <= gethouses(26) && gethouses(29) <= gethouses(27)){
 			GUIC.buyIstergade();
 			if(GUIC.buyIstergade().equals("Ja")){
 				board.getField(29).setNumberofHouses(1);
 				GUIC.setHouse(29, 1);
-			}
+			}}
 		}
 		
 		if(n == 7){
+			if(gethouses(31) <= gethouses(32) && gethouses(31) <= gethouses(34)){
 			GUIC.buyAmagertorv();
 			if(GUIC.buyAmagertorv().equals("Ja")){
 				board.getField(31).setNumberofHouses(1);
 				GUIC.setHouse(31, 1);
-			}
+			}}
+			if(gethouses(32) <= gethouses(31) && gethouses(32) <= gethouses(34)){
 			GUIC.buyVimmelskaftet();
 			if(GUIC.buyVimmelskaftet().equals("Ja")){
 				board.getField(32).setNumberofHouses(1);
 				GUIC.setHouse(32, 1);
-			}
+			}}
+			if(gethouses(34) <= gethouses(31) && gethouses(34) <= gethouses(32)){
 			GUIC.buyNygade();
 			if(GUIC.buyNygade().equals("Ja")){
 				board.getField(34).setNumberofHouses(1);
 				GUIC.setHouse(34, 1);
-			}
+			}}
 		}
 		if(n == 8){
+			if(gethouses(37) <= gethouses(39)){
 			GUIC.buyFrederiksberggade();
 			if(GUIC.buyFrederiksberggade().equals("Ja")){
 				board.getField(37).setNumberofHouses(1);
 				GUIC.setHouse(37, 1);
-			}
+			}}
+			if(gethouses(39) <= gethouses(37)){
 			GUIC.buyRaadhuspladsen();
 			if(GUIC.buyRaadhuspladsen().equals("Ja")){
 				board.getField(39).setNumberofHouses(1);
 				GUIC.setHouse(39, 1);
-			}
+			}}
 		}
 	}
 }
