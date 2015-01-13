@@ -58,7 +58,7 @@ public class Territory extends Ownable {
 			} else {
 			}
 		// if the owner is the player himself, nothing happens
-		} else if (getOwner() == player) {
+		} else if (getOwner().equals(player)) {
 		// if the field is owned by another player, a rent have to be paid
 		} else {
 			if (player.account.getScore() >= rent[numberofhouses]) {
