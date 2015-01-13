@@ -16,7 +16,7 @@ import control.HouseController;
 
 import org.junit.Test;
 
-public class TestKøb {
+public class TestPurchase {
 
 	@Test
 	public void test() {
@@ -43,7 +43,7 @@ public class TestKøb {
 		board.getField(24).landOnField(players[1]);
 
 	//Postconditions
-		//Tjek om spilleren er på feltet
+		//Tjek om spilleren er pï¿½ feltet
 		assertEquals(25600,players[0].account.getScore());
 		assertEquals(29600,players[1].account.getScore());
 		
