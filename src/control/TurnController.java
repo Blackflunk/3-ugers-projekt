@@ -22,7 +22,7 @@ public class TurnController {
 		FC = new FieldController(GUIC, board, box, playerlist);
 	}
 	
-	//lav en for løkke så den updater værd tur
+	//lav en for lï¿½kke sï¿½ den updater vï¿½rd tur
 	public void runTurn(Player[] playerlist, int currentPlayer) {
 		GUIC.updateBalance(playerlist[0].getName(), playerlist[0].account.getScore());
 		GUIC.updateBalance(playerlist[1].getName(), playerlist[1].account.getScore());
@@ -60,8 +60,8 @@ public class TurnController {
 	
 	// Tur, efter exit fra jail
 	public void afterJailTurn(Player[] playerlist, int currentPlayer) {
-		GUIC.showMessage("Du forlod fængslet, og rykker summen på terningerne");
-		GUIC.updatePosition(playerlist, currentPlayer, box.getSum());
+		GUIC.showMessage("Du forlod fï¿½ngslet, og rykker summen pï¿½ terningerne");
+		GUIC.newPositon(playerlist[currentPlayer]);
 		FC.landOnField(playerlist, currentPlayer);
 	}
 	
@@ -97,8 +97,8 @@ public class TurnController {
 			}
 			// If the playerlist[currentPlayer] tried exitting 3 times (forced pay) 
 			if (playerlist[currentPlayer].getJailcount() == 3) {
-				GUIC.showMessage("Du har prøvet at komme ud af fængslet 3 gange, uden held - du betaler 1000kr for at komme ud"
-						+ " du får ikke lov til at rykke denne tur");
+				GUIC.showMessage("Du har prï¿½vet at komme ud af fï¿½ngslet 3 gange, uden held - du betaler 1000kr for at komme ud"
+						+ " du fï¿½r ikke lov til at rykke denne tur");
 				playerlist[currentPlayer].account.addPoints(-1000);
 				playerlist[currentPlayer].setJailed(false);
 				playerlist[currentPlayer].setJailcount(0);

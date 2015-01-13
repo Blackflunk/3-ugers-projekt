@@ -59,6 +59,9 @@ public class GameController {
 		playerlist = new Player[playerAmount];
 		GUIC.createPlayers(playerAmount, playerlist);
 		
+		/** 
+		 * skal laves i turnC.
+		 */
 
 		DC.shuffleDeck();
 		// The game continues as long as won equals false
@@ -74,6 +77,9 @@ public class GameController {
 				GUIC.newPositon(playerlist[currentPlayer]);
 				
 				// If a player has lost, adds one to lostCount and reset the players owned fields
+				/** 
+				 * skal laves i FieldController
+				 */
 				if (playerlist[currentPlayer].getStatus()) {
 					GUIC.removePlayer(playerlist, currentPlayer);
 					
@@ -99,6 +105,10 @@ public class GameController {
 			currentPlayer++;
 		}
 	}
+	
+	/**
+	 * skal laves i FieldController
+	 */
 	
 	public void controlFieldType(){
 		if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.ChanceCard) {
