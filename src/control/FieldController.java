@@ -1,19 +1,22 @@
 package control;
 
-import entity.DiceBox;
+
 import entity.Player;
 import fields.GameBoard;
 import boundary.GUIcontroller;
+import deck.Deck;
 
 public class FieldController {
 	private GUIcontroller GUIC;
 	private GameBoard gameboard;
 	private Player[] playerlist;
+	private DeckController DC;
 	
-	public FieldController(GUIcontroller GUIC, GameBoard gameboard, DiceBox box, Player[] playerlist) {
+	public FieldController(GUIcontroller GUIC, GameBoard gameboard, Player[] playerlist, Deck deck) {
 		this.GUIC = GUIC;
 		this.gameboard = gameboard;
 		this.playerlist = playerlist;
+		DC = new DeckController(deck, GUIC, playerlist, gameboard);
 	}
 	
 	public void landOnField(Player[] playerlist, int currentPlayer) {

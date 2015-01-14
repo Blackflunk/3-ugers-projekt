@@ -1,5 +1,6 @@
 package control;
 
+import deck.Deck;
 import boundary.GUIcontroller;
 import entity.DiceBox;
 import entity.Player;
@@ -8,19 +9,18 @@ import fields.GameBoard;
 public class TurnController {
 	private GUIcontroller GUIC;
 	private GameBoard board;
-	private DiceBox box;
+	private DiceBox box = new DiceBox();
 	private Player[] playerlist;
 	private FieldController FC;
 	
 	// for testing only
 	private int k = 0;
 	
-	public TurnController(GUIcontroller GUIC, GameBoard board, DiceBox box, Player[] playerlist) {
+	public TurnController(GUIcontroller GUIC, GameBoard board, Player[] playerlist) {
 		this.GUIC = GUIC;
 		this.board = board;
-		this.box = box;
 		this.playerlist = playerlist;
-		FC = new FieldController(GUIC, board, box, playerlist);
+		FC = new FieldController(GUIC, board, playerlist, new Deck(playerlist, board));
 	}
 	
 	//lav en for lï¿½kke sï¿½ den updater vï¿½rd tur
@@ -55,9 +55,9 @@ public class TurnController {
 		if(count==0)
 		GUIC.nextPlayer(playerlist, currentPlayer);
 		else if (count==2)
-		GUIC.showMessage("Tryk for at slå igen, hvis du slår to ens igen ryger du i fængsel");
+		GUIC.showMessage("Tryk for at slï¿½ igen, hvis du slï¿½r to ens igen ryger du i fï¿½ngsel");
 		else
-		GUIC.showMessage("Tryk for at slå igen");
+		GUIC.showMessage("Tryk for at slï¿½ igen");
 		
 		box.rollDice();
 		GUIC.showDice(box.getDice1(), box.getDice2());
@@ -73,7 +73,7 @@ public class TurnController {
 			run = false;
 			playerlist[currentPlayer].setJailed(true);
 			playerlist[currentPlayer].setPosition(10);
-			GUIC.showMessage("Du har slået 3 par i træk, du ryger i fængsel");
+			GUIC.showMessage("Du har slï¿½et 3 par i trï¿½k, du ryger i fï¿½ngsel");
 			GUIC.newPositon(playerlist[currentPlayer]);
 		}
 		}
@@ -163,9 +163,9 @@ public class TurnController {
 		if(count==0)
 		GUIC.nextPlayer(playerlist, currentPlayer);
 		else if (count==2)
-		GUIC.showMessage("Tryk for at slå igen, hvis du slår to ens igen ryger du i fængsel");
+		GUIC.showMessage("Tryk for at slï¿½ igen, hvis du slï¿½r to ens igen ryger du i fï¿½ngsel");
 		else
-		GUIC.showMessage("Tryk for at slå igen");
+		GUIC.showMessage("Tryk for at slï¿½ igen");
 		
 		if (count==0) {
 		GUIC.showDice(box1.getDice1(), box1.getDice2());
@@ -187,7 +187,7 @@ public class TurnController {
 			run = false;
 			playerlist[currentPlayer].setJailed(true);
 			playerlist[currentPlayer].setPosition(10);
-			GUIC.showMessage("Du har slået 3 par i træk, du ryger i fængsel");
+			GUIC.showMessage("Du har slï¿½et 3 par i trï¿½k, du ryger i fï¿½ngsel");
 			GUIC.newPositon(playerlist[currentPlayer]);
 		}
 		}

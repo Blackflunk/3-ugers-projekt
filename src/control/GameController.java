@@ -23,10 +23,8 @@ public class GameController {
 	private Deck deck;
 	private GameBoard gameboard = new GameBoard(box);
 	private GUIcontroller GUIC = new GUIcontroller();
-	private FieldController FC = new FieldController(GUIC, gameboard, box, playerlist);
-	private DeckController DC;
-	private TurnController TurnC = new TurnController(GUIC, gameboard, box, playerlist);
-	private HouseController houseC = new HouseController(GUIC, gameboard, playerlist);
+	private TurnController TurnC;
+	private HouseController houseC;
 	private int lostCount = 0;
 	
 	public static void main(String[] args) {
@@ -64,8 +62,10 @@ public class GameController {
 		 */
 		
 		deck = new Deck(playerlist, gameboard);
-		DC = new DeckController(deck, GUIC, playerlist, gameboard, FC);
-		DC.shuffleDeck();
+		
+		TurnC = new TurnController(GUIC, gameboard, playerlist);
+		houseC = new HouseController(GUIC, gameboard, playerlist);
+
 		// The game continues as long as won equals false
 		while (!won) {
 			if (!playerlist[currentPlayer].getStatus()) {

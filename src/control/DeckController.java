@@ -15,12 +15,13 @@ public class DeckController {
 	
 	
 	
-	public DeckController(Deck deck, GUIcontroller GUIC, Player[] playerlist, GameBoard board, FieldController FC) {
+	public DeckController(Deck deck, GUIcontroller GUIC, Player[] playerlist, GameBoard board) {
 		this.GUIC = GUIC;
 		this.playerlist = playerlist;
 		this.board = board;
 		this.deck = deck;
-		this.FC = FC;
+		FC = new FieldController(GUIC, board, playerlist, deck);
+		shuffleDeck();
 	}
 	
 	public void drawCard(Player[] playerlist, int currentPlayer) {
