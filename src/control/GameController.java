@@ -57,12 +57,7 @@ public class GameController {
 		playerlist = new Player[playerAmount];
 		GUIC.createPlayers(playerAmount, playerlist);
 		
-		/** 
-		 * skal laves i turnC.
-		 */
-		
-		deck = new Deck(playerlist, gameboard);
-		
+		// Creates Controllers dependent on playerlist
 		TurnC = new TurnController(GUIC, gameboard, playerlist);
 		houseC = new HouseController(GUIC, gameboard, playerlist);
 
