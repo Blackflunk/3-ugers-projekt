@@ -75,7 +75,6 @@ public class GameController {
 				TurnC.runTurn(playerlist, currentPlayer);
 				
 				// Controls for further funktions on the field
-				controlFieldType();
 				GUIC.newPositon(playerlist[currentPlayer]);
 				
 				// If a player has lost, adds one to lostCount and reset the players owned fields
