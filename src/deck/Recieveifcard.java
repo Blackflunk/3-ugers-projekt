@@ -21,7 +21,7 @@ public class Recieveifcard extends Recievecard{
 		for (int i=0; i<40;i++) {
 			if (player.equals(board.getField(i).getOwner())) {
 				ownableworth += board.getField(i).getPrice();
-				buildingworth += board.getField(i).getNumberofhouses()*board.getField(i).getHouseprice();
+				buildingworth += (board.getField(i).getNumberofhouses() * board.getField(i).getHouseprice());
 			}		
 		}
 		totalworth = player.account.getScore() + ownableworth + buildingworth; 
