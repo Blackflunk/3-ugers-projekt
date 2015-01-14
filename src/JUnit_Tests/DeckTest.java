@@ -273,7 +273,7 @@ public class DeckTest {
 		
 		// Test
 		HC.checkOwnedFields(players[0]);
-		HC.Housing(players[0], 0);
+		HC.buyHouse(players[0], 0);
 		
 		// Postconditions
 		assertEquals(3,players[0].getFieldammount_green());

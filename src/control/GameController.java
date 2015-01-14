@@ -70,7 +70,7 @@ public class GameController {
 		while (!won) {
 			if (!playerlist[currentPlayer].getStatus()) {
 				houseC.checkOwnedFields(playerlist[currentPlayer]);
-				houseC.Housing(playerlist[currentPlayer],currentPlayer);
+				houseC.buyHouse(playerlist[currentPlayer],currentPlayer);
 				// If Player is jailed
 				TurnC.runTurn(playerlist, currentPlayer);
 				

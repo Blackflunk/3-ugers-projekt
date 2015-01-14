@@ -40,7 +40,7 @@ public class HouseTest {
 			assertEquals(30000, players[1].account.getScore());
 		// Test
 			HC.checkOwnedFields(players[0]);
-			HC.Housing(players[0], 0);
+			HC.buyHouse(players[0], 0);
 			
 			players[1].setPosition(11);
 			board.getField(players[1].getPosition()).landOnField(players[1]);
@@ -80,8 +80,8 @@ public class HouseTest {
 			
 		// Test
 			HC.checkOwnedFields(players[0]);
-			HC.Housing(players[0], 0);
-			HC.Housing(players[0], 0);
+			HC.buyHouse(players[0], 0);
+			HC.buyHouse(players[0], 0);
 			players[1].setPosition(11);
 			board.getField(players[1].getPosition()).landOnField(players[1]);
 			
@@ -118,9 +118,9 @@ public class HouseTest {
 			
 		// Test
 			HC.checkOwnedFields(players[0]);
-			HC.Housing(players[0], 0);
-			HC.Housing(players[0], 0);
-			HC.Housing(players[0], 0);
+			HC.buyHouse(players[0], 0);
+			HC.buyHouse(players[0], 0);
+			HC.buyHouse(players[0], 0);
 		
 			
 		// Postconditions

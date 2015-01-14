@@ -20,7 +20,7 @@ public class HouseController {
 		this.board = board;
 	}
 	
-	public void Housing(Player player, int currentPlayer){
+	public void buyHouse(Player player, int currentPlayer){
 		//check if you can buy.
 		possibleBuild = " ";
 		if(player.getBuy_Blue()== true||player.getBuy_Pink()== true||player.getBuy_Green()== true
@@ -41,7 +41,9 @@ public class HouseController {
 				}
 		}		
 	}
-	
+	public void sellHouse(Player player, int currentPlayer){
+		
+	}
 	
 	public void checkOwnedFields(Player player){
 		checkBlue(player);
