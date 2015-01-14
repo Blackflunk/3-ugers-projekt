@@ -16,7 +16,7 @@ public class TestCase8 {
 		DiceBox dice3 = new DiceBox();
 		GameBoard board = new GameBoard(dice1);
 		GUIcontroller gc = new GUIcontroller();
-		TurnController tc = new TurnController(gc, board, dice1, spillerarray); 
+		TurnController tc = new TurnController(gc, board, spillerarray); 
 		
 		dice1.setDice(0, 5);
 		dice1.setDice(1, 5);
