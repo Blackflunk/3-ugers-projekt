@@ -166,9 +166,9 @@ public class TurnController {
 		if(count==0)
 		GUIC.nextPlayer(playerlist, currentPlayer);
 		else if (count==2)
-		GUIC.showMessage("Tryk for at sl� igen, hvis du sl�r to ens igen ryger du i f�ngsel");
+		GUIC.twoPair();
 		else
-		GUIC.showMessage("Tryk for at sl� igen");
+		GUIC.onePair();;
 		
 		if (count==0) {
 		GUIC.showDice(box1.getDice1(), box1.getDice2());
@@ -190,7 +190,7 @@ public class TurnController {
 			run = false;
 			playerlist[currentPlayer].setJailed(true);
 			playerlist[currentPlayer].setPosition(10);
-			GUIC.showMessage("Du har sl�et 3 par i tr�k, du ryger i f�ngsel");
+			GUIC.threePair();;
 			GUIC.newPositon(playerlist[currentPlayer]);
 		}
 		}
