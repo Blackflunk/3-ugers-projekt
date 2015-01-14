@@ -359,4 +359,7 @@ public class GUIcontroller {
 	public void setHouse(int fieldNumber, int houseCount){
 		GUI.setHouses(fieldNumber, houseCount);
 	}
+	public void setHotel(int fieldNumber, boolean hasHotel){
+		GUI.setHotel(fieldNumber, hasHotel);
+	}
 }
