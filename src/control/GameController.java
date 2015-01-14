@@ -1,9 +1,3 @@
-//********************************************************************
-//  Main.java       Authors: Group 57
-//
-//  The main class in CDIO part 2 to start and end the game
-//********************************************************************
-
 package control;
 
 import entity.DiceBox;
@@ -20,7 +14,6 @@ public class GameController {
 	private Player[] playerlist;
 	private boolean won = false;
 	private DiceBox box = new DiceBox();
-	private Deck deck;
 	private GameBoard gameboard = new GameBoard(box);
 	private GUIcontroller GUIC = new GUIcontroller();
 	private TurnController TurnC;
