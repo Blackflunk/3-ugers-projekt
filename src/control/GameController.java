@@ -20,8 +20,8 @@ public class GameController {
 	private Player[] playerlist;
 	private boolean won = false;
 	private DiceBox box = new DiceBox();
+	private Deck deck;
 	private GameBoard gameboard = new GameBoard(box);
-	private Deck deck = new Deck(playerlist, gameboard);
 	private GUIcontroller GUIC = new GUIcontroller();
 	private FieldController FC = new FieldController(GUIC, gameboard, box, playerlist);
 	private DeckController DC;
@@ -63,6 +63,7 @@ public class GameController {
 		 * skal laves i turnC.
 		 */
 		
+		deck = new Deck(playerlist, gameboard);
 		DC = new DeckController(deck, GUIC, playerlist, gameboard, FC);
 		DC.shuffleDeck();
 		// The game continues as long as won equals false
