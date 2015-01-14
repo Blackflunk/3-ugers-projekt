@@ -271,7 +271,7 @@ public class GUIcontroller {
 	}
 	
 	public String taxPick(String name) {
-		return GUI.getUserSelection(
+		return GUI.getUserButtonPressed(
 				"du er landet paa "+ name + " og skal betale indkomstskat. "
 						+ "vil du helst betale 4000 eller 10% af dine kontanter?",
 				"4000", "10%");
@@ -291,70 +291,70 @@ public class GUIcontroller {
 	}
 	
 	public String buyRoedovervej(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Roedovervej for kr. 1000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Roedovervej for kr. 1000?", "Ja", "Nej");
 	}
 	public String buyHvidovervej(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Hvidovervej for kr. 1000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Hvidovervej for kr. 1000?", "Ja", "Nej");
 	}
 	public String buyRoskildevej(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Roskildevej for kr. 1000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Roskildevej for kr. 1000?", "Ja", "Nej");
 	}
 	public String buyValbyLanggade(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Valby Langgade for kr. 1000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Valby Langgade for kr. 1000?", "Ja", "Nej");
 	}
 	public String buyAllegade(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Allegade for kr. 1000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Allegade for kr. 1000?", "Ja", "Nej");
 	}
 	public String buyFredriksbergAlle(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Fredriksberg Alle for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Fredriksberg Alle for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyBulowsvej(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Bulowsvej for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Bulowsvej for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyGlKongevej(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Gl Kongevej for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Gl Kongevej for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyBernstorffsvej(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Bernstorffsvej for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Bernstorffsvej for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyHellerupvej(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Hellerupvej for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Hellerupvej for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyStrandvejen(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Strandvejen for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Strandvejen for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyTrianglen(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Trianglen for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Trianglen for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyOesterbrogade(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Oesterbrogade for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Oesterbrogade for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyGroenningen(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Groenningen for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Groenningen for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyBredgade(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Bredgade for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Bredgade for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyKgsNytorv(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Kgs Nytorv for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Kgs Nytorv for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyIstergade(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Istergade for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Istergade for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyAmagertorv(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Amagertorv for kr. 4000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Amagertorv for kr. 4000?", "Ja", "Nej");
 	}
 	public String buyVimmelskaftet(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Vimmelskaftet for kr. 4000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Vimmelskaftet for kr. 4000?", "Ja", "Nej");
 	}
 	public String buyNygade(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Nygade for kr. 4000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Nygade for kr. 4000?", "Ja", "Nej");
 	}
 	public String buyFrederiksberggade(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Frederiksberggade for kr. 4000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Frederiksberggade for kr. 4000?", "Ja", "Nej");
 	}
 	public String buyRaadhuspladsen(){
-		return GUI.getUserSelection("Oensker du at koebe et hus/hotel p� Raadhuspladsen for kr. 4000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel p� Raadhuspladsen for kr. 4000?", "Ja", "Nej");
 	}
 	public void setHouse(int fieldNumber, int houseCount){
 		GUI.setHouses(fieldNumber, houseCount);
