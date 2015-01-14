@@ -79,6 +79,7 @@ public class FieldController {
 				GUIC.insufficiantFunds(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), 
 						gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
 						playerlist[currentPlayer].account.getScore());
+				gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 			}
 				
 			GUIC.updateBalance(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
@@ -128,6 +129,7 @@ public class FieldController {
 				GUIC.insufficiantFunds(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), 
 						gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
 						playerlist[currentPlayer].account.getScore());
+				gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 			}
 				
 			GUIC.updateBalance(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
@@ -176,6 +178,7 @@ public class FieldController {
 				GUIC.insufficiantFunds(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), 
 						gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
 						playerlist[currentPlayer].account.getScore());
+				gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 			}
 				
 			GUIC.updateBalance(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
