@@ -73,7 +73,7 @@ public class TurnController {
 			run = false;
 			playerlist[currentPlayer].setJailed(true);
 			playerlist[currentPlayer].setPosition(10);
-			GUIC.showMessage("Du 3 par i træk, du ryger i fængsel");
+			GUIC.showMessage("Du har slået 3 par i træk, du ryger i fængsel");
 			GUIC.newPositon(playerlist[currentPlayer]);
 		}
 		}
@@ -187,7 +187,7 @@ public class TurnController {
 			run = false;
 			playerlist[currentPlayer].setJailed(true);
 			playerlist[currentPlayer].setPosition(10);
-			GUIC.showMessage("Du 3 par i træk, du ryger i fængsel");
+			GUIC.showMessage("Du har slået 3 par i træk, du ryger i fængsel");
 			GUIC.newPositon(playerlist[currentPlayer]);
 		}
 		}
