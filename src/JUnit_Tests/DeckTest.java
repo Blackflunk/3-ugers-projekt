@@ -23,8 +23,8 @@ public class DeckTest {
 		Player[] players = new Player[3];
 		Deck deck = new Deck(players, board);
 		GUIcontroller GUIC = new GUIcontroller();
-		FieldController FC = new FieldController(GUIC, board, box, players);
-		DeckController DC = new DeckController(deck, GUIC, players, board, FC);
+		FieldController FC = new FieldController(GUIC, board, players, deck);
+		DeckController DC = new DeckController(deck, GUIC, players, board);
 		
 		players[0] = new Player("Spiller1");
 		players[1] = new Player("Spiller2");
@@ -48,8 +48,8 @@ public class DeckTest {
 			Player[] players = new Player[3];
 			Deck deck = new Deck(players, board);
 			GUIcontroller GUIC = new GUIcontroller();
-			FieldController FC = new FieldController(GUIC, board, box, players);
-			DeckController DC = new DeckController(deck, GUIC, players, board, FC);
+			FieldController FC = new FieldController(GUIC, board, players, deck);
+			DeckController DC = new DeckController(deck, GUIC, players, board);
 			
 			players[0] = new Player("Spiller1");
 			players[1] = new Player("Spiller2");
