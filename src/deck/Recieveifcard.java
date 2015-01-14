@@ -11,7 +11,6 @@ public class Recieveifcard extends Recievecard{
 		this.maxvalue = maxvalue;
 		this.bonus = bonus;
 		this.board = board;
-		
 	}
 	
 	public void drawCard(Player player) {

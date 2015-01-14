@@ -9,17 +9,14 @@ public class Giftcard extends Recievecard {
 		this.playerlist = playerlist;
 	}
 	
-	public void drawcard(Player player) {
+	public void drawCard(Player player) {
 		for (int i=0; i < playerlist.length; i++) {
 			boolean t = player.equals(playerlist[i]);
-			if (!t)
+			if (!t) 
 				playerlist[i].account.addPoints(-bonus);
+			System.out.println(playerlist[i].account.getScore());
 		}
 		player.account.addPoints(bonus*(playerlist.length-1));
+		System.out.println(player.account.getScore());
 	}
-	
-	
-	
-	
-
 }
