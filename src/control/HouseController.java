@@ -219,7 +219,7 @@ public class HouseController {
 			possibleBuild += " Frederiksberggade og Raedhuspladsen";
 		}
 	}
-	//lav en funktion der checker om du har penge nok til at k�be. hvis man ikke har skal den sige (Du har desv�rre ikke nok til at k�be huse, rul venligts terningen)
+	
 	public int gethouses(int n){
 		return board.getField(n).getNumberofhouses();
 	}
@@ -233,6 +233,9 @@ public class HouseController {
 				if(GUIC.buyRoedovervej().equals("Ja")){
 					player.account.addPoints(-getHousePrice(1));
 					board.getField(1).setNumberofHouses(1);
+					if(board.getField(1).getNumberofhouses()==5){
+						GUIC.setHotel(2,1);
+					}
 					GUIC.setHouse(2, gethouses(1));
 				}}
 			if(gethouses(3) <= gethouses(1)){
