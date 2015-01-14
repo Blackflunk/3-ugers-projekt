@@ -61,8 +61,10 @@ public class TurnController {
 		
 		box.rollDice();
 		GUIC.showDice(box.getDice1(), box.getDice2());
+		if (count !=3) {
 		GUIC.updatePosition(playerlist, currentPlayer, box.getSum());
 		FC.landOnField(playerlist, currentPlayer);
+		}
 		if (box.isEqual()){
 			count ++;
 		} else
