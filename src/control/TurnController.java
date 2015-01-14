@@ -11,6 +11,7 @@ public class TurnController {
 	private DiceBox box;
 	private Player[] playerlist;
 	private FieldController FC;
+	
 	// for testing only
 	private int k = 0;
 	
@@ -48,12 +49,35 @@ public class TurnController {
 	
 	// Standard tur
 	public void runNormalTurn(Player[] playerlist, int currentPlayer) {
+		int count = 0;
+		boolean run = true;
+		while(run){
+		if(count==0)
 		GUIC.nextPlayer(playerlist, currentPlayer);
+		else if (count==2)
+		GUIC.showMessage("Tryk for at slå igen, hvis du slår to ens igen ryger du i fængsel");
+		else
+		GUIC.showMessage("Tryk for at slå igen");
+		
 		box.rollDice();
 		GUIC.showDice(box.getDice1(), box.getDice2());
+		if (count !=3) {
 		GUIC.updatePosition(playerlist, currentPlayer, box.getSum());
 		FC.landOnField(playerlist, currentPlayer);
-	}
+		}
+		if (box.isEqual()){
+			count ++;
+		} else
+			run = false;
+		if (count>=3){
+			run = false;
+			playerlist[currentPlayer].setJailed(true);
+			playerlist[currentPlayer].setPosition(10);
+			GUIC.showMessage("Du har slået 3 par i træk, du ryger i fængsel");
+			GUIC.newPositon(playerlist[currentPlayer]);
+		}
+		}
+		}
 	
 	// Tur, efter exit fra jail
 	public void afterJailTurn(Player[] playerlist, int currentPlayer) {
@@ -129,7 +153,43 @@ public class TurnController {
 			}
 			}
 	}
-		
-	
 	}
+	// For testing only
+	public void runNormaltestTurn(Player[] playerlist, int currentPlayer, 
+			DiceBox box1, DiceBox box2, DiceBox box3) {
+		int count = 0;
+		boolean run = true;
+		while(run){
+		if(count==0)
+		GUIC.nextPlayer(playerlist, currentPlayer);
+		else if (count==2)
+		GUIC.showMessage("Tryk for at slå igen, hvis du slår to ens igen ryger du i fængsel");
+		else
+		GUIC.showMessage("Tryk for at slå igen");
+		
+		if (count==0) {
+		GUIC.showDice(box1.getDice1(), box1.getDice2());
+		GUIC.updatePosition(playerlist, currentPlayer, box1.getSum());
+		} else if (count==1) {
+		GUIC.showDice(box2.getDice1(), box2.getDice2());
+		GUIC.updatePosition(playerlist, currentPlayer, box2.getSum());
+		} else {
+		GUIC.showDice(box3.getDice1(), box3.getDice2());
+		GUIC.updatePosition(playerlist, currentPlayer, box3.getSum());
+		}
+		
+		FC.landOnField(playerlist, currentPlayer);
+		if (box.isEqual()){
+			count ++;
+		} else
+			run = false;
+		if (count>=3){
+			run = false;
+			playerlist[currentPlayer].setJailed(true);
+			playerlist[currentPlayer].setPosition(10);
+			GUIC.showMessage("Du har slået 3 par i træk, du ryger i fængsel");
+			GUIC.newPositon(playerlist[currentPlayer]);
+		}
+		}
+		}
 }
