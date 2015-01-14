@@ -23,7 +23,7 @@ public class JailTest {
 		playerlist[1] = new Player("Spiller2");
 		playerlist[2] = new Player("Spiller3");
 		GUIcontroller GC = new GUIcontroller();
-		TurnController TC = new TurnController(GC, board, box, playerlist);
+		TurnController TC = new TurnController(GC, board, playerlist);
 		
 		// Preconditions
 		playerlist[0].setOutofjailcard(true);
@@ -46,7 +46,7 @@ public class JailTest {
 		playerlist[1] = new Player("Spiller2");
 		playerlist[2] = new Player("Spiller3");
 		GUIcontroller GC = new GUIcontroller();
-		TurnController TC = new TurnController(GC, board, box, playerlist);
+		TurnController TC = new TurnController(GC, board, playerlist);
 		
 		// Preconditions
 		playerlist[0].setJailed(true);
@@ -68,7 +68,7 @@ public class JailTest {
 		playerlist[1] = new Player("Spiller2");
 		playerlist[2] = new Player("Spiller3");
 		GUIcontroller GC = new GUIcontroller();
-		TurnController TC = new TurnController(GC, board, box, playerlist);
+		TurnController TC = new TurnController(GC, board, playerlist);
 		
 		// Preconditions
 		playerlist[0].setJailed(true);
@@ -107,7 +107,7 @@ public class JailTest {
 		playerlist[1] = new Player("Spiller2");
 		playerlist[2] = new Player("Spiller3");
 		GUIcontroller GC = new GUIcontroller();
-		TurnController TC = new TurnController(GC, board, box, playerlist);
+		TurnController TC = new TurnController(GC, board, playerlist);
 		
 		// Preconditions
 		playerlist[0].setJailed(true);
