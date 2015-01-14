@@ -48,9 +48,9 @@ public class GameBoard {
 		fieldlist[34] = new Territory("Nygade", 6400, 4000, 3200, 560, 3000, 9000, 20000, 24000, 28000,"Yellow");
 		fieldlist[35] = new Fleet("Raadby-Puttgarden", 4000, 2000, 500, 1000, 2000, 4000);
 		fieldlist[36] = new ChanceCard("Chancekort");
-		fieldlist[37] = new Territory("Frederiksberggade", 7000, 4000, 3500, 700, 3500, 10000, 22000, 26000, 30000, "Magenta");
+		fieldlist[37] = new Territory("Frederiksberggade", 7000, 4000, 3500, 700, 3500, 10000, 22000, 26000, 30000, "Magneta");
 		fieldlist[38] = new Tax("Indkomstskat", 4000);
-		fieldlist[39] =	new Territory("Raadhuspladsen", 8000, 4000, 4000, 1000, 4000, 12000, 28000, 34000, 40000, "Magenta");
+		fieldlist[39] =	new Territory("Raadhuspladsen", 8000, 4000, 4000, 1000, 4000, 12000, 28000, 34000, 40000, "Magneta");
 
 		
 		

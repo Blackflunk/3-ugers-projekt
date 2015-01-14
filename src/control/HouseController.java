@@ -17,16 +17,17 @@ public class HouseController {
 		this.board =board;
 		this.GUIC = GUIC;
 		this.playerlist = playerlist;
-		possibleBuild = " ";
+		this.board = board;
 	}
 	
 	public void Housing(Player player, int currentPlayer){
 		//check if you can buy.
+		possibleBuild = " ";
 		if(player.getBuy_Blue()== true||player.getBuy_Pink()== true||player.getBuy_Green()== true
 				||player.getBuy_grey()== true||player.getBuy_Red()== true||player.getBuy_White() == true
 				||player.getBuy_Yellow()== true||player.getBuy_Magenta()== true){
 					for(int i=1; i<=8; i++){
-						if(getBuild(i, player) == true && getPriceAndValue() == true){
+						if(getPriceAndValue(player, i, board) == true){
 							getRoad(i);
 						}
 					}
@@ -128,9 +129,65 @@ public class HouseController {
 		return false;
 	}
 	
-	public boolean getPriceAndValue(){
+	public boolean getPriceAndValue(Player player, int n, GameBoard board){
+		if(n == 1){
+			if(player.getBuy_Blue() == true){
+				if(player.account.getScore() >= board.getField(player.getPosition()).getPrice()){
+					return true;	
+				}
+			}	
+		}
+		else if(n == 2){
+			if(player.getBuy_Pink() == true){
+				if(player.account.getScore() >= board.getField(player.getPosition()).getPrice()){
+					return true;
+				}
+			}	
+		}
+		else if(n == 3){
+			if(player.getBuy_Green() == true){
+				if(player.account.getScore() >= board.getField(player.getPosition()).getPrice()){
+					return true;
+				}
+			}	
+		}
+		else if(n == 4){
+			if(player.getBuy_grey() == true){
+				if(player.account.getScore() >= board.getField(player.getPosition()).getPrice()){
+					return true;
+				}
+			}	
+		}
+		else if(n == 5){
+			if(player.getBuy_Red() == true){
+				if(player.account.getScore() >= board.getField(player.getPosition()).getPrice()){
+					return true;
+				}
+			}	
+		}
+		else if(n == 6){
+			if(player.getBuy_White() == true){
+				if(player.account.getScore() >= board.getField(player.getPosition()).getPrice()){
+					return true;
+				}
+			}	
+		}
+		else if(n == 7){
+			if(player.getBuy_Yellow() == true){
+				if(player.account.getScore() >= board.getField(player.getPosition()).getPrice()){
+					return true;
+				}
+			}	
+		}
+		else if(n == 8){
+			if(player.getBuy_Magenta() == true){
+				if(player.account.getScore() >= board.getField(player.getPosition()).getPrice()){
+					return true;
+				}
+			}	
+		}
 		
-		return true;
+		return false;
 		
 	}
 	
