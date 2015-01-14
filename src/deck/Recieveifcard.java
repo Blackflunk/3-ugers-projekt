@@ -10,6 +10,7 @@ public class Recieveifcard extends Recievecard{
 		super(message, bonus);
 		this.maxvalue = maxvalue;
 		this.bonus = bonus;
+		this.board = board;
 		
 	}
 	

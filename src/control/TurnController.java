@@ -24,9 +24,6 @@ public class TurnController {
 	
 	//lav en for l�kke s� den updater v�rd tur
 	public void runTurn(Player[] playerlist, int currentPlayer) {
-		GUIC.updateBalance(playerlist[0].getName(), playerlist[0].account.getScore());
-		GUIC.updateBalance(playerlist[1].getName(), playerlist[1].account.getScore());
-		GUIC.updateBalance(playerlist[2].getName(), playerlist[2].account.getScore());
 		if (playerlist[currentPlayer].isJailed())
 			runJailTurn(playerlist, currentPlayer);
 		else

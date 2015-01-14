@@ -73,6 +73,7 @@ public class FieldController {
 				GUIC.fieldTax(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), playerlist[currentPlayer].getName(), 
 						gameboard.getField(playerlist[currentPlayer].getPosition()).getRent
 						(gameboard.getField(playerlist[currentPlayer].getPosition()).getNumberofhouses()));;
+						gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 			// if insufficient funds
 			} else {
 				GUIC.insufficiantFunds(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), 
@@ -80,10 +81,10 @@ public class FieldController {
 						playerlist[currentPlayer].account.getScore());
 			}
 				
-		/*	GUIC.updateBalance(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
+			GUIC.updateBalance(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
 					gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().account.getScore());
 			GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
-		*/
+		
 		}
 	}
 	
@@ -121,17 +122,18 @@ public class FieldController {
 				GUIC.fieldTax(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), playerlist[currentPlayer].getName(), 
 						gameboard.getField(playerlist[currentPlayer].getPosition()).getRent
 						(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getFleets()));
+				gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 			// if insufficient funds
 			} else {
 				GUIC.insufficiantFunds(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), 
 						gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
 						playerlist[currentPlayer].account.getScore());
 			}
-			/*	
+				
 			GUIC.updateBalance(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
 					gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().account.getScore());
 			GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
-		*/}
+		}
 	}
 	
 	public void landOnLaborCamp(Player[] playerlist, int currentPlayer) {
@@ -168,6 +170,7 @@ public class FieldController {
 				GUIC.fieldTax(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), playerlist[currentPlayer].getName(), 
 						gameboard.getField(playerlist[currentPlayer].getPosition()).getRent
 						(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getLaborCamp()));
+				gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 			// if insufficient funds
 			} else {
 				GUIC.insufficiantFunds(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), 
@@ -175,10 +178,10 @@ public class FieldController {
 						playerlist[currentPlayer].account.getScore());
 			}
 				
-			/*GUIC.updateBalance(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
+			GUIC.updateBalance(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
 					gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().account.getScore());
 			GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
-		*/}
+		}
 	}
 
 }

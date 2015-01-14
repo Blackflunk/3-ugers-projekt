@@ -72,7 +72,7 @@ public class GameController {
 				houseC.Housing(playerlist[currentPlayer],currentPlayer);
 				// If Player is jailed
 				TurnC.runTurn(playerlist, currentPlayer);
-		
+				
 				// Controls for further funktions on the field
 				controlFieldType();
 				GUIC.newPositon(playerlist[currentPlayer]);

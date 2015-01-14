@@ -129,6 +129,7 @@ public class HouseController {
 	}
 	
 	public boolean getPriceAndValue(){
+		
 		return true;
 		
 	}
