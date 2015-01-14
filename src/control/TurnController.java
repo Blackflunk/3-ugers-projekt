@@ -55,11 +55,14 @@ public class TurnController {
 		if(count==0)
 		GUIC.nextPlayer(playerlist, currentPlayer);
 		else if (count==2)
-		GUIC.showMessage("Tryk for at sl� igen, hvis du sl�r to ens igen ryger du i f�ngsel");
+		GUIC.twoPair();
 		else
-		GUIC.showMessage("Tryk for at sl� igen");
+		GUIC.onePair();
 		
 		box.rollDice();
+		
+		if(box.getSum() + playerlist[currentPlayer].getPosition() >= 40)
+			GUIC.pastStart();
 		GUIC.showDice(box.getDice1(), box.getDice2());
 		if (count !=3) {
 		GUIC.updatePosition(playerlist, currentPlayer, box.getSum());
@@ -73,7 +76,7 @@ public class TurnController {
 			run = false;
 			playerlist[currentPlayer].setJailed(true);
 			playerlist[currentPlayer].setPosition(10);
-			GUIC.showMessage("Du har sl�et 3 par i tr�k, du ryger i f�ngsel");
+			GUIC.threePair();
 			GUIC.newPositon(playerlist[currentPlayer]);
 		}
 		}
@@ -81,7 +84,7 @@ public class TurnController {
 	
 	// Tur, efter exit fra jail
 	public void afterJailTurn(Player[] playerlist, int currentPlayer) {
-		GUIC.showMessage("Du forlod f�ngslet, og rykker summen p� terningerne");
+		GUIC.afterJail();
 		GUIC.newPositon(playerlist[currentPlayer]);
 		FC.landOnField(playerlist, currentPlayer);
 	}
