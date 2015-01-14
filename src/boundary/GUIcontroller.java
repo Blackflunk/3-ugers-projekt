@@ -234,7 +234,7 @@ public class GUIcontroller {
 	}
 	
 	public void onePair(){
-		GUI.showMessage("Tryk for at sl� igen");
+		GUI.showMessage("Tryk for at slaa igen");
 	}
 	
 	public void fieldRefused(String name) {
