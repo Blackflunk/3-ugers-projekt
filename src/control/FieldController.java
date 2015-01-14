@@ -29,6 +29,12 @@ public class FieldController {
 		// For LaborCamps
 		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.LaborCamp)
 			landOnLaborCamp(playerlist, currentPlayer);
+		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.ChanceCard) {
+			DC.drawCard(playerlist, currentPlayer);
+		}
+		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.MoveToJail) {
+			GUIC.newPositon(playerlist[currentPlayer]);
+		}
 		// For every other fields
 		else
 			gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);

@@ -108,21 +108,6 @@ public class GameController {
 		}
 	}
 	
-	/**
-	 * skal laves i FieldController
-	 */
-	
-	public void controlFieldType(){
-		if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.ChanceCard) {
-					DC.drawCard(playerlist, currentPlayer);
-				}
-			else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.MoveToJail) {
-				GUIC.newPositon(playerlist[currentPlayer]);
-			}
-	}
-	public void controlPurchase() {
-		
-	}
 }
 
 		
