@@ -19,21 +19,13 @@ public class GameController {
 	private TurnController TurnC;
 	private int lostCount = 0;
 	
-	public static void main(String[] args) {
-		GameController game = new GameController();
-		game.runGame();
-		/** 
-		 * To do list
-		 * BUG FIXING!!!!
-		 * lav binding i k�b af felter (ingen gui kontakt i ownable)
-		 * pansetning (m�ske)
-		 * Skal stadig havet fikset huset
-		 * 
-		 */
-
+	public void init() {
+		setupGame();
+		runGame();
+		showWinner();
 	}
-
-	public void runGame() {
+	
+	public void setupGame() {
 		System.out.println(gameboard.toString());
 		GUIC.createField();
 		
@@ -41,18 +33,17 @@ public class GameController {
 		while(!onwards){
 		playerAmount = GUIC.playerAmount();
 		if(playerAmount<7  && playerAmount>2){
-		onwards=true;
-		}else{
+			onwards=true;
+		}else
 			GUIC.playerAmountError();
-			}
 		}
 		playerlist = new Player[playerAmount];
 		GUIC.createPlayers(playerAmount, playerlist);
-		
 		// Creates Controllers dependent on playerlist
 		TurnC = new TurnController(GUIC, gameboard, playerlist);
-		
+	}
 
+	public void runGame() {
 		// The game continues as long as won equals false
 		while (!won) {
 			if (!playerlist[currentPlayer].getStatus()) {
@@ -90,6 +81,9 @@ public class GameController {
 		} else {
 			currentPlayer++;
 		}
+	}
+	public void showWinner() {
+		GUIC.showWin(playerlist, playerlist.length);
 	}
 	
 }
