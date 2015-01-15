@@ -305,6 +305,10 @@ public class GUIcontroller {
 		return GUI.getUserButtonPressed("Du ejer nok grunde af en farve til at bygge huse. Oensker du at bygger paa en af disse grunde?" + possibleBuild,"Ja","Nej");
 	}
 	
+	public String offerToSell(){
+		return GUI.getUserButtonPressed("Oensker du at sælge dine grunde/huse?","Ja","Nej");
+	}
+	
 	public boolean jailOptions(Player player) {
 		return GUI.getUserLeftButtonPressed(player.getName()+" sidder i faengsel, "
 				+ "vil du betale 1000kr for at komme ud, eller proeve at slaa dig ud af faengslet?", "Betal 1000kr", "slaa for at komme ud");
