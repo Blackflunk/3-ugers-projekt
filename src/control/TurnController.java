@@ -64,6 +64,7 @@ public class TurnController {
 			}
 			
 		}else if(choiceofTurn.equals("Saelg hus")){
+			
 			String sellHouse;
 			boolean sellMore = true;
 			String[] ar = houseC.checkIfPossibleSell(playerlist, currentPlayer, board);
@@ -72,13 +73,17 @@ public class TurnController {
 				GUIC.noHouseToSell();
 				sellMore = false;
 			}
-			
-			while(sellMore == true){
-			
-				if(ar.length > 0){
-					sellHouse = GUIC.offerToSellHouse(houseC.checkFieldsWithHouses(playerlist, currentPlayer, board));
-					houseC.sellHouse(playerlist, currentPlayer, board, sellHouse);
-					sellMore = GUIC.offerToMoreSellHouses();
+			if(ar.length > 0){
+				while(sellMore == true){	
+					if(ar.length > 0){
+						sellHouse = GUIC.offerToSellHouse(houseC.checkFieldsWithHouses(playerlist, currentPlayer, board));
+						if(houseC.checkIfPossibleSell(playerlist, currentPlayer, board).length == 0){
+							sellMore = false;
+						}else{
+						houseC.sellHouse(playerlist, currentPlayer, board, sellHouse);
+						sellMore = GUIC.offerToMoreSellHouses();
+						}
+					}
 				}
 			}
 		}else if(choiceofTurn.equals("Saelg grund")){
