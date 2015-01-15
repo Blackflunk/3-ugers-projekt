@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import entity.Player;
 import fields.GameBoard;
-import fields.MoveToJail;
 
 public class MoveToJailTest {
 	@Test

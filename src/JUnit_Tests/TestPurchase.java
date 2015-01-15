@@ -1,19 +1,9 @@
 package JUnit_Tests;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.*;
-import boundary.GUIController;
 import entity.DiceBox;
 import entity.Player;
 import fields.GameBoard;
-import deck.Deck;
-
-import org.junit.Test;
-
-import control.DeckController;
-import control.FieldController;
-import control.HouseController;
-
 import org.junit.Test;
 
 public class TestPurchase {
@@ -23,10 +13,7 @@ public class TestPurchase {
 	//Preconditions
 		DiceBox box = new DiceBox();
 		GameBoard board = new GameBoard(box);
-		Player[] players = new Player[3];
-		GUIController GUIC = new GUIController();
-		FieldController FC = new FieldController(GUIC, board, players);
-		
+		Player[] players = new Player[3];	
 		players[0] = new Player("Spiller1");
 		players[1] = new Player("Spiller2");
 		players[2] = new Player("Spiller3");

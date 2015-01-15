@@ -16,7 +16,7 @@ public class TestCase8 {
 		DiceBox dice3 = new DiceBox();
 		GameBoard board = new GameBoard(dice1);
 		GUIController gc = new GUIController();
-		TurnController tc = new TurnController(gc, board, spillerarray); 
+		TurnController tc = new TurnController(gc, board, spillerarray,1); 
 		
 		dice1.setDice(0, 5);
 		dice1.setDice(1, 5);
@@ -25,7 +25,7 @@ public class TestCase8 {
 		dice3.setDice(0, 6);
 		dice3.setDice(1, 6);
 		
-		tc.runNormaltestTurn(spillerarray, 0, dice1, dice2, dice3);
+		tc.runNormaltestTurn(0, dice1, dice2, dice3);
 		
 		if (spillerarray[0].isJailed())
 			System.out.println("ok");

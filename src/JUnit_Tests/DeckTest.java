@@ -6,11 +6,7 @@ import entity.DiceBox;
 import entity.Player;
 import fields.GameBoard;
 import deck.Deck;
-
 import org.junit.Test;
-
-import control.DeckController;
-import control.FieldController;
 import control.HouseController;
 
 public class DeckTest {
@@ -22,8 +18,6 @@ public class DeckTest {
 		GameBoard board = new GameBoard(box);
 		Player[] players = new Player[3];
 		Deck deck = new Deck(players, board);
-		GUIController GUIC = new GUIController();
-		FieldController FC = new FieldController(GUIC, board, players);
 		
 		players[0] = new Player("Spiller1");
 		players[1] = new Player("Spiller2");
@@ -46,8 +40,6 @@ public class DeckTest {
 			GameBoard board = new GameBoard(box);
 			Player[] players = new Player[3];
 			Deck deck = new Deck(players, board);
-			GUIController GUIC = new GUIController();
-			FieldController FC = new FieldController(GUIC, board, players);
 			
 			players[0] = new Player("Spiller1");
 			players[1] = new Player("Spiller2");
@@ -250,13 +242,11 @@ public class DeckTest {
 		DiceBox box = new DiceBox();
 		GameBoard board = new GameBoard(box);
 		Player[] players = new Player[3];
-		GUIController GUIC = new GUIController();
-		HouseController HC = new HouseController(GUIC, board, players);
-		
 		players[0] = new Player("Spiller1");
 		players[1] = new Player("Spiller2");
 		players[2] = new Player("Spiller3");
-		Deck deck = new Deck(players, board);
+		GUIController GUIC = new GUIController();
+		HouseController HC = new HouseController(GUIC, board, players);
 		// Preconditions
 		players[0].setPosition(11);
 		board.getField(11).setBuyfield(true);
@@ -270,8 +260,8 @@ public class DeckTest {
 		assertEquals(21200, players[0].account.getScore());
 		
 		// Test
-		HC.checkOwnedFields(players, 0);
-		HC.buyHouse(players, 0);
+		HC.checkOwnedFields(0);
+		HC.buyHouse(0);
 		
 		// Postconditions
 		assertEquals(3,players[0].getFieldammount_green());
@@ -286,13 +276,11 @@ public class DeckTest {
 		DiceBox box = new DiceBox();
 		GameBoard board = new GameBoard(box);
 		Player[] players = new Player[3];
-		GUIController GUIC = new GUIController();
 		
 		players[0] = new Player("Spiller1");
 		players[1] = new Player("Spiller2");
 		players[2] = new Player("Spiller3");
 		Deck deck = new Deck(players, board);
-		HouseController HC = new HouseController(GUIC, board, players);
 		
 		// Preconditions
 		players[0].setPosition(7);
@@ -313,8 +301,6 @@ public class DeckTest {
 		GameBoard board = new GameBoard(box);
 		Player[] players = new Player[3];
 		Deck deck = new Deck(players, board);
-		GUIController GUIC = new GUIController();
-		HouseController HC = new HouseController(GUIC, board, players);
 		
 		players[0] = new Player("Spiller1");
 		players[1] = new Player("Spiller2");

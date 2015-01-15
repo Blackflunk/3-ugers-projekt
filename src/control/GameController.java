@@ -17,6 +17,11 @@ public class GameController {
 	private GUIController GUIC = new GUIController();
 	private TurnController TurnC;
 	private int lostCount = 0;
+	private int mode;
+	
+	public GameController(int mode) {
+		this.mode = mode;
+	}
 	
 	public void init() {
 		setupGame();
@@ -39,7 +44,7 @@ public class GameController {
 		playerlist = new Player[playerAmount];
 		GUIC.createPlayers(playerAmount, playerlist);
 		// Creates Controllers dependent on playerlist
-		TurnC = new TurnController(GUIC, gameboard, playerlist);
+		TurnC = new TurnController(GUIC, gameboard, playerlist, mode);
 	}
 
 	public void runGame() {

@@ -1,7 +1,6 @@
 package control;
 
 import boundary.GUIController;
-import entity.DiceBox;
 import entity.Player;
 import fields.GameBoard;
 

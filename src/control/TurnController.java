@@ -13,14 +13,16 @@ public class TurnController {
 	private FieldController FC;
 	private HouseController houseC;
 	String choiceofTurn;
+	private int mode;
 	
 	// for testing only
 	private int k = 0;
 	
-	public TurnController(GUIController GUIC, GameBoard board, Player[] playerlist) {
+	public TurnController(GUIController GUIC, GameBoard board, Player[] playerlist, int mode) {
 		this.GUIC = GUIC;
 		this.board = board;
 		this.playerlist = playerlist;
+		this.mode = mode;
 		FC = new FieldController(GUIC, board, playerlist);
 		houseC = new HouseController(GUIC, board, playerlist);
 	}
@@ -97,12 +99,17 @@ public class TurnController {
 		GUIC.twoPair();
 		else
 		GUIC.onePair();
-		
+		if (mode==1){
 		box.rollDice();
-		
+		GUIC.showDice(box.getDice1(), box.getDice2());
+		} else if (mode==2) {
+			box.setDice(0, 1);
+			box.setDice(1, 0);
+			GUIC.showDice(box.getDice1(), 1);
+		}
+			
 		if(box.getSum() + playerlist[currentPlayer].getPosition() >= 40)
 			GUIC.pastStart();
-		GUIC.showDice(box.getDice1(), box.getDice2());
 		if (count !=3) {
 		GUIC.updatePosition(playerlist, currentPlayer, box.getSum());
 		FC.landOnField(currentPlayer);

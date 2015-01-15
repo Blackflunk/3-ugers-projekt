@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import entity.Player;
-import fields.GameBoard;
 
 
 public class PastStartTest {
@@ -13,7 +12,6 @@ public class PastStartTest {
 	@Test
 	public void test1() {
 	//Preconditions
-	GameBoard gameboard = new GameBoard(null);
 	Player player1 = new Player("Spiller1");
 	//Test
 		//Set the player position to field 37.
@@ -29,7 +27,6 @@ public class PastStartTest {
 	public void test2(){
 	//Preconditions
 		//Initialise the gameboard and player object.
-		GameBoard gameboard = new GameBoard(null);
 		Player player1 = new Player("Spiller1");
 		//Set the player score to 5000.
 		player1.account.setScore(5000);
