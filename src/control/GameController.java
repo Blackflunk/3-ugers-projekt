@@ -32,15 +32,22 @@ public class GameController {
 	public void setupGame() {
 		System.out.println(gameboard.toString());
 		GUIC.createField();
-		
 		// Takes a chosen number and creates that amount of players
 		while(!onwards){
 		playerAmount = GUIC.playerAmount();
-		if(playerAmount<7  && playerAmount>2){
-			onwards=true;
-		}else
-			GUIC.playerAmountError();
+		if (mode==1) {
+			if(playerAmount<7  && playerAmount>2)
+				onwards=true;
+			else
+				GUIC.playerAmountError();
 		}
+		// Accepts 2 players in gamemode 2
+		else if (mode==2) {
+			if (playerAmount<7  && playerAmount>1)
+				onwards=true;
+			else
+				GUIC.playerAmountError();
+		}}
 		playerlist = new Player[playerAmount];
 		GUIC.createPlayers(playerAmount, playerlist);
 		// Creates Controllers dependent on playerlist
@@ -51,16 +58,10 @@ public class GameController {
 		// The game continues as long as won equals false
 		while (!won) {
 			if (!playerlist[currentPlayer].getStatus()) {
-				// If Player is jailed
-				TurnC.runTurn(currentPlayer);
-				
-				// Controls for further funktions on the field
-				GUIC.newPositon(playerlist[currentPlayer]);
-				
+				// Runs turn for current Player
+				TurnC.runTurn(currentPlayer);				
+				GUIC.newPositon(playerlist[currentPlayer]);				
 				// If a player has lost, adds one to lostCount and reset the players owned fields
-				/** 
-				 * skal laves i FieldController
-				 */
 				if (playerlist[currentPlayer].getStatus()) {
 					GUIC.removePlayer(playerlist, currentPlayer);
 					
