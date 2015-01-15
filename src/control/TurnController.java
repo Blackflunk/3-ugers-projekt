@@ -56,7 +56,7 @@ public class TurnController {
 		boolean run = true;
 		choiceofTurn = GUIC.startOfTurn();
 		if(choiceofTurn.equals("Koeb hus")){
-			HC.buyHouse
+			houseC.buyHouse(playerlist, currentPlayer);
 		}else if(choiceofTurn.equals("Saelg hus")){
 			
 		}else if(choiceofTurn.equals("Saelg grund")){
