@@ -150,6 +150,7 @@ public class TurnController {
 	public void exitThrow(int currentPlayer) {
 		if (playerlist[currentPlayer].getJailcount() < 3) {
 			for (int i=1; i<=3; i++) {
+			GUIC.showJailTurn();	
 			box.rollDice();
 			GUIC.showDice(box.getDice1(), box.getDice2());
 			if (box.isEqual()){
@@ -167,8 +168,7 @@ public class TurnController {
 			}
 			// If the playerlist[currentPlayer] tried exitting 3 times (forced pay) 
 			if (playerlist[currentPlayer].getJailcount() == 3) {
-				GUIC.showMessage("Du har pr�vet at komme ud af f�ngslet 3 gange, uden held - du betaler 1000kr for at komme ud"
-						+ " du f�r ikke lov til at rykke denne tur");
+				GUIC.showJailForcedPay();
 				playerlist[currentPlayer].account.addPoints(-1000);
 				playerlist[currentPlayer].setJailed(false);
 				playerlist[currentPlayer].setJailcount(0);

@@ -206,6 +206,7 @@ public class GUIController {
 				GUI.showMessage(player[i].getName() + " har vundet!");
 			}
 		}
+		GUI.close();
 	}
 	
 	//Field methods
@@ -289,6 +290,13 @@ public class GUIController {
 	public void insufficiantFundsTax() {
 		GUI.showMessage("Du skylder mere i skat end du har. "
 				+ "Resten af dine vaerdier vil bliver overfoert til banken.");
+	}
+	public void showJailForcedPay() {
+		GUI.showMessage("Du har proevet at komme ud af faengslet 3 gange, uden held - du betaler 1000kr for at komme ud"
+						+ " du faar ikke lov til at rykke denne tur");
+	}
+	public void showJailTurn() {
+		GUI.showMessage("Slaa med terningerne for at proeve at komme ud af fængslet");
 	}
 	
 	public boolean taxPick(String name) {
