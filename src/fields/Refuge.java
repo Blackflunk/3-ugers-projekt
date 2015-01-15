@@ -1,13 +1,11 @@
 package fields;
 
 import entity.Player;
-import boundary.GUIcontroller;
 
 
 public class Refuge extends Field {
 	
 private int bonus;
-private GUIcontroller out = new GUIcontroller();
 	
 	public Refuge(String name, int bonus) {
 		super(name);
@@ -16,9 +14,11 @@ private GUIcontroller out = new GUIcontroller();
 	}
 	@Override
 	public void landOnField(Player player) {
-			out.bonusMessage(name, bonus);
 			player.account.addPoints(bonus);
-			out.updateBalance(player.getName(), player.account.getScore());
+	}
+	@Override
+	public int getRent(int t) {
+		return bonus;
 	}
 	@Override
 	public String toString() {

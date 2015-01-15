@@ -29,17 +29,17 @@ public class FieldController {
 		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.LaborCamp)
 			landOnLaborCamp(playerlist, currentPlayer);
 		// For ChanceCard
-		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.ChanceCard) {
+		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.ChanceCard)
 			DC.drawCard(playerlist, currentPlayer);
-		}
 		// For MoveToJail
-		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.MoveToJail) {
+		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.MoveToJail) 
 			GUIC.newPositon(playerlist[currentPlayer]);
-		}
 		// For Tax
-		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.Tax) {
+		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.Tax) 
 			landOnTax(currentPlayer);
-		}
+		// For Refuge
+		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.Refuge)
+			landOnRefuge(currentPlayer);
 		// For every other fields
 		else
 			gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
@@ -232,5 +232,10 @@ public class FieldController {
 				gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 			}
+	public void landOnRefuge(int currentPlayer) {
+		GUIC.bonusMessage(playerlist[currentPlayer].getName(), gameboard.getField(playerlist[currentPlayer].getPosition()).getRent(0));
+		gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
+		GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+	}
 
 }
