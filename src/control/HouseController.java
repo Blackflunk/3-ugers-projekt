@@ -13,13 +13,16 @@ public class HouseController {
 	private Player[] playerlist;
 	private boolean khan = true;
 	private String possibleBuild;
+	private String possibleSell;
 	boolean moreHouses = true;
+	int[] sellOptions;
 	
 	public HouseController(GUIcontroller GUIC, GameBoard board,Player[] playerlist){
 		this.board =board;
 		this.GUIC = GUIC;
 		this.playerlist = playerlist;
 		this.board = board;
+		
 	}
 	
 	public void buyHouse(Player[] player, int currentPlayer){
@@ -48,7 +51,7 @@ public class HouseController {
 	
 	//sell house
 	public void sellHouse(Player[] player, int currentPlayer){		
-		possibleBuild = " ";
+		possibleSell = " ";
 			for(int i=1; i<=8; i++){
 				if(getBuild(i, player, currentPlayer) == true){
 					buildPlots(player, currentPlayer,i);
@@ -57,7 +60,16 @@ public class HouseController {
 		}
 				
 	
-	
+	public void checkFieldsWithHouses(Player[] player, int currentPlayer){
+		sellOptions = new int[21];
+		int arrayIndex = 0;
+		for(int i=1; i>39; i++){
+			if(gethouses(i) > 0){
+				sellOptions[arrayIndex] = i;
+				arrayIndex++;
+			}
+		}
+	}
 	public void checkOwnedFields(Player[] player, int currentPlayer){
 		checkBlue(player, currentPlayer);
 		checkPink(player, currentPlayer);

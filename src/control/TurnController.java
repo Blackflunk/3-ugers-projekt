@@ -22,7 +22,7 @@ public class TurnController {
 		this.GUIC = GUIC;
 		this.board = board;
 		this.playerlist = playerlist;
-		FC = new FieldController(GUIC, board, playerlist);
+		FC = new FieldController(GUIC, board, playerlist, new Deck(playerlist, board));
 		houseC = new HouseController(GUIC, board, playerlist);
 	}
 	
@@ -56,6 +56,7 @@ public class TurnController {
 		boolean run = true;
 		choiceofTurn = GUIC.startOfTurn();
 		if(choiceofTurn.equals("Koeb hus")){
+			houseC.checkOwnedFields(playerlist, currentPlayer);
 			houseC.buyHouse(playerlist, currentPlayer);
 		}else if(choiceofTurn.equals("Saelg hus")){
 			
