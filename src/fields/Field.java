@@ -60,5 +60,8 @@ public abstract class Field {
 	public boolean checkPayDoubleRent(Player player){
 		return false;
 	}
+	public void addNumberofHouses(int add){
+		
+	}
 		
 }
