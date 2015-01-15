@@ -27,7 +27,6 @@ public class TurnController {
 		houseC = new HouseController(GUIC, board, playerlist);
 	}
 	
-	//lav en for l�kke s� den updater v�rd tur
 	public void runTurn(int currentPlayer) {
 		if (playerlist[currentPlayer].isJailed())
 			runJailTurn(currentPlayer);
@@ -51,7 +50,7 @@ public class TurnController {
 			exitThrow(currentPlayer);
 	}
 	
-	// Standard tur
+	// Standard turn
 	public void runNormalTurn(int currentPlayer) {
 		int count = 0;
 		boolean run = true;
@@ -93,9 +92,7 @@ public class TurnController {
 		}
 		
 		while(run){
-		if(count==0)
-		GUIC.nextPlayer(playerlist, currentPlayer);
-		else if (count==2)
+		if (count==2)
 		GUIC.twoPair();
 		else
 		GUIC.onePair();
@@ -114,7 +111,9 @@ public class TurnController {
 		GUIC.updatePosition(playerlist, currentPlayer, box.getSum());
 		FC.landOnField(currentPlayer);
 		}
-		if (box.isEqual()){
+		if (playerlist[currentPlayer].isJailed())
+			run = false;
+		else if (box.isEqual()){
 			count ++;
 		} else
 			run = false;
