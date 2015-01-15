@@ -12,11 +12,11 @@ public class FieldController {
 	private Player[] playerlist;
 	private DeckController DC;
 	
-	public FieldController(GUIcontroller GUIC, GameBoard gameboard, Player[] playerlist, Deck deck) {
+	public FieldController(GUIcontroller GUIC, GameBoard gameboard, Player[] playerlist) {
 		this.GUIC = GUIC;
 		this.gameboard = gameboard;
 		this.playerlist = playerlist;
-		DC = new DeckController(deck, GUIC, playerlist, gameboard);
+		DC = new DeckController(GUIC, playerlist, gameboard);
 	}
 	
 	public void landOnField(Player[] playerlist, int currentPlayer) {
