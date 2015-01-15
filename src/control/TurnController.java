@@ -51,6 +51,7 @@ public class TurnController {
 	public void runNormalTurn(Player[] playerlist, int currentPlayer) {
 		int count = 0;
 		boolean run = true;
+		GUIC.startOfTurn();
 		while(run){
 		if(count==0)
 		GUIC.nextPlayer(playerlist, currentPlayer);

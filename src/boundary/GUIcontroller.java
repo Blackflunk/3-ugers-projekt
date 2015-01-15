@@ -301,9 +301,16 @@ public class GUIcontroller {
 	public void taxFunds() {
 		GUI.showMessage("The tax is higher than your balance. Instead you pay the rest of your balance.");
 	}
+	public String startOfTurn(){
+		return GUI.getUserButtonPressed("Det er starten af din tur, hvad oensker du at gøre?", "Koeb hus", "Saelg hus", "Saelg grund", "rul terning");
+		
+	}
 	
 	public String offerToBuy(String possibleBuild){
 		return GUI.getUserButtonPressed("Du ejer nok grunde af en farve til at bygge huse. Oensker du at bygger paa en af disse grunde?" + possibleBuild,"Ja","Nej");
+	}
+	public boolean offerMoreHouses(){
+		return GUI.getUserLeftButtonPressed("Oensker du at købe flere huse?", "Ja", "Nej");
 	}
 	public String offerToSellHouse(){
 		return GUI.getUserButtonPressed("Oensker du at sælge dine grunde?","Ja","Nej");
