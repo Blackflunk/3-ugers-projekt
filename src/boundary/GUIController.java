@@ -17,7 +17,7 @@ import desktop_fields.Tax;
 import desktop_resources.GUI;
 import entity.Player;
 
-public class GUIcontroller {
+public class GUIController {
 	//Game methods
 	public void createField() {
 		// Array that holds the fields for the GUI

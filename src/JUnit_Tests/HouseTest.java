@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import boundary.GUIcontroller;
+import boundary.GUIController;
 import control.HouseController;
 import deck.Deck;
 import entity.DiceBox;
@@ -19,7 +19,7 @@ public class HouseTest {
 			DiceBox box = new DiceBox();
 			GameBoard board = new GameBoard(box);
 			Player[] players = new Player[3];
-			GUIcontroller GUIC = new GUIcontroller();
+			GUIController GUIC = new GUIController();
 			HouseController HC = new HouseController(GUIC, board, players);
 			
 			players[0] = new Player("Spiller1");
@@ -60,7 +60,7 @@ public class HouseTest {
 			DiceBox box = new DiceBox();
 			GameBoard board = new GameBoard(box);
 			Player[] players = new Player[3];
-			GUIcontroller GUIC = new GUIcontroller();
+			GUIController GUIC = new GUIController();
 			HouseController HC = new HouseController(GUIC, board, players);
 			
 			players[0] = new Player("Spiller1");

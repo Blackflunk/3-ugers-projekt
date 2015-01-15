@@ -3,10 +3,10 @@ package deck;
 import entity.Player;
 import fields.GameBoard;
 
-public class Movetofleetcard extends Movecard{
+public class MoveToFleetCard extends MoveCard{
 	private int newposition;
 
-	public Movetofleetcard(String message, GameBoard board) {
+	public MoveToFleetCard(String message, GameBoard board) {
 		super(message, board);
 	}
 

@@ -2,7 +2,7 @@ package JUnit_Tests;
 
 import static org.junit.Assert.*;
 import static org.junit.Assert.*;
-import boundary.GUIcontroller;
+import boundary.GUIController;
 import entity.DiceBox;
 import entity.Player;
 import fields.GameBoard;
@@ -24,7 +24,7 @@ public class TestPurchase {
 		DiceBox box = new DiceBox();
 		GameBoard board = new GameBoard(box);
 		Player[] players = new Player[3];
-		GUIcontroller GUIC = new GUIcontroller();
+		GUIController GUIC = new GUIController();
 		FieldController FC = new FieldController(GUIC, board, players);
 		
 		players[0] = new Player("Spiller1");

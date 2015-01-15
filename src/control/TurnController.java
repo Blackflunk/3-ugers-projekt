@@ -1,12 +1,12 @@
 package control;
 
-import boundary.GUIcontroller;
+import boundary.GUIController;
 import entity.DiceBox;
 import entity.Player;
 import fields.GameBoard;
 
 public class TurnController {
-	private GUIcontroller GUIC;
+	private GUIController GUIC;
 	private GameBoard board;
 	private DiceBox box = new DiceBox();
 	private Player[] playerlist;
@@ -17,7 +17,7 @@ public class TurnController {
 	// for testing only
 	private int k = 0;
 	
-	public TurnController(GUIcontroller GUIC, GameBoard board, Player[] playerlist) {
+	public TurnController(GUIController GUIC, GameBoard board, Player[] playerlist) {
 		this.GUIC = GUIC;
 		this.board = board;
 		this.playerlist = playerlist;
@@ -26,48 +26,48 @@ public class TurnController {
 	}
 	
 	//lav en for l�kke s� den updater v�rd tur
-	public void runTurn(Player[] playerlist, int currentPlayer) {
+	public void runTurn(int currentPlayer) {
 		if (playerlist[currentPlayer].isJailed())
-			runJailTurn(playerlist, currentPlayer);
+			runJailTurn(currentPlayer);
 		else
-			runNormalTurn(playerlist, currentPlayer);
+			runNormalTurn(currentPlayer);
 	}
 	
-	public void runJailTurn(Player[] playerlist, int currentPlayer){
+	public void runJailTurn(int currentPlayer){
 		// If player has a getoutofjailcard
 		if (playerlist[currentPlayer].hasOutofjailcard()) {
-			exitCard(playerlist[currentPlayer], currentPlayer);
-			runNormalTurn(playerlist, currentPlayer);
+			exitCard(currentPlayer);
+			runNormalTurn(currentPlayer);
 		}
 		// If player pays for exit
 		else if (GUIC.jailOptions(playerlist[currentPlayer])) {
-			exitPay(playerlist[currentPlayer], currentPlayer);
-			runNormalTurn(playerlist, currentPlayer);
+			exitPay(currentPlayer);
+			runNormalTurn(currentPlayer);
 		}
 		// If player wants to throw the dice for exit
 		else 
-			exitThrow(playerlist, currentPlayer);
+			exitThrow(currentPlayer);
 	}
 	
 	// Standard tur
-	public void runNormalTurn(Player[] playerlist, int currentPlayer) {
+	public void runNormalTurn(int currentPlayer) {
 		int count = 0;
 		boolean run = true;
 		choiceofTurn = GUIC.startOfTurn(playerlist, currentPlayer);
 
 		if(choiceofTurn.equals("Koeb hus")){
-			houseC.checkOwnedFields(playerlist, currentPlayer);
+			houseC.checkOwnedFields(currentPlayer);
 			if(playerlist[currentPlayer].getBuy_Blue()== true||playerlist[currentPlayer].getBuy_Pink()== true||playerlist[currentPlayer].getBuy_Green()== true
 					||playerlist[currentPlayer].getBuy_grey()== true||playerlist[currentPlayer].getBuy_Red()== true||playerlist[currentPlayer].getBuy_White() == true
 					||playerlist[currentPlayer].getBuy_Yellow()== true||playerlist[currentPlayer].getBuy_Magenta()== true){
-			houseC.buyHouse(playerlist, currentPlayer);
+			houseC.buyHouse(currentPlayer);
 			}
 			
 		}else if(choiceofTurn.equals("Saelg hus")){
 			
 			String sellHouse;
 			boolean sellMore = true;
-			String[] ar = houseC.checkIfPossibleSell(playerlist, currentPlayer, board);
+			String[] ar = houseC.checkIfPossibleSell(currentPlayer, board);
 			System.out.println(ar.toString());
 			if(ar.length == 0){
 				GUIC.noHouseToSell();
@@ -76,11 +76,11 @@ public class TurnController {
 			if(ar.length > 0){
 				while(sellMore == true){	
 					if(ar.length > 0){
-						sellHouse = GUIC.offerToSellHouse(houseC.checkFieldsWithHouses(playerlist, currentPlayer, board));
-						if(houseC.checkIfPossibleSell(playerlist, currentPlayer, board).length == 0){
+						sellHouse = GUIC.offerToSellHouse(houseC.checkFieldsWithHouses(currentPlayer, board));
+						if(houseC.checkIfPossibleSell(currentPlayer, board).length == 0){
 							sellMore = false;
 						}else{
-						houseC.sellHouse(playerlist, currentPlayer, board, sellHouse);
+						houseC.sellHouse(currentPlayer, board, sellHouse);
 						sellMore = GUIC.offerToMoreSellHouses();
 						}
 					}
@@ -105,7 +105,7 @@ public class TurnController {
 		GUIC.showDice(box.getDice1(), box.getDice2());
 		if (count !=3) {
 		GUIC.updatePosition(playerlist, currentPlayer, box.getSum());
-		FC.landOnField(playerlist, currentPlayer);
+		FC.landOnField(currentPlayer);
 		}
 		if (box.isEqual()){
 			count ++;
@@ -122,30 +122,27 @@ public class TurnController {
 		}
 	
 	// Tur, efter exit fra jail
-	public void afterJailTurn(Player[] playerlist, int currentPlayer) {
+	public void afterJailTurn(int currentPlayer) {
 		GUIC.afterJail();
 		GUIC.newPositon(playerlist[currentPlayer]);
-		FC.landOnField(playerlist, currentPlayer);
+		FC.landOnField(currentPlayer);
 	}
 	
 	
 	// runtypes in runJailTurn()
-	public void exitCard(Player player, int currentPlayer) {
-		player.setJailed(false);
-		player.setJailcount(0);
+	public void exitCard(int currentPlayer) {
+		playerlist[currentPlayer].setJailed(false);
+		playerlist[currentPlayer].setJailcount(0);
 	}
 	
-	public void exitPay(Player player, int currentPlayer) {
-		player.account.addPoints(-1000);
-		player.setJailed(false);
-		player.setJailcount(0);
+	public void exitPay(int currentPlayer) {
+		playerlist[currentPlayer].account.addPoints(-1000);
+		playerlist[currentPlayer].setJailed(false);
+		playerlist[currentPlayer].setJailcount(0);
 	}
-	public void exitThrow(Player[] playerlist, int currentPlayer) {
+	public void exitThrow(int currentPlayer) {
 		if (playerlist[currentPlayer].getJailcount() < 3) {
 			for (int i=1; i<=3; i++) {
-			/**
-			 * indsæt GUI slag
-			 */
 			box.rollDice();
 			GUIC.showDice(box.getDice1(), box.getDice2());
 			if (box.isEqual()){
@@ -153,7 +150,7 @@ public class TurnController {
 				board.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 				playerlist[currentPlayer].setJailed(false);
 				playerlist[currentPlayer].setJailcount(0);
-				afterJailTurn(playerlist, currentPlayer);
+				afterJailTurn(currentPlayer);
 				break;
 			}
 			}
@@ -172,32 +169,32 @@ public class TurnController {
 	}
 	// For testing only
 	// No GUI, Controlable dicebox
-	public void exitThrowTest(Player player, int currentPlayer, DiceBox testbox) {
-		if (player.getJailcount() < 3) {
+	public void exitThrowTest(int currentPlayer, DiceBox testbox) {
+		if (playerlist[currentPlayer].getJailcount() < 3) {
 			if (testbox.isEqual()){
-				player.movePosition(testbox.getSum());
-				player.setJailed(false);
-				player.setJailcount(0);
+				playerlist[currentPlayer].movePosition(testbox.getSum());
+				playerlist[currentPlayer].setJailed(false);
+				playerlist[currentPlayer].setJailcount(0);
 			}
 			else
 				k++;
 			// If the player didn't get out
 			if (k>=3) {
-				if (player.isJailed()) {
-					player.addJailcount();
+				if (playerlist[currentPlayer].isJailed()) {
+					playerlist[currentPlayer].addJailcount();
 					k=0;
 				}
 			// If the player tried exitting 3 times (forced pay) 
-					if (player.getJailcount() == 3) {
-						player.account.addPoints(-1000);
-						player.setJailed(false);
-						player.setJailcount(0);
+					if (playerlist[currentPlayer].getJailcount() == 3) {
+						playerlist[currentPlayer].account.addPoints(-1000);
+						playerlist[currentPlayer].setJailed(false);
+						playerlist[currentPlayer].setJailcount(0);
 			}
 			}
 	}
 	}
 	// For testing only
-	public void runNormaltestTurn(Player[] playerlist, int currentPlayer, 
+	public void runNormaltestTurn(int currentPlayer, 
 			DiceBox box1, DiceBox box2, DiceBox box3) {
 		int count = 0;
 		boolean run = true;
@@ -220,7 +217,7 @@ public class TurnController {
 		GUIC.updatePosition(playerlist, currentPlayer, box3.getSum());
 		}
 		
-		FC.landOnField(playerlist, currentPlayer);
+		FC.landOnField(currentPlayer);
 		if (box.isEqual()){
 			count ++;
 		} else

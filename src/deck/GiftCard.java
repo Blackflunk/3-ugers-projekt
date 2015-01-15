@@ -1,10 +1,10 @@
 package deck;
 import entity.Player;
 
-public class Giftcard extends Recievecard {
+public class GiftCard extends RecieveCard {
 	private Player[] playerlist;
 
-	public Giftcard(String message, int bonus, Player[] playerlist) {
+	public GiftCard(String message, int bonus, Player[] playerlist) {
 		super(message, bonus);
 		this.playerlist = playerlist;
 	}

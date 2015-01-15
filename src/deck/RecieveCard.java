@@ -1,10 +1,10 @@
 package deck;
 import entity.Player;
 
-public class Recievecard extends Card{
+public class RecieveCard extends Card{
 	protected int bonus;
 
-	public Recievecard(String message, int bonus) {
+	public RecieveCard(String message, int bonus) {
 		super(message);
 		this.bonus = bonus;
 	}

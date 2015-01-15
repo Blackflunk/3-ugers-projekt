@@ -2,10 +2,10 @@ package deck;
 import entity.Player;
 import fields.GameBoard;
 
-public class Jailcard extends Movecard {
+public class JailCard extends MoveCard {
 	private int newposition = 10;
 
-	public Jailcard(String message, GameBoard board) {
+	public JailCard(String message, GameBoard board) {
 		super(message, board);
 	}
 	

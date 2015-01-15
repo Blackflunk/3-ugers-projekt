@@ -3,10 +3,10 @@ package deck;
 import entity.Player;
 import fields.GameBoard;
 
-public abstract class Movecard extends Card{
+public abstract class MoveCard extends Card{
 	protected GameBoard board;
 	
-	public Movecard(String message, GameBoard board) {
+	public MoveCard(String message, GameBoard board) {
 		super(message);
 		this.board = board;
 	}

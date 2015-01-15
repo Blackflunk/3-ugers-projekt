@@ -3,7 +3,7 @@ package control;
 import entity.DiceBox;
 import entity.Player;
 import fields.GameBoard;
-import boundary.GUIcontroller;
+import boundary.GUIController;
 
 public class GameController {
 
@@ -14,7 +14,7 @@ public class GameController {
 	private boolean won = false;
 	private DiceBox box = new DiceBox();
 	private GameBoard gameboard = new GameBoard(box);
-	private GUIcontroller GUIC = new GUIcontroller();
+	private GUIController GUIC = new GUIController();
 	private TurnController TurnC;
 	private int lostCount = 0;
 	
@@ -47,7 +47,7 @@ public class GameController {
 		while (!won) {
 			if (!playerlist[currentPlayer].getStatus()) {
 				// If Player is jailed
-				TurnC.runTurn(playerlist, currentPlayer);
+				TurnC.runTurn(currentPlayer);
 				
 				// Controls for further funktions on the field
 				GUIC.newPositon(playerlist[currentPlayer]);

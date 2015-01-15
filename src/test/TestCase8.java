@@ -1,6 +1,6 @@
 package test;
 import control.TurnController;
-import boundary.GUIcontroller;
+import boundary.GUIController;
 import fields.GameBoard;
 import entity.DiceBox;
 import entity.Player;
@@ -15,7 +15,7 @@ public class TestCase8 {
 		DiceBox dice2 = new DiceBox();
 		DiceBox dice3 = new DiceBox();
 		GameBoard board = new GameBoard(dice1);
-		GUIcontroller gc = new GUIcontroller();
+		GUIController gc = new GUIController();
 		TurnController tc = new TurnController(gc, board, spillerarray); 
 		
 		dice1.setDice(0, 5);

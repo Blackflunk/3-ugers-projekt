@@ -1,7 +1,7 @@
 package JUnit_Tests;
 
 import static org.junit.Assert.*;
-import boundary.GUIcontroller;
+import boundary.GUIController;
 import entity.DiceBox;
 import entity.Player;
 import fields.GameBoard;
@@ -22,7 +22,7 @@ public class DeckTest {
 		GameBoard board = new GameBoard(box);
 		Player[] players = new Player[3];
 		Deck deck = new Deck(players, board);
-		GUIcontroller GUIC = new GUIcontroller();
+		GUIController GUIC = new GUIController();
 		FieldController FC = new FieldController(GUIC, board, players);
 		
 		players[0] = new Player("Spiller1");
@@ -46,7 +46,7 @@ public class DeckTest {
 			GameBoard board = new GameBoard(box);
 			Player[] players = new Player[3];
 			Deck deck = new Deck(players, board);
-			GUIcontroller GUIC = new GUIcontroller();
+			GUIController GUIC = new GUIController();
 			FieldController FC = new FieldController(GUIC, board, players);
 			
 			players[0] = new Player("Spiller1");
@@ -250,7 +250,7 @@ public class DeckTest {
 		DiceBox box = new DiceBox();
 		GameBoard board = new GameBoard(box);
 		Player[] players = new Player[3];
-		GUIcontroller GUIC = new GUIcontroller();
+		GUIController GUIC = new GUIController();
 		HouseController HC = new HouseController(GUIC, board, players);
 		
 		players[0] = new Player("Spiller1");
@@ -286,7 +286,7 @@ public class DeckTest {
 		DiceBox box = new DiceBox();
 		GameBoard board = new GameBoard(box);
 		Player[] players = new Player[3];
-		GUIcontroller GUIC = new GUIcontroller();
+		GUIController GUIC = new GUIController();
 		
 		players[0] = new Player("Spiller1");
 		players[1] = new Player("Spiller2");
@@ -313,7 +313,7 @@ public class DeckTest {
 		GameBoard board = new GameBoard(box);
 		Player[] players = new Player[3];
 		Deck deck = new Deck(players, board);
-		GUIcontroller GUIC = new GUIcontroller();
+		GUIController GUIC = new GUIController();
 		HouseController HC = new HouseController(GUIC, board, players);
 		
 		players[0] = new Player("Spiller1");

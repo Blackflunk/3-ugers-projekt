@@ -2,10 +2,10 @@ package deck;
 
 import entity.Player;
 import fields.GameBoard;
-public class Movetocard extends Movecard {
+public class MoveToCard extends MoveCard {
 	private int newposition;
 
-	public Movetocard(String message, int newposition, GameBoard board) {
+	public MoveToCard(String message, int newposition, GameBoard board) {
 		super(message, board);
 		this.newposition = newposition;
 	}

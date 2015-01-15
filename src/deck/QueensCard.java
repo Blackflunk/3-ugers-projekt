@@ -2,9 +2,9 @@ package deck;
 
 import entity.Player;
 
-public class Queenscard extends Card{
+public class QueensCard extends Card{
 
-	public Queenscard(String message) {
+	public QueensCard(String message) {
 		super(message);
 	}
 

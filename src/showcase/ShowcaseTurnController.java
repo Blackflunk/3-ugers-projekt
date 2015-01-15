@@ -2,13 +2,13 @@ package showcase;
 
 import control.FieldController;
 import control.HouseController;
-import boundary.GUIcontroller;
+import boundary.GUIController;
 import entity.DiceBox;
 import entity.Player;
 import fields.GameBoard;
 
 public class ShowcaseTurnController {
-	private GUIcontroller GUIC;
+	private GUIController GUIC;
 	private GameBoard board;
 	private DiceBox box = new DiceBox();
 	private Player[] playerlist;
@@ -19,7 +19,7 @@ public class ShowcaseTurnController {
 	// for testing only
 	private int k = 0;
 	
-	public ShowcaseTurnController(GUIcontroller GUIC, GameBoard board, Player[] playerlist) {
+	public ShowcaseTurnController(GUIController GUIC, GameBoard board, Player[] playerlist) {
 		this.GUIC = GUIC;
 		this.board = board;
 		this.playerlist = playerlist;

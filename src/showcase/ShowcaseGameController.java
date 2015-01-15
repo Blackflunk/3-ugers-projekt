@@ -3,7 +3,7 @@ package showcase;
 import entity.DiceBox;
 import entity.Player;
 import fields.GameBoard;
-import boundary.GUIcontroller;
+import boundary.GUIController;
 
 public class ShowcaseGameController {
 
@@ -14,7 +14,7 @@ public class ShowcaseGameController {
 	private boolean won = false;
 	private DiceBox box = new DiceBox();
 	private GameBoard gameboard = new GameBoard(box);
-	private GUIcontroller GUIC = new GUIcontroller();
+	private GUIController GUIC = new GUIController();
 	private ShowcaseTurnController TurnC;
 	private int lostCount = 0;
 	

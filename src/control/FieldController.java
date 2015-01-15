@@ -3,34 +3,34 @@ package control;
 
 import entity.Player;
 import fields.GameBoard;
-import boundary.GUIcontroller;
+import boundary.GUIController;
 
 public class FieldController {
-	private GUIcontroller GUIC;
+	private GUIController GUIC;
 	private GameBoard gameboard;
 	private Player[] playerlist;
 	private DeckController DC;
 	
-	public FieldController(GUIcontroller GUIC, GameBoard gameboard, Player[] playerlist) {
+	public FieldController(GUIController GUIC, GameBoard gameboard, Player[] playerlist) {
 		this.GUIC = GUIC;
 		this.gameboard = gameboard;
 		this.playerlist = playerlist;
 		DC = new DeckController(GUIC, playerlist, gameboard, this);
 	}
 	
-	public void landOnField(Player[] playerlist, int currentPlayer) {
+	public void landOnField(int currentPlayer) {
 		// For Territories
 		if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.Territory)
-			landOnTerritory(playerlist, currentPlayer);
+			landOnTerritory(currentPlayer);
 		// For Fleets
 		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.Fleet)
-			landOnFleet(playerlist, currentPlayer);
+			landOnFleet(currentPlayer);
 		// For LaborCamps
 		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.LaborCamp)
-			landOnLaborCamp(playerlist, currentPlayer);
+			landOnLaborCamp(currentPlayer);
 		// For ChanceCard
 		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.ChanceCard)
-			DC.drawCard(playerlist, currentPlayer);
+			DC.drawCard(currentPlayer);
 		// For MoveToJail
 		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.MoveToJail) 
 			GUIC.newPositon(playerlist[currentPlayer]);
@@ -49,7 +49,7 @@ public class FieldController {
 	}
 	
 	
-	public void landOnTerritory(Player[] playerlist, int currentPlayer) {
+	public void landOnTerritory(int currentPlayer) {
 		// If no owner
 		if (gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner() == null) {
 			// If affordable
@@ -111,7 +111,7 @@ public class FieldController {
 		}
 	}
 	
-	public void landOnFleet(Player[] playerlist, int currentPlayer) {
+	public void landOnFleet(int currentPlayer) {
 		// If no owner
 		if (gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner() == null) {
 			// If affordable
@@ -161,7 +161,7 @@ public class FieldController {
 		}
 	}
 	
-	public void landOnLaborCamp(Player[] playerlist, int currentPlayer) {
+	public void landOnLaborCamp(int currentPlayer) {
 		// If no owner
 		if (gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner() == null) {
 			// If affordable

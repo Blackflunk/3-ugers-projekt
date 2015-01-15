@@ -1,10 +1,10 @@
 package deck;
 import entity.Player;
 
-public class Paycard extends Card{
+public class PayCard extends Card{
 	protected int price;
 	
-	public Paycard(String message, int price) {
+	public PayCard(String message, int price) {
 		super(message);
 		this.price = price;
 	}

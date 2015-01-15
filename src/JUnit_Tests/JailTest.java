@@ -7,7 +7,7 @@ import fields.GameBoard;
 
 import org.junit.Test;
 
-import boundary.GUIcontroller;
+import boundary.GUIController;
 import control.TurnController;
 
 public class JailTest {
@@ -21,7 +21,7 @@ public class JailTest {
 		playerlist[0] = new Player("Spiller1");
 		playerlist[1] = new Player("Spiller2");
 		playerlist[2] = new Player("Spiller3");
-		GUIcontroller GC = new GUIcontroller();
+		GUIController GC = new GUIController();
 		TurnController TC = new TurnController(GC, board, playerlist);
 		
 		// Preconditions
@@ -44,7 +44,7 @@ public class JailTest {
 		playerlist[0] = new Player("Spiller1");
 		playerlist[1] = new Player("Spiller2");
 		playerlist[2] = new Player("Spiller3");
-		GUIcontroller GC = new GUIcontroller();
+		GUIController GC = new GUIController();
 		TurnController TC = new TurnController(GC, board, playerlist);
 		
 		// Preconditions
@@ -66,7 +66,7 @@ public class JailTest {
 		playerlist[0] = new Player("Spiller1");
 		playerlist[1] = new Player("Spiller2");
 		playerlist[2] = new Player("Spiller3");
-		GUIcontroller GC = new GUIcontroller();
+		GUIController GC = new GUIController();
 		TurnController TC = new TurnController(GC, board, playerlist);
 		
 		// Preconditions
@@ -105,7 +105,7 @@ public class JailTest {
 		playerlist[0] = new Player("Spiller1");
 		playerlist[1] = new Player("Spiller2");
 		playerlist[2] = new Player("Spiller3");
-		GUIcontroller GC = new GUIcontroller();
+		GUIController GC = new GUIController();
 		TurnController TC = new TurnController(GC, board, playerlist);
 		
 		// Preconditions
