@@ -6,9 +6,7 @@ import fields.GameBoard;
 
 public class DeckController {
 	private GUIcontroller GUIC = new GUIcontroller();
-	private Player[] playerlist;
-	private GameBoard board;
-	private Deck deck = new Deck(playerlist, board);
+	private Deck deck;
 	private FieldController FC;
 	private int decklength = 30;
 	private int cardsdrawned= 0;
@@ -17,11 +15,11 @@ public class DeckController {
 	
 	public DeckController(Deck deck, GUIcontroller GUIC, Player[] playerlist, GameBoard board) {
 		this.GUIC = GUIC;
-		this.playerlist = playerlist;
-		this.board = board;
-		this.deck = deck;
-		FC = new FieldController(GUIC, board, playerlist, deck);
+		this.deck = new Deck(playerlist, board);
 		shuffleDeck();
+	}
+	public void createFieldController(GameBoard board, Player[] playerlist){
+		FC = new FieldController(GUIC, board, playerlist, deck);
 	}
 	
 	public void drawCard(Player[] playerlist, int currentPlayer) {

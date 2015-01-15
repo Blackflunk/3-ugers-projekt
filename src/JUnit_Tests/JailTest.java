@@ -9,7 +9,6 @@ import org.junit.Test;
 
 import boundary.GUIcontroller;
 import control.TurnController;
-import deck.Deck;
 
 public class JailTest {
 

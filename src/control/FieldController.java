@@ -17,6 +17,7 @@ public class FieldController {
 		this.gameboard = gameboard;
 		this.playerlist = playerlist;
 		DC = new DeckController(deck, GUIC, playerlist, gameboard);
+		DC.createFieldController(gameboard, playerlist);
 	}
 	
 	public void landOnField(Player[] playerlist, int currentPlayer) {
