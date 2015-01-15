@@ -1,10 +1,8 @@
 package fields;
 
 import entity.Player;
-import boundary.GUIcontroller;
 
 public class Tax extends Field {
-
 	private String name;
 	private int pay;
 	private boolean option;
@@ -21,6 +19,7 @@ public class Tax extends Field {
 	public void landOnField(Player player) {
 		// If a player lands on goldmine
 		if (option) {
+			//
 			if (paypercent) {
 				player.account.addPoints(-player.account.getScore() / 10);
 			}
@@ -35,7 +34,7 @@ public class Tax extends Field {
 			}
 			}
 		}
-		// If a player lands on caravan
+		// If field don't have a pay option
 		else {
 			if (player.account.getScore() >= pay) {
 				player.account.addPoints(-pay);
@@ -52,13 +51,25 @@ public class Tax extends Field {
 	public String toString() {
 		return "Type: Tax --- Name: " + name + " --- Tax: " + pay + "\n";
 	}
-
+	@Override
 	public boolean isPaypercent() {
 		return paypercent;
 	}
-
+	@Override
 	public void setPaypercent(boolean paypercent) {
 		this.paypercent = paypercent;
+	}
+
+	public boolean isOption() {
+		return option;
+	}
+
+	public void setOption(boolean option) {
+		this.option = option;
+	}
+	@Override
+	public int getPrice() {
+		return pay;
 	}
 
 }

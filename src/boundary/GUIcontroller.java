@@ -33,8 +33,8 @@ public class GUIcontroller {
 				.setDescription("Hvidovrevej").setBgColor(Color.BLUE)
 				.setSubText("Price: 1200").setRent("Rent: 1000").build();
 		field[4] = new Tax.Builder().setTitle("Statskat")
-				.setDescription("Pay: 2000").setBgColor(Color.ORANGE)
-				.setSubText("Pay: 2000").build();
+				.setDescription("Pay: 4000 eller 10%").setBgColor(Color.ORANGE)
+				.setSubText("Pay: 4000 eller 10%").build();
 		field[5] = new Shipping.Builder().setTitle("Helsingoer-Helsingborg")
 				.setDescription("Helsingoer-Helsingborg").setBgColor(Color.GRAY)
 				.setSubText("Price: 4000").setRent("Rent: 500").build();
@@ -123,8 +123,8 @@ public class GUIcontroller {
 				.setDescription("Frederiksberggade").setBgColor(Color.MAGENTA)
 				.setSubText("Price: 7000").setRent("Rent: 4000").build();
 		field[38] = new Tax.Builder().setTitle("Indkomstskat")
-				.setDescription("Pay: 4000 or 10%").setBgColor(Color.ORANGE)
-				.setSubText("Pay: 4000 or 10%").build();
+				.setDescription("Pay: 2000").setBgColor(Color.ORANGE)
+				.setSubText("Pay: 2000").build();
 		field[39] = new Street.Builder().setTitle("Raadhuspladsen")
 				.setDescription("Raadhuspladsen").setBgColor(Color.MAGENTA)
 				.setSubText("Price: 8000").setRent("Rent: 4000").build();
@@ -280,9 +280,8 @@ public class GUIcontroller {
 				+ ". Slap af indtil naeste tur."); 
 	}
 	
-	public void goldmineMessage(String name) {
-		GUI.showMessage("Du er landet paa " + name
-				+ " og maa betale 2000 til skat");
+	public void taxMessageNoOption(int price) {
+		GUI.showMessage("Du har betalt " + price + " i tax");
 	}
 	
 	public void insufficiantFundsTax() {
@@ -290,15 +289,16 @@ public class GUIcontroller {
 				+ "Resten af dine vaerdier vil bliver overfoert til banken.");
 	}
 	
-	public String taxPick(String name) {
-		return GUI.getUserButtonPressed(
-				"du er landet paa "+ name + " og skal betale indkomstskat. "
-						+ "vil du helst betale 4000 eller 10% af dine kontanter?",
-				"4000", "10%");
+	public boolean taxPick(String name) {
+		return GUI.getUserLeftButtonPressed("du er landet paa "+ name + " og skal betale indkomstskat. "
+						+ "vil du helst betale 4000 eller 10% af dine kontanter?","10%", "4000");
+	}
+	public void messageTax10percent() {
+		GUI.showMessage("Du har betalt 10% af dine kontanter");
 	}
 	
 	public void taxFunds() {
-		GUI.showMessage("The tax is higher than your balance. Instead you pay the rest of you balance.");
+		GUI.showMessage("The tax is higher than your balance. Instead you pay the rest of your balance.");
 	}
 	
 	public String offerToBuy(String possibleBuild){
