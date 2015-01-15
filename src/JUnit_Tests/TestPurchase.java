@@ -24,10 +24,8 @@ public class TestPurchase {
 		DiceBox box = new DiceBox();
 		GameBoard board = new GameBoard(box);
 		Player[] players = new Player[3];
-		Deck deck = new Deck(players, board);
 		GUIcontroller GUIC = new GUIcontroller();
-		FieldController FC = new FieldController(GUIC, board, players, deck);
-		DeckController DC = new DeckController(deck, GUIC, players, board);
+		FieldController FC = new FieldController(GUIC, board, players);
 		
 		players[0] = new Player("Spiller1");
 		players[1] = new Player("Spiller2");

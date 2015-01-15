@@ -23,8 +23,7 @@ public class DeckTest {
 		Player[] players = new Player[3];
 		Deck deck = new Deck(players, board);
 		GUIcontroller GUIC = new GUIcontroller();
-		FieldController FC = new FieldController(GUIC, board, players, deck);
-		DeckController DC = new DeckController(deck, GUIC, players, board);
+		FieldController FC = new FieldController(GUIC, board, players);
 		
 		players[0] = new Player("Spiller1");
 		players[1] = new Player("Spiller2");
@@ -48,8 +47,7 @@ public class DeckTest {
 			Player[] players = new Player[3];
 			Deck deck = new Deck(players, board);
 			GUIcontroller GUIC = new GUIcontroller();
-			FieldController FC = new FieldController(GUIC, board, players, deck);
-			DeckController DC = new DeckController(deck, GUIC, players, board);
+			FieldController FC = new FieldController(GUIC, board, players);
 			
 			players[0] = new Player("Spiller1");
 			players[1] = new Player("Spiller2");
@@ -272,8 +270,8 @@ public class DeckTest {
 		assertEquals(21200, players[0].account.getScore());
 		
 		// Test
-		HC.checkOwnedFields(players[0]);
-		HC.buyHouse(players[0], 0);
+		HC.checkOwnedFields(players, 0);
+		HC.buyHouse(players, 0);
 		
 		// Postconditions
 		assertEquals(3,players[0].getFieldammount_green());

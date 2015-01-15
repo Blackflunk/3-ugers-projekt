@@ -39,8 +39,8 @@ public class HouseTest {
 			assertEquals(21200, players[0].account.getScore());
 			assertEquals(30000, players[1].account.getScore());
 		// Test
-			HC.checkOwnedFields(players[0]);
-			HC.buyHouse(players[0], 0);
+			HC.checkOwnedFields(players, 0);
+			HC.buyHouse(players, 0);
 			
 			players[1].setPosition(11);
 			board.getField(players[1].getPosition()).landOnField(players[1]);
@@ -79,13 +79,13 @@ public class HouseTest {
 			assertEquals(21200, players[0].account.getScore());
 			
 		// Test
-			HC.checkOwnedFields(players[0]);
-			HC.buyHouse(players[0], 0);
-			HC.buyHouse(players[0], 0);
-			HC.buyHouse(players[0], 0);
-			HC.buyHouse(players[0], 0);
-			HC.buyHouse(players[0], 0);
-			HC.buyHouse(players[0], 0);
+			HC.checkOwnedFields(players,0);
+			HC.buyHouse(players, 0);
+			HC.buyHouse(players, 0);
+			HC.buyHouse(players, 0);
+			HC.buyHouse(players, 0);
+			HC.buyHouse(players, 0);
+			HC.buyHouse(players, 0);
 			System.out.println(players[0].getHouseammount());
 		// Postconditions
 		/*	assertEquals(3,players[0].getFieldammount_green());
