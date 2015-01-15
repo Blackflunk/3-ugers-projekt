@@ -65,13 +65,21 @@ public class TurnController {
 			
 		}else if(choiceofTurn.equals("Saelg hus")){
 			String sellHouse;
+			boolean sellMore = true;
 			String[] ar = houseC.checkIfPossibleSell(playerlist, currentPlayer, board);
+			System.out.println(ar.toString());
 			if(ar.length == 0){
 				GUIC.noHouseToSell();
+				sellMore = false;
 			}
-			if(ar.length != 0){
-				sellHouse = GUIC.offerToSellHouse(houseC.checkFieldsWithHouses(playerlist, currentPlayer, board));
-				houseC.sellHouse(playerlist, currentPlayer, board, sellHouse);
+			
+			while(sellMore == true){
+			
+				if(ar.length > 0){
+					sellHouse = GUIC.offerToSellHouse(houseC.checkFieldsWithHouses(playerlist, currentPlayer, board));
+					houseC.sellHouse(playerlist, currentPlayer, board, sellHouse);
+					sellMore = GUIC.offerToMoreSellHouses();
+				}
 			}
 		}else if(choiceofTurn.equals("Saelg grund")){
 			
@@ -92,7 +100,7 @@ public class TurnController {
 		GUIC.showDice(box.getDice1(), box.getDice2());
 		if (count !=3) {
 		GUIC.updatePosition(playerlist, currentPlayer, box.getSum());
-		FC.landOnField(currentPlayer);
+		FC.landOnField(playerlist, currentPlayer);
 		}
 		if (box.isEqual()){
 			count ++;
@@ -112,7 +120,7 @@ public class TurnController {
 	public void afterJailTurn(Player[] playerlist, int currentPlayer) {
 		GUIC.afterJail();
 		GUIC.newPositon(playerlist[currentPlayer]);
-		FC.landOnField(currentPlayer);
+		FC.landOnField(playerlist, currentPlayer);
 	}
 	
 	
@@ -207,7 +215,7 @@ public class TurnController {
 		GUIC.updatePosition(playerlist, currentPlayer, box3.getSum());
 		}
 		
-		FC.landOnField(currentPlayer);
+		FC.landOnField(playerlist, currentPlayer);
 		if (box.isEqual()){
 			count ++;
 		} else

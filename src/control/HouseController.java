@@ -52,13 +52,13 @@ public class HouseController {
 			for(int i=1; i<=39; i++){
 				if(board.getField(i).getName().equals(plot)){
 					player[currentPlayer].account.addPoints(getHousePrice(1));
-					board.getField(i).setNumberofHouses(-1);
+					board.getField(i).addNumberofHouses(-1);
 					if(board.getField(i).getNumberofhouses()==5){
 						GUIC.setHotel(i+1,false);
 						removeHotel(player, currentPlayer);
 					}else{
-					GUIC.setHouse(i+1, gethouses(-1));
-					player[currentPlayer].addHouseammount(-1);
+					player[currentPlayer].addHouseammount(-1);	
+					GUIC.setHouse(i+1, gethouses(1));
 					}
 				}	
 			}
@@ -82,8 +82,7 @@ public class HouseController {
 	}
 	
 	public String[] checkFieldsWithHouses(Player[] player, int currentPlayer, GameBoard board){
-	boolean sellHouses = true;
-	while(sellHouses == true){
+	
 		int arrayIndex = 0;
 		int arraylength = 0;
 		for(int i=1; i<=39; i++){
@@ -98,12 +97,10 @@ public class HouseController {
 				arrayIndex++;
 			}
 		}
-			if(GUIC.offerToSellHouses()==false){
-				sellHouses=false;
-			}
+		return sellOptions;
 	}
-			return sellOptions;
-		}
+		
+		
 
 	public void checkOwnedFields(Player[] player, int currentPlayer){
 		checkBlue(player, currentPlayer);
@@ -301,7 +298,7 @@ public class HouseController {
 				if(board.getField(1).getNumberofhouses()<5){
 					if(GUIC.buyRoedovervej().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(1));
-						board.getField(1).setNumberofHouses(1);
+						board.getField(1).addNumberofHouses(1);
 						if(board.getField(1).getNumberofhouses()==5){
 							GUIC.setHotel(2,true);
 							setHotel(player, currentPlayer);
@@ -314,7 +311,7 @@ public class HouseController {
 				if(board.getField(3).getNumberofhouses()<5){
 					if(GUIC.buyHvidovervej().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(3));
-						board.getField(3).setNumberofHouses(1);
+						board.getField(3).addNumberofHouses(1);
 						if(board.getField(3).getNumberofhouses()==5){
 							GUIC.setHotel(4,true);
 							setHotel(player, currentPlayer);
@@ -329,7 +326,7 @@ public class HouseController {
 				if(board.getField(6).getNumberofhouses()<5){
 					if(GUIC.buyRoskildevej().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(6));
-						board.getField(6).setNumberofHouses(1);
+						board.getField(6).addNumberofHouses(1);
 						if(board.getField(6).getNumberofhouses()==5){
 							GUIC.setHotel(7,true);
 							setHotel(player, currentPlayer);
@@ -341,7 +338,7 @@ public class HouseController {
 				if(board.getField(8).getNumberofhouses()<5){
 					if(GUIC.buyValbyLanggade().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(8));
-						board.getField(8).setNumberofHouses(1);
+						board.getField(8).addNumberofHouses(1);
 						if(board.getField(8).getNumberofhouses()==5){
 							GUIC.setHotel(9,true);
 							setHotel(player, currentPlayer);
@@ -353,7 +350,7 @@ public class HouseController {
 				if(board.getField(9).getNumberofhouses()<5){
 					if(GUIC.buyAllegade().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(9));
-						board.getField(9).setNumberofHouses(1);
+						board.getField(9).addNumberofHouses(1);
 						if(board.getField(9).getNumberofhouses()==5){
 							GUIC.setHotel(10,true);
 							setHotel(player, currentPlayer);
@@ -367,7 +364,7 @@ public class HouseController {
 				if(board.getField(11).getNumberofhouses()<5){
 					if(GUIC.buyFredriksbergAlle().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(11));
-						board.getField(11).setNumberofHouses(1);
+						board.getField(11).addNumberofHouses(1);
 						if(board.getField(11).getNumberofhouses()==5){
 							GUIC.setHotel(12,true);
 							setHotel(player, currentPlayer);
@@ -379,7 +376,7 @@ public class HouseController {
 				if(board.getField(13).getNumberofhouses()<5){
 					if(GUIC.buyBulowsvej().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(13));
-						board.getField(13).setNumberofHouses(1);
+						board.getField(13).addNumberofHouses(1);
 						if(board.getField(13).getNumberofhouses()==5){
 							GUIC.setHotel(14,true);
 							setHotel(player, currentPlayer);
@@ -391,7 +388,7 @@ public class HouseController {
 				if(board.getField(14).getNumberofhouses()<5){
 					if(GUIC.buyGlKongevej().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(14));
-						board.getField(14).setNumberofHouses(1);
+						board.getField(14).addNumberofHouses(1);
 						if(board.getField(14).getNumberofhouses()==5){
 							GUIC.setHotel(15,true);
 							setHotel(player, currentPlayer);
@@ -405,7 +402,7 @@ public class HouseController {
 				if(board.getField(16).getNumberofhouses()<5){
 					if(GUIC.buyBernstorffsvej().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(16));
-						board.getField(16).setNumberofHouses(1);
+						board.getField(16).addNumberofHouses(1);
 						if(board.getField(16).getNumberofhouses()==5){
 							GUIC.setHotel(17,true);
 							setHotel(player, currentPlayer);
@@ -417,7 +414,7 @@ public class HouseController {
 				if(board.getField(18).getNumberofhouses()<5){
 					if(GUIC.buyHellerupvej().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(18));
-						board.getField(18).setNumberofHouses(1);
+						board.getField(18).addNumberofHouses(1);
 						if(board.getField(18).getNumberofhouses()==5){
 							GUIC.setHotel(19,true);
 							setHotel(player, currentPlayer);
@@ -429,7 +426,7 @@ public class HouseController {
 				if(board.getField(19).getNumberofhouses()<5){
 					if(GUIC.buyStrandvejen().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(19));
-						board.getField(19).setNumberofHouses(1);
+						board.getField(19).addNumberofHouses(1);
 						if(board.getField(19).getNumberofhouses()==5){
 							GUIC.setHotel(20,true);
 							setHotel(player, currentPlayer);
@@ -444,7 +441,7 @@ public class HouseController {
 				if(board.getField(21).getNumberofhouses()<5){
 					if(GUIC.buyTrianglen().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(21));
-						board.getField(21).setNumberofHouses(1);
+						board.getField(21).addNumberofHouses(1);
 						if(board.getField(21).getNumberofhouses()==5){
 							GUIC.setHotel(22,true);
 							setHotel(player, currentPlayer);
@@ -456,7 +453,7 @@ public class HouseController {
 				if(board.getField(23).getNumberofhouses()<5){
 					if(GUIC.buyOesterbrogade().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(23));
-						board.getField(23).setNumberofHouses(1);
+						board.getField(23).addNumberofHouses(1);
 						if(board.getField(23).getNumberofhouses()==5){
 							GUIC.setHotel(24,true);
 							setHotel(player, currentPlayer);
@@ -468,7 +465,7 @@ public class HouseController {
 				if(board.getField(24).getNumberofhouses()<5){
 					if(GUIC.buyGroenningen().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(24));
-						board.getField(24).setNumberofHouses(1);
+						board.getField(24).addNumberofHouses(1);
 						if(board.getField(24).getNumberofhouses()==5){
 							GUIC.setHotel(25,true);
 							setHotel(player, currentPlayer);
@@ -483,7 +480,7 @@ public class HouseController {
 				if(board.getField(26).getNumberofhouses()<5){
 					if(GUIC.buyBredgade().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(26));
-						board.getField(26).setNumberofHouses(1);
+						board.getField(26).addNumberofHouses(1);
 						if(board.getField(26).getNumberofhouses()==5){
 							GUIC.setHotel(27,true);
 							setHotel(player, currentPlayer);
@@ -495,7 +492,7 @@ public class HouseController {
 				if(board.getField(27).getNumberofhouses()<5){
 					if(GUIC.buyKgsNytorv().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(27));
-						board.getField(27).setNumberofHouses(1);
+						board.getField(27).addNumberofHouses(1);
 						if(board.getField(27).getNumberofhouses()==5){
 							GUIC.setHotel(28,true);
 							setHotel(player, currentPlayer);
@@ -507,7 +504,7 @@ public class HouseController {
 				if(board.getField(29).getNumberofhouses()<5){
 					if(GUIC.buyIstergade().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(29));
-						board.getField(29).setNumberofHouses(1);
+						board.getField(29).addNumberofHouses(1);
 						if(board.getField(29).getNumberofhouses()==5){
 							GUIC.setHotel(30,true);
 							setHotel(player, currentPlayer);
@@ -522,7 +519,7 @@ public class HouseController {
 				if(board.getField(31).getNumberofhouses()<5){
 					if(GUIC.buyAmagertorv().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(31));
-						board.getField(31).setNumberofHouses(1);
+						board.getField(31).addNumberofHouses(1);
 						if(board.getField(31).getNumberofhouses()==5){
 							GUIC.setHotel(32,true);
 							setHotel(player, currentPlayer);
@@ -534,7 +531,7 @@ public class HouseController {
 				if(board.getField(32).getNumberofhouses()<5){
 					if(GUIC.buyVimmelskaftet().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(32));
-						board.getField(32).setNumberofHouses(1);
+						board.getField(32).addNumberofHouses(1);
 						if(board.getField(32).getNumberofhouses()==5){
 							GUIC.setHotel(33,true);
 							setHotel(player, currentPlayer);
@@ -546,7 +543,7 @@ public class HouseController {
 				if(board.getField(34).getNumberofhouses()<5){
 					if(GUIC.buyNygade().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(34));
-						board.getField(34).setNumberofHouses(1);
+						board.getField(34).addNumberofHouses(1);
 						if(board.getField(34).getNumberofhouses()==5){
 							GUIC.setHotel(35,true);
 							setHotel(player, currentPlayer);
@@ -560,7 +557,7 @@ public class HouseController {
 				if(board.getField(37).getNumberofhouses()<5){
 					if(GUIC.buyFrederiksberggade().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(37));
-						board.getField(37).setNumberofHouses(1);
+						board.getField(37).addNumberofHouses(1);
 						if(board.getField(37).getNumberofhouses()==5){
 							GUIC.setHotel(38,true);
 							setHotel(player, currentPlayer);
@@ -572,7 +569,7 @@ public class HouseController {
 				if(board.getField(39).getNumberofhouses()<5){
 					if(GUIC.buyRaadhuspladsen().equals("Ja")){
 						player[currentPlayer].account.addPoints(-getHousePrice(39));
-						board.getField(39).setNumberofHouses(1);
+						board.getField(39).addNumberofHouses(1);
 						if(board.getField(39).getNumberofhouses()==5){
 							GUIC.setHotel(40,true);
 							setHotel(player, currentPlayer);

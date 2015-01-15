@@ -66,8 +66,22 @@ public class ShowcaseTurnController {
 			}
 			
 		}else if(choiceofTurn.equals("Saelg hus")){
-			if(houseC.checkFieldsWithHouses(playerlist, currentPlayer, board) != null){
-			GUIC.offerToSellHouse(houseC.checkFieldsWithHouses(playerlist, currentPlayer, board));
+			String sellHouse;
+			boolean sellMore = true;
+			String[] ar = houseC.checkIfPossibleSell(playerlist, currentPlayer, board);
+			System.out.println(ar.toString());
+			if(ar.length == 0){
+				GUIC.noHouseToSell();
+				sellMore = false;
+			}
+			
+			while(sellMore == true){
+			
+				if(ar.length > 0){
+					sellHouse = GUIC.offerToSellHouse(houseC.checkFieldsWithHouses(playerlist, currentPlayer, board));
+					houseC.sellHouse(playerlist, currentPlayer, board, sellHouse);
+					sellMore = GUIC.offerToMoreSellHouses();
+				}
 			}
 		}else if(choiceofTurn.equals("Saelg grund")){
 			
@@ -80,13 +94,13 @@ public class ShowcaseTurnController {
 		GUIC.twoPair();
 		else
 		GUIC.onePair();
-		// SHOWCASE SLAG
-		box.setDice(0, 1);
-		box.setDice(1, 0);
+		
+		box.setDice(1,0);
+		box.setDice(0,1);
 		
 		if(box.getSum() + playerlist[currentPlayer].getPosition() >= 40)
 			GUIC.pastStart();
-		GUIC.showDice(box.getDice1(), 0);
+		GUIC.showDice(box.getDice1(), box.getDice2());
 		if (count !=3) {
 		GUIC.updatePosition(playerlist, currentPlayer, box.getSum());
 		FC.landOnField(playerlist, currentPlayer);
