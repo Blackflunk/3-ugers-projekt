@@ -1,5 +1,6 @@
 package control;
 
+import desktop_resources.GUI;
 import boundary.GUIcontroller;
 import entity.DiceBox;
 import entity.Player;
@@ -41,8 +42,24 @@ public class HouseController {
 				}
 		}		
 	}
+	
+	//sell house
 	public void sellHouse(Player player, int currentPlayer){
+		if(GUIC.offerToSellHouse().equals("Ja"));
 		
+		possibleBuild = " ";
+		if(player.getBuy_Blue()== true||player.getBuy_Pink()== true||player.getBuy_Green()== true
+				||player.getBuy_grey()== true||player.getBuy_Red()== true||player.getBuy_White() == true
+				||player.getBuy_Yellow()== true||player.getBuy_Magenta()== true){
+					if(GUIC.offerToBuy(possibleBuild).equals("Ja")){
+						for(int i=1; i<=8; i++){
+							if(getBuild(i, player) == true){
+								buildPlots(player,i);
+							}
+					
+					}
+				}
+		}		
 	}
 	
 	public void checkOwnedFields(Player player){
@@ -219,7 +236,10 @@ public class HouseController {
 			possibleBuild += " Frederiksberggade og Raedhuspladsen";
 		}
 	}
-	
+	public void setHotel(Player player){
+		player.addHouseammount(-4);
+		player.addHotelammount(1);
+	}
 	public int gethouses(int n){
 		return board.getField(n).getNumberofhouses();
 	}
@@ -236,8 +256,10 @@ public class HouseController {
 						board.getField(1).setNumberofHouses(1);
 						if(board.getField(1).getNumberofhouses()==5){
 							GUIC.setHotel(2,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(2, gethouses(1));
+						player.addHouseammount(1);
 						}
 					}}}
 			if(gethouses(3) <= gethouses(1)){
@@ -470,4 +492,10 @@ public class HouseController {
 						}}}}
 		}
 	}
+	
+	public void sellPlots(Player player, int n){
+		
+	}
 }
+
+
