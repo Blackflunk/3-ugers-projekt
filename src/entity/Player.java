@@ -273,8 +273,8 @@ public class Player {
 		this.houseammount = houseammount;
 	}
 	
-	public void addHouseammount(){
-		houseammount++;
+	public void addHouseammount(int houseAmount){
+		houseammount += houseAmount;
 	}
 
 	public int getHotelammount() {
@@ -285,8 +285,8 @@ public class Player {
 		this.hotelammount = hotelammount;
 	}
 
-	public void addHotelammount(){
-		hotelammount++;
+	public void addHotelammount(int hotelAmount){
+		hotelammount+= hotelAmount;
 	}
 	
 	// Jailcard and jail status
