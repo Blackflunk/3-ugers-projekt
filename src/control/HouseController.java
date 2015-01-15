@@ -13,6 +13,7 @@ public class HouseController {
 	private Player[] playerlist;
 	private boolean khan = true;
 	private String possibleBuild;
+	boolean moreHouses = true;
 	
 	public HouseController(GUIcontroller GUIC, GameBoard board,Player[] playerlist){
 		this.board =board;
@@ -24,6 +25,7 @@ public class HouseController {
 	public void buyHouse(Player player, int currentPlayer){
 		//check if you can buy.
 		possibleBuild = " ";
+		while(moreHouses== true){
 		if(player.getBuy_Blue()== true||player.getBuy_Pink()== true||player.getBuy_Green()== true
 				||player.getBuy_grey()== true||player.getBuy_Red()== true||player.getBuy_White() == true
 				||player.getBuy_Yellow()== true||player.getBuy_Magenta()== true){
@@ -40,11 +42,15 @@ public class HouseController {
 					
 					}
 				}
-		}		
+			}if(GUIC.offerMoreHouses()==false){
+				moreHouses=false;
+			}
+		}	
 	}
 	
 	//sell house
 	public void sellHouse(Player player, int currentPlayer){
+		
 		if(GUIC.offerToSellHouse().equals("Ja"));
 		
 		possibleBuild = " ";
@@ -269,8 +275,10 @@ public class HouseController {
 						board.getField(3).setNumberofHouses(1);
 						if(board.getField(3).getNumberofhouses()==5){
 							GUIC.setHotel(4,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(4, gethouses(3));
+						player.addHouseammount(1);
 						}
 					}}}
 		}
@@ -282,8 +290,10 @@ public class HouseController {
 						board.getField(6).setNumberofHouses(1);
 						if(board.getField(6).getNumberofhouses()==5){
 							GUIC.setHotel(7,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(7, gethouses(6));
+						player.addHouseammount(1);
 						}}}}
 			if(gethouses(8) <= gethouses(6) && gethouses(8) <= gethouses(9)){
 				if(board.getField(8).getNumberofhouses()<5){
@@ -292,8 +302,10 @@ public class HouseController {
 						board.getField(8).setNumberofHouses(1);
 						if(board.getField(8).getNumberofhouses()==5){
 							GUIC.setHotel(9,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(9, gethouses(8));
+						player.addHouseammount(1);
 						}}}}
 			if(gethouses(9) <= gethouses(6) && gethouses(9) <= gethouses(8)){
 				if(board.getField(9).getNumberofhouses()<5){
@@ -302,8 +314,10 @@ public class HouseController {
 						board.getField(9).setNumberofHouses(1);
 						if(board.getField(9).getNumberofhouses()==5){
 							GUIC.setHotel(10,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(10, gethouses(9));
+						player.addHouseammount(1);
 						}}}}
 		}
 		if(n == 3){
@@ -314,8 +328,10 @@ public class HouseController {
 						board.getField(11).setNumberofHouses(1);
 						if(board.getField(11).getNumberofhouses()==5){
 							GUIC.setHotel(12,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(12, gethouses(11));
+						player.addHouseammount(1);
 						}}}}
 			if(gethouses(13) <= gethouses(11) && gethouses(13) <= gethouses(14)){
 				if(board.getField(13).getNumberofhouses()<5){
@@ -324,8 +340,10 @@ public class HouseController {
 						board.getField(13).setNumberofHouses(1);
 						if(board.getField(13).getNumberofhouses()==5){
 							GUIC.setHotel(14,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(14, gethouses(13));
+						player.addHouseammount(1);
 						}}}}
 			if(gethouses(14) <= gethouses(11) && gethouses(14) <= gethouses(13)){
 				if(board.getField(14).getNumberofhouses()<5){
@@ -334,8 +352,10 @@ public class HouseController {
 						board.getField(14).setNumberofHouses(1);
 						if(board.getField(14).getNumberofhouses()==5){
 							GUIC.setHotel(15,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(15, gethouses(14));
+						player.addHouseammount(1);
 						}}}}
 		}
 		if(n == 4){
@@ -346,8 +366,10 @@ public class HouseController {
 						board.getField(16).setNumberofHouses(1);
 						if(board.getField(16).getNumberofhouses()==5){
 							GUIC.setHotel(17,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(17, gethouses(16));
+						player.addHouseammount(1);
 						}}}}
 			if(gethouses(18) <= gethouses(16) && gethouses(18) <= gethouses(19)){
 				if(board.getField(18).getNumberofhouses()<5){
@@ -356,8 +378,10 @@ public class HouseController {
 						board.getField(18).setNumberofHouses(1);
 						if(board.getField(18).getNumberofhouses()==5){
 							GUIC.setHotel(19,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(19, gethouses(18));
+						player.addHouseammount(1);
 						}}}}
 			if(gethouses(19) <= gethouses(16) && gethouses(19) <= gethouses(18)){
 				if(board.getField(19).getNumberofhouses()<5){
@@ -366,8 +390,10 @@ public class HouseController {
 						board.getField(19).setNumberofHouses(1);
 						if(board.getField(19).getNumberofhouses()==5){
 							GUIC.setHotel(20,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(20, gethouses(19));
+						player.addHouseammount(1);
 						}}}}
 		}
 		
@@ -379,8 +405,10 @@ public class HouseController {
 						board.getField(21).setNumberofHouses(1);
 						if(board.getField(21).getNumberofhouses()==5){
 							GUIC.setHotel(22,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(22, gethouses(21));
+						player.addHouseammount(1);
 						}}}}
 			if(gethouses(23) <= gethouses(21) && gethouses(23) <= gethouses(24)){
 				if(board.getField(23).getNumberofhouses()<5){
@@ -389,8 +417,10 @@ public class HouseController {
 						board.getField(23).setNumberofHouses(1);
 						if(board.getField(23).getNumberofhouses()==5){
 							GUIC.setHotel(24,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(24, gethouses(23));
+						player.addHouseammount(1);
 						}}}}
 			if(gethouses(24) <= gethouses(21) && gethouses(24) <= gethouses(23)){
 				if(board.getField(24).getNumberofhouses()<5){
@@ -399,8 +429,10 @@ public class HouseController {
 						board.getField(24).setNumberofHouses(1);
 						if(board.getField(24).getNumberofhouses()==5){
 							GUIC.setHotel(25,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(25, gethouses(24));
+						player.addHouseammount(1);
 						}}}}
 		}
 		
@@ -412,8 +444,10 @@ public class HouseController {
 						board.getField(26).setNumberofHouses(1);
 						if(board.getField(26).getNumberofhouses()==5){
 							GUIC.setHotel(27,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(27, gethouses(26));
+						player.addHouseammount(1);
 						}}}}
 			if(gethouses(27) <= gethouses(26) && gethouses(27) <= gethouses(29)){
 				if(board.getField(27).getNumberofhouses()<5){
@@ -422,8 +456,10 @@ public class HouseController {
 						board.getField(27).setNumberofHouses(1);
 						if(board.getField(27).getNumberofhouses()==5){
 							GUIC.setHotel(28,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(28, gethouses(27));
+						player.addHouseammount(1);
 						}}}}
 			if(gethouses(29) <= gethouses(26) && gethouses(29) <= gethouses(27)){
 				if(board.getField(29).getNumberofhouses()<5){
@@ -432,8 +468,10 @@ public class HouseController {
 						board.getField(29).setNumberofHouses(1);
 						if(board.getField(29).getNumberofhouses()==5){
 							GUIC.setHotel(30,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(30, gethouses(29));
+						player.addHouseammount(1);
 						}}}}
 		}
 		
@@ -445,9 +483,11 @@ public class HouseController {
 						board.getField(31).setNumberofHouses(1);
 						if(board.getField(31).getNumberofhouses()==5){
 							GUIC.setHotel(32,true);
+							setHotel(player);
 						}else{
 							GUIC.setHouse(32, gethouses(31));
-						}}}}
+							player.addHouseammount(1);
+							}}}}
 			if(gethouses(32) <= gethouses(31) && gethouses(32) <= gethouses(34)){
 				if(board.getField(32).getNumberofhouses()<5){
 					if(GUIC.buyVimmelskaftet().equals("Ja")){
@@ -455,8 +495,10 @@ public class HouseController {
 						board.getField(32).setNumberofHouses(1);
 						if(board.getField(32).getNumberofhouses()==5){
 							GUIC.setHotel(33,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(33, gethouses(32));
+						player.addHouseammount(1);
 						}}}}
 			if(gethouses(34) <= gethouses(31) && gethouses(34) <= gethouses(32)){
 				if(board.getField(34).getNumberofhouses()<5){
@@ -465,8 +507,10 @@ public class HouseController {
 						board.getField(34).setNumberofHouses(1);
 						if(board.getField(34).getNumberofhouses()==5){
 							GUIC.setHotel(35,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(35, gethouses(34));
+						player.addHouseammount(1);
 						}}}}
 		}
 		if(n == 8){
@@ -477,8 +521,10 @@ public class HouseController {
 						board.getField(37).setNumberofHouses(1);
 						if(board.getField(37).getNumberofhouses()==5){
 							GUIC.setHotel(38,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(38, gethouses(37));
+						player.addHouseammount(1);
 						}}}}
 			if(gethouses(39) <= gethouses(37)){
 				if(board.getField(39).getNumberofhouses()<5){
@@ -487,8 +533,10 @@ public class HouseController {
 						board.getField(39).setNumberofHouses(1);
 						if(board.getField(39).getNumberofhouses()==5){
 							GUIC.setHotel(40,true);
+							setHotel(player);
 						}else{
 						GUIC.setHouse(40, gethouses(39));
+						player.addHouseammount(1);
 						}}}}
 		}
 	}
