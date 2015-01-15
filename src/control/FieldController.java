@@ -33,7 +33,7 @@ public class FieldController {
 			DC.drawCard(currentPlayer);
 		// For MoveToJail
 		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.MoveToJail) 
-			GUIC.newPositon(playerlist[currentPlayer]);
+			GUIC.newPosition(playerlist[currentPlayer]);
 		// For Tax
 		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.Tax) 
 			landOnTax(currentPlayer);
@@ -45,7 +45,7 @@ public class FieldController {
 			gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 		
 		// Update on GUI
-		GUIC.newPositon(playerlist[currentPlayer]);
+		GUIC.newPosition(playerlist[currentPlayer]);
 	}
 	
 	

@@ -191,7 +191,7 @@ public class GUIController {
 		GUI.setCar(player.getPosition(), player.getName());
 	}
 	
-	public void newPositon(Player player) {
+	public void newPosition(Player player) {
 		GUI.removeAllCars(player.getName());
 		GUI.setCar(player.getPosition()+1, player.getName());
 	}

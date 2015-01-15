@@ -28,7 +28,7 @@ public class DeckController {
 		GUIC.showMessage(deck.getMessage(0));
 		Card temp = deck.drawCard(playerlist[currentPlayer]);
 		cardsdrawned++;
-		GUIC.newPositon(playerlist[currentPlayer]);
+		GUIC.newPosition(playerlist[currentPlayer]);
 		if (cardsdrawned >=decklength) {
 			deck.shuffleDeck();
 			cardsdrawned = 0;
@@ -44,7 +44,7 @@ public class DeckController {
 	public void pickCard(Player player, int cardnumber) {
 		GUIC.showMessage(deck.getMessage(cardnumber));
 		deck.pickCard(player, cardnumber);
-		GUIC.newPositon(player);
+		GUIC.newPosition(player);
 	}
 	
 

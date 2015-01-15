@@ -123,7 +123,7 @@ public class TurnController {
 			playerlist[currentPlayer].setJailed(true);
 			playerlist[currentPlayer].setPosition(10);
 			GUIC.threePair();
-			GUIC.newPositon(playerlist[currentPlayer]);
+			GUIC.newPosition(playerlist[currentPlayer]);
 		}
 		}
 		}
@@ -131,7 +131,7 @@ public class TurnController {
 	// Tur, efter exit fra jail
 	public void afterJailTurn(int currentPlayer) {
 		GUIC.afterJail();
-		GUIC.newPositon(playerlist[currentPlayer]);
+		GUIC.newPosition(playerlist[currentPlayer]);
 		FC.landOnField(currentPlayer);
 	}
 	
@@ -234,7 +234,7 @@ public class TurnController {
 			playerlist[currentPlayer].setJailed(true);
 			playerlist[currentPlayer].setPosition(10);
 			GUIC.threePair();;
-			GUIC.newPositon(playerlist[currentPlayer]);
+			GUIC.newPosition(playerlist[currentPlayer]);
 		}
 		}
 		}

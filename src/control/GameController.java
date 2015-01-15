@@ -61,7 +61,7 @@ public class GameController {
 			if (!playerlist[currentPlayer].getStatus()) {
 				// Runs turn for current Player
 				TurnC.runTurn(currentPlayer);				
-				GUIC.newPositon(playerlist[currentPlayer]);				
+				GUIC.newPosition(playerlist[currentPlayer]);				
 				// If a player has lost, adds one to lostCount and reset the players owned fields
 				if (playerlist[currentPlayer].getStatus()) {
 					GUIC.removePlayer(playerlist, currentPlayer);
