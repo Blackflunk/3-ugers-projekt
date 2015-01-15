@@ -214,7 +214,7 @@ public class FieldController {
 				if (gameboard.getField(playerlist[currentPlayer].getPosition()).isOption()) {
 					boolean paypercent = GUIC.taxPick(gameboard.getField(playerlist[currentPlayer].getPosition()).getName());
 					if(paypercent) {
-						gameboard.getField(playerlist[currentPlayer].getPosition()).setPaypercent(paypercent);	
+						gameboard.getField(playerlist[currentPlayer].getPosition()).setPaypercent(true);	
 					GUIC.messageTax10percent();
 					} else if (playerlist[currentPlayer].account.getScore() >= 
 							gameboard.getField(playerlist[currentPlayer].getPosition()).getPrice()) {

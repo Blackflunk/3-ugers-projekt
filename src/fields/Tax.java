@@ -7,7 +7,7 @@ public class Tax extends Field {
 	private String name;
 	private int pay;
 	private boolean option;
-	private boolean paypercent;
+	private boolean paypercent=false;
 
 	public Tax(String name, int pay, boolean option) {
 		super(name);
@@ -18,19 +18,16 @@ public class Tax extends Field {
 
 	@Override
 	public void landOnField(Player player) {
-		// If a player lands on goldmine
 		if (option) {
-			if (paypercent) {
+			if (paypercent)
 			player.account.addPoints(-(player.account.getScore() / 10));
-			}
-			else if (player.account.getScore() >= pay) {
+			else if (player.account.getScore() >= pay)
 				player.account.addPoints(-pay);
-			} else {
+			else {
 				player.account.addPoints(-player.account.getScore());
 				player.setStatus(true);
 			}
 		}
-		// If a player lands on caravan
 		else {
 			if (player.account.getScore() >= pay) {
 					player.account.addPoints(-pay);
