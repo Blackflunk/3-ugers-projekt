@@ -100,7 +100,7 @@ public class GUIcontroller {
 		field[28] = new Brewery.Builder().setTitle("Coca-Cola")
 				.setDescription("Coca-Cola").setBgColor(Color.CYAN)
 				.setSubText("Price: 3000").setRent("80/200 x dice").build();
-		field[29] = new Street.Builder().setTitle("Istergade")
+		field[29] = new Street.Builder().setTitle("Oestergade")
 				.setDescription("Oestergade").setBgColor(Color.WHITE)
 				.setSubText("Price: 5600").setRent("Rent: 3000").build();
 		field[30] = new Jail.Builder().setDescription("Ryk til Faengsel")
