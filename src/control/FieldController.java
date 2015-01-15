@@ -229,6 +229,7 @@ public class FieldController {
 						GUIC.insufficiantFundsTax();
 				}
 				gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 			}
 
 }
