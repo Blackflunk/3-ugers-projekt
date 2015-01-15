@@ -82,7 +82,18 @@ public class FieldController {
 		// If someone else owns the field
 		else {
 			// If affordable rent
-			if (playerlist[currentPlayer].account.getScore() >= 
+			if (gameboard.getField(playerlist[currentPlayer].getPosition()).checkPayDoubleRent(playerlist[currentPlayer])) {
+				if(playerlist[currentPlayer].account.getScore() >= gameboard.getField(playerlist[currentPlayer].getPosition()).getRent(0)*2)
+					GUIC.fieldTax(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), 
+							gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
+							gameboard.getField(playerlist[currentPlayer].getPosition()).getRent(0)*2);
+				else
+					GUIC.insufficiantFunds(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), 
+							gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
+							playerlist[currentPlayer].account.getScore());
+					gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
+			
+			}else if (playerlist[currentPlayer].account.getScore() >= 
 					gameboard.getField(playerlist[currentPlayer].getPosition()).getRent(
 							gameboard.getField(playerlist[currentPlayer].getPosition()).getNumberofhouses())){
 				GUIC.fieldTax(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), playerlist[currentPlayer].getName(), 

@@ -57,5 +57,8 @@ public abstract class Field {
 	}
 	public void setPaypercent(boolean paypercent) {
 		}
+	public boolean checkPayDoubleRent(Player player){
+		return false;
+	}
 		
 }

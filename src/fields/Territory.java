@@ -61,13 +61,18 @@ public class Territory extends Ownable {
 		} else if (getOwner().equals(player)) {
 		// if the field is owned by another player, a rent have to be paid
 		} else {
-			if (player.account.getScore() >= rent[numberofhouses]) {
-				if(checkPayDoubleRent(player))
+			if (checkPayDoubleRent(player)){
+				if(player.account.getScore() >= rent[0]*2)
 					payDoubleRent(player);
-				else
-					payRent(player);
-		// the player looses if the rent is higher than the players balance
+				// the player loses if the rent is higher than the players balance
+				else {
+					getOwner().account.addPoints(player.account.getScore());
+					player.account.addPoints(-player.account.getScore());
+					player.setStatus(true);	
+				}
 			}
+			else if(player.account.getScore() >= rent[numberofhouses])
+					payRent(player);
 			// the player loses if the rent is higher than the players balance
 			else {
 				getOwner().account.addPoints(player.account.getScore());
@@ -81,7 +86,7 @@ public class Territory extends Ownable {
 		getOwner().account.addPoints(rent[numberofhouses]);
 		player.account.addPoints(-rent[numberofhouses]);
 	}
-	
+	@Override
 	public boolean checkPayDoubleRent(Player player){
 		switch(color){
 			case "Blue" : 
