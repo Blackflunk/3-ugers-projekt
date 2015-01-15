@@ -23,7 +23,7 @@ public class TurnController {
 		this.board = board;
 		this.playerlist = playerlist;
 		FC = new FieldController(GUIC, board, playerlist, new Deck(playerlist, board));
-		houseC = new HouseController(Player playerlist, )
+		houseC = new HouseController(GUIC, board, playerlist);
 	}
 	
 	//lav en for l�kke s� den updater v�rd tur
