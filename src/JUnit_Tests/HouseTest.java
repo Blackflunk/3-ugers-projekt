@@ -41,10 +41,11 @@ public class HouseTest {
 		// Test
 			HC.checkOwnedFields(players, 0);
 			HC.buyHouse(players, 0);
-			
+			GUIC.offerToSellHouse(HC.checkFieldsWithHouses(players, 0, board));
 			players[1].setPosition(11);
 			board.getField(players[1].getPosition()).landOnField(players[1]);
 			System.out.println(players[0].getHouseammount());
+			GUIC.offerToSellHouse(HC.checkFieldsWithHouses(players, 0, board));
 		// Postconditions
 			assertEquals(3,players[0].getFieldammount_green());
 			assertEquals(16200, players[0].account.getScore());

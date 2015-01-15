@@ -14,7 +14,7 @@ public class HouseController {
 	private boolean khan = true;
 	private String possibleBuild;
 	private String possibleSell;
-	boolean moreHouses = true;
+	
 	String[] sellOptions;
 	
 	public HouseController(GUIcontroller GUIC, GameBoard board,Player[] playerlist){
@@ -27,21 +27,22 @@ public class HouseController {
 	
 	public void buyHouse(Player[] player, int currentPlayer){
 		//check if you can buy.
+		boolean moreHouses = true;
 		possibleBuild = " ";
 		while(moreHouses== true){
-					for(int i=1; i<=8; i++){
-						if(getPriceAndValue(player, currentPlayer, i, board) == true){
-							getRoad(i);
-						}
-					}
-					for(int i=1; i<=8; i++){
-						if(getBuild(i, player, currentPlayer) == true){
-							buildPlots(player, currentPlayer ,i);
-						}
+			for(int i=1; i<=8; i++){
+				if(getPriceAndValue(player, currentPlayer, i, board) == true){
+					getRoad(i);
+				}
+			}
+			for(int i=1; i<=8; i++){
+				if(getBuild(i, player, currentPlayer) == true){
+					buildPlots(player, currentPlayer ,i);
 					}
 				}
 			if(GUIC.offerMoreHouses()==false){
 				moreHouses=false;
+			}
 		}
 	}		
 	
@@ -58,12 +59,25 @@ public class HouseController {
 				
 	
 	public String[] checkFieldsWithHouses(Player[] player, int currentPlayer, GameBoard board){
-		sellOptions = new String[39];
-		for(int i=1; i>39; i++){
+	boolean sellHouses = true;
+	while(sellHouses == true){
+		int arrayIndex = 0;
+		int arraylength = 0;
+		for(int i=1; i<=39; i++){
 			if(gethouses(i) > 0){
-				sellOptions[i] = board.getField(i).getName();
+				arraylength++;
 			}
 		}	
+		sellOptions = new String[arraylength];
+		for(int i=1; i<=39; i++){
+			if(gethouses(i) > 0){
+				sellOptions[arrayIndex] = board.getField(i).getName();
+				arrayIndex++;
+			}
+		}
+		if(GUIC.offerMoreHouses()==false){
+			sellHouses=false;
+	}
 		return sellOptions;
 	}
 	public void checkOwnedFields(Player[] player, int currentPlayer){

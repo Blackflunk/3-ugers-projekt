@@ -302,7 +302,7 @@ public class GUIcontroller {
 		GUI.showMessage("The tax is higher than your balance. Instead you pay the rest of your balance.");
 	}
 	public String startOfTurn(){
-		return GUI.getUserButtonPressed("Det er starten af din tur, hvad oensker du at gøre?", "Koeb hus", "Saelg hus", "Saelg grund", "rul terning");
+		return GUI.getUserButtonPressed("Det er starten af din tur, hvad oensker du at gï¿½re?", "Koeb hus", "Saelg hus", "Saelg grund", "rul terning");
 		
 	}
 	
@@ -310,13 +310,13 @@ public class GUIcontroller {
 		return GUI.getUserButtonPressed("Du ejer nok grunde af en farve til at bygge huse. Oensker du at bygger paa en af disse grunde?" + possibleBuild,"Ja","Nej");
 	}
 	public boolean offerMoreHouses(){
-		return GUI.getUserLeftButtonPressed("Oensker du at købe flere huse?", "Ja", "Nej");
+		return GUI.getUserLeftButtonPressed("Oensker du at kï¿½be flere huse?", "Ja", "Nej");
 	}
 	public String offerToSellHouse(String[] sellOptions){
-		return GUI.getUserSelection("Du kan sælge huse på disse grunde!", sellOptions);
+		return GUI.getUserSelection("Du kan sÃ¦lge huse pÃ¥ disse grunde!", sellOptions);
 	}
 	public String offerToSellPlot(){
-		return GUI.getUserButtonPressed("Oensker du at sælge dine grunde?","Ja","Nej");
+		return GUI.getUserButtonPressed("Oensker du at sï¿½lge dine grunde?","Ja","Nej");
 	}
 
 	
