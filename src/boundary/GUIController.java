@@ -135,6 +135,9 @@ public class GUIController {
 	public int playerAmount() {
 		return Integer.parseInt(JOptionPane.showInputDialog("Vaelg antallet af spillere (mellem 3-6)"));
 	}
+	public int playerAmountshowcase() {
+		return Integer.parseInt(JOptionPane.showInputDialog("Vaelg antallet af spillere (mellem 2-6) \n DETTE ER EN DEMO KOERSEL AF SPILLET"));
+	}
 	
 	public void playerAmountError(){
 		JOptionPane.showMessageDialog(null, "Du skal vaelge mellem 3-6 spiller");

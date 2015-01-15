@@ -93,12 +93,13 @@ public class TurnController {
 		
 		while(run){
 		if (count==2)
-		GUIC.twoPair();
-		else
-		GUIC.onePair();
+			GUIC.twoPair();
+		else if (count==1)
+			GUIC.onePair();
+		// For demo or normal game run
 		if (mode==1){
-		box.rollDice();
-		GUIC.showDice(box.getDice1(), box.getDice2());
+			box.rollDice();
+			GUIC.showDice(box.getDice1(), box.getDice2());
 		} else if (mode==2) {
 			box.setDice(0, 1);
 			box.setDice(1, 0);

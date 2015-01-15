@@ -8,7 +8,7 @@ import boundary.GUIController;
 public class GameController {
 
 	private int currentPlayer = 0;
-	private int playerAmount = 0;
+	private int playerAmmount = 0;
 	private boolean onwards = false;
 	private Player[] playerlist;
 	private boolean won = false;
@@ -34,22 +34,23 @@ public class GameController {
 		GUIC.createField();
 		// Takes a chosen number and creates that amount of players
 		while(!onwards){
-		playerAmount = GUIC.playerAmount();
 		if (mode==1) {
-			if(playerAmount<7  && playerAmount>2)
+			playerAmmount = GUIC.playerAmount();
+			if(playerAmmount<7  && playerAmmount>2)
 				onwards=true;
 			else
 				GUIC.playerAmountError();
 		}
 		// Accepts 2 players in gamemode 2
 		else if (mode==2) {
-			if (playerAmount<7  && playerAmount>1)
+			playerAmmount = GUIC.playerAmountshowcase();
+			if (playerAmmount<7  && playerAmmount>1)
 				onwards=true;
 			else
 				GUIC.playerAmountError();
 		}}
-		playerlist = new Player[playerAmount];
-		GUIC.createPlayers(playerAmount, playerlist);
+		playerlist = new Player[playerAmmount];
+		GUIC.createPlayers(playerAmmount, playerlist);
 		// Creates Controllers dependent on playerlist
 		TurnC = new TurnController(GUIC, gameboard, playerlist, mode);
 	}
@@ -69,9 +70,9 @@ public class GameController {
 					lostCount++;
 					
 					// If only one player is left, won is set to true
-					if (lostCount == playerAmount - 1) {
+					if (lostCount == playerAmmount - 1) {
 						won = true;
-						GUIC.showWin(playerlist, playerAmount);
+						GUIC.showWin(playerlist, playerAmmount);
 					}	
 				}	
 			}
@@ -81,7 +82,7 @@ public class GameController {
 	}
 	// Method that changes turn
 	public void changePlayer() {
-		if (currentPlayer == playerAmount - 1) {
+		if (currentPlayer == playerAmmount - 1) {
 			currentPlayer = 0;
 		} else {
 			currentPlayer++;
