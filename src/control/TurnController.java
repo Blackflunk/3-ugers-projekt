@@ -21,7 +21,7 @@ public class TurnController {
 		this.GUIC = GUIC;
 		this.board = board;
 		this.playerlist = playerlist;
-		FC = new FieldController(GUIC, board, playerlist, new Deck(playerlist, board));
+		FC = new FieldController(GUIC, board, playerlist);
 		houseC = new HouseController(GUIC, board, playerlist);
 	}
 	
