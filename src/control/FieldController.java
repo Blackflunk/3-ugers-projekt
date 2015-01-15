@@ -16,7 +16,7 @@ public class FieldController {
 		this.GUIC = GUIC;
 		this.gameboard = gameboard;
 		this.playerlist = playerlist;
-		DC = new DeckController(GUIC, playerlist, gameboard);
+		DC = new DeckController(GUIC, playerlist, gameboard, this);
 	}
 	
 	public void landOnField(Player[] playerlist, int currentPlayer) {
