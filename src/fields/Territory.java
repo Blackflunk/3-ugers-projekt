@@ -150,6 +150,9 @@ public class Territory extends Ownable {
 	public void setNumberofHouses(int numberofhouses){
 		this.numberofhouses += numberofhouses;
 	}
+	public void addNumberofHouses(int add){
+		numberofhouses += add;
+	}
 	public String getColor(){
 		return color;
 	}
