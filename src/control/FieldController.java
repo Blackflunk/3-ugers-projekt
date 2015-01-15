@@ -4,7 +4,6 @@ package control;
 import entity.Player;
 import fields.GameBoard;
 import boundary.GUIcontroller;
-import deck.Deck;
 
 public class FieldController {
 	private GUIcontroller GUIC;
