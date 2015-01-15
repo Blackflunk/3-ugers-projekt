@@ -49,10 +49,6 @@ public class FieldController {
 	}
 	
 	
-	/** 
-	 * fieldtax is the only thing that varies
-	 * 
-	 */
 	public void landOnTerritory(Player[] playerlist, int currentPlayer) {
 		// If no owner
 		if (gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner() == null) {
@@ -95,7 +91,8 @@ public class FieldController {
 			}else if (playerlist[currentPlayer].account.getScore() >= 
 					gameboard.getField(playerlist[currentPlayer].getPosition()).getRent(
 							gameboard.getField(playerlist[currentPlayer].getPosition()).getNumberofhouses())){
-				GUIC.fieldTax(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), playerlist[currentPlayer].getName(), 
+				GUIC.fieldTax(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), 
+						gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
 						gameboard.getField(playerlist[currentPlayer].getPosition()).getRent
 						(gameboard.getField(playerlist[currentPlayer].getPosition()).getNumberofhouses()));;
 						gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
@@ -145,7 +142,8 @@ public class FieldController {
 			if (playerlist[currentPlayer].account.getScore() >= 
 					gameboard.getField(playerlist[currentPlayer].getPosition()).getRent(
 							gameboard.getField(playerlist[currentPlayer].getPosition()).getNumberofhouses())){
-				GUIC.fieldTax(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), playerlist[currentPlayer].getName(), 
+				GUIC.fieldTax(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), 
+						gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
 						gameboard.getField(playerlist[currentPlayer].getPosition()).getRent
 						(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getFleets()));
 				gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
@@ -194,7 +192,8 @@ public class FieldController {
 			if (playerlist[currentPlayer].account.getScore() >= 
 					gameboard.getField(playerlist[currentPlayer].getPosition()).getRent(
 							gameboard.getField(playerlist[currentPlayer].getPosition()).getNumberofhouses())){
-				GUIC.fieldTax(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), playerlist[currentPlayer].getName(), 
+				GUIC.fieldTax(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), 
+						gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
 						gameboard.getField(playerlist[currentPlayer].getPosition()).getRent
 						(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getLaborCamp()));
 				gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
