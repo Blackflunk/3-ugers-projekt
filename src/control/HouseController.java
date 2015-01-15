@@ -78,9 +78,10 @@ public class HouseController {
 			if(GUIC.offerMoreHouses()==false){
 				sellHouses=false;
 			}
+	}
 			return sellOptions;
 		}
-}
+
 	public void checkOwnedFields(Player[] player, int currentPlayer){
 		checkBlue(player, currentPlayer);
 		checkPink(player, currentPlayer);
