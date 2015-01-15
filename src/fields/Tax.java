@@ -21,9 +21,9 @@ public class Tax extends Field {
 		// If a player lands on goldmine
 		if (option) {
 			if (paypercent) {
-			player.account.addPoints(-player.account.getScore() / 10);
+			player.account.addPoints(-(player.account.getScore() / 10));
 			}
-			if (player.account.getScore() >= pay) {
+			else if (player.account.getScore() >= pay) {
 				player.account.addPoints(-pay);
 			} else {
 				player.account.addPoints(-player.account.getScore());
