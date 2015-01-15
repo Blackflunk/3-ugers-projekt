@@ -57,7 +57,7 @@ public class Deck {
 			cardlist[i] = a;
 		}
 	}
-	public void drawCard(Player player) {
+	public Card drawCard(Player player) {
 		cardlist[0].drawCard(player);
 		// puts the card in the bottom of the list/array
 		Card temp = cardlist[0];
@@ -65,6 +65,7 @@ public class Deck {
 			cardlist[k-1] = cardlist[k];
 		}
 		cardlist[cardlist.length-1]=temp;
+		return temp;
 		
 	}
 	public String getMessage(int cardnumber) {
