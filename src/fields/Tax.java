@@ -1,55 +1,65 @@
 package fields;
 
 import entity.Player;
-import boundary.GUIcontroller;
 
 public class Tax extends Field {
 
 	private String name;
 	private int pay;
-	private GUIcontroller out = new GUIcontroller();
+	private boolean option;
+	private boolean paypercent;
 
-	public Tax(String name, int pay) {
+	public Tax(String name, int pay, boolean option) {
 		super(name);
 		this.pay = pay;
 		this.name = name;
+		this.option = option;
 	}
 
 	@Override
 	public void landOnField(Player player) {
 		// If a player lands on goldmine
-		if (name.equals("Statsskat")) {
-			out.goldmineMessage(name);
+		if (option) {
+			if (paypercent) {
+			player.account.addPoints(-player.account.getScore() / 10);
+			}
 			if (player.account.getScore() >= pay) {
 				player.account.addPoints(-pay);
 			} else {
-				out.insufficiantFundsTax();
 				player.account.addPoints(-player.account.getScore());
 				player.setStatus(true);
 			}
 		}
 		// If a player lands on caravan
 		else {
-			String taxPick = out.taxPick(name);
-			if (taxPick == "4000") {
-				if (player.account.getScore() >= pay) {
+			if (player.account.getScore() >= pay) {
 					player.account.addPoints(-pay);
-				} else {
-					out.taxFunds();
-					player.account.addPoints(-player.account.getScore());
-					player.setStatus(true);
-				}
 			} else {
-				player.account.addPoints((int) -player.account.getScore() / 10);
+				player.account.addPoints(-player.account.getScore());
+				player.setStatus(true);
 			}
 
 		}
-		out.updateBalance(player.getName(), player.account.getScore());
-
+	}
+	public boolean isPaypercent() {
+		return paypercent;
+	}
+	public void setPaypercent(boolean paypercent) {
+			this.paypercent = paypercent;
 	}
 	@Override
 	public String toString() {
 		return "Type: Tax --- Name: " + name + " --- Tax: " + pay + "\n";
+	}
+	public boolean isOption() {
+		return option;
+	}
+	public void setOption(boolean option) {
+		this.option = option;
+	}
+	@Override
+	public int getPrice() {
+		return pay;
 	}
 
 }
