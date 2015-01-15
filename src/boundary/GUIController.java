@@ -153,9 +153,8 @@ public class GUIController {
 		car[4] = new Car.Builder().primaryColor(Color.white).build();
 		car[5] = new Car.Builder().primaryColor(Color.black).build();
 		
-		for (int i = 0; i < playerAmount; i++) {
-			player[i] = new Player(GUI.getUserString("Skriv navnet for spiller "
-					+ (i + 1) + ":"));
+		for (int i = 0; i < playerAmount; i++) {		
+			player[i] = new Player(JOptionPane.showInputDialog("Skriv navnet for spiller "+(i + 1) + ":"));
 			GUI.addPlayer(player[i].getName(), player[i].account.getScore(),
 					car[i]);
 			GUI.setCar(player[i].getPosition() + 1, player[i].getName());
