@@ -15,7 +15,7 @@ public class HouseController {
 	private String possibleBuild;
 	private String possibleSell;
 	boolean moreHouses = true;
-	int[] sellOptions;
+	String[] sellOptions;
 	
 	public HouseController(GUIcontroller GUIC, GameBoard board,Player[] playerlist){
 		this.board =board;
@@ -57,15 +57,13 @@ public class HouseController {
 		}
 				
 	
-	public int[] checkFieldsWithHouses(Player[] player, int currentPlayer){
-		sellOptions = new int[39];
-		int arrayIndex = 0;
+	public String[] checkFieldsWithHouses(Player[] player, int currentPlayer, GameBoard board){
+		sellOptions = new String[39];
 		for(int i=1; i>39; i++){
 			if(gethouses(i) > 0){
-				sellOptions[arrayIndex] = i;
-				arrayIndex++;
+				sellOptions[i] = board.getField(i).getName();
 			}
-		}
+		}	
 		return sellOptions;
 	}
 	public void checkOwnedFields(Player[] player, int currentPlayer){

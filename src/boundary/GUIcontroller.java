@@ -312,8 +312,8 @@ public class GUIcontroller {
 	public boolean offerMoreHouses(){
 		return GUI.getUserLeftButtonPressed("Oensker du at købe flere huse?", "Ja", "Nej");
 	}
-	public String offerToSellHouse(){
-		return GUI.getUserButtonPressed("Oensker du at sælge dine grunde?","Ja","Nej");
+	public String offerToSellHouse(String[] sellOptions){
+		return GUI.getUserSelection("Du kan sælge huse på disse grunde!", sellOptions);
 	}
 	public String offerToSellPlot(){
 		return GUI.getUserButtonPressed("Oensker du at sælge dine grunde?","Ja","Nej");

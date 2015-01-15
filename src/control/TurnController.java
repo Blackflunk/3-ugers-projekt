@@ -64,8 +64,8 @@ public class TurnController {
 			}
 			
 		}else if(choiceofTurn.equals("Saelg hus")){
-			houseC.checkFieldsWithHouses(playerlist, currentPlayer);
-			
+			GUIC.offerToSellHouse(houseC.checkFieldsWithHouses(playerlist, currentPlayer, board));
+
 		}else if(choiceofTurn.equals("Saelg grund")){
 			
 		}
