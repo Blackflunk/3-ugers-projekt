@@ -28,10 +28,7 @@ public class Fleet extends Ownable {
 					player.account.addPoints(-price);
 					setOwner(player);
 					player.addFleet();
-				} else {
-				}
-			} else {
-			}
+				} 		}	
 			// if the owner is the player himself, nothing happens
 		} else if (getOwner().equals(player)) {
 		}

@@ -145,7 +145,7 @@ public class FieldController {
 				GUIC.fieldTax(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), 
 						gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
 						gameboard.getField(playerlist[currentPlayer].getPosition()).getRent
-						(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getFleets()));
+						(gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getFleets()-1));
 				gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 			// if insufficient funds
 			} else {
