@@ -48,11 +48,18 @@ public class HouseController {
 	
 	
 	//sell house
-	public void sellHouse(Player[] player, int currentPlayer){		
-		possibleSell = " ";
-			for(int i=1; i<=8; i++){
-				if(getBuild(i, player, currentPlayer) == true){
-					buildPlots(player, currentPlayer,i);
+	public void sellHouse(Player[] player, int currentPlayer,GameBoard board, String plot){		
+			for(int i=1; i<=39; i++){
+				if(board.getField(i).getName().equals(plot)){
+					player[currentPlayer].account.addPoints(getHousePrice(1));
+					board.getField(i).setNumberofHouses(-1);
+					if(board.getField(i).getNumberofhouses()==5){
+						GUIC.setHotel(i+1,false);
+						removeHotel(player, currentPlayer);
+					}else{
+					GUIC.setHouse(i+1, gethouses(-1));
+					player[currentPlayer].addHouseammount(-1);
+					}
 				}	
 			}
 		}
@@ -275,6 +282,11 @@ public class HouseController {
 	public void setHotel(Player[] player, int currentPlayer){
 		player[currentPlayer].addHouseammount(-4);
 		player[currentPlayer].addHotelammount(1);
+	}
+	
+	public void removeHotel(Player[] player, int currentPlayer){
+		player[currentPlayer].addHouseammount(4);
+		player[currentPlayer].addHotelammount(-1);
 	}
 	public int gethouses(int n){
 		return board.getField(n).getNumberofhouses();
