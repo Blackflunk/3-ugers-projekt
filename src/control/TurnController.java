@@ -53,7 +53,7 @@ public class TurnController {
 	public void runNormalTurn(Player[] playerlist, int currentPlayer) {
 		int count = 0;
 		boolean run = true;
-		choiceofTurn = GUIC.startOfTurn();
+		choiceofTurn = GUIC.startOfTurn(playerlist, currentPlayer);
 
 		if(choiceofTurn.equals("Koeb hus")){
 			houseC.checkOwnedFields(playerlist, currentPlayer);
