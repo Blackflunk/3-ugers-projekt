@@ -92,7 +92,7 @@ public class TurnController {
 		GUIC.showDice(box.getDice1(), box.getDice2());
 		if (count !=3) {
 		GUIC.updatePosition(playerlist, currentPlayer, box.getSum());
-		FC.landOnField(playerlist, currentPlayer);
+		FC.landOnField(currentPlayer);
 		}
 		if (box.isEqual()){
 			count ++;
@@ -112,7 +112,7 @@ public class TurnController {
 	public void afterJailTurn(Player[] playerlist, int currentPlayer) {
 		GUIC.afterJail();
 		GUIC.newPositon(playerlist[currentPlayer]);
-		FC.landOnField(playerlist, currentPlayer);
+		FC.landOnField(currentPlayer);
 	}
 	
 	
@@ -207,7 +207,7 @@ public class TurnController {
 		GUIC.updatePosition(playerlist, currentPlayer, box3.getSum());
 		}
 		
-		FC.landOnField(playerlist, currentPlayer);
+		FC.landOnField(currentPlayer);
 		if (box.isEqual()){
 			count ++;
 		} else

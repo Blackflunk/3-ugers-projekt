@@ -9,8 +9,8 @@ import fields.GameBoard;
 public class DeckController {
 	private GUIcontroller GUIC = new GUIcontroller();
 	private Deck deck;
-	private GameBoard board;
 	private FieldController FC;
+	private Player[] playerlist;
 	private int decklength = 30;
 	private int cardsdrawned= 0;
 	
@@ -18,13 +18,13 @@ public class DeckController {
 	
 	public DeckController(GUIcontroller GUIC, Player[] playerlist, GameBoard board, FieldController FC) {
 		this.GUIC = GUIC;
-		this.board = board;
+		this.playerlist = playerlist;
 		this.deck = new Deck(playerlist, board);
 		this.FC = FC;
 		shuffleDeck();
 	}
 	
-	public void drawCard(Player[] playerlist, int currentPlayer) {
+	public void drawCard(int currentPlayer) {
 		GUIC.showMessage(deck.getMessage(0));
 		Card temp = deck.drawCard(playerlist[currentPlayer]);
 		cardsdrawned++;
@@ -34,7 +34,7 @@ public class DeckController {
 			cardsdrawned = 0;
 		}
 		if (temp instanceof Movecard)
-			FC.landOnField(playerlist, currentPlayer);
+			FC.landOnField(currentPlayer);
 		// ektra update på GUI
 		GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 	}
