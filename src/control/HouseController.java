@@ -256,10 +256,10 @@ public class HouseController {
 						board.getField(1).setNumberofHouses(1);
 						if(board.getField(1).getNumberofhouses()==5){
 							GUIC.setHotel(2,true);
-							
+							setHotel(player);
 						}else{
 						GUIC.setHouse(2, gethouses(1));
-						player.setHouseammount(1);
+						player.addHouseammount(1);
 						}
 					}}}
 			if(gethouses(3) <= gethouses(1)){
@@ -499,9 +499,3 @@ public class HouseController {
 }
 
 
-public String offerToSellHouse(){
-	return GUI.getUserButtonPressed("Oensker du at sælge dine grunde?","Ja","Nej");
-}
-public String offerToSellPlot(){
-	return GUI.getUserButtonPressed("Oensker du at sælge dine grunde?","Ja","Nej");
-}

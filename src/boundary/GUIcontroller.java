@@ -305,6 +305,13 @@ public class GUIcontroller {
 	public String offerToBuy(String possibleBuild){
 		return GUI.getUserButtonPressed("Du ejer nok grunde af en farve til at bygge huse. Oensker du at bygger paa en af disse grunde?" + possibleBuild,"Ja","Nej");
 	}
+	public String offerToSellHouse(){
+		return GUI.getUserButtonPressed("Oensker du at sælge dine grunde?","Ja","Nej");
+	}
+	public String offerToSellPlot(){
+		return GUI.getUserButtonPressed("Oensker du at sælge dine grunde?","Ja","Nej");
+	}
+
 	
 	public boolean jailOptions(Player player) {
 		return GUI.getUserLeftButtonPressed(player.getName()+" sidder i faengsel, "
