@@ -16,10 +16,8 @@ public class DeckController {
 	public DeckController(Deck deck, GUIcontroller GUIC, Player[] playerlist, GameBoard board) {
 		this.GUIC = GUIC;
 		this.deck = new Deck(playerlist, board);
-		shuffleDeck();
-	}
-	public void createFieldController(GameBoard board, Player[] playerlist){
 		FC = new FieldController(GUIC, board, playerlist, deck);
+		shuffleDeck();
 	}
 	
 	public void drawCard(Player[] playerlist, int currentPlayer) {
