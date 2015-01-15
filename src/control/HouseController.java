@@ -1,5 +1,6 @@
 package control;
 
+import desktop_resources.GUI;
 import boundary.GUIcontroller;
 import entity.DiceBox;
 import entity.Player;
@@ -44,6 +45,8 @@ public class HouseController {
 	
 	//sell house
 	public void sellHouse(Player player, int currentPlayer){
+		if(GUIC.offerToSellHouse().equals("Ja"));
+		
 		possibleBuild = " ";
 		if(player.getBuy_Blue()== true||player.getBuy_Pink()== true||player.getBuy_Green()== true
 				||player.getBuy_grey()== true||player.getBuy_Red()== true||player.getBuy_White() == true
@@ -233,7 +236,10 @@ public class HouseController {
 			possibleBuild += " Frederiksberggade og Raedhuspladsen";
 		}
 	}
-	
+	public void setHotel(Player player){
+		player.addHouseammount(-4);
+		player.addHotelammount(1);
+	}
 	public int gethouses(int n){
 		return board.getField(n).getNumberofhouses();
 	}
@@ -250,8 +256,10 @@ public class HouseController {
 						board.getField(1).setNumberofHouses(1);
 						if(board.getField(1).getNumberofhouses()==5){
 							GUIC.setHotel(2,true);
+							
 						}else{
 						GUIC.setHouse(2, gethouses(1));
+						player.setHouseammount(1);
 						}
 					}}}
 			if(gethouses(3) <= gethouses(1)){
@@ -488,4 +496,12 @@ public class HouseController {
 	public void sellPlots(Player player, int n){
 		
 	}
+}
+
+
+public String offerToSellHouse(){
+	return GUI.getUserButtonPressed("Oensker du at sælge dine grunde?","Ja","Nej");
+}
+public String offerToSellPlot(){
+	return GUI.getUserButtonPressed("Oensker du at sælge dine grunde?","Ja","Nej");
 }

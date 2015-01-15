@@ -37,10 +37,6 @@ public class FieldController {
 		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.MoveToJail) {
 			GUIC.newPositon(playerlist[currentPlayer]);
 		}
-		// For Tax
-		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.Tax) {
-			landOnTax(currentPlayer);
-		}
 		// For every other fields
 		else
 			gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
@@ -200,27 +196,6 @@ public class FieldController {
 					gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().account.getScore());
 			GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 		}
-	}
-	
-	public void landOnTax(int currentPlayer) {
-		if (gameboard.getField(playerlist[currentPlayer].getPosition()).isOption()) {
-			boolean paypercent = GUIC.taxPick(gameboard.getField(playerlist[currentPlayer].getPosition()).getName());
-			if(paypercent) {
-				gameboard.getField(playerlist[currentPlayer].getPosition()).setPaypercent(paypercent);	
-				GUIC.messageTax10percent();
-			} else if (playerlist[currentPlayer].account.getScore() >= 
-					gameboard.getField(playerlist[currentPlayer].getPosition()).getPrice()) {
-				GUIC.taxMessageNoOption(gameboard.getField(playerlist[currentPlayer].getPosition()).getPrice());
-			} else
-				GUIC.insufficiantFundsTax();
-		} else {
-				if (playerlist[currentPlayer].account.getScore() >= 
-					gameboard.getField(playerlist[currentPlayer].getPosition()).getPrice()) {
-					GUIC.taxMessageNoOption(gameboard.getField(playerlist[currentPlayer].getPosition()).getPrice());
-	}			else
-					GUIC.insufficiantFundsTax();
-		}
-		gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 	}
 
 }

@@ -44,7 +44,7 @@ public class HouseTest {
 			
 			players[1].setPosition(11);
 			board.getField(players[1].getPosition()).landOnField(players[1]);
-			
+			System.out.println(players[0].getHouseammount());
 		// Postconditions
 			assertEquals(3,players[0].getFieldammount_green());
 			assertEquals(16200, players[0].account.getScore());
@@ -84,7 +84,7 @@ public class HouseTest {
 			HC.buyHouse(players[0], 0);
 			players[1].setPosition(11);
 			board.getField(players[1].getPosition()).landOnField(players[1]);
-			
+			System.out.println(players[0].getHouseammount());
 		// Postconditions
 			assertEquals(3,players[0].getFieldammount_green());
 			assertEquals(12200, players[0].account.getScore());
@@ -124,6 +124,7 @@ public class HouseTest {
 			HC.buyHouse(players[0], 0);
 			HC.buyHouse(players[0], 0);
 			HC.buyHouse(players[0], 0);
+			System.out.println(players[0].getHouseammount());
 		// Postconditions
 		/*	assertEquals(3,players[0].getFieldammount_green());
 			assertEquals(3200, players[0].account.getScore());*/

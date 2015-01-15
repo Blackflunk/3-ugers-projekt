@@ -49,14 +49,5 @@ public abstract class Field {
 	public int getRent(int rentnumber) {
 		return 0;
 	}
-	public boolean isOption() {
-		return false;
-	}
-	public boolean isPaypercent() {
-		return false;
-	}
-	public void setPaypercent(boolean paypercent) {
-		
-	}
 		
 }
