@@ -65,7 +65,6 @@ public class GameController {
 				// If a player has lost, adds one to lostCount and reset the players owned fields
 				if (playerlist[currentPlayer].getStatus()) {
 					GUIC.removePlayer(playerlist, currentPlayer);
-					
 					gameboard.resetOwnedFields(playerlist[currentPlayer]);
 					lostCount++;
 					
@@ -73,9 +72,7 @@ public class GameController {
 					if (lostCount == playerAmmount - 1) {
 						won = true;
 						GUIC.showWin(playerlist, playerAmmount);
-					}	
-				}	
-			}
+					}}}	
 			// Changes player
 			changePlayer();
 		}
