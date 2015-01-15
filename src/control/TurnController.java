@@ -1,6 +1,5 @@
 package control;
 
-import deck.Deck;
 import boundary.GUIcontroller;
 import entity.DiceBox;
 import entity.Player;
