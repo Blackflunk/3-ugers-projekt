@@ -17,7 +17,6 @@ public class GameController {
 	private GameBoard gameboard = new GameBoard(box);
 	private GUIcontroller GUIC = new GUIcontroller();
 	private TurnController TurnC;
-	private HouseController houseC;
 	private int lostCount = 0;
 	
 	public static void main(String[] args) {
@@ -52,13 +51,11 @@ public class GameController {
 		
 		// Creates Controllers dependent on playerlist
 		TurnC = new TurnController(GUIC, gameboard, playerlist);
-		houseC = new HouseController(GUIC, gameboard, playerlist);
+		
 
 		// The game continues as long as won equals false
 		while (!won) {
 			if (!playerlist[currentPlayer].getStatus()) {
-				houseC.checkOwnedFields(playerlist[currentPlayer]);
-				houseC.buyHouse(playerlist[currentPlayer],currentPlayer);
 				// If Player is jailed
 				TurnC.runTurn(playerlist, currentPlayer);
 				

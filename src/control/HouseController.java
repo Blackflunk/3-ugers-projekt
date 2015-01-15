@@ -22,7 +22,7 @@ public class HouseController {
 		this.board = board;
 	}
 	
-	public void buyHouse(Player player, int currentPlayer){
+	public void buyHouse(Player player){
 		//check if you can buy.
 		possibleBuild = " ";
 		while(moreHouses== true){
@@ -34,39 +34,29 @@ public class HouseController {
 							getRoad(i);
 						}
 					}
-					if(GUIC.offerToBuy(possibleBuild).equals("Ja")){
-						for(int i=1; i<=8; i++){
-							if(getBuild(i, player) == true){
-								buildPlots(player,i);
-							}
-					
+					for(int i=1; i<=8; i++){
+						if(getBuild(i, player) == true){
+							buildPlots(player,i);
+						}
 					}
 				}
 			}if(GUIC.offerMoreHouses()==false){
 				moreHouses=false;
 			}
 		}	
-	}
+	
 	
 	//sell house
-	public void sellHouse(Player player, int currentPlayer){
-		
-		if(GUIC.offerToSellHouse().equals("Ja"));
-		
+	public void sellHouse(Player player, int currentPlayer){		
 		possibleBuild = " ";
-		if(player.getBuy_Blue()== true||player.getBuy_Pink()== true||player.getBuy_Green()== true
-				||player.getBuy_grey()== true||player.getBuy_Red()== true||player.getBuy_White() == true
-				||player.getBuy_Yellow()== true||player.getBuy_Magenta()== true){
-					if(GUIC.offerToBuy(possibleBuild).equals("Ja")){
-						for(int i=1; i<=8; i++){
-							if(getBuild(i, player) == true){
-								buildPlots(player,i);
-							}
-					
-					}
-				}
-		}		
-	}
+			for(int i=1; i<=8; i++){
+				if(getBuild(i, player) == true){
+					buildPlots(player,i);
+				}	
+			}
+		}
+				
+	
 	
 	public void checkOwnedFields(Player player){
 		checkBlue(player);

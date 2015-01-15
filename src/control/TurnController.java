@@ -12,6 +12,8 @@ public class TurnController {
 	private DiceBox box = new DiceBox();
 	private Player[] playerlist;
 	private FieldController FC;
+	private HouseController houseC;
+	String choiceofTurn;
 	
 	// for testing only
 	private int k = 0;
@@ -21,6 +23,7 @@ public class TurnController {
 		this.board = board;
 		this.playerlist = playerlist;
 		FC = new FieldController(GUIC, board, playerlist, new Deck(playerlist, board));
+		houseC = new HouseController(Player playerlist, )
 	}
 	
 	//lav en for l�kke s� den updater v�rd tur
@@ -51,7 +54,14 @@ public class TurnController {
 	public void runNormalTurn(Player[] playerlist, int currentPlayer) {
 		int count = 0;
 		boolean run = true;
-		GUIC.startOfTurn();
+		choiceofTurn = GUIC.startOfTurn();
+		if(choiceofTurn.equals("Koeb hus")){
+			HC.buyHouse
+		}else if(choiceofTurn.equals("Saelg hus")){
+			
+		}else if(choiceofTurn.equals("Saelg grund")){
+			
+		}
 		while(run){
 		if(count==0)
 		GUIC.nextPlayer(playerlist, currentPlayer);
