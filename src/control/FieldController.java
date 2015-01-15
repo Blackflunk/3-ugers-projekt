@@ -218,6 +218,7 @@ public class FieldController {
 					GUIC.messageTax10percent();
 					} else if (playerlist[currentPlayer].account.getScore() >= 
 							gameboard.getField(playerlist[currentPlayer].getPosition()).getPrice()) {
+						gameboard.getField(playerlist[currentPlayer].getPosition()).setPaypercent(false);
 						GUIC.taxMessageNoOption(gameboard.getField(playerlist[currentPlayer].getPosition()).getPrice());
 					} else
 						GUIC.insufficiantFundsTax();
