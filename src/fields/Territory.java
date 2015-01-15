@@ -62,8 +62,10 @@ public class Territory extends Ownable {
 		// if the field is owned by another player, a rent have to be paid
 		} else {
 			if (player.account.getScore() >= rent[numberofhouses]) {
-				getOwner().account.addPoints(rent[numberofhouses]);
-				player.account.addPoints(-rent[numberofhouses]);
+				if(checkPayDoubleRent(player))
+					payDoubleRent(player);
+				else
+					payRent(player);
 		// the player looses if the rent is higher than the players balance
 			}
 			// the player loses if the rent is higher than the players balance
@@ -73,6 +75,65 @@ public class Territory extends Ownable {
 				player.setStatus(true);
 			}
 		}
+	}
+	
+	public void payRent(Player player){
+		getOwner().account.addPoints(rent[numberofhouses]);
+		player.account.addPoints(-rent[numberofhouses]);
+	}
+	
+	public boolean checkPayDoubleRent(Player player){
+		switch(color){
+			case "Blue" : 
+				if (getOwner().getBuy_Blue() && numberofhouses == 0)
+					return true;
+				else
+					return false;
+			case "Pink" : 
+				if (getOwner().getBuy_Pink() && numberofhouses == 0)
+					return true;
+				else
+					return false;
+			case "Green" : 
+				if (getOwner().getBuy_Green() && numberofhouses == 0)
+					return true;
+				else
+					return false;
+			case "Gray" : 
+				if (getOwner().getBuy_grey() && numberofhouses == 0)
+					return true;
+				else
+					return false;
+			case "Red" : 
+				if (getOwner().getBuy_Red() && numberofhouses == 0)
+					return true;
+				else
+					return false;
+			case "White" : 
+				if (getOwner().getBuy_White() && numberofhouses == 0)
+					return true;
+				else
+					return false;
+			case "Yellow" : 
+				if (getOwner().getBuy_Yellow() && numberofhouses == 0)
+					return true;
+				else
+					return false;
+			case "Magneta" : 
+				if (getOwner().getBuy_Magenta() && numberofhouses == 0)
+					return true;
+				else
+					return false;
+			default:
+					return false;
+			
+		}
+	}
+
+	
+	public void payDoubleRent(Player player){
+		getOwner().account.addPoints(rent[0]*2);
+		player.account.addPoints(-rent[0]*2);
 	}
 	
 	public int getHouseprice() {
