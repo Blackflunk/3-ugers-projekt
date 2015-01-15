@@ -29,9 +29,6 @@ public class HouseController {
 		//check if you can buy.
 		possibleBuild = " ";
 		while(moreHouses== true){
-		if(player[currentPlayer].getBuy_Blue()== true||player[currentPlayer].getBuy_Pink()== true||player[currentPlayer].getBuy_Green()== true
-				||player[currentPlayer].getBuy_grey()== true||player[currentPlayer].getBuy_Red()== true||player[currentPlayer].getBuy_White() == true
-				||player[currentPlayer].getBuy_Yellow()== true||player[currentPlayer].getBuy_Magenta()== true){
 					for(int i=1; i<=8; i++){
 						if(getPriceAndValue(player, currentPlayer, i, board) == true){
 							getRoad(i);
@@ -43,10 +40,10 @@ public class HouseController {
 						}
 					}
 				}
-			}if(GUIC.offerMoreHouses()==false){
+			if(GUIC.offerMoreHouses()==false){
 				moreHouses=false;
-			}
-		}	
+		}
+	}		
 	
 	
 	//sell house
@@ -60,8 +57,8 @@ public class HouseController {
 		}
 				
 	
-	public void checkFieldsWithHouses(Player[] player, int currentPlayer){
-		sellOptions = new int[21];
+	public int[] checkFieldsWithHouses(Player[] player, int currentPlayer){
+		sellOptions = new int[39];
 		int arrayIndex = 0;
 		for(int i=1; i>39; i++){
 			if(gethouses(i) > 0){
@@ -69,6 +66,7 @@ public class HouseController {
 				arrayIndex++;
 			}
 		}
+		return sellOptions;
 	}
 	public void checkOwnedFields(Player[] player, int currentPlayer){
 		checkBlue(player, currentPlayer);

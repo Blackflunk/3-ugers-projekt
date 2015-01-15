@@ -54,14 +54,22 @@ public class TurnController {
 		int count = 0;
 		boolean run = true;
 		choiceofTurn = GUIC.startOfTurn();
+
 		if(choiceofTurn.equals("Koeb hus")){
 			houseC.checkOwnedFields(playerlist, currentPlayer);
+			if(playerlist[currentPlayer].getBuy_Blue()== true||playerlist[currentPlayer].getBuy_Pink()== true||playerlist[currentPlayer].getBuy_Green()== true
+					||playerlist[currentPlayer].getBuy_grey()== true||playerlist[currentPlayer].getBuy_Red()== true||playerlist[currentPlayer].getBuy_White() == true
+					||playerlist[currentPlayer].getBuy_Yellow()== true||playerlist[currentPlayer].getBuy_Magenta()== true){
 			houseC.buyHouse(playerlist, currentPlayer);
+			}
+			
 		}else if(choiceofTurn.equals("Saelg hus")){
+			houseC.checkFieldsWithHouses(playerlist, currentPlayer);
 			
 		}else if(choiceofTurn.equals("Saelg grund")){
 			
 		}
+		
 		while(run){
 		if(count==0)
 		GUIC.nextPlayer(playerlist, currentPlayer);
