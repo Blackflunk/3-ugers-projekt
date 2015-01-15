@@ -29,7 +29,6 @@ public class DeckController {
 			deck.shuffleDeck();
 			cardsdrawned = 0;
 		}
-		FC.landOnField(playerlist, currentPlayer);
 		// ektra update på GUI
 		GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 	}
