@@ -56,7 +56,23 @@ public class HouseController {
 				}	
 			}
 		}
-				
+	public String[] checkIfPossibleSell(Player[] player, int currentPlayer, GameBoard board){
+		int arrayIndex = 0;
+		int arraylength = 0;
+		for(int i=1; i<=39; i++){
+			if(gethouses(i) > 0){
+				arraylength++;
+			}
+		}	
+		sellOptions = new String[arraylength];	
+		for(int i=1; i<=39; i++){
+			if(gethouses(i) > 0){
+				sellOptions[arrayIndex] = board.getField(i).getName();
+				arrayIndex++;
+			}
+		}
+			return sellOptions;
+	}
 	
 	public String[] checkFieldsWithHouses(Player[] player, int currentPlayer, GameBoard board){
 	boolean sellHouses = true;
@@ -68,14 +84,14 @@ public class HouseController {
 				arraylength++;
 			}
 		}	
-		sellOptions = new String[arraylength];
+		sellOptions = new String[arraylength];	
 		for(int i=1; i<=39; i++){
 			if(gethouses(i) > 0){
 				sellOptions[arrayIndex] = board.getField(i).getName();
 				arrayIndex++;
 			}
 		}
-			if(GUIC.offerMoreHouses()==false){
+			if(GUIC.offerToSellHouses()==false){
 				sellHouses=false;
 			}
 	}
