@@ -12,7 +12,7 @@ public class MoveToFleetCard extends MoveCard{
 
 	@Override
 	public void drawCard(Player player) {
-		if (player.getPosition() >= 35 && player.getPosition() < 5) {
+		if (player.getPosition() >= 35 || player.getPosition() < 5) {
 			newposition = 5;
 			if (player.getPosition() <= 39)
 				player.passStart();
