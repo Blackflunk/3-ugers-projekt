@@ -17,10 +17,12 @@ public class LaborCamp extends Ownable {
 	}
 	@Override
 	public int getRent(int numberoflaborcamps) {
-		if (owner.getLaborCamp() == 1)
+		if (numberoflaborcamps == 1)
 			return 80*box.getSum();
-		else
+		else if (numberoflaborcamps==2)
 			return 200*box.getSum();
+		else 
+			return 0;
 	}
 
 	@Override
