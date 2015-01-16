@@ -40,7 +40,7 @@ public class GameBoard {
 		fieldlist[26] = new Territory("Bredgade", 5200, 3000, 2600, 440, 2200, 6600, 16000, 19500, 23000,"White");
 		fieldlist[27] =	new Territory("Kgs Nytorv", 5200, 3000, 2600, 440, 2200, 6600, 16000, 19500, 23000,"White");
 		fieldlist[28] = new LaborCamp("Coca-Cola", 3000, 1500, 80, box);
-		fieldlist[29] = new Territory("Istergade", 5600, 3000, 2800, 480, 2400, 7200, 17000, 20500, 24000,"White");
+		fieldlist[29] = new Territory("Oestergade", 5600, 3000, 2800, 480, 2400, 7200, 17000, 20500, 24000,"White");
 		fieldlist[30] = new MoveToJail("Gaa I Faengslet");
 		fieldlist[31] = new Territory("Amagertorv", 6000, 4000, 3000, 520, 2600, 7800, 18000, 22000, 25500,"Yellow");
 		fieldlist[32] =	new Territory("Vimmelskaftet", 6000, 4000, 3000, 520, 2600, 7800, 18000, 22000, 25500,"Yellow");
