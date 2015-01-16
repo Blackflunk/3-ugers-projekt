@@ -32,8 +32,10 @@ public class FieldController {
 		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.ChanceCard)
 			DC.drawCard(currentPlayer);
 		// For MoveToJail
-		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.MoveToJail) 
+		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.MoveToJail) {
+			gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 			GUIC.newPosition(playerlist[currentPlayer]);
+		}
 		// For Tax
 		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.Tax) 
 			landOnTax(currentPlayer);

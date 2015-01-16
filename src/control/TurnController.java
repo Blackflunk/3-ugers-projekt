@@ -110,8 +110,10 @@ public class TurnController {
 			GUIC.showDice(box.getDice1(), 1);
 		}
 			
-		if(box.getSum() + playerlist[currentPlayer].getPosition() >= 40)
+		if(box.getSum() + playerlist[currentPlayer].getPosition() >= 40) {
 			GUIC.pastStart();
+			GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+		}
 		if (count !=3) {
 		GUIC.updatePosition(playerlist, currentPlayer, box.getSum());
 		FC.landOnField(currentPlayer);
