@@ -45,7 +45,7 @@ public class HouseController {
 	public void sellHouse(int currentPlayer,GameBoard board, String plot){		
 			for(int i=1; i<=39; i++){
 				if(board.getField(i).getName().equals(plot)){
-					playerlist[currentPlayer].account.addPoints(getHousePrice(1));
+					playerlist[currentPlayer].account.addPoints(getHousePrice(1)/2);
 					board.getField(i).addNumberofHouses(-1);
 					if(board.getField(i).getNumberofhouses()==5){
 						GUIC.setHotel(i+1,false);

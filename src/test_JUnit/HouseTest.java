@@ -54,7 +54,7 @@ public class HouseTest {
 
 		players[1].setPosition(11);
 		board.getField(players[1].getPosition()).landOnField(players[1]);
-		System.out.println(players[0].getHouseammount());
+	
 
 	// Postconditions
 		assertEquals(3,players[0].getFieldammount_green());
