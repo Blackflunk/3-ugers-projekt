@@ -12,6 +12,11 @@ public class PropertyPayCard extends PayCard {
 	}
 	
 	public void drawCard(Player player) {
+		if (player.account.getScore()<price_house*player.getHouseammount()+price_hotel*player.getHotelammount()){
+			player.setStatus(true);
+			player.account.setScore(0);
+		}
+		else
 		player.account.addPoints(price_house*player.getHouseammount()+price_hotel*player.getHotelammount());
 	}
 	

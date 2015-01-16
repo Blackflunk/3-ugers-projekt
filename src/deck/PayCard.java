@@ -11,11 +11,11 @@ public class PayCard extends Card{
 	
 	@Override 
 	public void drawCard(Player player) {
+		if (player.account.getScore()<price){
+			player.setStatus(true);
+			player.account.setScore(0);
+		}
+		else
 		player.account.addPoints(-price);
 	}
-	
-
-	
-	
-
 }

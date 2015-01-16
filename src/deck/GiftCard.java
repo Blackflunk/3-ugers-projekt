@@ -12,11 +12,15 @@ public class GiftCard extends RecieveCard {
 	public void drawCard(Player player) {
 		for (int i=0; i < playerlist.length; i++) {
 			boolean t = player.equals(playerlist[i]);
-			if (!t) 
+			if (!t) {
+				if (player.account.getScore()<playerlist[i].account.getScore()){
+					player.setStatus(true);
+					player.account.setScore(0);
+				}		
+				else
 				playerlist[i].account.addPoints(-bonus);
-			System.out.println(playerlist[i].account.getScore());
+			}
 		}
 		player.account.addPoints(bonus*(playerlist.length-1));
-		System.out.println(player.account.getScore());
 	}
 }
