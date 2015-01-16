@@ -193,7 +193,7 @@ public class FieldController {
 			// If affordable rent
 			if (playerlist[currentPlayer].account.getScore() >= 
 					gameboard.getField(playerlist[currentPlayer].getPosition()).getRent(
-							gameboard.getField(playerlist[currentPlayer].getPosition()).getNumberofhouses())){
+							gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getLaborCamp())){
 				GUIC.fieldTax(gameboard.getField(playerlist[currentPlayer].getPosition()).getName(), 
 						gameboard.getField(playerlist[currentPlayer].getPosition()).getOwner().getName(), 
 						gameboard.getField(playerlist[currentPlayer].getPosition()).getRent
