@@ -54,16 +54,19 @@ public class TurnController {
 	public void runNormalTurn(int currentPlayer) {
 		int count = 0;
 		boolean run = true;
-		choiceofTurn = GUIC.startOfTurn(playerlist, currentPlayer);
-
+		boolean keepBuyingSelling = true;
+		while(keepBuyingSelling){
+		choiceofTurn = GUIC.startOfTurn(playerlist, currentPlayer);	
 		if(choiceofTurn.equals("Koeb hus")){
 			buyHouse(currentPlayer);
 			
 		}else if(choiceofTurn.equals("Saelg hus")){
 			sellHouse(currentPlayer);
 			
+		}else if(choiceofTurn.equals("rul terning")){
+			keepBuyingSelling = false;
 		}
-		
+		}
 		while(run){
 		if (count==2)
 			GUIC.twoPair();
