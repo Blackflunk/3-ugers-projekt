@@ -61,7 +61,9 @@ public class TurnController {
 			if(playerlist[currentPlayer].getBuy_Blue()== true||playerlist[currentPlayer].getBuy_Pink()== true||playerlist[currentPlayer].getBuy_Green()== true
 					||playerlist[currentPlayer].getBuy_grey()== true||playerlist[currentPlayer].getBuy_Red()== true||playerlist[currentPlayer].getBuy_White() == true
 					||playerlist[currentPlayer].getBuy_Yellow()== true||playerlist[currentPlayer].getBuy_Magenta()== true){
-			houseC.buyHouse(currentPlayer);
+					houseC.buyHouse(currentPlayer);
+			}else{
+				GUIC.noHouseToBuy();
 			}
 			
 		}else if(choiceofTurn.equals("Saelg hus")){
@@ -69,24 +71,26 @@ public class TurnController {
 			String sellHouse;
 			boolean sellMore = true;
 			String[] ar = houseC.checkIfPossibleSell(currentPlayer, board);
-			System.out.println(ar.toString());
-			if(ar.length == 0){
-				GUIC.noHouseToSell();
-				sellMore = false;
-			}
-			if(ar.length > 0){
-				while(sellMore == true){	
+			
+			if(playerlist[currentPlayer].getBuy_Blue()== true||playerlist[currentPlayer].getBuy_Pink()== true||playerlist[currentPlayer].getBuy_Green()== true
+					||playerlist[currentPlayer].getBuy_grey()== true||playerlist[currentPlayer].getBuy_Red()== true||playerlist[currentPlayer].getBuy_White() == true
+					||playerlist[currentPlayer].getBuy_Yellow()== true||playerlist[currentPlayer].getBuy_Magenta()== true){
 					if(ar.length > 0){
-						sellHouse = GUIC.offerToSellHouse(houseC.checkFieldsWithHouses(currentPlayer, board));
-						if(houseC.checkIfPossibleSell(currentPlayer, board).length == 0){
-							sellMore = false;
-						}else{
-						houseC.sellHouse(currentPlayer, board, sellHouse);
-						sellMore = GUIC.offerToMoreSellHouses();
-						}
+							while(sellMore == true){	
+								ar = houseC.checkIfPossibleSell(currentPlayer, board);
+								if(ar.length == 0){
+									GUIC.noHouseToSell();
+									sellMore = false;
+									break;
+								}
+								sellHouse = GUIC.offerToSellHouse(houseC.checkIfPossibleSell(currentPlayer, board));
+								houseC.sellHouse(currentPlayer, board, sellHouse);	
+								sellMore = GUIC.offerToMoreSellHouses();	
+							}
+						}	
+					}else{
+						GUIC.noHouseToSell();
 					}
-				}
-			}
 		}else if(choiceofTurn.equals("Saelg grund")){
 			
 		}

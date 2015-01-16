@@ -331,6 +331,11 @@ public class GUIController {
 	public String noHouseToSell(){
 		return GUI.getUserButtonPressed("Du ejer ikke nogle huse som kan sÃ¦lges", "Okay");
 	}
+
+	public String noHouseToBuy() {
+		return GUI.getUserButtonPressed("Du ejer ikke nogle grunde hvor du kan købe huse'1", "Okay");
+		
+	}
 	public String offerToSellPlot(){
 		return GUI.getUserButtonPressed("Oensker du at sï¿½lge dine grunde?","Ja","Nej");
 	}
@@ -413,4 +418,5 @@ public class GUIController {
 	public void setHotel(int fieldNumber, boolean hasHotel){
 		GUI.setHotel(fieldNumber, hasHotel);
 	}
+
 }

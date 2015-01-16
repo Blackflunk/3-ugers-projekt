@@ -10,8 +10,6 @@ public class HouseController {
 	private GameBoard board;
 	private Player[] playerlist;
 	private boolean khan = true;
-	private String possibleBuild;
-	private String possibleSell;
 	private String[] sellOptions;
 	
 	public HouseController(GUIController GUIC, GameBoard board,Player[] playerlist){
@@ -24,18 +22,18 @@ public class HouseController {
 	public void buyHouse(int currentPlayer){
 		//check if you can buy.
 		boolean moreHouses = true;
-		possibleBuild = " ";
 		while(moreHouses== true){
 			for(int i=1; i<=8; i++){
 				if(getPriceAndValue(currentPlayer, i, board) == true){
-					getRoad(i);
+					for(int q=1; q<=8; q++){
+						if(getBuild(q, currentPlayer) == true){
+							buildPlots(currentPlayer ,q);
+							GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+							}
+						}
 				}
 			}
-			for(int i=1; i<=8; i++){
-				if(getBuild(i, currentPlayer) == true){
-					buildPlots(currentPlayer ,i);
-					}
-				}
+			
 			if(GUIC.offerMoreHouses()==false){
 				moreHouses=false;
 			}
@@ -76,27 +74,6 @@ public class HouseController {
 		}
 			return sellOptions;
 	}
-	
-	public String[] checkFieldsWithHouses(int currentPlayer, GameBoard board){
-	
-		int arrayIndex = 0;
-		int arraylength = 0;
-		for(int i=1; i<=39; i++){
-			if(gethouses(i) > 0){
-				arraylength++;
-			}
-		}	
-		sellOptions = new String[arraylength];	
-		for(int i=1; i<=39; i++){
-			if(gethouses(i) > 0){
-				sellOptions[arrayIndex] = board.getField(i).getName();
-				arrayIndex++;
-			}
-		}
-		return sellOptions;
-	}
-		
-		
 
 	public void checkOwnedFields(int currentPlayer){
 		checkBlue(currentPlayer);
@@ -246,32 +223,6 @@ public class HouseController {
 		
 	}
 	
-	public void getRoad(int n){
-		if(n == 1){
-			possibleBuild += " Roedovervej og Hvidovervej";
-		}
-		else if(n == 2){
-			possibleBuild += " Roskildevej, Valby Langgade og Allegade";
-		}
-		else if(n == 3){
-			possibleBuild += " Fredriksberg Alle, Bulowsvej og GL Kongevej";
-		}
-		else if(n == 4){
-			possibleBuild += " Bernstorffsvej, Hellerupvej og Strandvej";
-		}
-		else if(n == 5){
-			possibleBuild += " Trianglen, Oesterbrogade og Groenningen";
-		}
-		else if(n == 6){
-			possibleBuild += " Bredgade, Kgs Nytorv og Istergade";
-		}
-		else if(n == 7){
-			possibleBuild += " Amagertorv, Vimmelskaftet og Nygade";
-		}
-		else if(n == 8){
-			possibleBuild += " Frederiksberggade og Raedhuspladsen";
-		}
-	}
 	public void setHotel(int currentPlayer){
 		playerlist[currentPlayer].addHouseammount(-4);
 		playerlist[currentPlayer].addHotelammount(1);
