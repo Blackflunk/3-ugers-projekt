@@ -32,12 +32,11 @@ public class LaborCamp extends Ownable {
 					player.account.addPoints(-price);
 					setOwner(player);
 					player.addLaborCamp();
-				} else {
-				}
-			} else {
-			}
+				} 
+			} 
 			// if the owner is the player himself, nothing happens
 		} else if (getOwner().equals(player)) {
+			// nothing happens
 		}
 		// if the field is owned by another player, a rent have to be paid
 		else {

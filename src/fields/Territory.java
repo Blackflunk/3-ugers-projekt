@@ -53,12 +53,11 @@ public class Territory extends Ownable {
 					case "Magneta": player.addFieldammount_magenta();
 					break;
 					}
-				} else {
-				}
-			} else {
-			}
+				} 
+			} 
 		// if the owner is the player himself, nothing happens
 		} else if (getOwner().equals(player)) {
+			// Nothing happens
 		// if the field is owned by another player, a rent have to be paid
 		} else {
 			if (checkPayDoubleRent(player)){
