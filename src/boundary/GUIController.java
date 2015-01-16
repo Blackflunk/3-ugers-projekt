@@ -227,6 +227,9 @@ public class GUIController {
 	public void afterJail(){
 		GUI.showMessage("Du forlod faengslet, og rykker summen paa terningerne");
 	}
+	public void moveToJail() {
+		GUI.showMessage("Du har stoedt pÃ¥ en politiracia, du er blevet arresteret, og bliver forflyttet til fÃ¦ngslet");
+	}
 	
 	public void threePair(){
 		GUI.showMessage("Du har slaaet 3 par i traek, du ryger i faengsel");
@@ -296,7 +299,7 @@ public class GUIController {
 						+ " du faar ikke lov til at rykke denne tur");
 	}
 	public void showJailTurn() {
-		GUI.showMessage("Slaa med terningerne for at proeve at komme ud af fængslet");
+		GUI.showMessage("Slaa med terningerne for at proeve at komme ud af fï¿½ngslet");
 	}
 	
 	public boolean taxPick(String name) {
@@ -333,7 +336,7 @@ public class GUIController {
 	}
 
 	public String noHouseToBuy() {
-		return GUI.getUserButtonPressed("Du ejer ikke nogle grunde hvor du kan købe huse'1", "Okay");
+		return GUI.getUserButtonPressed("Du ejer ikke nogle grunde hvor du kan kï¿½be huse'1", "Okay");
 		
 	}
 	public String offerToSellPlot(){

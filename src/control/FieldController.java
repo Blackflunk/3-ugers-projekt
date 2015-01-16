@@ -33,9 +33,9 @@ public class FieldController {
 			DC.drawCard(currentPlayer);
 		// For MoveToJail
 		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.MoveToJail) {
+			GUIC.moveToJail();
 			gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 			GUIC.newPosition(playerlist[currentPlayer]);
-			// BESKED *****
 		}
 		// For Tax
 		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.Tax) 
