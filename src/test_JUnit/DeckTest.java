@@ -6,7 +6,10 @@ import entity.DiceBox;
 import entity.Player;
 import fields.GameBoard;
 import deck.Deck;
+
+import org.junit.Before;
 import org.junit.Test;
+
 import control.HouseController;
 
 public class DeckTest {
@@ -234,6 +237,17 @@ public class DeckTest {
 		//Check if the player lost 3000.
 		assertEquals(27000,players[0].account.getScore());
 		
+	}
+	@Before
+	public void ini(){
+	DiceBox box = new DiceBox();
+	GameBoard board = new GameBoard(box);
+	Player[] players = new Player[3];
+	players[0] = new Player("Spiller1");
+	players[1] = new Player("Spiller2");
+	players[2] = new Player("Spiller3");
+	GUIController GUIC = new GUIController();
+	HouseController HC = new HouseController(GUIC, board, players);
 	}
 	
 	@Test
