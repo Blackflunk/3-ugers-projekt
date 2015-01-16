@@ -2,6 +2,7 @@ package control;
 
 import boundary.GUIController;
 import entity.Player;
+import fields.Field;
 import fields.GameBoard;
 
 
@@ -51,7 +52,7 @@ public class HouseController {
 						removeHotel(currentPlayer);
 					}else{
 					playerlist[currentPlayer].addHouseammount(-1);	
-					GUIC.setHouse(i+1, gethouses(1));
+					GUIC.setHouse(i+1, board.getField(i).getNumberofhouses());
 					}
 				}	
 			}GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
@@ -60,13 +61,13 @@ public class HouseController {
 		int arrayIndex = 0;
 		int arraylength = 0;
 		for(int i=1; i<=39; i++){
-			if(gethouses(i) > 0 && playerlist[currentPlayer].equals(board.getField(i).getOwner())){
+			if(board.getField(i).getNumberofhouses() > 0 && playerlist[currentPlayer].equals(board.getField(i).getOwner())){
 				arraylength++;
 			}
 		}	
 		sellOptions = new String[arraylength];	
 		for(int i=1; i<=39; i++){
-			if(gethouses(i) > 0 && playerlist[currentPlayer].equals(board.getField(i).getOwner())){
+			if(board.getField(i).getNumberofhouses() > 0 && playerlist[currentPlayer].equals(board.getField(i).getOwner())){
 				sellOptions[arrayIndex] = board.getField(i).getName();
 				arrayIndex++;
 			}
@@ -231,170 +232,182 @@ public class HouseController {
 		playerlist[currentPlayer].addHouseammount(4);
 		playerlist[currentPlayer].addHotelammount(-1);
 	}
-	public int gethouses(int n){
-		return board.getField(n).getNumberofhouses();
-	}
+
 	public int getHousePrice(int n){
 		return board.getField(n).getHouseprice();
 	}
 	
 	public void buildPlots(int currentPlayer, int n){
 		if(n == 1){
-			if(gethouses(1) <= gethouses(3)){
-				if(board.getField(1).getNumberofhouses()<5){
+			Field f1 = board.getField(1);
+			Field f2 = board.getField(3);
+			
+			if(f1.getNumberofhouses() <= f2.getNumberofhouses()){
+				if(f1.getNumberofhouses()<5){
 					if(GUIC.buyRoedovervej().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(1));
-						board.getField(1).addNumberofHouses(1);
-						if(board.getField(1).getNumberofhouses()==5){
+						f1.addNumberofHouses(1);
+						if(f1.getNumberofhouses()==5){
 							GUIC.setHotel(2,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(2, gethouses(1));
+						GUIC.setHouse(2, f1.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}
 					}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				}
-			if(gethouses(3) <= gethouses(1)){
-				if(board.getField(3).getNumberofhouses()<5){
+			if(f2.getNumberofhouses() <= f1.getNumberofhouses()){
+				if(f2.getNumberofhouses()<5){
 					if(GUIC.buyHvidovervej().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(3));
-						board.getField(3).addNumberofHouses(1);
-						if(board.getField(3).getNumberofhouses()==5){
+						f2.addNumberofHouses(1);
+						if(f2.getNumberofhouses()==5){
 							GUIC.setHotel(4,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(4, gethouses(3));
+						GUIC.setHouse(4, f2.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}
 					}}}
 			GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 		}
 		if(n == 2){
-			if(gethouses(6) <= gethouses(8) && gethouses(6) <= gethouses(9)){
-				if(board.getField(6).getNumberofhouses()<5){
+			Field f3 = board.getField(6);
+			Field f4 = board.getField(8);
+			Field f5 = board.getField(9);
+			if(f3.getNumberofhouses() <= f4.getNumberofhouses() && f3.getNumberofhouses() <= f5.getNumberofhouses()){
+				if(f3.getNumberofhouses()<5){
 					if(GUIC.buyRoskildevej().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(6));
-						board.getField(6).addNumberofHouses(1);
-						if(board.getField(6).getNumberofhouses()==5){
+						f3.addNumberofHouses(1);
+						if(f3.getNumberofhouses()==5){
 							GUIC.setHotel(7,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(7, gethouses(6));
+						GUIC.setHouse(7, f3.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				}
-			if(gethouses(8) <= gethouses(6) && gethouses(8) <= gethouses(9)){
-				if(board.getField(8).getNumberofhouses()<5){
+			if(f4.getNumberofhouses() <= f3.getNumberofhouses() && f4.getNumberofhouses() <= f5.getNumberofhouses()){
+				if(f4.getNumberofhouses()<5){
 					if(GUIC.buyValbyLanggade().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(8));
-						board.getField(8).addNumberofHouses(1);
-						if(board.getField(8).getNumberofhouses()==5){
+						f4.addNumberofHouses(1);
+						if(f4.getNumberofhouses()==5){
 							GUIC.setHotel(9,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(9, gethouses(8));
+						GUIC.setHouse(9, f4.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}}
-			if(gethouses(9) <= gethouses(6) && gethouses(9) <= gethouses(8)){
-				if(board.getField(9).getNumberofhouses()<5){
+			if(f5.getNumberofhouses() <= f3.getNumberofhouses() && f5.getNumberofhouses() <= f4.getNumberofhouses()){
+				if(f5.getNumberofhouses()<5){
 					if(GUIC.buyAllegade().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(9));
-						board.getField(9).addNumberofHouses(1);
-						if(board.getField(9).getNumberofhouses()==5){
+						f5.addNumberofHouses(1);
+						if(f5.getNumberofhouses()==5){
 							GUIC.setHotel(10,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(10, gethouses(9));
+						GUIC.setHouse(10, f5.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				}
 		}
 		if(n == 3){
-			if(gethouses(11) <= gethouses(13) && gethouses(11) <= gethouses(14)){
-				if(board.getField(11).getNumberofhouses()<5){
+			Field f6 = board.getField(11);
+			Field f7 = board.getField(13);
+			Field f8 = board.getField(14);
+			
+			if(f6.getNumberofhouses() <= f7.getNumberofhouses() && f6.getNumberofhouses() <= f8.getNumberofhouses()){
+				if(f6.getNumberofhouses()<5){
 					if(GUIC.buyFredriksbergAlle().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(11));
-						board.getField(11).addNumberofHouses(1);
-						if(board.getField(11).getNumberofhouses()==5){
+						f6.addNumberofHouses(1);
+						if(f6.getNumberofhouses()==5){
 							GUIC.setHotel(12,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(12, gethouses(11));
+						GUIC.setHouse(12, f6.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				}
-			if(gethouses(13) <= gethouses(11) && gethouses(13) <= gethouses(14)){
-				if(board.getField(13).getNumberofhouses()<5){
+			if(f7.getNumberofhouses() <= f6.getNumberofhouses() && f7.getNumberofhouses() <= f8.getNumberofhouses()){
+				if(f7.getNumberofhouses()<5){
 					if(GUIC.buyBulowsvej().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(13));
-						board.getField(13).addNumberofHouses(1);
-						if(board.getField(13).getNumberofhouses()==5){
+						f7.addNumberofHouses(1);
+						if(f7.getNumberofhouses()==5){
 							GUIC.setHotel(14,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(14, gethouses(13));
+						GUIC.setHouse(14, f7.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				}
-			if(gethouses(14) <= gethouses(11) && gethouses(14) <= gethouses(13)){
-				if(board.getField(14).getNumberofhouses()<5){
+			if(f8.getNumberofhouses() <= f6.getNumberofhouses() && f8.getNumberofhouses() <= f7.getNumberofhouses()){
+				if(f8.getNumberofhouses()<5){
 					if(GUIC.buyGlKongevej().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(14));
-						board.getField(14).addNumberofHouses(1);
-						if(board.getField(14).getNumberofhouses()==5){
+						f8.addNumberofHouses(1);
+						if(f8.getNumberofhouses()==5){
 							GUIC.setHotel(15,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(15, gethouses(14));
+						GUIC.setHouse(15, f8.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				}
 		}
 		if(n == 4){
-			if(gethouses(16) <= gethouses(18) && gethouses(16) <= gethouses(19)){
-				if(board.getField(16).getNumberofhouses()<5){
+			Field f9 = board.getField(16);
+			Field f10 = board.getField(18);
+			Field f11 = board.getField(19);
+			
+			if(f9.getNumberofhouses() <= f10.getNumberofhouses() && f9.getNumberofhouses() <= f11.getNumberofhouses()){
+				if(f9.getNumberofhouses()<5){
 					if(GUIC.buyBernstorffsvej().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(16));
-						board.getField(16).addNumberofHouses(1);
-						if(board.getField(16).getNumberofhouses()==5){
+						f9.addNumberofHouses(1);
+						if(f9.getNumberofhouses()==5){
 							GUIC.setHotel(17,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(17, gethouses(16));
+						GUIC.setHouse(17, f9.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				}
-			if(gethouses(18) <= gethouses(16) && gethouses(18) <= gethouses(19)){
-				if(board.getField(18).getNumberofhouses()<5){
+			if(f10.getNumberofhouses() <= f9.getNumberofhouses() && f10.getNumberofhouses() <= f11.getNumberofhouses()){
+				if(f10.getNumberofhouses()<5){
 					if(GUIC.buyHellerupvej().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(18));
-						board.getField(18).addNumberofHouses(1);
-						if(board.getField(18).getNumberofhouses()==5){
+						f10.addNumberofHouses(1);
+						if(f10.getNumberofhouses()==5){
 							GUIC.setHotel(19,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(19, gethouses(18));
+						GUIC.setHouse(19, f10.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				}
-			if(gethouses(19) <= gethouses(16) && gethouses(19) <= gethouses(18)){
-				if(board.getField(19).getNumberofhouses()<5){
+			if(f11.getNumberofhouses() <= f9.getNumberofhouses() && f11.getNumberofhouses() <= f10.getNumberofhouses()){
+				if(f11.getNumberofhouses()<5){
 					if(GUIC.buyStrandvejen().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(19));
-						board.getField(19).addNumberofHouses(1);
-						if(board.getField(19).getNumberofhouses()==5){
+						f11.addNumberofHouses(1);
+						if(f11.getNumberofhouses()==5){
 							GUIC.setHotel(20,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(20, gethouses(19));
+						GUIC.setHouse(20, f11.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
@@ -402,44 +415,48 @@ public class HouseController {
 		}
 		
 		if(n == 5){
-			if(gethouses(21) <= gethouses(23) && gethouses(21) <= gethouses(24)){
-				if(board.getField(21).getNumberofhouses()<5){
+			Field f12 = board.getField(21);
+			Field f13 = board.getField(23);
+			Field f14 = board.getField(24);
+			
+			if(f12.getHouseprice() <= f13.getNumberofhouses() && f12.getHouseprice() <= f14.getNumberofhouses()){
+				if(f12.getNumberofhouses()<5){
 					if(GUIC.buyTrianglen().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(21));
-						board.getField(21).addNumberofHouses(1);
-						if(board.getField(21).getNumberofhouses()==5){
+						f12.addNumberofHouses(1);
+						if(f12.getNumberofhouses()==5){
 							GUIC.setHotel(22,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(22, gethouses(21));
+						GUIC.setHouse(22, f12.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				}
-			if(gethouses(23) <= gethouses(21) && gethouses(23) <= gethouses(24)){
-				if(board.getField(23).getNumberofhouses()<5){
+			if(f13.getNumberofhouses() <= f12.getNumberofhouses() && f13.getNumberofhouses() <= f14.getNumberofhouses()){
+				if(f13.getNumberofhouses()<5){
 					if(GUIC.buyOesterbrogade().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(23));
-						board.getField(23).addNumberofHouses(1);
-						if(board.getField(23).getNumberofhouses()==5){
+						f13.addNumberofHouses(1);
+						if(f13.getNumberofhouses()==5){
 							GUIC.setHotel(24,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(24, gethouses(23));
+						GUIC.setHouse(24, f13.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 						}
-			if(gethouses(24) <= gethouses(21) && gethouses(24) <= gethouses(23)){
-				if(board.getField(24).getNumberofhouses()<5){
+			if(f14.getNumberofhouses() <= f12.getNumberofhouses() && f14.getNumberofhouses() <= f13.getNumberofhouses()){
+				if(f14.getNumberofhouses()<5){
 					if(GUIC.buyGroenningen().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(24));
-						board.getField(24).addNumberofHouses(1);
-						if(board.getField(24).getNumberofhouses()==5){
+						f14.addNumberofHouses(1);
+						if(f14.getNumberofhouses()==5){
 							GUIC.setHotel(25,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(25, gethouses(24));
+						GUIC.setHouse(25, f14.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
@@ -447,44 +464,47 @@ public class HouseController {
 		}
 		
 		if(n == 6){
-			if(gethouses(26) <= gethouses(27) && gethouses(26) <= gethouses(29)){
-				if(board.getField(26).getNumberofhouses()<5){
+			Field f15 = board.getField(26);
+			Field f16 = board.getField(27);
+			Field f17 = board.getField(29);
+			if(f15.getNumberofhouses() <= f16.getNumberofhouses() && f15.getNumberofhouses() <= f17.getNumberofhouses()){
+				if(f15.getNumberofhouses()<5){
 					if(GUIC.buyBredgade().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(26));
-						board.getField(26).addNumberofHouses(1);
-						if(board.getField(26).getNumberofhouses()==5){
+						f15.addNumberofHouses(1);
+						if(f15.getNumberofhouses()==5){
 							GUIC.setHotel(27,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(27, gethouses(26));
+						GUIC.setHouse(27, f15.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				}
-			if(gethouses(27) <= gethouses(26) && gethouses(27) <= gethouses(29)){
-				if(board.getField(27).getNumberofhouses()<5){
+			if(f16.getNumberofhouses() <= f15.getNumberofhouses() && f16.getNumberofhouses() <= f17.getNumberofhouses()){
+				if(f16.getNumberofhouses()<5){
 					if(GUIC.buyKgsNytorv().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(27));
-						board.getField(27).addNumberofHouses(1);
-						if(board.getField(27).getNumberofhouses()==5){
+						f16.addNumberofHouses(1);
+						if(f16.getNumberofhouses()==5){
 							GUIC.setHotel(28,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(28, gethouses(27));
+						GUIC.setHouse(28, f16.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				}
-			if(gethouses(29) <= gethouses(26) && gethouses(29) <= gethouses(27)){
-				if(board.getField(29).getNumberofhouses()<5){
+			if(f17.getNumberofhouses() <= f15.getNumberofhouses() && f17.getNumberofhouses() <= f16.getNumberofhouses()){
+				if(f17.getNumberofhouses()<5){
 					if(GUIC.buyIstergade().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(29));
-						board.getField(29).addNumberofHouses(1);
-						if(board.getField(29).getNumberofhouses()==5){
+						f17.addNumberofHouses(1);
+						if(f17.getNumberofhouses()==5){
 							GUIC.setHotel(30,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(30, gethouses(29));
+						GUIC.setHouse(30, f17.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
@@ -492,84 +512,88 @@ public class HouseController {
 		}
 		
 		if(n == 7){
-			if(gethouses(31) <= gethouses(32) && gethouses(31) <= gethouses(34)){
-				if(board.getField(31).getNumberofhouses()<5){
+			Field f18 = board.getField(31);
+			Field f19 = board.getField(32);
+			Field f20 = board.getField(34);
+			
+			if(f18.getNumberofhouses() <= f19.getNumberofhouses() && f18.getNumberofhouses() <= f20.getNumberofhouses()){
+				if(f18.getNumberofhouses()<5){
 					if(GUIC.buyAmagertorv().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(31));
-						board.getField(31).addNumberofHouses(1);
-						if(board.getField(31).getNumberofhouses()==5){
+						f18.addNumberofHouses(1);
+						if(f18.getNumberofhouses()==5){
 							GUIC.setHotel(32,true);
 							setHotel(currentPlayer);
 						}else{
-							GUIC.setHouse(32, gethouses(31));
+							GUIC.setHouse(32, f18.getNumberofhouses());
 							playerlist[currentPlayer].addHouseammount(1);
 							}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				}
-			if(gethouses(32) <= gethouses(31) && gethouses(32) <= gethouses(34)){
-				if(board.getField(32).getNumberofhouses()<5){
+			if(f19.getNumberofhouses() <= f18.getNumberofhouses() && f19.getNumberofhouses() <= f20.getNumberofhouses()){
+				if(f19.getNumberofhouses()<5){
 					if(GUIC.buyVimmelskaftet().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(32));
-						board.getField(32).addNumberofHouses(1);
-						if(board.getField(32).getNumberofhouses()==5){
+						f19.addNumberofHouses(1);
+						if(f19.getNumberofhouses()==5){
 							GUIC.setHotel(33,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(33, gethouses(32));
+						GUIC.setHouse(33, f19.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				}
-			if(gethouses(34) <= gethouses(31) && gethouses(34) <= gethouses(32)){
-				if(board.getField(34).getNumberofhouses()<5){
+			if(f20.getNumberofhouses() <= f18.getNumberofhouses() && f20.getNumberofhouses() <= f19.getNumberofhouses()){
+				if(f20.getNumberofhouses()<5){
 					if(GUIC.buyNygade().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(34));
-						board.getField(34).addNumberofHouses(1);
-						if(board.getField(34).getNumberofhouses()==5){
+						f20.addNumberofHouses(1);
+						if(f20.getNumberofhouses()==5){
 							GUIC.setHotel(35,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(35, gethouses(34));
+						GUIC.setHouse(35, f20.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				}
 		}
 		if(n == 8){
-			if(gethouses(37) <= gethouses(39)){
-				if(board.getField(37).getNumberofhouses()<5){
+			Field f21 = board.getField(37);
+			Field f22 = board.getField(39);
+			
+			if(f21.getNumberofhouses() <= f22.getNumberofhouses()){
+				if(f21.getNumberofhouses()<5){
 					if(GUIC.buyFrederiksberggade().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(37));
-						board.getField(37).addNumberofHouses(1);
-						if(board.getField(37).getNumberofhouses()==5){
+						f21.addNumberofHouses(1);
+						if(f21.getNumberofhouses()==5){
 							GUIC.setHotel(38,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(38, gethouses(37));
+						GUIC.setHouse(38, f21.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				}
-			if(gethouses(39) <= gethouses(37)){
-				if(board.getField(39).getNumberofhouses()<5){
+			if(f22.getNumberofhouses() <= f21.getNumberofhouses()){
+				if(f22.getNumberofhouses()<5){
 					if(GUIC.buyRaadhuspladsen().equals("Ja")){
 						playerlist[currentPlayer].account.addPoints(-getHousePrice(39));
-						board.getField(39).addNumberofHouses(1);
-						if(board.getField(39).getNumberofhouses()==5){
+						f22.addNumberofHouses(1);
+						if(f22.getNumberofhouses()==5){
 							GUIC.setHotel(40,true);
 							setHotel(currentPlayer);
 						}else{
-						GUIC.setHouse(40, gethouses(39));
+						GUIC.setHouse(40, f22.getNumberofhouses());
 						playerlist[currentPlayer].addHouseammount(1);
 						}}}
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 				}
 		}
 	}
-	
-	public void sellPlots(int currentPlayer, int n){
-		
-	}
+
 }
 
 
