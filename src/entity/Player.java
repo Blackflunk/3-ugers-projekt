@@ -13,7 +13,7 @@ public class Player {
 	fieldammount_red,fieldammount_white,fieldammount_yellow,fieldammount_magenta,
 	houseammount,hotelammount, jailcount;
 	private boolean lost, outofjailcard,jailed,build_blue, build_pink, build_green,
-			build_grey, build_red, build_white, build_yellow, build_magenta;
+			build_grey, build_red, build_white, build_yellow, build_magenta, paydoublefleet;
 	public Account account = new Account();
 		
 	// Object that stores the name and position of a player
@@ -44,6 +44,7 @@ public class Player {
 		build_white = false;
 		build_yellow = false;
 		build_magenta = false;
+		paydoublefleet = false;
 	}
 
 	// Method that returns the name of the player
@@ -324,6 +325,14 @@ public class Player {
 
 	public String getOwner() {
 		return null;
+	}
+
+	public boolean isPaydoublefleet() {
+		return paydoublefleet;
+	}
+
+	public void setPaydoublefleet(boolean paydoublefleet) {
+		this.paydoublefleet = paydoublefleet;
 	}
 	
 }

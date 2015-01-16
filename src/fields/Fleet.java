@@ -33,6 +33,19 @@ public class Fleet extends Ownable {
 		} else if (getOwner().equals(player)) {
 		}
 		// if the field is owned by another player, a rent have to be paid
+		else if (player.isPaydoublefleet()){
+			if (player.account.getScore() >= rent[getOwner().getFleets() - 1]*2) {
+				player.account.addPoints(-rent[getOwner().getFleets() - 1]*2);
+				getOwner().account.addPoints(rent[getOwner().getFleets() - 1]*2);
+				player.setPaydoublefleet(false);
+				// the player loses if the rent is higher than the players
+				// balance
+			} else {
+				getOwner().account.addPoints(player.account.getScore());
+				player.account.addPoints(-player.account.getScore());
+				player.setStatus(true);
+			}
+		}
 		else {
 			if (player.account.getScore() >= rent[getOwner().getFleets() - 1]) {
 				player.account.addPoints(-rent[getOwner().getFleets() - 1]);

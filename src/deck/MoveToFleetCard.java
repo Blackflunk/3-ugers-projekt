@@ -26,6 +26,7 @@ public class MoveToFleetCard extends MoveCard{
 		else if (player.getPosition() >= 5 && player.getPosition() < 15) {
 			newposition = 15;
 		}
+		player.setPaydoublefleet(true);
 		player.setPosition(newposition);
 	}
 	
