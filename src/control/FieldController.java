@@ -48,7 +48,10 @@ public class FieldController {
 			gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 		
 		// Update on GUI
-		GUIC.newPosition(playerlist[currentPlayer]);
+		for (int i = 0; i<playerlist.length; i++) {
+		GUIC.newPosition(playerlist[i]);
+		GUIC.updateBalance(playerlist[i].getName(), playerlist[i].account.getScore());
+		}
 	}
 	
 	
