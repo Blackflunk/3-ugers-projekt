@@ -25,8 +25,8 @@ public class GUIController {
 		field[0] = new Start.Builder().setTitle("Start")
 				.setDescription("Start").setSubText("Start")
 				.setBgColor(Color.RED).build();
-		field[1] = new Street.Builder().setTitle("Roedovrevej")
-				.setDescription("Roedovrevej").setBgColor(Color.BLUE)
+		field[1] = new Street.Builder().setTitle("Rødovrevej")
+				.setDescription("Rødovrevej").setBgColor(Color.BLUE)
 				.setSubText("Price: 1200").setRent("Rent: 1000").build();
 		field[2] = new Chance.Builder().build();
 		field[3] = new Street.Builder().setTitle("Hvidovrevej")
@@ -35,8 +35,8 @@ public class GUIController {
 		field[4] = new Tax.Builder().setTitle("Statskat")
 				.setDescription("Pay: 4000 or 10%").setBgColor(Color.ORANGE)
 				.setSubText("Pay: 4000 or 10%").build();
-		field[5] = new Shipping.Builder().setTitle("Helsingoer-Helsingborg")
-				.setDescription("Helsingoer-Helsingborg").setBgColor(Color.GRAY)
+		field[5] = new Shipping.Builder().setTitle("Helsingør-Helsingborg")
+				.setDescription("Helsingør-Helsingborg").setBgColor(Color.GRAY)
 				.setSubText("Price: 4000").setRent("Rent: 500").build();
 		field[6] = new Street.Builder().setTitle("Roskildevej")
 				.setDescription("Roskildevej").setBgColor(Color.PINK)
@@ -45,13 +45,13 @@ public class GUIController {
 		field[8] = new Street.Builder().setTitle("Valby Langgade")
 				.setDescription("Valby Langgade").setBgColor(Color.PINK)
 				.setSubText("Price: 2000").setRent("Rent: 1000").build();
-		field[9] = new Street.Builder().setTitle("Allegade")
-				.setDescription("Allegade").setBgColor(Color.PINK)
+		field[9] = new Street.Builder().setTitle("Allégade")
+				.setDescription("Allégade").setBgColor(Color.PINK)
 				.setSubText("Price: 2400").setRent("Rent: 1000").build();
 		field[10] = new Jail.Builder().setTitle("Fængsel").setDescription("Fængsel")
-				.setSubText("RAWR").build();
-		field[11] = new Street.Builder().setTitle("Fredriksberg Alle")
-				.setDescription("Fredriksberg Alle").setBgColor(Color.GREEN)
+				.setSubText("Fængsel").build();
+		field[11] = new Street.Builder().setTitle("Fredriksberg Allé")
+				.setDescription("Fredriksberg Allé").setBgColor(Color.GREEN)
 				.setSubText("Price: 2800").setRent("Rent: 2000").build();
 		field[12] = new Brewery.Builder().setTitle("Tuborg")
 				.setDescription("Tuborg").setBgColor(Color.CYAN)
@@ -82,11 +82,11 @@ public class GUIController {
 				.setDescription("Trianglen").setBgColor(Color.RED)
 				.setSubText("Price: 4400").setRent("Rent: 3000").build();
 		field[22] = new Chance.Builder().build();
-		field[23]= new Street.Builder().setTitle("Oesterbrogade")
-				.setDescription("Oesterbrogade").setBgColor(Color.RED)
+		field[23]= new Street.Builder().setTitle("Østerbrogade")
+				.setDescription("Østerbrogade").setBgColor(Color.RED)
 				.setSubText("Price: 4400").setRent("Rent: 3000").build();
-		field[24] = new Street.Builder().setTitle("Groenningen")
-				.setDescription("Groenningen").setBgColor(Color.RED)
+		field[24] = new Street.Builder().setTitle("Grønningen")
+				.setDescription("Grønningen").setBgColor(Color.RED)
 				.setSubText("Price: 4800").setRent("Rent: 3000").build();
 		field[25] = new Shipping.Builder().setTitle("Gedser-Rostock")
 				.setDescription("Gedser-Rostock").setBgColor(Color.CYAN)
@@ -100,10 +100,10 @@ public class GUIController {
 		field[28] = new Brewery.Builder().setTitle("Coca-Cola")
 				.setDescription("Coca-Cola").setBgColor(Color.CYAN)
 				.setSubText("Price: 3000").setRent("80/200 x dice").build();
-		field[29] = new Street.Builder().setTitle("Oestergade")
-				.setDescription("Oestergade").setBgColor(Color.WHITE)
+		field[29] = new Street.Builder().setTitle("Østergade")
+				.setDescription("Østergade").setBgColor(Color.WHITE)
 				.setSubText("Price: 5600").setRent("Rent: 3000").build();
-		field[30] = new Jail.Builder().setDescription("Ryk til Faengsel")
+		field[30] = new Jail.Builder().setDescription("Ryk til Fængsel")
 				.setSubText("Du modtager ikke kr. 4000 selvom du passerer start").build();
 		field[31] = new Street.Builder().setTitle("Amagertorv")
 				.setDescription("Amagertorv").setBgColor(Color.YELLOW)
@@ -115,8 +115,8 @@ public class GUIController {
 		field[34] = new Street.Builder().setTitle("Nygade")
 				.setDescription("Nygade").setBgColor(Color.YELLOW)
 				.setSubText("Price: 6400").setRent("Rent: 4000").build();
-		field[35] = new Shipping.Builder().setTitle("Roedby-Puttgarden")
-				.setDescription("Roedby-Puttgarden").setBgColor(Color.CYAN)
+		field[35] = new Shipping.Builder().setTitle("Rødby-Puttgarden")
+				.setDescription("Rødby-Puttgarden").setBgColor(Color.CYAN)
 				.setSubText("Price: 4000").setRent("Rent: 500").build();
 		field[36] = new Chance.Builder().build();
 		field[37] = new Street.Builder().setTitle("Frederiksberggade")
@@ -125,22 +125,22 @@ public class GUIController {
 		field[38] = new Tax.Builder().setTitle("Indkomstskat")
 				.setDescription("Pay: 2000").setBgColor(Color.ORANGE)
 				.setSubText("Pay: 2000").build();
-		field[39] = new Street.Builder().setTitle("Raadhuspladsen")
-				.setDescription("Raadhuspladsen").setBgColor(Color.MAGENTA)
+		field[39] = new Street.Builder().setTitle("Rådhuspladsen")
+				.setDescription("Rådhuspladsen").setBgColor(Color.MAGENTA)
 				.setSubText("Price: 8000").setRent("Rent: 4000").build();
 		
 		GUI.create(field);
 	}
 	
 	public int playerAmount() {
-		return Integer.parseInt(JOptionPane.showInputDialog("Vaelg antallet af spillere (mellem 3-6)"));
+		return Integer.parseInt(JOptionPane.showInputDialog("Vælg antallet af spillere (mellem 3-6)"));
 	}
 	public int playerAmountshowcase() {
-		return Integer.parseInt(JOptionPane.showInputDialog("Vaelg antallet af spillere (mellem 2-6) \n DETTE ER EN DEMO KOERSEL AF SPILLET"));
+		return Integer.parseInt(JOptionPane.showInputDialog("Vælg antallet af spillere (mellem 2-6) \n DETTE ER EN DEMO KØRSEL AF SPILLET"));
 	}
 	
 	public void playerAmountError(){
-		JOptionPane.showMessageDialog(null, "Du skal vaelge mellem 3-6 spiller");
+		JOptionPane.showMessageDialog(null, "Du skal vælge mellem 3-6 spiller");
 	}
 	public void showMessage(String message) {
 		GUI.showMessage(message);
@@ -165,7 +165,7 @@ public class GUIController {
 	}
 	
 	public void nextPlayer(Player[] player, int currentPlayer) {
-		GUI.showMessage(player[currentPlayer].getName()+"'s tur til at slaa.");
+		GUI.showMessage(player[currentPlayer].getName()+"'s tur til at slå.");
 	}
 	
 	public void showDice(int dice1, int dice2) {
@@ -212,12 +212,12 @@ public class GUIController {
 	//Field methods
 	public boolean buyField(String name, int price) {
 		return GUI.getUserLeftButtonPressed(name + 
-				" har ingen ejer, vil du koebe grunden for " + price + "?", "Ja",
+				" har ingen ejer, vil du købe grunden for " + price + "?", "Ja",
 				"Nej");
 	}
 	
 	public void fieldBought(String name) {
-		GUI.showMessage("Du har koebt " + name);
+		GUI.showMessage("Du har købt " + name);
 	}
 	
 	public void pastStart(){
@@ -225,30 +225,30 @@ public class GUIController {
 	}
 	
 	public void afterJail(){
-		GUI.showMessage("Du forlod faengslet, og rykker summen paa terningerne");
+		GUI.showMessage("Du forlod fængslet, og rykker summen på terningerne");
 	}
 	public void moveToJail() {
-		GUI.showMessage("Du har stoedt pÃ¥ en politiracia, du er blevet arresteret, og bliver forflyttet til fÃ¦ngslet");
+		GUI.showMessage("Du har stødt på en politiracia, du er blevet arresteret, og bliver forflyttet til fængslet");
 	}
 	
 	public void threePair(){
-		GUI.showMessage("Du har slaaet 3 par i traek, du ryger i faengsel");
+		GUI.showMessage("Du har slået 3 par i træk, du ryger i fængsel");
 	}
 	
 	public void twoPair(){
-		GUI.showMessage("Tryk for at slaa igen, hvis du slaer to ens igen ryger du i faengsel");
+		GUI.showMessage("Tryk for at slå igen, hvis du slår to ens igen ryger du i fængsel");
 	}
 	
 	public void onePair(){
-		GUI.showMessage("Tryk for at slaa igen");
+		GUI.showMessage("Tryk for at slå igen");
 	}
 	
 	public void fieldRefused(String name) {
-		GUI.showMessage("Du har ikke koebt " + name);
+		GUI.showMessage("Du har ikke købt " + name);
 	}
 	
 	public void fieldRefusedPrice(String name) {
-		GUI.showMessage("Du har ikke nok penge til at koebe " + name);
+		GUI.showMessage("Du har ikke nok penge til at købe " + name);
 	}
 	
 	public void fieldOwnedByPlayer(String name) {
@@ -278,12 +278,12 @@ public class GUIController {
 	}
 	
 	public void bonusMessage(String name, int bonus) {
-		GUI.showMessage("du er landet paa " + name + " og modtager " + bonus + " Kr.");
+		GUI.showMessage("du er landet på " + name + " og modtager " + bonus + " Kr.");
 	}
 	
 	public void startMessage(String name) {
-		GUI.showMessage("Du er landet paa " + name
-				+ ". Slap af indtil naeste tur."); 
+		GUI.showMessage("Du er landet på " + name
+				+ ". Slap af indtil næste tur."); 
 	}
 	
 	public void taxMessageNoOption(int price) {
@@ -292,18 +292,18 @@ public class GUIController {
 	
 	public void insufficiantFundsTax() {
 		GUI.showMessage("Du skylder mere i skat end du har. "
-				+ "Resten af dine vaerdier vil bliver overfoert til banken.");
+				+ "Resten af dine værdier vil bliver overført til banken.");
 	}
 	public void showJailForcedPay() {
-		GUI.showMessage("Du har proevet at komme ud af faengslet 3 gange, uden held - du betaler 1000kr for at komme ud"
-						+ " du faar ikke lov til at rykke denne tur");
+		GUI.showMessage("Du har prøvet at komme ud af fængslet 3 gange, uden held - du betaler 1000kr for at komme ud"
+						+ " du får ikke lov til at rykke denne tur");
 	}
 	public void showJailTurn() {
-		GUI.showMessage("Slaa med terningerne for at proeve at komme ud af fï¿½ngslet");
+		GUI.showMessage("Slå med terningerne for at prøve at komme ud af fængslet");
 	}
 	
 	public boolean taxPick(String name) {
-		return GUI.getUserLeftButtonPressed("du er landet paa "+ name + " og skal betale indkomstskat. "
+		return GUI.getUserLeftButtonPressed("du er landet på "+ name + " og skal betale indkomstskat. "
 								+ "vil du helst betale 4000 eller 10% af dine kontanter?","10%", "4000");
 			}
 	
@@ -312,108 +312,108 @@ public class GUIController {
 		 	}
 	
 	public void taxFunds() {
-		GUI.showMessage("The tax is higher than your balance. Instead you pay the rest of your balance.");
+		GUI.showMessage("Den skat du skal betale er større end den mængde penge du har og du betaler derfor resten af dine penge.");
 	}
 	public String startOfTurn(Player[] player, int currentPlayer){
-		return GUI.getUserButtonPressed("Det er starten af din tur, " + player[currentPlayer].getName() + " hvad oensker du at gï¿½re?", "Koeb hus", "Saelg hus", "rul terning");
+		return GUI.getUserButtonPressed("Det er starten af din tur, " + player[currentPlayer].getName() + " hvad 'nsker du at gøre?", "Køb hus", "Sælg hus", "rul terning");
 		
 	}
 	
 	public String offerToBuy(String possibleBuild){
-		return GUI.getUserButtonPressed("Du ejer nok grunde af en farve til at bygge huse. Oensker du at bygger paa en af disse grunde?" + possibleBuild,"Ja","Nej");
+		return GUI.getUserButtonPressed("Du ejer nok grunde af en farve til at bygge huse. Ønsker du at bygger på en af disse grunde?" + possibleBuild,"Ja","Nej");
 	}
 	public boolean offerMoreHouses(){
-		return GUI.getUserLeftButtonPressed("Oensker du at kï¿½be flere huse?", "Ja", "Nej");
+		return GUI.getUserLeftButtonPressed("Ønsker du at købe flere huse?", "Ja", "Nej");
 	}
 	public String offerToSellHouse(String[] sellOptions){
-		return GUI.getUserSelection("Du kan sÃ¦lge huse pÃ¥ disse grunde!", sellOptions);
+		return GUI.getUserSelection("Du kan sælge huse på disse grunde!", sellOptions);
 	}
 	public boolean offerToMoreSellHouses(){
-		return GUI.getUserLeftButtonPressed("Ã˜nsker du at sÃ¦lge flere huse?", "Ja", "Nej");
+		return GUI.getUserLeftButtonPressed("Ønsker du at sælge flere huse?", "Ja", "Nej");
 	}
 	public String noHouseToSell(){
-		return GUI.getUserButtonPressed("Du ejer ikke nogle huse som kan sÃ¦lges", "Okay");
+		return GUI.getUserButtonPressed("Du ejer ikke nogle huse som kan sælges", "Okay");
 	}
 
 	public String noHouseToBuy() {
-		return GUI.getUserButtonPressed("Du ejer ikke nogle grunde hvor du kan kï¿½be huse'1", "Okay");
+		return GUI.getUserButtonPressed("Du ejer ikke nogle grunde hvor du kan købe huse'1", "Okay");
 		
 	}
 	public String offerToSellPlot(){
-		return GUI.getUserButtonPressed("Oensker du at sï¿½lge dine grunde?","Ja","Nej");
+		return GUI.getUserButtonPressed("Ønsker du at sælge dine grunde?","Ja","Nej");
 	}
 
 	
 	public boolean jailOptions(Player player) {
-		return GUI.getUserLeftButtonPressed(player.getName()+" sidder i faengsel, "
-				+ "vil du betale 1000kr for at komme ud, eller proeve at slaa dig ud af faengslet?", "Betal 1000kr", "slaa for at komme ud");
+		return GUI.getUserLeftButtonPressed(player.getName()+" sidder i fængsel, "
+				+ "vil du betale 1000kr for at komme ud, eller prøve at slå dig ud af fængslet?", "Betal 1000kr", "slå for at komme ud");
 	}
 	
 	public String buyRoedovervej(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Roedovervej for kr. 1000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Rødovervej for kr. 1000?", "Ja", "Nej");
 	}
 	public String buyHvidovervej(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Hvidovervej for kr. 1000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Hvidovervej for kr. 1000?", "Ja", "Nej");
 	}
 	public String buyRoskildevej(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Roskildevej for kr. 1000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Roskildevej for kr. 1000?", "Ja", "Nej");
 	}
 	public String buyValbyLanggade(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Valby Langgade for kr. 1000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Valby Langgade for kr. 1000?", "Ja", "Nej");
 	}
 	public String buyAllegade(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Allegade for kr. 1000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Allégade for kr. 1000?", "Ja", "Nej");
 	}
 	public String buyFredriksbergAlle(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Fredriksberg Alle for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Fredriksberg Allé for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyBulowsvej(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Bulowsvej for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Bulowsvej for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyGlKongevej(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Gl Kongevej for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Gl Kongevej for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyBernstorffsvej(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Bernstorffsvej for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Bernstorffsvej for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyHellerupvej(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Hellerupvej for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Hellerupvej for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyStrandvejen(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Strandvejen for kr. 2000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Strandvejen for kr. 2000?", "Ja", "Nej");
 	}
 	public String buyTrianglen(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Trianglen for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Trianglen for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyOesterbrogade(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Oesterbrogade for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Østerbrogade for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyGroenningen(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Groenningen for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Grønningen for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyBredgade(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Bredgade for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Bredgade for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyKgsNytorv(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Kgs Nytorv for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Kgs Nytorv for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyIstergade(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Istergade for kr. 3000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Østergade for kr. 3000?", "Ja", "Nej");
 	}
 	public String buyAmagertorv(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Amagertorv for kr. 4000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Amagertorv for kr. 4000?", "Ja", "Nej");
 	}
 	public String buyVimmelskaftet(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Vimmelskaftet for kr. 4000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Vimmelskaftet for kr. 4000?", "Ja", "Nej");
 	}
 	public String buyNygade(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Nygade for kr. 4000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Nygade for kr. 4000?", "Ja", "Nej");
 	}
 	public String buyFrederiksberggade(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Frederiksberggade for kr. 4000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Frederiksberggade for kr. 4000?", "Ja", "Nej");
 	}
 	public String buyRaadhuspladsen(){
-		return GUI.getUserButtonPressed("Oensker du at koebe et hus/hotel paa Raadhuspladsen for kr. 4000?", "Ja", "Nej");
+		return GUI.getUserButtonPressed("Ønsker du at købe et hus/hotel på Rådhuspladsen for kr. 4000?", "Ja", "Nej");
 	}
 	public void setHouse(int fieldNumber, int houseCount){
 		GUI.setHouses(fieldNumber, houseCount);
