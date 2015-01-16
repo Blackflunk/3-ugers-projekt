@@ -312,7 +312,7 @@ public class GUIController {
 		GUI.showMessage("The tax is higher than your balance. Instead you pay the rest of your balance.");
 	}
 	public String startOfTurn(Player[] player, int currentPlayer){
-		return GUI.getUserButtonPressed("Det er starten af din tur, " + player[currentPlayer].getName() + " hvad oensker du at g�re?", "Koeb hus", "Saelg hus", "Saelg grund", "rul terning");
+		return GUI.getUserButtonPressed("Det er starten af din tur, " + player[currentPlayer].getName() + " hvad oensker du at g�re?", "Koeb hus", "Saelg hus", "rul terning");
 		
 	}
 	

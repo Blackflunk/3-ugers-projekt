@@ -57,41 +57,10 @@ public class TurnController {
 		choiceofTurn = GUIC.startOfTurn(playerlist, currentPlayer);
 
 		if(choiceofTurn.equals("Koeb hus")){
-			houseC.checkOwnedFields(currentPlayer);
-			if(playerlist[currentPlayer].getBuy_Blue()== true||playerlist[currentPlayer].getBuy_Pink()== true||playerlist[currentPlayer].getBuy_Green()== true
-					||playerlist[currentPlayer].getBuy_grey()== true||playerlist[currentPlayer].getBuy_Red()== true||playerlist[currentPlayer].getBuy_White() == true
-					||playerlist[currentPlayer].getBuy_Yellow()== true||playerlist[currentPlayer].getBuy_Magenta()== true){
-					houseC.buyHouse(currentPlayer);
-			}else{
-				GUIC.noHouseToBuy();
-			}
+			buyHouse(currentPlayer);
 			
 		}else if(choiceofTurn.equals("Saelg hus")){
-			
-			String sellHouse;
-			boolean sellMore = true;
-			String[] ar = houseC.checkIfPossibleSell(currentPlayer, board);
-			
-			if(playerlist[currentPlayer].getBuy_Blue()== true||playerlist[currentPlayer].getBuy_Pink()== true||playerlist[currentPlayer].getBuy_Green()== true
-					||playerlist[currentPlayer].getBuy_grey()== true||playerlist[currentPlayer].getBuy_Red()== true||playerlist[currentPlayer].getBuy_White() == true
-					||playerlist[currentPlayer].getBuy_Yellow()== true||playerlist[currentPlayer].getBuy_Magenta()== true){
-					if(ar.length > 0){
-							while(sellMore == true){	
-								ar = houseC.checkIfPossibleSell(currentPlayer, board);
-								if(ar.length == 0){
-									GUIC.noHouseToSell();
-									sellMore = false;
-									break;
-								}
-								sellHouse = GUIC.offerToSellHouse(houseC.checkIfPossibleSell(currentPlayer, board));
-								houseC.sellHouse(currentPlayer, board, sellHouse);	
-								sellMore = GUIC.offerToMoreSellHouses();	
-							}
-						}	
-					}else{
-						GUIC.noHouseToSell();
-					}
-		}else if(choiceofTurn.equals("Saelg grund")){
+			sellHouse(currentPlayer);
 			
 		}
 		
@@ -244,4 +213,39 @@ public class TurnController {
 		}
 		}
 		}
+	public void buyHouse(int currentPlayer){
+		houseC.checkOwnedFields(currentPlayer);
+		if(playerlist[currentPlayer].getBuy_Blue()== true||playerlist[currentPlayer].getBuy_Pink()== true||playerlist[currentPlayer].getBuy_Green()== true
+				||playerlist[currentPlayer].getBuy_grey()== true||playerlist[currentPlayer].getBuy_Red()== true||playerlist[currentPlayer].getBuy_White() == true
+				||playerlist[currentPlayer].getBuy_Yellow()== true||playerlist[currentPlayer].getBuy_Magenta()== true){
+				houseC.buyHouse(currentPlayer);
+		}else{
+			GUIC.noHouseToBuy();
+		}
+	}
+	public void sellHouse(int currentPlayer){
+		String sellHouse;
+		boolean sellMore = true;
+		String[] ar = houseC.checkIfPossibleSell(currentPlayer, board);
+		
+		if(playerlist[currentPlayer].getBuy_Blue()== true||playerlist[currentPlayer].getBuy_Pink()== true||playerlist[currentPlayer].getBuy_Green()== true
+				||playerlist[currentPlayer].getBuy_grey()== true||playerlist[currentPlayer].getBuy_Red()== true||playerlist[currentPlayer].getBuy_White() == true
+				||playerlist[currentPlayer].getBuy_Yellow()== true||playerlist[currentPlayer].getBuy_Magenta()== true){
+				if(ar.length > 0){
+						while(sellMore == true){	
+							ar = houseC.checkIfPossibleSell(currentPlayer, board);
+							if(ar.length == 0){
+								GUIC.noHouseToSell();
+								sellMore = false;
+								break;
+							}
+							sellHouse = GUIC.offerToSellHouse(houseC.checkIfPossibleSell(currentPlayer, board));
+							houseC.sellHouse(currentPlayer, board, sellHouse);	
+							sellMore = GUIC.offerToMoreSellHouses();	
+						}
+					}	
+				}else{
+					GUIC.noHouseToSell();
+				}
+	}
 }
