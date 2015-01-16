@@ -48,7 +48,7 @@ public class GUIController {
 		field[9] = new Street.Builder().setTitle("Allegade")
 				.setDescription("Allegade").setBgColor(Color.PINK)
 				.setSubText("Price: 2400").setRent("Rent: 1000").build();
-		field[10] = new Jail.Builder().setTitle("Faengsel").setDescription("Faengsel")
+		field[10] = new Jail.Builder().setTitle("Fængsel").setDescription("Fængsel")
 				.setSubText("RAWR").build();
 		field[11] = new Street.Builder().setTitle("Fredriksberg Alle")
 				.setDescription("Fredriksberg Alle").setBgColor(Color.GREEN)
