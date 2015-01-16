@@ -54,16 +54,7 @@ public class TurnController {
 	public void runNormalTurn(int currentPlayer) {
 		int count = 0;
 		boolean run = true;
-		choiceofTurn = GUIC.startOfTurn(playerlist, currentPlayer);
-
-		if(choiceofTurn.equals("Koeb hus")){
-			buyHouse(currentPlayer);
-			
-		}else if(choiceofTurn.equals("Saelg hus")){
-			sellHouse(currentPlayer);
-			
-		}
-		
+		optionsStartOfTurn(currentPlayer);
 		while(run){
 		if (count==2)
 			GUIC.twoPair();
@@ -213,6 +204,22 @@ public class TurnController {
 		}
 		}
 		}
+	
+	public void optionsStartOfTurn(int currentPlayer){
+		boolean keepBuyingSelling = true;
+		while(keepBuyingSelling){
+		choiceofTurn = GUIC.startOfTurn(playerlist, currentPlayer);	
+		if(choiceofTurn.equals("Koeb hus")){
+			buyHouse(currentPlayer);
+			
+		}else if(choiceofTurn.equals("Saelg hus")){
+			sellHouse(currentPlayer);
+			
+		}else if(choiceofTurn.equals("rul terning")){
+			keepBuyingSelling = false;
+		}
+		}
+	}
 	public void buyHouse(int currentPlayer){
 		houseC.checkOwnedFields(currentPlayer);
 		if(playerlist[currentPlayer].getBuy_Blue()== true||playerlist[currentPlayer].getBuy_Pink()== true||playerlist[currentPlayer].getBuy_Green()== true
