@@ -28,7 +28,6 @@ public class HouseController {
 					for(int q=1; q<=8; q++){
 						if(getBuild(q, currentPlayer) == true){
 							buildPlots(currentPlayer ,q);
-							GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 							}
 						}
 				}
@@ -55,19 +54,19 @@ public class HouseController {
 					GUIC.setHouse(i+1, gethouses(1));
 					}
 				}	
-			}
+			}GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 		}
 	public String[] checkIfPossibleSell(int currentPlayer, GameBoard board){
 		int arrayIndex = 0;
 		int arraylength = 0;
 		for(int i=1; i<=39; i++){
-			if(gethouses(i) > 0){
+			if(gethouses(i) > 0 && playerlist[currentPlayer].equals(board.getField(i).getOwner())){
 				arraylength++;
 			}
 		}	
 		sellOptions = new String[arraylength];	
 		for(int i=1; i<=39; i++){
-			if(gethouses(i) > 0){
+			if(gethouses(i) > 0 && playerlist[currentPlayer].equals(board.getField(i).getOwner())){
 				sellOptions[arrayIndex] = board.getField(i).getName();
 				arrayIndex++;
 			}
@@ -253,7 +252,9 @@ public class HouseController {
 						GUIC.setHouse(2, gethouses(1));
 						playerlist[currentPlayer].addHouseammount(1);
 						}
-					}}}
+					}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 			if(gethouses(3) <= gethouses(1)){
 				if(board.getField(3).getNumberofhouses()<5){
 					if(GUIC.buyHvidovervej().equals("Ja")){
@@ -267,6 +268,7 @@ public class HouseController {
 						playerlist[currentPlayer].addHouseammount(1);
 						}
 					}}}
+			GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
 		}
 		if(n == 2){
 			if(gethouses(6) <= gethouses(8) && gethouses(6) <= gethouses(9)){
@@ -280,7 +282,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(7, gethouses(6));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 			if(gethouses(8) <= gethouses(6) && gethouses(8) <= gethouses(9)){
 				if(board.getField(8).getNumberofhouses()<5){
 					if(GUIC.buyValbyLanggade().equals("Ja")){
@@ -304,7 +308,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(10, gethouses(9));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 		}
 		if(n == 3){
 			if(gethouses(11) <= gethouses(13) && gethouses(11) <= gethouses(14)){
@@ -318,7 +324,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(12, gethouses(11));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 			if(gethouses(13) <= gethouses(11) && gethouses(13) <= gethouses(14)){
 				if(board.getField(13).getNumberofhouses()<5){
 					if(GUIC.buyBulowsvej().equals("Ja")){
@@ -330,7 +338,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(14, gethouses(13));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 			if(gethouses(14) <= gethouses(11) && gethouses(14) <= gethouses(13)){
 				if(board.getField(14).getNumberofhouses()<5){
 					if(GUIC.buyGlKongevej().equals("Ja")){
@@ -342,7 +352,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(15, gethouses(14));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 		}
 		if(n == 4){
 			if(gethouses(16) <= gethouses(18) && gethouses(16) <= gethouses(19)){
@@ -356,7 +368,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(17, gethouses(16));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 			if(gethouses(18) <= gethouses(16) && gethouses(18) <= gethouses(19)){
 				if(board.getField(18).getNumberofhouses()<5){
 					if(GUIC.buyHellerupvej().equals("Ja")){
@@ -368,7 +382,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(19, gethouses(18));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 			if(gethouses(19) <= gethouses(16) && gethouses(19) <= gethouses(18)){
 				if(board.getField(19).getNumberofhouses()<5){
 					if(GUIC.buyStrandvejen().equals("Ja")){
@@ -380,7 +396,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(20, gethouses(19));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+						}
 		}
 		
 		if(n == 5){
@@ -395,7 +413,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(22, gethouses(21));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 			if(gethouses(23) <= gethouses(21) && gethouses(23) <= gethouses(24)){
 				if(board.getField(23).getNumberofhouses()<5){
 					if(GUIC.buyOesterbrogade().equals("Ja")){
@@ -407,7 +427,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(24, gethouses(23));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+						}
 			if(gethouses(24) <= gethouses(21) && gethouses(24) <= gethouses(23)){
 				if(board.getField(24).getNumberofhouses()<5){
 					if(GUIC.buyGroenningen().equals("Ja")){
@@ -419,7 +441,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(25, gethouses(24));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 		}
 		
 		if(n == 6){
@@ -434,7 +458,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(27, gethouses(26));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 			if(gethouses(27) <= gethouses(26) && gethouses(27) <= gethouses(29)){
 				if(board.getField(27).getNumberofhouses()<5){
 					if(GUIC.buyKgsNytorv().equals("Ja")){
@@ -446,7 +472,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(28, gethouses(27));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 			if(gethouses(29) <= gethouses(26) && gethouses(29) <= gethouses(27)){
 				if(board.getField(29).getNumberofhouses()<5){
 					if(GUIC.buyIstergade().equals("Ja")){
@@ -458,7 +486,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(30, gethouses(29));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 		}
 		
 		if(n == 7){
@@ -473,7 +503,9 @@ public class HouseController {
 						}else{
 							GUIC.setHouse(32, gethouses(31));
 							playerlist[currentPlayer].addHouseammount(1);
-							}}}}
+							}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 			if(gethouses(32) <= gethouses(31) && gethouses(32) <= gethouses(34)){
 				if(board.getField(32).getNumberofhouses()<5){
 					if(GUIC.buyVimmelskaftet().equals("Ja")){
@@ -485,7 +517,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(33, gethouses(32));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 			if(gethouses(34) <= gethouses(31) && gethouses(34) <= gethouses(32)){
 				if(board.getField(34).getNumberofhouses()<5){
 					if(GUIC.buyNygade().equals("Ja")){
@@ -497,7 +531,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(35, gethouses(34));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 		}
 		if(n == 8){
 			if(gethouses(37) <= gethouses(39)){
@@ -511,7 +547,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(38, gethouses(37));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 			if(gethouses(39) <= gethouses(37)){
 				if(board.getField(39).getNumberofhouses()<5){
 					if(GUIC.buyRaadhuspladsen().equals("Ja")){
@@ -523,7 +561,9 @@ public class HouseController {
 						}else{
 						GUIC.setHouse(40, gethouses(39));
 						playerlist[currentPlayer].addHouseammount(1);
-						}}}}
+						}}}
+				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				}
 		}
 	}
 	
