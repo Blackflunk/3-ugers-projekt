@@ -89,42 +89,42 @@ public class Territory extends Ownable {
 	public boolean checkPayDoubleRent(Player player){
 		switch(color){
 			case "Blue" : 
-				if (getOwner().getBuy_Blue() && numberofhouses == 0)
+				if (getOwner().getFieldammount_blue()==2 && numberofhouses == 0)
 					return true;
 				else
 					return false;
 			case "Pink" : 
-				if (getOwner().getBuy_Pink() && numberofhouses == 0)
+				if (getOwner().getFieldammount_pink()==3 && numberofhouses == 0)
 					return true;
 				else
 					return false;
 			case "Green" : 
-				if (getOwner().getBuy_Green() && numberofhouses == 0)
+				if (getOwner().getFieldammount_green()==3 && numberofhouses == 0)
 					return true;
 				else
 					return false;
 			case "Gray" : 
-				if (getOwner().getBuy_grey() && numberofhouses == 0)
+				if (getOwner().getFieldammount_grey()==3 && numberofhouses == 0)
 					return true;
 				else
 					return false;
 			case "Red" : 
-				if (getOwner().getBuy_Red() && numberofhouses == 0)
+				if (getOwner().getFieldammount_red()==3 && numberofhouses == 0)
 					return true;
 				else
 					return false;
 			case "White" : 
-				if (getOwner().getBuy_White() && numberofhouses == 0)
+				if (getOwner().getFieldammount_white()==3 && numberofhouses == 0)
 					return true;
 				else
 					return false;
 			case "Yellow" : 
-				if (getOwner().getBuy_Yellow() && numberofhouses == 0)
+				if (getOwner().getFieldammount_yellow()==3 && numberofhouses == 0)
 					return true;
 				else
 					return false;
 			case "Magneta" : 
-				if (getOwner().getBuy_Magenta() && numberofhouses == 0)
+				if (getOwner().getFieldammount_magenta()==2 && numberofhouses == 0)
 					return true;
 				else
 					return false;

@@ -43,6 +43,9 @@ public class FieldController {
 		// For Refuge
 		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.Refuge)
 			landOnRefuge(currentPlayer);
+		// For Start 
+		else if (gameboard.getField(playerlist[currentPlayer].getPosition()) instanceof fields.Start)
+			GUIC.startMessage(gameboard.getField(playerlist[currentPlayer].getPosition()).getName());
 		// For every other fields
 		else
 			gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);

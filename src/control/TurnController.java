@@ -209,10 +209,10 @@ public class TurnController {
 		boolean keepBuyingSelling = true;
 		while(keepBuyingSelling){
 		choiceofTurn = GUIC.startOfTurn(playerlist, currentPlayer);	
-		if(choiceofTurn.equals("Koeb hus")){
+		if(choiceofTurn.equals("Køb hus")){
 			buyHouse(currentPlayer);
 			
-		}else if(choiceofTurn.equals("Saelg hus")){
+		}else if(choiceofTurn.equals("Sælg hus")){
 			sellHouse(currentPlayer);
 			
 		}else if(choiceofTurn.equals("rul terning")){
