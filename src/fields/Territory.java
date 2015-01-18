@@ -23,7 +23,6 @@ public class Territory extends Ownable {
 		this.name = name;
 		this.price  = price;
 		this.pansat = pansat;
-		
 	}
 
 	@Override
