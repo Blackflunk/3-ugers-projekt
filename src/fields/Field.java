@@ -1,8 +1,3 @@
-//********************************************************************
-//  Fields.java       Authors: Group 57
-//
-//  A class to hold field text and points for CDIO part 2
-//********************************************************************
 
 package fields;
 
