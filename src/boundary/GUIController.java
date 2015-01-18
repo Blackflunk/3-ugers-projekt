@@ -77,7 +77,7 @@ public class GUIController {
 				.setSubText("Price: 4000").setRent("Rent: 2000").build();
 		field[20] = new Refuge.Builder().setTitle("Helle")
 				.setDescription("Price 5000").setBgColor(Color.ORANGE)
-				.setSubText("Recieve: 500").build();
+				.setSubText("Parkering").build();
 		field[21] = new Street.Builder().setTitle("Trianglen")
 				.setDescription("Trianglen").setBgColor(Color.RED)
 				.setSubText("Price: 4400").setRent("Rent: 3000").build();
@@ -104,7 +104,7 @@ public class GUIController {
 				.setDescription("Østergade").setBgColor(Color.WHITE)
 				.setSubText("Price: 5600").setRent("Rent: 3000").build();
 		field[30] = new Jail.Builder().setDescription("Ryk til Fængsel")
-				.setSubText("Du modtager ikke kr. 4000 selvom du passerer start").build();
+				.setSubText("Ryk Direkte I Fængsel").build();
 		field[31] = new Street.Builder().setTitle("Amagertorv")
 				.setDescription("Amagertorv").setBgColor(Color.YELLOW)
 				.setSubText("Price: 6000").setRent("Rent: 4000").build();
@@ -303,19 +303,19 @@ public class GUIController {
 	}
 	
 	public boolean taxPick(String name) {
-		return GUI.getUserLeftButtonPressed("du er landet på "+ name + " og skal betale indkomstskat. "
-								+ "vil du helst betale 4000 eller 10% af dine kontanter?","10%", "4000");
+		return GUI.getUserLeftButtonPressed("Du er landet på "+ name + " og skal betale indkomstskat. "
+								+ "vil du helst betale 4000 eller 10% af dine totale værdier \n (værdi af grunde, huse og kontanter)?","10%", "4000");
 			}
 	
 	public void messageTax10percent() {
-		GUI.showMessage("Du har betalt 10% af dine kontanter");
+		GUI.showMessage("Du har betalt 10% af dine totale værdier");
 		 	}
 	
 	public void taxFunds() {
 		GUI.showMessage("Den skat du skal betale er større end den mængde penge du har og du betaler derfor resten af dine penge.");
 	}
 	public String startOfTurn(Player[] player, int currentPlayer){
-		return GUI.getUserButtonPressed("Det er starten af din tur, " + player[currentPlayer].getName() + " hvad 'nsker du at gøre?", "Køb hus", "Sælg hus", "rul terning");
+		return GUI.getUserButtonPressed("Det er starten af din tur, " + player[currentPlayer].getName() + " hvad ønsker du at gøre?", "Køb hus", "Sælg hus", "Rul Terninger");
 		
 	}
 	
@@ -336,7 +336,7 @@ public class GUIController {
 	}
 
 	public String noHouseToBuy() {
-		return GUI.getUserButtonPressed("Du ejer ikke nogle grunde hvor du kan købe huse'1", "Okay");
+		return GUI.getUserButtonPressed("Du ejer ikke nogle grunde hvor du kan købe huse", "Okay");
 		
 	}
 	public String offerToSellPlot(){

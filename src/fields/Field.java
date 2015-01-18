@@ -60,7 +60,12 @@ public abstract class Field {
 	public boolean checkPayDoubleRent(Player player){
 		return false;
 	}
-	public void addNumberofHouses(int add){
+	public void addNumberofHouses(int add){	
+	}
+	public int getNetworth(){
+		return 0;
+	}
+	public void setNetworth(int networth){
 		
 	}
 		

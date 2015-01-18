@@ -223,8 +223,9 @@ public class FieldController {
 				if (gameboard.getField(playerlist[currentPlayer].getPosition()).isOption()) {
 					boolean paypercent = GUIC.taxPick(gameboard.getField(playerlist[currentPlayer].getPosition()).getName());
 					if(paypercent) {
-						gameboard.getField(playerlist[currentPlayer].getPosition()).setPaypercent(true);	
-					GUIC.messageTax10percent();
+						gameboard.getField(playerlist[currentPlayer].getPosition()).setPaypercent(true);
+						gameboard.getField(playerlist[currentPlayer].getPosition()).setNetworth(checkNetworth(currentPlayer));
+						GUIC.messageTax10percent();
 					} else if (playerlist[currentPlayer].account.getScore() >= 
 							gameboard.getField(playerlist[currentPlayer].getPosition()).getPrice()) {
 						gameboard.getField(playerlist[currentPlayer].getPosition()).setPaypercent(false);
@@ -240,11 +241,25 @@ public class FieldController {
 				}
 				gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 				GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+				gameboard.getField(playerlist[currentPlayer].getPosition()).setNetworth(0);
 			}
 	public void landOnRefuge(int currentPlayer) {
 		GUIC.bonusMessage(playerlist[currentPlayer].getName(), gameboard.getField(playerlist[currentPlayer].getPosition()).getRent(0));
 		gameboard.getField(playerlist[currentPlayer].getPosition()).landOnField(playerlist[currentPlayer]);
 		GUIC.updateBalance(playerlist[currentPlayer].getName(), playerlist[currentPlayer].account.getScore());
+	}
+	
+	public int checkNetworth(int currentPlayer) {
+		int ownableworth = 0;
+		int buildingworth = 0;
+		for (int i=0; i<40;i++) {
+			if (playerlist[currentPlayer].equals(gameboard.getField(i).getOwner())) {
+				ownableworth += gameboard.getField(i).getPrice();
+				buildingworth += (gameboard.getField(i).getNumberofhouses() * gameboard.getField(i).getHouseprice());
+			}		
+		}
+		int networth = playerlist[currentPlayer].account.getScore() + ownableworth + buildingworth; 
+		return networth;
 	}
 
 }

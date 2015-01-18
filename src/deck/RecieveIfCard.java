@@ -14,7 +14,7 @@ public class RecieveIfCard extends RecieveCard{
 	}
 	
 	public void drawCard(Player player) {
-		int totalworth;
+		int networth;
 		int ownableworth = 0;
 		int buildingworth = 0;
 		for (int i=0; i<40;i++) {
@@ -23,8 +23,8 @@ public class RecieveIfCard extends RecieveCard{
 				buildingworth += (board.getField(i).getNumberofhouses() * board.getField(i).getHouseprice());
 			}		
 		}
-		totalworth = player.account.getScore() + ownableworth + buildingworth; 
-		if (totalworth <= maxvalue)
+		networth = player.account.getScore() + ownableworth + buildingworth; 
+		if (networth <= maxvalue)
 			player.account.addPoints(bonus);
 	}
 }

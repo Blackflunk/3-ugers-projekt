@@ -24,7 +24,7 @@ public class GameBoard {
 		fieldlist[10] = new Jail("Fængsel");
 		fieldlist[11] = new Territory("Fredriksberg Alle", 2800, 2000, 1400, 200, 1000, 3000, 9000, 12500, 15000, "Green");
 		fieldlist[12] = new LaborCamp("Tuborg", 3000, 1500, 80, box);
-		fieldlist[13] = new Territory("Bülowsvej", 2800, 2000, 1400, 200, 1000, 3000, 9000, 12500, 15000,"Green");
+		fieldlist[13] = new Territory("Bulowsvej", 2800, 2000, 1400, 200, 1000, 3000, 9000, 12500, 15000,"Green");
 		fieldlist[14] = new Territory("Gl Kongevej", 3200, 2000, 1600, 240, 1200, 3600, 10000, 14000, 18000, "Green");
 		fieldlist[15] = new Fleet("Mols-Linien", 4000, 2000, 500, 1000, 2000, 4000);
 		fieldlist[16] = new Territory("Bernstorffsvej", 3600, 2000, 1800, 280, 1400, 4000, 11000, 15000, 19000,"Gray");

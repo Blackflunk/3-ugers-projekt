@@ -215,7 +215,7 @@ public class TurnController {
 		}else if(choiceofTurn.equals("Sælg hus")){
 			sellHouse(currentPlayer);
 			
-		}else if(choiceofTurn.equals("rul terning")){
+		}else if(choiceofTurn.equals("Rul Terninger")){
 			keepBuyingSelling = false;
 		}
 		}

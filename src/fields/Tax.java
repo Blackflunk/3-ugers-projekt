@@ -8,6 +8,7 @@ public class Tax extends Field {
 	private int pay;
 	private boolean option;
 	private boolean paypercent=false;
+	private int networth;
 
 	public Tax(String name, int pay, boolean option) {
 		super(name);
@@ -20,7 +21,7 @@ public class Tax extends Field {
 	public void landOnField(Player player) {
 		if (option) {
 			if (paypercent)
-			player.account.addPoints(-(player.account.getScore() / 10));
+			player.account.addPoints(-(networth / 10));
 			else if (player.account.getScore() >= pay)
 				player.account.addPoints(-pay);
 			else {
@@ -57,6 +58,14 @@ public class Tax extends Field {
 	@Override
 	public int getPrice() {
 		return pay;
+	}
+	@Override
+	public int getNetworth() {
+		return networth;
+	}
+	@Override
+	public void setNetworth(int networth) {
+		this.networth = networth;
 	}
 
 }
