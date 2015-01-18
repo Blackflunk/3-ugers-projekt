@@ -1,8 +1,3 @@
-//********************************************************************
-//  Player.java       Authors: Group 57
-//
-//  A class to hold information and methods regarding the player in CDIO part 3
-//********************************************************************
 
 package entity;
 

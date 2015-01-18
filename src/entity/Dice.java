@@ -1,8 +1,3 @@
-//********************************************************************
-//  Dice.java       Authors: Group 57
-//
-//  A class to hold information and methods regarding the dice in CDIO part 2
-//********************************************************************
 
 package entity;
 
